@@ -3,7 +3,7 @@ id: supported-document-formats
 url: editor/net/supported-document-formats
 title: Supported Document Formats
 weight: 2
-description: ""
+description: "This section describes GroupDocs.Editor for .NET supported document types"
 keywords: 
 productName: GroupDocs.Editor for .NET
 hideChildren: False

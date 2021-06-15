@@ -3,7 +3,7 @@ id: installation
 url: editor/net/installation
 title: Development Environment Installation and Configuration
 weight: 4
-description: ""
+description: "This guide explains how to install GroupDocs.Editor for .NET to your environment"
 keywords: 
 productName: GroupDocs.Editor for .NET
 hideChildren: False

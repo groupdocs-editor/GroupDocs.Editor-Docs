@@ -3,7 +3,7 @@ id: supported-document-formats
 url: editor/java/supported-document-formats
 title: Supported Document Formats
 weight: 2
-description: ""
+description: "This section describes GroupDocs.Editor for Java supported document types"
 keywords: 
 productName: GroupDocs.Editor for Java
 hideChildren: False

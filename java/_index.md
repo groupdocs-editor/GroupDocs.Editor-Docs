@@ -3,7 +3,7 @@ id: home
 url: editor/java
 title: GroupDocs.Editor for Java
 weight: 1
-description: ""
+description: "GroupDocs.Editor for Java enables document editing in form of HTML."
 keywords: 
 productName: GroupDocs.Editor for Java
 hideChildren: True

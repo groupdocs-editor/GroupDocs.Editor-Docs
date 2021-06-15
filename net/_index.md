@@ -3,7 +3,7 @@ id: home
 url: editor/net
 title: GroupDocs.Editor for .NET
 weight: 1
-description: ""
+description: "GroupDocs.Editor for .NET is is a powerful document editing API using HTML and C# language."
 keywords: 
 productName: GroupDocs.Editor for .NET
 hideChildren: True

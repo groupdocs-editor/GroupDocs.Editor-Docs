@@ -3,7 +3,7 @@ id: installation
 url: editor/java/installation
 title: Development Environment Installation and Configuration
 weight: 4
-description: ""
+description: "This guide explains how to install GroupDocs.Editor for Java to your environment"
 keywords: 
 productName: GroupDocs.Editor for Java
 hideChildren: False

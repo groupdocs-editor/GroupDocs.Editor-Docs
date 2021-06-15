@@ -3,7 +3,7 @@ id: migration-notes
 url: editor/java/migration-notes
 title: Migration Notes
 weight: 3
-description: ""
+description: "How to migrate from earlier versions of GroupDocs.Editor for Java"
 keywords: 
 productName: GroupDocs.Editor for Java
 hideChildren: False

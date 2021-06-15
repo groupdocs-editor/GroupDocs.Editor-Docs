@@ -3,7 +3,7 @@ id: system-requirements
 url: editor/java/system-requirements
 title: System Requirements
 weight: 4
-description: ""
+description: "This article explains GroupDocs.Editor for Java system requirements."
 keywords: 
 productName: GroupDocs.Editor for Java
 hideChildren: False

@@ -3,7 +3,7 @@ id: system-requirements
 url: editor/net/system-requirements
 title: System Requirements
 weight: 3
-description: ""
+description: "This article explains GroupDocs.Editor for .NET system requirements."
 keywords: 
 productName: GroupDocs.Editor for .NET
 hideChildren: False

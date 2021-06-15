@@ -3,7 +3,7 @@ id: features-overview
 url: editor/java/features-overview
 title: Features Overview
 weight: 1
-description: ""
+description: "This is an overview of GroupDocs.Editor for Java library features and capabilities"
 keywords: 
 productName: GroupDocs.Editor for Java
 hideChildren: False

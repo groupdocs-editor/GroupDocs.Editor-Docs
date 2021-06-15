@@ -3,7 +3,7 @@ id: migration-notes
 url: editor/net/migration-notes
 title: Migration Notes
 weight: 3
-description: ""
+description: "How to migrate from earlier versions of GroupDocs.Editor for .NET"
 keywords: 
 productName: GroupDocs.Editor for .NET
 hideChildren: False

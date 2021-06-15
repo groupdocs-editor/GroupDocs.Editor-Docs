@@ -3,7 +3,7 @@ id: introducing-groupdocs-editor-for-java
 url: editor/java/introducing-groupdocs-editor-for-java
 title: Introducing GroupDocs.Editor for Java
 weight: 1
-description: ""
+description: "Introduction to GroupDocs.Editor for Java - what is it and why to use"
 keywords: 
 productName: GroupDocs.Editor for Java
 hideChildren: False
