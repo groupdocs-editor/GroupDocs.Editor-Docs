@@ -12,11 +12,12 @@ hideChildren: False
 
 #### Introduction
 
-Almost all documents of any types have resources. It is first of all images, some document formats also hold fonts. Even for plain text document (TXT), when converting it to the HTML for editing, there will be one stylesheet, that is treated as a resource. GroupDocs.Editor allows to work with resources on editing phase, when document was loaded to the [Editor](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) class and opened for editing by generating the [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) instance, that is produced by the [Editor](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor).[Edit](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor/methods/edit/index) method. Instance of [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument)can be treated as an input document, converted to internal intermediate format, with possibilities to generate HTML markup and resources for passing them to the client-side WYSIWYG HTML-editor. GroupDocs.Editor classifies all resources onto three groups:
+Almost all documents of any types have resources. It is first of all images, some document formats also hold fonts. Even for plain text document (TXT), when converting it to the HTML for editing, there will be one stylesheet, that is treated as a resource. WordProcessing documents of some format, Office Open XML usually, can also contain embedded audio files. GroupDocs.Editor allows to work with resources on editing phase, when document was loaded to the [Editor](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) class and opened for editing by generating the [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) instance, that is produced by the [Editor](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor).[Edit](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor/methods/edit/index) method. Instance of [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument)can be treated as an input document, converted to internal intermediate format, with possibilities to generate HTML markup and resources for passing them to the client-side WYSIWYG HTML-editor. GroupDocs.Editor classifies all resources onto three groups:
 
 *   Images, including: raster (PNG, BMP, JPEG, GIF, ICON) and vector (SVG and WMF).
 *   Fonts, including: TTF, EOT, WOFF, WOFF2.
 *   Textual resources: only CSS.
+*   Audio files: only MP3 (appear in version 21.10).
 
 Every resource type has its own distinct class with metadata, constructors and other methods. They all are located within [GroupDocs.Editor.HtmlCss.Resources](https://apireference.groupdocs.com/net/editor/groupdocs.editor.htmlcss.resources/index) namespace.
 
@@ -36,13 +37,14 @@ EditableDocument beforeEdit = editor.Edit(editOptions);// Create EditableDocumen
 
 Now, when [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) instance is ready, it is possible to obtains resources from it, and [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) provides several ways for this.
 
-First of all, resources can be retrieved by their type. [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) contains three properties for every resource type:
+First of all, resources can be retrieved by their type. [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) contains four properties for every resource type:
 
 *   [EditableDocument.Images](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument/properties/images) — returns a List of [IImageResource](https://apireference.groupdocs.com/net/editor/groupdocs.editor.htmlcss.resources.images/iimageresource), interface, that is common for all images, raster and vector.
 *   [EditableDocument.Fonts](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument/properties/fonts) — returns a List of [FontResourceBase](https://apireference.groupdocs.com/net/editor/groupdocs.editor.htmlcss.resources.fonts/fontresourcebase), abstract class, that is common for all fonts.
 *   [EditableDocument.Css](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument/properties/css) — returns a List of [CssText](https://apireference.groupdocs.com/net/editor/groupdocs.editor.htmlcss.resources.textual/csstext), class, that represents one CSS stylesheet.
+*   [EditableDocument.Audio]((https://apireference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/properties/audio)) — returns a List of [Mp3Audio]((https://apireference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.resources.audio/mp3audio)), class, that represents one MP3 audio file. Added in ver 21.10.
 
-Secondly, completely all resources may be obtained with a single property [EditableDocument.AllResources](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument/properties/allresources). It returns a List of [IHtmlResource](https://apireference.groupdocs.com/net/editor/groupdocs.editor.htmlcss.resources/ihtmlresource), interface, that is common for absolutely all HTML resources, including images, fonts and stylesheets. The collection, returned by the [AllResources](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument/properties/allresources) property, in fact is a concatenation of previous three.
+Secondly, completely all resources may be obtained with a single property [EditableDocument.AllResources](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument/properties/allresources). It returns a List of [IHtmlResource](https://apireference.groupdocs.com/net/editor/groupdocs.editor.htmlcss.resources/ihtmlresource), interface, that is common for absolutely all HTML resources, including images, fonts, stylesheets, and audio. The collection, returned by the [AllResources](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument/properties/allresources) property, in fact is a concatenation of previous four.
 
 Here is a source code:
 
@@ -50,6 +52,7 @@ Here is a source code:
 List<IImageResource> images = beforeEdit.Images;
 List<FontResourceBase> fonts = beforeEdit.Fonts;
 List<CssText> stylesheets = beforeEdit.Css;
+List<Mp3Audio> audiofiles = beforeEdit.Audio;
 List<IHtmlResource> allTogether = beforeEdit.AllResources;
 ```
 
@@ -68,6 +71,10 @@ foreach (FontResourceBase oneFont in fonts)
 foreach (CssText oneStylesheet in stylesheets)
 {
     oneStylesheet.Save(Path.Combine(outputFolder, oneStylesheet.FilenameWithExtension));
+}
+foreach (Mp3Audio oneMp3 in audiofiles)
+{
+    oneMp3.Save(Path.Combine(outputFolder, oneMp3.FilenameWithExtension));
 }
 System.IO.File.WriteAllText("c://output/document.html", beforeEdit.GetContent());
 ```

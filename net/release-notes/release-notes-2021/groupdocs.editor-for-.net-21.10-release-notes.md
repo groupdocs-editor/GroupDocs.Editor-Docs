@@ -18,13 +18,13 @@ Version 21.10 of GroupDocs.Editor contains two new features, which are described
 
 #### Audio support
 
-In version 21.10 GroupDocs.Editor is able to process the MP3 audio files, embedded in the WordProcessing documents. For supporting this a new public namespace "GroupDocs.Editor.HtmlCss.Resources.Audio" and two new public types inside it, — AudioType and Mp3Audio, — were added. Now, when WordProcessing document contains an embedded audio, it will be preserved and stored in the EditableDocument instance, and will be present in editable HTML representation.
+In version 21.10 GroupDocs.Editor is able to process the MP3 audio files, embedded in the WordProcessing documents. For supporting this a new public namespace "[GroupDocs.Editor.HtmlCss.Resources.Audio](https://apireference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.resources.audio)" and two new public types inside it, — [AudioType](https://apireference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.resources.audio/audiotype) and [Mp3Audio](https://apireference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.resources.audio/mp3audio), — were added. Now, when WordProcessing document contains an embedded audio, it will be preserved and stored in the EditableDocument instance, and will be present in editable HTML representation.
 
 #### New HTML parser
 
-When edited document content in a form of HTML markup, CSS, images and other resources, is passing back to the GroupDocs.Editor via EditableDocument in order to create an output document, GroupDocs.Editor internally performs a parsing of HTML markup. Before version 21.10 the HTML parser supported only a strict and narrow range of valid HTML markup, with proper tag structure, where all opening tags are properly closed, and structure is complete and well-formed. There even was a special method "[FromBodyMarkupAndResourceFolder](https://apireference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/methods/frombodymarkupandresourcefolder)" for coping with inner-BODY content.
+When edited document content in a form of HTML markup, CSS, images and other resources, is passing back to the GroupDocs.Editor via [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) in order to create an output document, GroupDocs.Editor internally performs a parsing of HTML markup. Before version 21.10 the HTML parser supported only a strict and narrow range of valid HTML markup, with proper tag structure, where all opening tags are properly closed, and structure is complete and well-formed. There even was a special method "[FromBodyMarkupAndResourceFolder](https://apireference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/methods/frombodymarkupandresourcefolder)" for coping with inner-BODY content.
 
-Starting from 21.10 the completely new HTML parser has replaced the old one, and now any HTML content is supportable and correctly processable, even invalid. Method "[FromBodyMarkupAndResourceFolder](https://apireference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/methods/frombodymarkupandresourcefolder)" now is obsolete; instead of it a new method "FromMarkupAndResourceFolder" is introduced.
+Starting from 21.10 the completely new HTML parser has replaced the old one, and now any HTML content is supportable and correctly processable, even invalid. Method "[FromBodyMarkupAndResourceFolder](https://apireference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/methods/frombodymarkupandresourcefolder)" now is obsolete; instead of it a new method "[FromMarkupAndResourceFolder](https://apireference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/methods/frommarkupandresourcefolder)" is introduced.
 
 ## Improvements
 
@@ -56,14 +56,14 @@ GroupDocs.Editor version 21.10 contains big amount of bugfixes and performance i
 
 New public types:
 
-1. GroupDocs.Editor.HtmlCss.Resources.Audio.Mp3Audio
-2. GroupDocs.Editor.HtmlCss.Resources.Audio.AudioType
+1. [GroupDocs.Editor.HtmlCss.Resources.Audio.Mp3Audio](https://apireference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.resources.audio/mp3audio)
+2. [GroupDocs.Editor.HtmlCss.Resources.Audio.AudioType](https://apireference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.resources.audio/audiotype)
 
 New public methods and properties:
 
-1. GroupDocs.Editor.EditableDocument.Audio - instance property
-2. GroupDocs.Editor.EditableDocument.FromMarkupAndResourceFolder(string newHtmlContent, string resourceFolderPath) - static method
+1. [GroupDocs.Editor.EditableDocument.Audio](https://apireference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/properties/audio) - instance property
+2. [GroupDocs.Editor.EditableDocument.FromMarkupAndResourceFolder(string newHtmlContent, string resourceFolderPath)](https://apireference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/methods/frommarkupandresourcefolder) - static method
 
 **Obsolete** methods:
 
-1. GroupDocs.Editor.EditableDocument.FromBodyMarkupAndResourceFolder(string htmlBodyContent, string resourceFolderPath) - static method
+1. [GroupDocs.Editor.EditableDocument.FromBodyMarkupAndResourceFolder(string htmlBodyContent, string resourceFolderPath)](https://apireference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/methods/frombodymarkupandresourcefolder) - static method

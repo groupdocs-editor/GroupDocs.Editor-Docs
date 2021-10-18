@@ -35,7 +35,7 @@ Like with load and edit options, every family format has its own class, that imp
 | Delimiter-Separated Values (DSV) | CSV, TSV | [DelimitedTextSaveOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/delimitedtextsaveoptions) | [TextualFormats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/textualformats) |
 | Presentation | PPT, PPTX, PPS, POT | [PresentationSaveOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/presentationsaveoptions) | [PresentationFormats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/presentationformats) |
 | Plain Text documents | TXT | [TextSaveOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/textsaveoptions) | [TextualFormats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/textualformats) |
-| PDF | PDF | [PdfSaveOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/pdfsaveoptions) | N/A |
+| Fixed-layout format | PDF | [PdfSaveOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/pdfsaveoptions) | N/A |
 
 Source code below shows creating an instance of [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) class and consequent saving a two versions of the document: one to the file and second — to the stream.
 
