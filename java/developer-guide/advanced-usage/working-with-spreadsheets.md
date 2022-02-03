@@ -62,18 +62,3 @@ SpreadsheetSaveOptions saveOptions = new SpreadsheetSaveOptions(SpreadsheetForma
 saveOptions.setPassword("new password");
 saveOptions.setWorksheetProtection(new WorksheetProtection(WorksheetProtectionType.All, "write password"));
 ```
-
-## More resources
-### GitHub Examples
-
-You may easily run the code above and see the feature in action in our GitHub examples:
-*   [GroupDocs.Editor for .NET examples, plugins, and showcase](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET)   
-*   [GroupDocs.Editor for Java examples, plugins, and showcase](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java)    
-*   [Document Editor for .NET MVC UI Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-MVC)     
-*   [Document Editor for .NET App WebForms UI Modern Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-WebForms)    
-*   [Document Editor for Java App Dropwizard UI Modern Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java-Dropwizard)    
-*   [Document Editor for Java Spring UI Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java-Spring)
-    
-### Free Online App
-Along with full-featured Java library we provide simple but powerful free Apps.  
-You are welcome to edit your Microsoft Word (DOC, DOCX, RTF etc.), Microsoft Excel (XLS, XLSX, CSV etc.), Open Document (ODT, OTT, ODS) and other documents with free to use online **[GroupDocs Editor App](https://products.groupdocs.app/editor)**.

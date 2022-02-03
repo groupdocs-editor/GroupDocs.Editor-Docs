@@ -18,11 +18,11 @@ GroupDocs.Editor for .NET version 20.4 contains a lot of new features, improveme
 
 Starting from version 20.4, GroupDocs.Editor is able not only to generate a presentation with single slide, but insert new edited slide into existing presentation. In order to make this feature public the two new properties were added to the [`PresentationSaveOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/presentationsaveoptions) class: integer [`SlideNumber`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/presentationsaveoptions/properties/slidenumber) and boolean flag [InsertAsNewSlide](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/presentationsaveoptions/properties/insertasnewslide).
 
-There is a special article "[Inserting edited slide into existing presentation]({{< ref "editor/net/developer-guide/advanced-usage/working-with-presentations/inserting-edited-slide-into-existing-presentation.md" >}})", which explains exactly this specific feature.
+There is a special article "[Inserting edited slide into existing presentation]({{< ref "editor/net/developer-guide/edit-powerpoint/inserting-edited-slide-into-existing-presentation.md" >}})", which explains exactly this specific feature.
 
 ### Paginal mode for PDF
 
-Starting from version 20.4 a paginal mode becomes available for PDF conversion, which means that input WordProcessing document, which was edited in paginal mode, can be saved in PDF format in paginal mode too. Corresponding boolean flag [EnablePagination](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfsaveoptions/properties/enablepagination) was added to the [PdfSaveOptions](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfsaveoptions) class. Section "Paginal mode in PDF" in the "[Float and paginal modes]({{< ref "editor/net/developer-guide/advanced-usage/working-with-wordprocessing-documents/float-and-paginal-modes.md" >}})" article describes this new feature.
+Starting from version 20.4 a paginal mode becomes available for PDF conversion, which means that input WordProcessing document, which was edited in paginal mode, can be saved in PDF format in paginal mode too. Corresponding boolean flag [EnablePagination](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfsaveoptions/properties/enablepagination) was added to the [PdfSaveOptions](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfsaveoptions) class. Section "Paginal mode in PDF" in the "[Float and paginal modes]({{< ref "editor/net/developer-guide/edit-word/float-and-paginal-modes.md" >}})" article describes this new feature.
 
 ### Support of TIFF images
 

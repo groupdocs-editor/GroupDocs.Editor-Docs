@@ -34,17 +34,3 @@ Along with family of WordProcessing formats, GroupDocs.Editor support a PDF as o
 
 Starting from GroupDocs.Editor version 20.4 these two conversion mode were added into the PDF processor. Now [PdfSaveOptions](https://apireference.groupdocs.com/editor/java/groupdocs.editor.options/pdfsaveoptions) class contains the same property — [EnablePagination](https://apireference.groupdocs.com/editor/java/groupdocs.editor.options/pdfsaveoptions/properties/enablepagination) boolean flag, which, like the same in WordProcessing, has `false` default value, which means *float* mode, when `true` value means *paginal* mode. If input WordProcessing document was converted to [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) in *paginal* mode, the output PDF should be generated in *paginal* mode too, with enabled [EnablePagination](https://apireference.groupdocs.com/editor/java/groupdocs.editor.options/pdfsaveoptions/properties/enablepagination) flag.
 --->
-## More resources
-### GitHub Examples
-
-You may easily run the code above and see the feature in action in our GitHub examples:
-*   [GroupDocs.Editor for .NET examples, plugins, and showcase](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET)   
-*   [GroupDocs.Editor for Java examples, plugins, and showcase](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java)    
-*   [Document Editor for .NET MVC UI Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-MVC)     
-*   [Document Editor for .NET App WebForms UI Modern Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-WebForms)    
-*   [Document Editor for Java App Dropwizard UI Modern Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java-Dropwizard)    
-*   [Document Editor for Java Spring UI Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java-Spring)
-    
-### Free Online App
-Along with full-featured Java library we provide simple but powerful free Apps.  
-You are welcome to edit your Microsoft Word (DOC, DOCX, RTF etc.), Microsoft Excel (XLS, XLSX, CSV etc.), Open Document (ODT, OTT, ODS) and other documents with free to use online **[GroupDocs Editor App](https://products.groupdocs.app/editor)**.

@@ -23,18 +23,3 @@ However, when document is multi-language, enabling language information may be v
 
 *   It eases spell checking for client-base JavaScript spell-checkers, that are working in the browser. However, this is very dependent on specific spell-checker, as not all spell-checkers are able to grab values from "lang" attributes or even use language information at all.
 *   It improves the quality of output WordProcessing document in roundtrip scenarios. When document with enabled [`EnableLanguageInformation`](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingeditoptions/properties/enablelanguageinformation) option was converted to the [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) instance, then HTML markup was generated, edited in the some HTML-editor, and then new instance of [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class was created from edited markup, language metadata in "lang" attributes is still preserved. When edited [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) will be converted back to the output document of some WordProcessing format like DOCX or RTF, the textual content inside it will have connections to correct locale.
-
-## More resources
-### GitHub Examples
-
-You may easily run the code above and see the feature in action in our GitHub examples:
-*   [GroupDocs.Editor for .NET examples, plugins, and showcase](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET)   
-*   [GroupDocs.Editor for Java examples, plugins, and showcase](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java)    
-*   [Document Editor for .NET MVC UI Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-MVC)     
-*   [Document Editor for .NET App WebForms UI Modern Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-WebForms)    
-*   [Document Editor for Java App Dropwizard UI Modern Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java-Dropwizard)    
-*   [Document Editor for Java Spring UI Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java-Spring)
-    
-### Free Online App
-Along with full-featured Java library we provide simple but powerful free Apps.  
-You are welcome to edit your Microsoft Word (DOC, DOCX, RTF etc.), Microsoft Excel (XLS, XLSX, CSV etc.), Open Document (ODT, OTT, ODS) and other documents with free to use online **[GroupDocs Editor App](https://products.groupdocs.app/editor)**.

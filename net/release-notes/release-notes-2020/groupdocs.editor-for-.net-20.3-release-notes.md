@@ -20,7 +20,7 @@ Starting from version 20.3, GroupDocs.Editor is able to extract fonts, installed
 
 In counterpart, the next feature, related to font processing, has affected the public API: new boolean flag named `ExtractOnlyUsedFont` was added to the [WordProcessingEditOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/wordprocessingeditoptions) class. Setting this flag to `true` allows to exclude those fonts, which are not directly applied to textual content in the document.
 
-More info about these two features is located in the corresponding article "[Font extraction options]({{< ref "editor/net/developer-guide/advanced-usage/working-with-wordprocessing-documents/font-extraction-options.md" >}})".
+More info about these two features is located in the corresponding article "[Font extraction options]({{< ref "editor/net/developer-guide/edit-word/font-extraction-options.md" >}})".
 
 ### Improvements in HTML support
 

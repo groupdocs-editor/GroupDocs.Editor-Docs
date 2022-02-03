@@ -26,18 +26,3 @@ The [Password](https://apireference.groupdocs.com/editor/java/com.groupdocs.edit
 4.  `ReadOnly` — No changes are allowed to the document.
 
 Take a note that both the properties [Password](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotection/properties/password) and a [ProtectionType](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotection/properties/protectiontype) are bound to each other. If user set a valid non-NULL not-empty [Password](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotection/properties/password), but the [ProtectionType](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotection/properties/protectiontype) property has a [WordProcessingProtectionType](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotectiontype). `NoProtection` value, the protection will not be applied. And vice versa, if [ProtectionType](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotection/properties/protectiontype) property has a `AllowOnlyFormFields` value, for example, but [Password](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotection/properties/password) is NULL or empty string, then the protection will not be applied too.
-
-## More resources
-### GitHub Examples
-
-You may easily run the code above and see the feature in action in our GitHub examples:
-*   [GroupDocs.Editor for .NET examples, plugins, and showcase](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET)   
-*   [GroupDocs.Editor for Java examples, plugins, and showcase](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java)    
-*   [Document Editor for .NET MVC UI Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-MVC)     
-*   [Document Editor for .NET App WebForms UI Modern Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-WebForms)    
-*   [Document Editor for Java App Dropwizard UI Modern Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java-Dropwizard)    
-*   [Document Editor for Java Spring UI Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java-Spring)
-    
-### Free Online App
-Along with full-featured Java library we provide simple but powerful free Apps.  
-You are welcome to edit your Microsoft Word (DOC, DOCX, RTF etc.), Microsoft Excel (XLS, XLSX, CSV etc.), Open Document (ODT, OTT, ODS) and other documents with free to use online **[GroupDocs Editor App](https://products.groupdocs.app/editor)**.

@@ -74,18 +74,3 @@ However, most of client-side WYSIWYG HTML-editors like TinyMCE and CKEditor are 
 *   `string resourceFolderPath` — string, that contains a full path to the folder with all external resources for the opening document. If the folder doesn't exist, an exception will be thrown.
 
 Because inner-BODY markup doesn't contain stylesheets (neither included not embedded), these stylesheets should be referenced by some another way. For obtaining them a second parameter exists; user should specify a full path to the folder, that contains an images, fonts and stylesheets, used by the HTML document, specified in the 1st parameter. GroupDocs.Editor scans this folder, founds \*.css files, opens them, parses their content, and if this content is valid, applies these stylesheets for the document. If stylesheet references on external images and/or fonts, GroupDocs.Editor will try to find these resources in this resource folder too. Also, if HTML markup, specified in the 1st parameter, contains external images, referenced using an IMG element, GroupDocs.Editor will try to find these images in this resource folder too. In other words, the [FromBodyMarkupAndResourceFolder()](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument#frombodymarkupandresourcefolder()) method "assumes" that contains resources for that specific HTML document, which inner-BODY content was specified in the 1st parameter.
-
-## More resources
-### GitHub Examples
-
-You may easily run the code above and see the feature in action in our GitHub examples:
-*   [GroupDocs.Editor for .NET examples, plugins, and showcase](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET)   
-*   [GroupDocs.Editor for Java examples, plugins, and showcase](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java)    
-*   [Document Editor for .NET MVC UI Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-MVC)     
-*   [Document Editor for .NET App WebForms UI Modern Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-WebForms)    
-*   [Document Editor for Java App Dropwizard UI Modern Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java-Dropwizard)    
-*   [Document Editor for Java Spring UI Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java-Spring)
-    
-### Free Online App
-Along with full-featured Java library we provide simple but powerful free Apps.  
-You are welcome to edit your Microsoft Word (DOC, DOCX, RTF etc.), Microsoft Excel (XLS, XLSX, CSV etc.), Open Document (ODT, OTT, ODS) and other documents with free to use online **[GroupDocs Editor App](https://products.groupdocs.app/editor)**.
