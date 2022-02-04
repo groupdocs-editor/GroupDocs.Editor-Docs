@@ -1,7 +1,7 @@
 ---
 id: installation
 url: editor/net/installation
-title: Development Environment Installation and Configuration
+title: Installation
 weight: 4
 description: "This guide explains how to install GroupDocs.Editor for .NET to your environment"
 keywords: 
@@ -16,9 +16,10 @@ NuGet is the easiest way to download and install GroupDocs.Editor for .NET. Ther
 ### Install via Package Manager GUI
 
 Follow these steps to reference GroupDocs.Editor using Package Manager GUI:
-   Open your solution/project in Visual Studio.
-* Click **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**. You can also access the same option through the Solution Explorer. Right-click the solution or project and select Manage NuGet Packages from the context menu    
-* Select **Browse** tab and type **"GroupDocs.Editor"** in the search text box.    
+
+*  Open your solution/project in Visual Studio.
+* Click **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**. You can also access the same option through the Solution Explorer. Right-click the solution or project and select Manage NuGet Packages from the context menu.
+* Select **Browse** tab and type **"GroupDocs.Editor"** in the search text box.
 * Click the **Install** button to install the latest version of the API into your project as shown in the following screenshot.
 ![](editor/net/images/development-environment-installation-and-configuration.png)
 
