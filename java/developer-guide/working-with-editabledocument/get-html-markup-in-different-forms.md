@@ -7,10 +7,11 @@ description: "Learn this article to know how to get edited document HTML markup 
 keywords: Get html content, get html body, get html markup
 productName: GroupDocs.Editor for Java
 hideChildren: False
+toc: True
 ---
 > This demonstration shows how to open input document, convert it to intermediate [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument), and get HTML markup in different forms depending on client requirements.
 
-#### Preparations
+## Preparations
 
 When input document is loaded into [Editor](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor) class and opened for edit by transforming to the intermediate [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class, it is possible to generate and get HTML markup in different forms. Code below shows all variations of such procedure.
 
@@ -26,13 +27,12 @@ EditableDocument document = editor.edit(new WordProcessingEditOptions()); //open
 
 Piece of code above has prepared a ready-to-use instance of [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class, that contains the original document in its own intermediate format and is able to generate HTML markup in different forms.
 
-#### Getting whole HTML content
+## Getting whole HTML content
 
 The most default and standard method for generating HTML markup is parameterless [GetContent](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument#getcontent()) method:
 
 ```java
 String htmlContent = document.getContent();
-
 ```
 
 If document has external resources (stylesheets, fonts, images), they are referenced via different HTML elements: stylesheets are specified through LINK elements, while images — through IMG. When using the [GetContent()](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument#getcontent()) method, such external resources will be referenced by external links. For example:
@@ -57,7 +57,7 @@ In the example above specified prefixes will be added to every external link in 
 <IMG src="http://www.mywebsite.com/css/id=image.png"/"> 
 ```
 
-#### Getting HTML BODY content
+## Getting HTML BODY content
 
 Lot of HTML WYSIWYG editors are not able to process the whole HTML document, with HEAD section and so on. They are able only to process inner content of HTML->BODY element. In order to obtain such part of HTML markup, [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class contains the [GetBodyContent()](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument#getcontent()) method, which, as previous one, has two overloads, that are provided below:
 
@@ -69,7 +69,7 @@ String prefixedBodyContent = document.getBodyContent(externalImagesPrefix); 
 
 First parameterless overload, like previous one, leaves links to the external images intact. Second, that obtains external resource prefix, adds this prefix to every url in the 'src' attribute of every IMG tag, that is found inside HTML->BODY markup.
 
-#### Getting base64-encoded content
+## Getting base64-encoded content
 
 Sometimes it is necessary to obtain all content of all document with all used resources into one single string.GroupDocs.Editor allows to do this:
 
@@ -79,6 +79,6 @@ String embeddedHtmlContent = document.getEmbeddedHtml();
 
 In such string all stylesheets will be placed into the STYLE elements in the HTML->HEAD section, all images in IMG elements will be serialized with base64 encoding and placed directly in the 'src' attributes. All fonts and images, which are used in stylesheets, will also be serialized and stored in appropriate locations in the corresponding stylesheet. Such string will be fully autonomous and self-sufficient.
 
-#### Conclusion
+## Conclusion
 
 This guide has explained different ways of obtaining HTML markup from a document in different forms.

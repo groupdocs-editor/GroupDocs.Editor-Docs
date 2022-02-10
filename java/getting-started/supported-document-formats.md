@@ -7,12 +7,12 @@ description: "This section describes GroupDocs.Editor for Java supported documen
 keywords: 
 productName: GroupDocs.Editor for Java
 hideChildren: False
+toc: True
 ---
-## Supported Document Formats
 
 The following table indicates the file formats that GroupDocs.Editor can edit.
 
-#### WordProcessing family formats
+## WordProcessing family formats
 
 | Format | Description | Edit | Auto Detection |
 | --- | --- | --- | --- |
@@ -28,7 +28,7 @@ The following table indicates the file formats that GroupDocs.Editor can edit.
 | [RTF](https://wiki.fileformat.com/specification/word-processing/rtf/) | Rich Text Format | ![(tick)](editor/java/images/check.png) | ![(tick)](editor/java/images/check.png) |
 | WordML | Microsoft Office Word 2003 XML Format — WordProcessingML or WordML | ![(tick)](editor/java/images/check.png) |   |
 
-#### Spreadsheet family formats
+## Spreadsheet family formats
 
 | Format | Description | Edit | Auto Detection |
 | --- | --- | --- | --- |
@@ -49,7 +49,7 @@ The following table indicates the file formats that GroupDocs.Editor can edit.
 | [CSV](https://wiki.fileformat.com/specification/spreadsheet/csv/) | Comma Separated Values document | ![(tick)](editor/java/images/check.png) |   |
 | [TSV](https://wiki.fileformat.com/specification/spreadsheet/tsv/) | Tab Separated Values document | ![(tick)](editor/java/images/check.png) |   |
 
-#### Presentation family formats
+## Presentation family formats
 
 | Format | Description | Edit | Auto Detection |
 | --- | --- | --- | --- |
@@ -66,7 +66,7 @@ The following table indicates the file formats that GroupDocs.Editor can edit.
 | [ODP](https://wiki.fileformat.com/presentation/odp/) | OpenDocument Presentation | ![(tick)](editor/java/images/check.png) | ![(tick)](editor/java/images/check.png) |
 | [OTP](https://wiki.fileformat.com/presentation/otp/) | OpenDocument Presentation template | ![(tick)](editor/java/images/check.png) | ![(tick)](editor/java/images/check.png) |
 
-#### Other formats
+## Other formats
 
 | Format | Description | Edit | Auto Detection |
 | --- | --- | --- | --- |

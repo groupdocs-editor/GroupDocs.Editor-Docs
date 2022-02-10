@@ -2,7 +2,7 @@
 id: save-document
 url: editor/java/save-document
 title: Save document
-weight: 4
+weight: 3
 description: "This article demonstrates how to save edited text documents, spreadsheets and presentations with GroupDocs.Editor for Java API."
 keywords: Save edited document, edit document, GroupDocs.Editor
 productName: GroupDocs.Editor for Java
@@ -15,16 +15,16 @@ When end-user has finished document editing in the WYSIWYG HTML-editor (this is 
 As it was shown in previous articles, instances of [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) are generated and returned by the [Editor](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor).[Edit()](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor#edit()) method and then are used for emitting HTML markup and resources for passing them *to* the WYSIWYG editor.  
 However [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) also has a second purpose — to obtain edited content *from* WYSIWYG editor. [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class has no public constructors; instead of them it has two static factories, that obtain HTML document in different forms:
 
-1.  [FromFile](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument#fromfile()) method is designed for opening HTML-documents from disk — it obtains path to \*.html file and path to corresponding resource folder.
-2.  [FromMarkup](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument#frommarkup()) method is designed for opening HTML-documents from memory — it obtains HTML-markup as a `System.String` and a list of [IHtmlResource](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.htmlcss.resources/ihtmlresource) items.
+1. [FromFile](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument#fromfile()) method is designed for opening HTML-documents from disk — it obtains path to \*.html file and path to corresponding resource folder.
+2. [FromMarkup](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument#frommarkup()) method is designed for opening HTML-documents from memory — it obtains HTML-markup as a `System.String` and a list of [IHtmlResource](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.htmlcss.resources/ihtmlresource) items.
 
-More information about creating [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) instances from files or markup with resources can be found in corresponding article "[Create EditableDocument from file or markup]({{< ref "editor/java/developer-guide/advanced-usage/working-with-editabledocument/create-editabledocument-from-file-or-markup.md" >}})".
+More information about creating [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) instances from files or markup with resources can be found in corresponding article "[Create EditableDocument from file or markup]({{< ref "editor/java/developer-guide/working-with-editabledocument/create-editabledocument-from-file-or-markup.md" >}})".
 
 When [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) is created, it can be converted to the output document. For doing this, user must use [Editor](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor).[Save()](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor#save()) method, that has two overloads. These overloads differ only with the way how output document is specified: as path, where file should be created, or as a byte stream, into which the document content should be written. All other parameters are same. They are:
 
-1.  Instance of [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class, that holds a content of edited document.
-2.  Output document, that is specified as file path (`System.String`) or byte stream (`System.IO.Stream`).
-3.  Mandatory save options, that are represented by one of inheritors of the [ISaveOptions](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/isaveoptions) interface.
+1. Instance of [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class, that holds a content of edited document.
+2. Output document, that is specified as file path (`System.String`) or byte stream (`System.IO.Stream`).
+3. Mandatory save options, that are represented by one of inheritors of the [ISaveOptions](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/isaveoptions) interface.
 
 Like with load and edit options, every family format has its own class, that implements [ISaveOptions](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/isaveoptions) interface. These classes are listed below.
 

@@ -2,22 +2,22 @@
 id: migration-notes
 url: editor/java/migration-notes
 title: Migration Notes
-weight: 3
+weight: 300
 description: "How to migrate from earlier versions of GroupDocs.Editor for Java"
 keywords: 
 productName: GroupDocs.Editor for Java
 hideChildren: False
+toc: True
 ---
-### Why To Migrate?
+## Why To Migrate?
 
 Here are the key reasons to use the new updated API provided by GroupDocs.Editor for Java since version 20.8:
 
-*   **Editor** class introduced as a **single entry point** to manage the document editing process to any supported file format (instead of **EditorHander** class from previous versions).     
-*   Product architecture was redesigned from scratch in order to **decreased memory usage** (from 10% to 400% approx. depending on document type).    
-*   Document **editing** and **saving options simplified** so it’s easy to instantiate proper options class and control over document editing and saving processes.  
-    
+* **Editor** class introduced as a **single entry point** to manage the document editing process to any supported file format (instead of **EditorHander** class from previous versions).
+* Product architecture was redesigned from scratch in order to **decreased memory usage** (from 10% to 400% approx. depending on document type).
+* Document **editing** and **saving options simplified** so it’s easy to instantiate proper options class and control over document editing and saving processes.
 
-### How To Migrate?
+## How To Migrate?
 
 Here is a brief comparison of how to edit document in HTML form using old and new API.  
 
@@ -32,17 +32,17 @@ try {
     String htmlContent = htmlDoc.getContent();
     // Edit html in WYSIWYG-editor...
     // ...
-                
+  
     // Save edited html to original document format
     OutputHtmlDocument editedHtmlDoc = OutputHtmlDocument.fromMarkup(htmlContent, CommonUtilities.sourcePath + CommonUtilities.sourceResourcesFolder);
-    
+  
     WordsSaveOptions saveOptions = new WordsSaveOptions();
     saveOptions.setOutputFormat(WordFormats.Rtf);
-    
+  
     OutputStream outputStream = new FileOutputStream("C:\\output\\edited.docx");
-    
+  
     EditorHandler.toDocument(editedHtmlDoc, outputStream, saveOptions);
-    
+  
     outputStream.close();
 } catch (Exception ex){
     ex.getMessage();
@@ -55,7 +55,7 @@ inputStream.close();
 **New coding style**
 
 ```java
-String documentPath = "C://sample.docx"; 
+String documentPath = "C://sample.docx";
 try {
     Editor editor = new Editor(documentPath);
 

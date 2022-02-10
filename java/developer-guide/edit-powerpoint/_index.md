@@ -1,16 +1,17 @@
 ---
-id: working-with-presentations
-url: editor/java/working-with-presentations
-title: Working with Presentations
-weight: 4
+id: edit-powerpoint
+url: editor/java/edit-powerpoint
+title: Edit PowerPoint Presentations
+weight: 47
 description: "This guide demonstrates how to edit PPT, PPTX, PPTM, PPSX, PPSM, POTX, POTM presentations with different settings and many other powerful features of GroupDocs.Editor for Java."
 keywords: Edit PPT, Edit PPTX, Edit PPTM, Edit PPSX, Edit PPSM, Edit POTX, Edit POTM
 productName: GroupDocs.Editor for Java
 hideChildren: False
+toc: True
 ---
 > This example demonstrates standard open-edit-save cycle with Presentation documents, using different options on every step.
 
-#### Introduction
+## Introduction
 
 Presentation documents are presented by many formats: PPT, PPTX, PPTM, PPS(X/M), POT(X/M) and other, which are supported by GroupDocs.Editor as a separate format family among all others. Same like for all other family formats, Presentation family has its own load, edit and save options. Presentation format has significant distinction from the WordProcessing and all textual formats, and at the same time big similarity with Spreadsheet formats, — it has no pages, but instead of pages it has slides (like Spreadsheet has tabs). Like tabs in Spreadsheets, slides in Presentations are completely separate one from each other and has no valid representation in HTML markup, so the only way to edit slides is to edit them separately, one slide per one editing procedure.
 
@@ -18,7 +19,7 @@ As a result, a Presentation document with multiple slides is loaded into the [Ed
 
 Like all Office OOXML formats, Presentation documents can be encrypted with password. GroupDocs.Editor supports opening password-protected Presentation documents (password should be specified in the [PresentationLoadOptions](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/presentationloadoptions)) and creating password-protected documents (password should be specified in the [PresentationSaveOptions](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/presentationsaveoptions)).
 
-#### Loading Presentation documents
+## Loading Presentation for editing
 
 First step for edit a document is to load it. In order to load presentation to the [Editor](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor) class, user should use the [PresentationLoadOptions](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/presentationloadoptions) class. It is not necessary in some general cases — even without [PresentationLoadOptions](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/presentationloadoptions) the GroupDocs.Editor is able to recognize presentation format and apply appropriate default load options automatically. But when presentation is encoded, the [PresentationLoadOptions](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/presentationloadoptions) is the only way to set a password and load the document properly.
 
@@ -33,7 +34,7 @@ loadOptions.setPassword("password");
 Editor editor = new Editor(inputPptxPath, loadOptions);
 ```
 
-#### Editing Presentation documents
+## Edit PowerPoint presentation
 
 For opening Presentation document for edit a [PresentationEditOptions](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/presentationeditoptions) class should be used. It has two properties: [SlideNumber](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/presentationeditoptions/properties/slidenumber) of Integer type, and a [ShowHiddenSlides](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/presentationeditoptions/properties/showhiddenslides), that is a boolean flag.
 
@@ -59,7 +60,7 @@ editOptions3.setShowHiddenSlides(true); //if 3rd slide is hidden, it will be ope
 EditableDocument thirdSlide = editor.edit(editOptions3);
 ```
 
-#### Saving Presentation documents
+## Save Presentation after edit
 
 [PresentationSaveOptions](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/presentationsaveoptions) class is designed for saving the edited Presentation documents. This class has one [constructor](https://apireference.groupdocs.com/editor/java/groupdocs.editor.options/presentationsaveoptions/constructors/main), which has one parameter — a [Presentation format](https://apireference.groupdocs.com/editor/java/groupdocs.editor.formats/presentationformats), in which the output document should be saved. This output format is represented by the [PresentationFormats](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.formats/presentationformats) struct. After creating an instance, output format can be obtained or modified later, through the [OutputFormat](https://apireference.groupdocs.com/editor/java/groupdocs.editor.options/presentationsaveoptions/properties/outputformat) property. This is the only parameter, which is necessary for saving the document: all others are optional and may be omitted.
 

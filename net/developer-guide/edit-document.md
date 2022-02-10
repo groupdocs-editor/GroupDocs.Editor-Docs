@@ -48,11 +48,11 @@ Editor editor = new Editor(inputXlsxPath, delegate { return new SpreadsheetLoadO
 SpreadsheetEditOptions editOptions1 = new SpreadsheetEditOptions();
 editOptions1.WorksheetIndex = 0;//index is 0-based, so this is 1st tab
 editOptions1.ExcludeHiddenWorksheets = true;
- 
+  
 SpreadsheetEditOptions editOptions2 = new SpreadsheetEditOptions();
 editOptions2.WorksheetIndex = 1;//index is 0-based, so this is 2nd tab
 editOptions2.ExcludeHiddenWorksheets = false;
- 
+  
 EditableDocument firstTab = editor.Edit(editOptions1);
 EditableDocument secondTab = editor.Edit(editOptions2);
 ```

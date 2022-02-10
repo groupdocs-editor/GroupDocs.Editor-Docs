@@ -7,18 +7,20 @@ description: "This article describes how to run GroupDocs.Editor for Java code e
 keywords: 
 productName: GroupDocs.Editor for Java
 hideChildren: False
+toc: true
 ---
 ## Download from GitHub
 
 The complete examples package of **GroupDocs.Editor** is hosted on [Github](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java). You can either download the ZIP file or clone the repository of Github using your favorite Github client.
 
 In case you download the ZIP file, extract the folders on your local disk. The extracted files and folders will look like following image:
-![](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java/blob/master/Examples/Data/Screenshots/folder.JPG?raw=true)  
+![](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java/blob/master/Examples/Data/Screenshots/folder.JPG?raw=true)
 
 Open Eclipse and import the project to get started with it. Archived project file can also be imported.Follow the given steps to run the application:
-*   Go to project properties.
-*   Click on Java Build Path.
-*   Go to Libraries and external Jars (GroupDocs.Editor.Jar).
+
+* Go to project properties.
+* Click on Java Build Path.
+* Go to Libraries and external Jars (GroupDocs.Editor.Jar).
 ![](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java/blob/master/Examples/Data/Screenshots/eclipse.JPG?raw=true)
 
 ## Contribute

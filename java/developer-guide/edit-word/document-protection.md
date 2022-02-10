@@ -20,9 +20,9 @@ The [Password](https://apireference.groupdocs.com/editor/java/com.groupdocs.edit
 
 [ProtectionType](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotection/properties/protectiontype) property has type [WordProcessingProtectionType](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotectiontype), which is a simple enum, and value of this enum determines the level of protection. By default enum has a `NoProtection` value, which means that no protection will be applied. Other values are:
 
-1.  `AllowOnlyRevisions` — User can only add revision marks to the document.
-2.  `AllowOnlyComments` — User can only modify comments in the document.
-3.  `AllowOnlyFormFields` — User can only enter data in the form fields in the document.
-4.  `ReadOnly` — No changes are allowed to the document.
+1. `AllowOnlyRevisions` — User can only add revision marks to the document.
+2. `AllowOnlyComments` — User can only modify comments in the document.
+3. `AllowOnlyFormFields` — User can only enter data in the form fields in the document.
+4. `ReadOnly` — No changes are allowed to the document.
 
 Take a note that both the properties [Password](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotection/properties/password) and a [ProtectionType](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotection/properties/protectiontype) are bound to each other. If user set a valid non-NULL not-empty [Password](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotection/properties/password), but the [ProtectionType](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotection/properties/protectiontype) property has a [WordProcessingProtectionType](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotectiontype). `NoProtection` value, the protection will not be applied. And vice versa, if [ProtectionType](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotection/properties/protectiontype) property has a `AllowOnlyFormFields` value, for example, but [Password](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingprotection/properties/password) is NULL or empty string, then the protection will not be applied too.

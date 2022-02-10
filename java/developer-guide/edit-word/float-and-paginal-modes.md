@@ -7,7 +7,9 @@ description: "This article explains pros and cons of float and paginal document 
 keywords: Edit Word document in float mode, Edit Word document page by page
 productName: GroupDocs.Editor for Java
 hideChildren: False
+toc: True
 ---
+## How to enable different document edit modes?
 WordProcessing module of [**GroupDocs.Editor**](https://products.groupdocs.com/editor/java), that is responsible for converting all WordProcessing formats to [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) instances and backward (from [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) to some of WordProcessing format), contains two modes: *float* and *paginal* (also known as *paged*), where first one — float, is default. These modes are presented by two properties with the same name and type:
 
 ```java
@@ -25,8 +27,8 @@ Main distinguish of these two modes lies in the form of representation of the in
 
 The problem is the most of used client-side browser-based JavaScript HTML WYSIWYG editors like TinyMCE or CKEditor do not support pages, page separation and described calculations at all. They support only documents with pageless structure. That's why GroupDocs.Editor support two modes:
 
-*   In the *float* mode the WordProcessing document in represented in pageless form. Content is not separated on pages, There are no any page-related entities like headers, footers, watermarks and page numbers. This mode is the most suitable for almost all widespread WYSIWYG HTML-editors and that's why this mode is default.
-*   In the *paginal* mode the WordProcessing document in represented as a set of pages, where content is divided onto pages in the same way as MS Word does. Al page-related entities like headers, footers, watermarks and page numbers are present. This mode should be turned on manually (as it is described above) and is fitting for scenarios where end-user is able to process such content in some appropriate and suitable way, for example, in his own-made HTML editing software.
+* In the *float* mode the WordProcessing document in represented in pageless form. Content is not separated on pages, There are no any page-related entities like headers, footers, watermarks and page numbers. This mode is the most suitable for almost all widespread WYSIWYG HTML-editors and that's why this mode is default.
+* In the *paginal* mode the WordProcessing document in represented as a set of pages, where content is divided onto pages in the same way as MS Word does. Al page-related entities like headers, footers, watermarks and page numbers are present. This mode should be turned on manually (as it is described above) and is fitting for scenarios where end-user is able to process such content in some appropriate and suitable way, for example, in his own-made HTML editing software.
 <!---
 ### Paginal mode in PDF
 

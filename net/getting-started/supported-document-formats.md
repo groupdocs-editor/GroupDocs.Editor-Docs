@@ -7,12 +7,12 @@ description: "This section describes GroupDocs.Editor for .NET supported documen
 keywords: 
 productName: GroupDocs.Editor for .NET
 hideChildren: False
+toc: True
 ---
-## Supported Document Formats
 
 The following table indicates the file formats that GroupDocs.Editor can edit.
 
-#### WordProcessing family formats
+## WordProcessing family formats
 
 | Format | Description | Edit | Auto Detection |
 | --- | --- | --- | --- |
@@ -28,7 +28,7 @@ The following table indicates the file formats that GroupDocs.Editor can edit.
 | [RTF](https://wiki.fileformat.com/specification/word-processing/rtf/) | Rich Text Format | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 | WordML | Microsoft Office Word 2003 XML Format — WordProcessingML or WordML | ![(tick)](editor/net/images/check.png) |   |
 
-#### Spreadsheet family formats
+## Spreadsheet family formats
 
 | Format | Description | Edit | Auto Detection |
 | --- | --- | --- | --- |
@@ -49,7 +49,7 @@ The following table indicates the file formats that GroupDocs.Editor can edit.
 | [CSV](https://wiki.fileformat.com/specification/spreadsheet/csv/) | Comma Separated Values document | ![(tick)](editor/net/images/check.png) |   |
 | [TSV](https://wiki.fileformat.com/specification/spreadsheet/tsv/) | Tab Separated Values document | ![(tick)](editor/net/images/check.png) |   |
 
-#### Presentation family formats
+## Presentation family formats
 
 | Format | Description | Edit | Auto Detection |
 | --- | --- | --- | --- |
@@ -66,7 +66,7 @@ The following table indicates the file formats that GroupDocs.Editor can edit.
 | [ODP](https://wiki.fileformat.com/presentation/odp/) | OpenDocument Presentation | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 | [OTP](https://wiki.fileformat.com/presentation/otp/) | OpenDocument Presentation template | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 
-#### Other formats
+## Other formats
 
 | Format | Description | Edit | Auto Detection |
 | --- | --- | --- | --- |

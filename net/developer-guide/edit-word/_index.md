@@ -2,9 +2,9 @@
 id: edit-word
 url: editor/net/edit-word
 title: Edit Word 
-title: Edit Word document
+linktitle: Edit Word document
 weight: 45
-description: " This guide demonstrates how to edit DOC, DOT, DOCX, DOCM, DOTX, ODT, RTF documents with font extraction, different pagination modes and many other powerful features of GroupDocs.Editor for .NET."
+description: "This guide demonstrates how to edit DOC, DOT, DOCX, DOCM, DOTX, ODT, RTF documents with font extraction, different pagination modes and many other powerful features of GroupDocs.Editor for .NET."
 keywords: Edit DOCX, Edit DOC, Edit RTF, Edit ODT, Edit Word document
 productName: GroupDocs.Editor for .NET
 hideChildren: False

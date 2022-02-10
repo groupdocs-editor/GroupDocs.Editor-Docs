@@ -3,7 +3,7 @@ id: edit-document
 url: editor/java/edit-document
 title: Edit document
 weight: 3
-description: "Follow this guide and learn how to edit text documents, spreadsheets and presentations using GroupDocs.Editor for Java API features."
+description: "This article explains basic concepts of document editing inside your Java application with help or GroupDocs.Editor for Java API"
 keywords: Edit document, edit presentation, edit spreadsheet, GroupDocs.Editor
 productName: GroupDocs.Editor for Java
 hideChildren: False
@@ -65,4 +65,4 @@ List<IImageResource> onlyImages = document.getImages();
 List<IHtmlResource> allResourcesTogether = document.getAllResources();
 ```
 
-For more information about obtaining HTML markup and resources from [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) please visit [Get HTML markup in different forms]({{< ref "editor/java/developer-guide/advanced-usage/working-with-editabledocument/get-html-markup-in-different-forms.md" >}}), [Working with resources]({{< ref "editor/java/developer-guide/advanced-usage/working-with-editabledocument/working-with-resources.md" >}}), and [Save HTML to folder]({{< ref "editor/java/developer-guide/advanced-usage/working-with-editabledocument/save-html-to-folder.md" >}}) articles.
+For more information about obtaining HTML markup and resources from [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) please visit [Get HTML markup in different forms]({{< ref "editor/java/developer-guide/working-with-editabledocument/get-html-markup-in-different-forms.md" >}}), [Working with resources]({{< ref "editor/java/developer-guide/working-with-editabledocument/working-with-resources.md" >}}), and [Save HTML to folder]({{< ref "editor/java/developer-guide/working-with-editabledocument/save-html-to-folder.md" >}}) articles.
