@@ -7,6 +7,7 @@ description: "This article describes how to run GroupDocs.Editor for .NET code e
 keywords: 
 productName: GroupDocs.Editor for .NET
 hideChildren: False
+toc: true
 ---
 {{< alert style="warning" >}}Before running an example make sure that GroupDocs.Editor has been installed successfully.{{< /alert >}}
 
@@ -14,31 +15,32 @@ We offer multiple solutions on how you can run GroupDocs.Editor examples, by bu
 
 Please choose one from the following list:
 
-
 ## Build project from scratch
 
-*   Open Visual Studio and go to **File** -> **New** -> **Project**.
-*   Select appropriate project type - Console App, ASP.NET Web Application etc.
-*   Install **GroupDocs.Editor for .NET** from Nuget or official GroupDocs website following this [guide]({{< ref "editor/net/getting-started/installation.md" >}}).
-*   Code your first application with **GroupDocs.Editor for .NET** like this    
-    ```csharp
-     			string documentPath = @"C:\sample.docx"; // NOTE: Put here actual path for your document
-                using (Editor editor = new Editor(documentPath))
-                {
-                    // Obtain editable document from original DOCX document
-                    WordProcessingEditOptions editOptions = new WordProcessingEditOptions();
-                    EditableDocument editableDocument = editor.Edit(editOptions);
-    
-                    // Pass EditableDocument object to WYSIWYG editor and edit there...
-                    // ...
-    
-                    // Save edited EditableDocument object to some WordProcessing format - DOC for example
-                    WordProcessingSaveOptions saveOptions = new WordProcessingSaveOptions(Formats.WordProcessingFormats.Docx);
-                    editor.Save(editableDocument, @"C:\output\edited.docx", saveOptions);
-                }
-    ```    
-*   Build and Run your project. 
-*   Rendered document pages will appear inside *"C:\\output\\"* directory.
+* Open Visual Studio and go to **File** -> **New** -> **Project**.
+* Select appropriate project type - Console App, ASP.NET Web Application etc.
+* Install **GroupDocs.Editor for .NET** from Nuget or official GroupDocs website following this [guide]({{< ref "editor/net/getting-started/installation.md" >}}).
+* Code your first application with **GroupDocs.Editor for .NET** like this:
+
+```csharp
+string documentPath = @"C:\sample.docx"; // NOTE: Put here actual path for your document
+using (Editor editor = new Editor(documentPath))
+{
+    // Obtain editable document from original DOCX document
+    WordProcessingEditOptions editOptions = new WordProcessingEditOptions();
+    EditableDocument editableDocument = editor.Edit(editOptions);
+
+    // Pass EditableDocument object to WYSIWYG editor and edit there...
+    // ...
+
+    // Save edited EditableDocument object to some WordProcessing format - DOC for example
+    WordProcessingSaveOptions saveOptions = new WordProcessingSaveOptions(Formats.WordProcessingFormats.Docx);
+    editor.Save(editableDocument, @"C:\output\edited.docx", saveOptions);
+}
+```
+
+* Build and Run your project. 
+* Rendered document pages will appear inside *"C:\\output\\"* directory.
 
 ## Run back-end examples
 
@@ -57,24 +59,29 @@ Un-comment the function you want to run and comment the rest.
 
 You can run [GroupDocs.Editor for .NET MVC Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-MVC) following these steps:
 
-*   Download [source code](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-MVC/archive/master.zip) from GitHub or clone this repository    
-    ```csharp
-    git clone https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-MVC
-    ```    
-*   Open solution in the VisualStudio. Update common parameters in **web.config** and example related properties in the **configuration.yml** to meet your requirements.
-*   Open [http://localhost:8080/editor](http://localhost:8080/editor) in your favorite browser
+*  Download [source code](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-MVC/archive/master.zip) from GitHub or clone this repository
+
+```csharp
+git clone https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-MVC
+```
+
+* Open solution in the VisualStudio. Update common parameters in **web.config** and example related properties in the **configuration.yml** to meet your requirements.
+* Open [http://localhost:8080/editor](http://localhost:8080/editor) in your favorite browser
 
 For more details about project configuration please refer to this [guide](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-MVC#configuration).
 
 ## Run WebForms examples
 
 You can run [GroupDocs.Editor for .NET Web.Forms Example](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-WebForms) following these steps:
-*   Download [source code](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-WebForms/archive/master.zip) from GitHub or clone this repository    
-    ```csharp
-    git clone https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-WebForms
-    ```    
-*   Open solution in the VisualStudio. Update common parameters in **web.config** and example related properties in the **configuration.yml** to meet your requirements.
-*   Open [http://localhost:8080/editor](http://localhost:8080/editor) in your favorite browser
+
+* Download [source code](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-WebForms/archive/master.zip) from GitHub or clone this repository
+  
+```csharp
+git clone https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-WebForms
+```
+
+* Open solution in the VisualStudio. Update common parameters in **web.config** and example related properties in the **configuration.yml** to meet your requirements.
+* Open [http://localhost:8080/editor](http://localhost:8080/editor) in your favorite browser
 
 For more details about project configuration please refer to this [guide](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-WebForms#configuration).
 

@@ -38,7 +38,7 @@ Implementing a EDITORNET-1467 ticket has a result in form of a new public proper
 public string InputControlsClassName {get; set;}
 ```
 
-You can find more info about this feature in the article "[Adding class name to input controls]({{< ref "editor/net/developer-guide/advanced-usage/working-with-wordprocessing-documents/adding-class-name-to-input-controls.md" >}})".
+You can find more info about this feature in the article "[Adding class name to input controls]({{< ref "editor/net/developer-guide/edit-word/adding-class-name-to-input-controls.md" >}})".
 
 #### New enum and property in TextEditOptions
 

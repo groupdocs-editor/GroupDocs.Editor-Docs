@@ -8,19 +8,63 @@ keywords:
 productName: GroupDocs.Editor for Java
 hideChildren: True
 ---
-{{< alert style="info" >}}
-![](editor/java/images/home.png) **Welcome to the GroupDocs.Editor for Java**  
-GroupDocs.Editor for Java API enables document editing in form of HTML. API supports multiple document formats and can be integrated with any external, opensource or paid HTML editor. Editor API will process to load documents, convert it to HTML, provide HTML to external UI and then save HTML to original document after manipulation. It can also be used to generate different Microsoft Word files, OpenDocument Formats, XML and TXT documents. 
-{{< /alert >}}
+<img src="editor/java/images/home.png" alt="groupdocs-editor-java-home" align="left" style="width:110px; margin: 0 30px 30px 0"/>
 
-## GroupDocs.Editor for Java Resources
-Following are the links to some useful resources you may need to accomplish your tasks.
-*   [GroupDocs.Editor for Java Online Documentation]({{< ref "editor/java" >}})
-*   [GroupDocs.Editor for Java Features]({{< ref "editor/java/getting-started/features-overview.md" >}})
-*   [GroupDocs.Editor for Java Limitations]({{< ref "editor/java/getting-started/evaluation-limitations-and-licensing-of-groupdocs.editor.md" >}})
-*   [GroupDocs.Editor for Java Release Notes]({{< ref "editor/java/release-notes/_index.md" >}})
-*   [GroupDocs.Editor for Java Product Page](https://products.groupdocs.com/editor/java)
-*   [Download GroupDocs.Editor for Java](https://repository.groupdocs.com/webapp/#/artifacts/browse/tree/General/repo/com/groupdocs/groupdocs-editor)
-*   [GroupDocs.Editor for Java API Reference Guide](https://apireference.groupdocs.com/java/editor)
-*   [GroupDocs.Editor for Java Free Support Forum](https://forum.groupdocs.com/c/editor)
-*   [GroupDocs.Editor for Java Paid Support Helpdesk](https://helpdesk.groupdocs.com/)
+Edit Word, Excel and PowerPoint documents using GroupDocs.Editor for Java powerful document editing API. It can be used with any external, open source or paid HTML editor.
+  
+GroupDocs.Editor API will load documents, convert it into HTML that allows to edit document with any external UI, after making changes to document content edited HTML will be saved to original document format.
+  
+GroupDocs.Editor can also be used to generate different Microsoft Word documents, Excel workbooks, PowerPoint presentations, XML, OpenDocument Formats and TXT files.
+
+----------------------------------------------------------------------------------------
+
+<div class="row">
+	<div class="col-md-4">
+		<p><b>About GroupDocs.Editor</b></p>
+			<hr><p>OVERVIEW</p></hr>
+			<ul>
+				<li><a href='{{< ref "product-overview" >}}'>Product Overview</a></li>
+				<li><a href='{{< ref "editor/java/getting-started/supported-document-formats.md" >}}'>Supported Document Formats</a></li>
+			</ul>
+			<p>LICENSING</p>
+			<ul>
+                <li><a href='{{< ref "editor/java/getting-started/licensing-and-subscription.md" >}}'>Licensing and Subscription</a></li>
+			</ul>
+	</div>
+	<div class="col-md-4">
+		<p><b>Get Started</b></p>
+			<hr><p>GETTING STARTED</p></hr>
+			<ul>
+				<li><a href='{{< ref "editor/java/getting-started" >}}'>Getting Started</a></li>
+				<li><a href='{{< ref "editor/java/getting-started/system-requirements.md" >}}'>System Requirements</a></li>
+				<li><a href='{{< ref "editor/java/getting-started/installation.md" >}}'>Installation</a></li>
+			</ul>
+			<p>LEARN</p>
+			<ul>
+				<li><a href='{{< ref "editor/java/getting-started/how-to-run-examples.md" >}}'>How to Run Examples</a></li>
+			</ul>
+			<p>DOWNLOAD</p>
+			<ul>
+				<li><a href="https://repository.groupdocs.com/webapp/#/artifacts/browse/tree/General/repo/com/groupdocs/groupdocs-editor">GroupDocs.Editor for Java Repository</a></li>
+				</li><li><a href="https://downloads.groupdocs.com/editor/java">GroupDocs.Editor for Java Downloads</a></li>
+				<li><a href="https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java">Download Examples and Demos from GitHub</a></li>
+			</ul>
+	</div>
+	<div class="col-md-4">
+		<p><b>RESOURCES</b></p>
+			<hr><p>GUIDE</p></hr>
+			<ul>
+				<li><a href='{{< ref "editor/java/developer-guide/edit-document.md" >}}'>Edit Files</a></li>
+				<li><a href="https://apireference.groupdocs.com/editor/java">GroupDocs.Editor for Java API Reference</a></li>
+			</ul>
+			<p>WHAT'S NEW?</p>
+			<ul>
+				<li><a href='{{< ref "editor/java/release-notes" >}}'>GroupDocs.Editor for Java Release Notes</a></li>
+			</ul>
+			<p>TECHNICAL SUPPORT</p>
+			<ul>
+				<li><a href="https://forum.groupdocs.com/">GroupDocs Free Support Forum</a></li>
+				<li><a href="https://helpdesk.groupdocs.com/">GroupDocs Paid Support Helpdesk</a></li>
+			</ul>
+	</div>
+</div>
