@@ -1,7 +1,7 @@
 ---
 id: groupdocs-editor-for-net-21-1-release-notes
 url: editor/net/groupdocs-editor-for-net-21-1-release-notes
-title: GroupDocs.Editor for .NET 20.1 Release Notes
+title: GroupDocs.Editor for .NET 21.1 Release Notes
 weight: 100
 description: ""
 keywords: 
