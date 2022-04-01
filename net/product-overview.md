@@ -3,7 +3,8 @@ id: product-overview
 url: editor/net/product-overview
 title: Product Overview
 weight: 1
-description: "GroupDocs.Editor for .NET allows to edit Microsoft Office documents like Word, Excel or PowerPoint or PDF without third party software installed."
+description: "GroupDocs.Editor for .NET is a C# api allows to edit Microsoft Office documents like Word, Excel or PowerPoint or PDF without third party software installed."
+keywords: edit Microsoft Office documents, C#
 productName: GroupDocs.Editor for .NET
 toc: True
 ---

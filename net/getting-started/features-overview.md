@@ -3,8 +3,8 @@ id: features-overview
 url: editor/net/features-overview
 title: Features Overview
 weight: 1
-description: "This section decsribes how to get started with GroupDocs.Editor for .NET library"
-keywords: 
+description: "The main feature of GroupDocs.Editor is an ability to edit most popular document formats using front-end WYSIWYG editors without any additional applications. No Open Office or MS Office is required to edit Word Processing documents, Spreadsheets or Presentations."
+keywords: edit, WYSIWYG editors, edit Word Processing documents
 productName: GroupDocs.Editor for .NET
 hideChildren: False
 toc: true
@@ -13,7 +13,7 @@ GroupDocs.Editor allows you to edit files and documents across wide range of [su
 
 ## Document editing
 
-The main feature of GroupDocs.Editor is an ability to edit most popular document formats using front-end WYSIWYG editors without any additional applications. No Open Office or MS Office is required to edit a Word Processing documents, Spreadsheets or Presentations. You can just load document via GroupDocs.Editor into any WYSIWYG editor, edit document in a way you want and save it back to original document format.
+The main feature of GroupDocs.Editor is an ability to edit most popular document formats using front-end WYSIWYG editors without any additional applications. No Open Office or MS Office is required to edit Word Processing documents, Spreadsheets or Presentations. You can just load document via GroupDocs.Editor into any WYSIWYG editor, edit document in a way you want and save it back to original document format.
 
 ## Editing options and output customizations
 

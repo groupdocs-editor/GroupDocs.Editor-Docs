@@ -3,8 +3,8 @@ id: how-to-run-examples
 url: editor/net/how-to-run-examples
 title: How to Run Examples
 weight: 6
-description: "This article describes how to run GroupDocs.Editor for .NET code examples"
-keywords: 
+description: "We offer multiple solutions on how you can run GroupDocs.Editor examples, by building your own or using our back-end or front-end examples out-of-the-box."
+keywords: GroupDocs.Editor examples, front-end examples
 productName: GroupDocs.Editor for .NET
 hideChildren: False
 toc: true

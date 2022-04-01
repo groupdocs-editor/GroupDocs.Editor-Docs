@@ -4,7 +4,7 @@ url: editor/net
 title: GroupDocs.Editor for .NET
 weight: 1
 description: "Edit Word, Excel and PowerPoint documents using GroupDocs.Editor for .NET powerful document editing API and C# language."
-keywords: 
+keywords: how to edit word documents, Edit Word, PowerPoint documents
 productName: GroupDocs.Editor for .NET
 hideChildren: True
 ---
