@@ -20,7 +20,7 @@ The following table indicates the file formats that GroupDocs.Editor can edit.
 | [DOCX](https://docs.fileformat.com/word-processing/docx/) | Office Open XML WordProcessingML Macro-Free Document | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 | [DOCM](https://docs.fileformat.com/word-processing/docm/) | Office Open XML WordProcessingML Macro-Enabled Document | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 | [DOT](https://docs.fileformat.com/word-processing/dot/) | MS Word 97-2007 Template | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
-| DOTM | Office Open XML WordprocessingML Macro-Enabled Template | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
+| [DOTM](https://docs.fileformat.com/word-processing/dotm/) | Office Open XML WordprocessingML Macro-Enabled Template | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 | [DOTX](https://docs.fileformat.com/word-processing/dotx/) | Office Open XML WordprocessingML Macro-Free Template | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 | FlatOPC | Office Open XML WordprocessingML stored in a flat XML file instead of a ZIP package | ![(tick)](editor/net/images/check.png) |   |
 | [ODT](https://docs.fileformat.com/word-processing/odt/) | Open Document Format Text Document | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
@@ -39,12 +39,12 @@ The following table indicates the file formats that GroupDocs.Editor can edit.
 | [XLTX](https://docs.fileformat.com/spreadsheet/xltx/) | Office Open XML Template Macro-Free | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 | [XLTM](https://docs.fileformat.com/spreadsheet/xltm/) | Office Open XML Template Macro-Enabled | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 | [XLSB](https://docs.fileformat.com/spreadsheet/xlsb/) | Excel Binary Workbook | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
-| XLAM | Excel Add-in | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
-| SXC | StarOffice or OpenOffice.org Calc XML Spreadsheet | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
+| [XLAM](https://docs.fileformat.com/spreadsheet/xlam/) | Excel Add-in | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
+| [SXC](https://docs.fileformat.com/spreadsheet/sxc/) | StarOffice or OpenOffice.org Calc XML Spreadsheet | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 | SpreadsheetML | Microsoft Office Excel 2002 and Excel 2003 XML Format | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 | [ODS](https://docs.fileformat.com/spreadsheet/ods/) | OpenDocument Spreadsheet | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
-| FODS | Flat OpenDocument Spreadsheet — stored as a single uncompressed XML document | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
-| DIF | Data Interchange Format | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
+| [FODS](https://docs.fileformat.com/spreadsheet/fods/) | Flat OpenDocument Spreadsheet — stored as a single uncompressed XML document | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
+| [DIF](https://docs.fileformat.com/spreadsheet/dif/) | Data Interchange Format | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 | DSV | Delimiter Separated Values document (arbitrary delimiter) | ![(tick)](editor/net/images/check.png) |   |
 | [CSV](https://docs.fileformat.com/spreadsheet/csv/) | Comma Separated Values document | ![(tick)](editor/net/images/check.png) |   |
 | [TSV](https://docs.fileformat.com/spreadsheet/tsv/) | Tab Separated Values document | ![(tick)](editor/net/images/check.png) |   |
