@@ -3,8 +3,8 @@ id: system-requirements
 url: editor/java/system-requirements
 title: System Requirements
 weight: 4
-description: "This article explains GroupDocs.Editor for Java system requirements."
-keywords: 
+description: GroupDocs.Editor for Java does not require any external software or third party tool to be installed.
+keywords: GroupDocs.Editor for Java, Editor
 productName: GroupDocs.Editor for Java
 hideChildren: False
 toc: True

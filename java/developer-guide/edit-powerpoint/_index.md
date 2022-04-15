@@ -4,7 +4,7 @@ url: editor/java/edit-powerpoint
 title: Edit PowerPoint Presentations
 weight: 47
 description: "This guide demonstrates how to edit PPT, PPTX, PPTM, PPSX, PPSM, POTX, POTM presentations with different settings and many other powerful features of GroupDocs.Editor for Java."
-keywords: Edit PPT, Edit PPTX, Edit PPTM, Edit PPSX, Edit PPSM, Edit POTX, Edit POTM
+keywords: Edit PPT, Edit PPTX, Edit PPTM, Edit PPSX, Edit PPSM, Edit POTX, Edit POTM,  edit powerpoint
 productName: GroupDocs.Editor for Java
 hideChildren: False
 toc: True

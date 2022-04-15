@@ -4,7 +4,7 @@ url: editor/java/extracting-document-metainfo
 title: Extracting document metainfo
 weight: 6
 description: "Following this guide you will learn how to obtain basic document metadata like pages count, size, file type before editing it with GroupDocs.Editor for Java API."
-keywords: Extract document metadata, Get document info
+keywords: Extract document metadata, Get document info,  obtain basic document metadata
 productName: GroupDocs.Editor for Java
 hideChildren: False
 toc: True

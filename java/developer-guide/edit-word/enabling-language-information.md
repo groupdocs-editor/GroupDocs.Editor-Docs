@@ -4,7 +4,7 @@ url: editor/java/enabling-language-information
 title: Enabling language information
 weight: 3
 description: "Following this guide you will learn how to edit Word document using locale info, apply spell-checkers to a document content written in different languages using GroupDocs.Editor for Java API."
-keywords: Edit Word document with language. Edit Word document with locale
+keywords: Edit Word document with language, Edit Word document with locale, edit Word
 productName: GroupDocs.Editor for Java
 hideChildren: False
 ---

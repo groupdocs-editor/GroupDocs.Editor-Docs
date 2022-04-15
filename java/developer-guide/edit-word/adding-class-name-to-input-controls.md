@@ -4,7 +4,7 @@ url: editor/java/adding-class-name-to-input-controls
 title: Adding class name to input controls
 weight: 1
 description: "Follow this guide and learn how to edit Word documents that contain input controls like buttons, textboxes, check-boxes, combo-boxes, input fields, dropdown lists, radio-buttons, date/time pickers etc. using GroupDocs.Editor for Java API features."
-keywords: Edit Word document with input controls, Edit DOCX with input fields and text boxes
+keywords: Edit Word document with input controls, Edit DOCX with input fields and text boxes, , Edit Word, Edit DOCX
 productName: GroupDocs.Editor for Java
 hideChildren: False
 ---

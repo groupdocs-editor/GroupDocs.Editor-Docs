@@ -3,8 +3,8 @@ id: home
 url: editor/java
 title: GroupDocs.Editor for Java
 weight: 1
-description: "GroupDocs.Editor for Java enables document editing in form of HTML."
-keywords: 
+description: "GroupDocs.Editor for Java enables document editing in form of HTML.Edit Word, Excel and PowerPoint documents using GroupDocs.Editor for Java powerful document editing API."
+keywords: document editing, Edit Words, document editing API
 productName: GroupDocs.Editor for Java
 hideChildren: True
 ---

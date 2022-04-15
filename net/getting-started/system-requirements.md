@@ -4,7 +4,7 @@ url: editor/net/system-requirements
 title: System Requirements
 weight: 3
 description: GroupDocs.Editor for .NET supports any 32-bit or 64-bit operating system where .NET or Mono framework is installed
-keywords: GroupDocs.Conversion for .NET, Conversion
+keywords: GroupDocs.Editor for .NET, Editor
 productName: GroupDocs.Editor for .NET
 hideChildren: False
 toc: true

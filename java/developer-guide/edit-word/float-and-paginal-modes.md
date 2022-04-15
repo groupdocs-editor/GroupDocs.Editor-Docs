@@ -4,7 +4,7 @@ url: editor/java/float-and-paginal-modes
 title: Float and paginal modes
 weight: 4
 description: "This article explains pros and cons of float and paginal document editing modes when edit Word documents with GroupDocs.Editor API."
-keywords: Edit Word document in float mode, Edit Word document page by page
+keywords: Edit Word document in float mode, Edit Word document page by page, edit Word
 productName: GroupDocs.Editor for Java
 hideChildren: False
 toc: True

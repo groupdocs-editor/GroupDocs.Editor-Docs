@@ -3,8 +3,8 @@ id: licensing-and-subscription
 url: editor/java/licensing-and-subscription
 title: Licensing and Subscription
 weight: 5
-description: "This article explains evaluation limitations and licensing of GroupDocs.Editor for Java"
-keywords: 
+description: "Free evaluation version simply becomes licensed when you set the license. You can set the license in a number of ways that described in the next sections of this article."
+keywords: Free evaluation, edit
 productName: GroupDocs.Editor for Java
 hideChildren: False
 toc: True

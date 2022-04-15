@@ -3,8 +3,8 @@ id: features-overview
 url: editor/java/features-overview
 title: Features Overview
 weight: 1
-description: "This is an overview of GroupDocs.Editor for Java library features and capabilities"
-keywords: 
+description: "The main feature of GroupDocs.Editor for Java is an ability to edit most popular document formats using front-end WYSIWYG editors without any additional applications. No Open Office or MS Office is required to edit Word Processing documents, Spreadsheets or Presentations."
+keywords: edit, WYSIWYG editors, edit Word Processing documents
 productName: GroupDocs.Editor for Java
 hideChildren: False
 toc: true

@@ -3,8 +3,8 @@ id: how-to-run-examples
 url: editor/java/how-to-run-examples
 title: How to Run Examples
 weight: 6
-description: "This article describes how to run GroupDocs.Editor for Java code examples"
-keywords: 
+description:  "We offer multiple solutions on how you can run GroupDocs.Editor examples, by building your own or using our back-end or front-end Java examples out-of-the-box."
+keywords: GroupDocs.Editor examples, front-end examples
 productName: GroupDocs.Editor for Java
 hideChildren: False
 toc: true
