@@ -8,7 +8,7 @@ keywords: Edit Microsoft Office documents, without third party
 productName: GroupDocs.Editor for Java
 hideChildren: False
 ---
-<img src="editor/java/images/home.png" alt="groupdocs-editor-java-home" align="left" style="width:110px; margin: 0 30px 30px 0"/>
+<img src="editor/java/images/home.png" width="110" height="110" alt="groupdocs-editor-java-home" align="left" style="margin: 0 30px 30px 0"/>
 
 GroupDocs.Editor for Java is a powerful and lightweight library which allows you to edit most popular document formats using 3rd party front-end WYSIWYG HTML-editors without any additional software.
 

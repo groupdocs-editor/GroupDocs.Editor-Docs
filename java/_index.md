@@ -8,7 +8,7 @@ keywords: document editing, Edit Words, document editing API
 productName: GroupDocs.Editor for Java
 hideChildren: True
 ---
-<img src="editor/java/images/home.png" alt="groupdocs-editor-java-home" align="left" style="width:110px; margin: 0 30px 30px 0"/>
+<img src="editor/java/images/home.png" width="110" height="110" alt="groupdocs-editor-java-home" align="left" style="margin: 0 30px 30px 0"/>
 
 Edit Word, Excel and PowerPoint documents using GroupDocs.Editor for Java powerful document editing API. It can be used with any external, open source or paid HTML editor.
   

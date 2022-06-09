@@ -9,7 +9,7 @@ productName: GroupDocs.Editor for .NET
 toc: True
 ---
 
-<img src="editor/net/images/home.png" alt="groupdocs-editor-net-home" align="left" style="width:110px; margin: 0 30px 30px 0"/>
+<img src="editor/net/images/home.png" width="110" height="110" alt="groupdocs-editor-net-home" align="left" style="margin: 0 30px 30px 0"/>
 
 GroupDocs.Editor for .NET is a powerful and lightweight library which allows you to edit most popular document formats using 3rd party front-end WYSIWYG HTML-editors without any additional software.
 
