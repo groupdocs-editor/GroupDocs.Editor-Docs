@@ -54,7 +54,7 @@ Then define GroupDocs.Editor for Java API dependency in your `pom.xml` as fol
     <dependency>
         <groupId>com.groupdocs</groupId>
         <artifactId>groupdocs-editor</artifactId>
-        <version>22.4</version>
+        <version>22.6</version>
     </dependency>
 </dependencies>
 ```
