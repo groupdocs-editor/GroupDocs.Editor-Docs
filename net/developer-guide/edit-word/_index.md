@@ -23,19 +23,19 @@ structuredData:
         steps:
         - name: Load desired Word document to the Editor class
           text: Create an instance of the Editor class using the most suitable constructor overload, by passing the desired  Word document into it.
-		- name: Prepare a WordProcessingEditOptions class
+        - name: Prepare a WordProcessingEditOptions class
           text: Create an instance of the WordProcessingEditOptions class and adjust its properties to meet your needs if necessary.
         - name: Select desired paginal mode
           text: Using the WordProcessingEditOptions you should select the desired pagination mode during editing — in the float mode all content of the Word document will be represented as one single page, while in the paginal the separation onto pages will be preserved, like in Microsoft Word.
-		- name: Call Editor.Edit and send the obtained EditableDocument to the WYSIWYG-editor
+        - name: Call Editor.Edit and send the obtained EditableDocument to the WYSIWYG-editor
           text: Invoke a Editor.Edit method with specifying a previously prepared WordProcessingEditOptions and obtain an instance of the EditableDocument class, which is ready for editing. Then generate HTML-markup and extract resources from this instance using corresponding instance methods, and pass all these data to the HTML-based WYSIWYG-editor.
-		- name: Edit the document in WYSIWYG-editor and send the edited content back to the server-side
+        - name: Edit the document in WYSIWYG-editor and send the edited content back to the server-side
           text: Make all necessary edits in the document content in the HTML-based WYSIWYG-editor, which is running on a client-side (in a web-browser) and then submit the edited content and resources back to the server-side, where the GroupDocs.Editor is running.
-		- name: Create an instance of EditableDocument
+        - name: Create an instance of EditableDocument
           text: Create an instance of the EditableDocument by passing the edited document content into the most suitable static methods of the class
-		- name: Prepare a WordProcessingSaveOptions class
+        - name: Prepare a WordProcessingSaveOptions class
           text: Create an instance of the WordProcessingSaveOptions class and adjust its properties to meet your needs if necessary. You need to choose the format of the output document — this is the only mandatory parameter, that must be specified in the constructor. Also set the pagination mode value the same, as it was specified in WordProcessingEditOptions.
-		- name: Save edited document with Editor.Save method
+        - name: Save edited document with Editor.Save method
           text: Pass an instance of EditableDocument with content of the edited document, instance of the WordProcessingSaveOptions, and a destination byte stream or file path to the Editor.Save method for saving the document.
 ---
 > This example demonstrates standard open-edit-save cycle with WordProcessing documents, using different options on every step.

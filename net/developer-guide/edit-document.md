@@ -21,11 +21,11 @@ structuredData:
         steps:
         - name: Create appropriate EditOptions instance
           text: Each format family has its own implementation of IEditOptions interface. You need to create an inheritor of the IEditOptions interface, that is corresponding to the format family of the input document
-		- name: Adjust EditOptions
+        - name: Adjust EditOptions
           text: When IEditOptions is created, you need to adjust it to meet your needs: select pagination mode (for WordProcessing documents), desired tab (Spreadsheet), slide (Presentation), or separator (Delimiter-separated values) etc.        
         - name: Invoke Editor.Edit method
           text: After document is successfully loaded to the Editor class instance and appropriate EditOptions are ready, call Editor.Edit method with specified options and obtain an instance of generated EditableDocument		
-		- name: Obtain HTML markup and resources from EditableDocument
+        - name: Obtain HTML markup and resources from EditableDocument
           text: When EditableDocument is generated, use its methods and properties to obtain HTML-markup and all related HTML resuources (stylesheets, fonts, images, audio) in order to send and use them in the WYSIWYG HTML-editor.
 ---
 > This article describes how to open for editing a previously loaded document, which options should be applied, and how to send document content to the WYSIWYG HTML-editor or any other editing application.

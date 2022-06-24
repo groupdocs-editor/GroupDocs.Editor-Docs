@@ -22,19 +22,19 @@ structuredData:
         steps:
         - name: Load desired PowerPoint presentation to the Editor class
           text: Create an instance of the Editor class using the most suitable constructor overload, by passing the desired  PowerPoint presentation into it.
-		- name: Prepare a PresentationEditOptions class
+        - name: Prepare a PresentationEditOptions class
           text: Create an instance of the PresentationEditOptions class and adjust its properties to meet your needs if necessary.
         - name: Select desired slide for editing
           text: Using the PresentationEditOptions you should select the desired slide, that should be edited, using the "SlideNumber" property.
-		- name: Call Editor.Edit and send the obtained EditableDocument to the WYSIWYG-editor
+        - name: Call Editor.Edit and send the obtained EditableDocument to the WYSIWYG-editor
           text: Invoke a Editor.Edit method with specifying a previously prepared PresentationEditOptions and obtain an instance of the EditableDocument class, which is ready for editing. Then generate HTML-markup and extract resources from this instance using corresponding instance methods, and pass all these data to the HTML-based WYSIWYG-editor.
-		- name: Edit the document in WYSIWYG-editor and send the edited content back to the server-side
+        - name: Edit the document in WYSIWYG-editor and send the edited content back to the server-side
           text: Make all necessary edits in the content of the slide in the HTML-based WYSIWYG-editor, which is running on a client-side (in a web-browser) and then submit the edited content and resources back to the server-side, where the GroupDocs.Editor is running.
-		- name: Create an instance of EditableDocument
+        - name: Create an instance of EditableDocument
           text: Create an instance of the EditableDocument by passing the edited slide content into the most suitable static methods of the class
-		- name: Prepare a PresentationSaveOptions class
+        - name: Prepare a PresentationSaveOptions class
           text: Create an instance of the PresentationSaveOptions class and adjust its properties to meet your needs if necessary. You need to choose the format of the output presentation — this is the only mandatory parameter, that must be specified in the constructor. Also using the "SlideNumber" and "InsertAsNewSlide" properties you can choose how to insert the edited slide into the output presentation — replace the original slide with the edited one, or inject a new edited slide to keep it along with old original simultaneously.
-		- name: Save edited PowerPoint presentation with Editor.Save method
+        - name: Save edited PowerPoint presentation with Editor.Save method
           text: Pass an instance of EditableDocument with content of the edited PowerPoint presentation, instance of the PresentationSaveOptions, and a destination byte stream or file path to the Editor.Save method for saving the presentation.
 ---
 > This example demonstrates standard open-edit-save cycle with Presentation documents, using different options on every step.

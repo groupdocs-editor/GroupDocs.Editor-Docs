@@ -23,17 +23,17 @@ structuredData:
         steps:
         - name: Load desired text file to the Editor class
           text: Create an instance of the Editor class using the most suitable constructor overload, by passing the desired  text file into it. LoadOptions are not needed.
-		- name: Prepare a TextEditOptions class
+        - name: Prepare a TextEditOptions class
           text: Create an instance of the TextEditOptions class and adjust its properties to meet your needs if necessary. You can specify an encoding of the text document, direction of the text flow, pagination mode, and other options.
-		- name: Call Editor.Edit and send the obtained EditableDocument to the WYSIWYG-editor
+        - name: Call Editor.Edit and send the obtained EditableDocument to the WYSIWYG-editor
           text: Invoke a Editor.Edit method with specifying a previously prepared TextEditOptions and obtain an instance of the EditableDocument class, which is ready for editing. Then generate HTML-markup and extract resources from this instance using corresponding instance methods, and pass all these data to the HTML-based WYSIWYG-editor.
-		- name: Edit the document in WYSIWYG-editor and send the edited content back to the server-side
+        - name: Edit the document in WYSIWYG-editor and send the edited content back to the server-side
           text: Make all necessary edits in the content of the text file in the HTML-based WYSIWYG-editor, which is running on a client-side (in a web-browser) and then submit the edited content and resources back to the server-side, where the GroupDocs.Editor is running.
-		- name: Create an instance of EditableDocument
+        - name: Create an instance of EditableDocument
           text: Create an instance of the EditableDocument by passing the edited text content into the most suitable static methods of the class
-		- name: Prepare a TextSaveOptions class
+        - name: Prepare a TextSaveOptions class
           text: Create an instance of the TextSaveOptions class and adjust its properties to meet your needs if necessary. You can specify an encoding of the text document, and other options. 
-		- name: Save edited text file with Editor.Save method
+        - name: Save edited text file with Editor.Save method
           text: Pass an instance of EditableDocument with content of the edited text file, instance of the TextSaveOptions, and a destination byte stream or file path to the Editor.Save method for saving the text file.
 ---
 > This demonstration shows how to load, open for editing and save text documents, explains edit and save options and their destination.

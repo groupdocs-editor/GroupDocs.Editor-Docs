@@ -21,11 +21,11 @@ structuredData:
         steps:
         - name: Submit edited HTML-document to the server-side
           text: After document was edited on the client-side with WYSIWYG HTML-editor, its edited HTML-markup and resources must be submitted to the server-side, because the GroupDocs.Editor is a server-based middleware.
-		- name: Create EditableDocument instance from edited content
+        - name: Create EditableDocument instance from edited content
           text: Once the content of edited document is transferred to the server-side, you should create an instance of EditableDocument class from this content by using the most appropriate static method from this type.
         - name: Create and adjust the appropriate SaveOptions
           text: Depending on what format the input document had and which output format you want to obtain, you need to create an appropriate inheritor of the ISaveOptions interface and and adjust it by selecting the desired format, protection, and other options.
-		- name: Invoke Editor.Save method
+        - name: Invoke Editor.Save method
           text: Finally, when edited document is stored within the EditableDocument instance and SaveOptions are prepared, you should invoke the desired overload of the Editor.Save method (first one saves the document to the file, while second — to the byte stream).
 ---
 > This article describes how to obtain edited document content from client, process it and save to the resultant document of some specified format.
