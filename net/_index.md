@@ -7,6 +7,8 @@ description: "Edit Word, Excel and PowerPoint documents using GroupDocs.Editor f
 keywords: how to edit word documents, Edit Word, PowerPoint documents
 productName: GroupDocs.Editor for .NET
 hideChildren: True
+structuredData:
+    showOrganization: True
 ---
 <img src="editor/net/images/home.png" width="110" height="110" alt="groupdocs-editor-net-home" align="left" style="margin: 0 30px 30px 0"/>
 

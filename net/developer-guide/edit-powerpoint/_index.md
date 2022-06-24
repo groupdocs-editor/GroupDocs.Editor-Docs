@@ -8,6 +8,34 @@ keywords: Edit PPT, Edit PPTX, Edit PPTM, Edit PPSX, Edit PPSM, Edit POTX, Edit 
 productName: GroupDocs.Editor for .NET
 hideChildren: False
 toc: True
+structuredData:
+    showOrganization: True
+    application:    
+        name: How to edit PowerPoint presentation in the GroupDocs.Editor
+        description: How to edit PowerPoint presentation using the GroupDocs.Editor in C# language
+        productCode: editor
+        productPlatform: net 
+    showVideo: True
+    howTo:
+        name: How to edit content of the PowerPoint presentation in the GroupDocs.Editor in C#
+        description: Learn how to edit content of the slides from the PowerPoint presentation using the GroupDocs.Editor in C# step by step
+        steps:
+        - name: Load desired PowerPoint presentation to the Editor class
+          text: Create an instance of the Editor class using the most suitable constructor overload, by passing the desired  PowerPoint presentation into it.
+		- name: Prepare a PresentationEditOptions class
+          text: Create an instance of the PresentationEditOptions class and adjust its properties to meet your needs if necessary.
+        - name: Select desired slide for editing
+          text: Using the PresentationEditOptions you should select the desired slide, that should be edited, using the "SlideNumber" property.
+		- name: Call Editor.Edit and send the obtained EditableDocument to the WYSIWYG-editor
+          text: Invoke a Editor.Edit method with specifying a previously prepared PresentationEditOptions and obtain an instance of the EditableDocument class, which is ready for editing. Then generate HTML-markup and extract resources from this instance using corresponding instance methods, and pass all these data to the HTML-based WYSIWYG-editor.
+		- name: Edit the document in WYSIWYG-editor and send the edited content back to the server-side
+          text: Make all necessary edits in the content of the slide in the HTML-based WYSIWYG-editor, which is running on a client-side (in a web-browser) and then submit the edited content and resources back to the server-side, where the GroupDocs.Editor is running.
+		- name: Create an instance of EditableDocument
+          text: Create an instance of the EditableDocument by passing the edited slide content into the most suitable static methods of the class
+		- name: Prepare a PresentationSaveOptions class
+          text: Create an instance of the PresentationSaveOptions class and adjust its properties to meet your needs if necessary. You need to choose the format of the output presentation — this is the only mandatory parameter, that must be specified in the constructor. Also using the "SlideNumber" and "InsertAsNewSlide" properties you can choose how to insert the edited slide into the output presentation — replace the original slide with the edited one, or inject a new edited slide to keep it along with old original simultaneously.
+		- name: Save edited PowerPoint presentation with Editor.Save method
+          text: Pass an instance of EditableDocument with content of the edited PowerPoint presentation, instance of the PresentationSaveOptions, and a destination byte stream or file path to the Editor.Save method for saving the presentation.
 ---
 > This example demonstrates standard open-edit-save cycle with Presentation documents, using different options on every step.
 
@@ -40,7 +68,7 @@ For opening Presentation document for edit a [PresentationEditOptions](https://a
 
 [SlideNumber](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/presentationeditoptions/properties/slidenumber) is a zero-based index of a slide, that allows to specify and select one particular slide from a presentation to edit. If lesser then 0, the first slide will be selected (same as *SlideNumber = 0*). If greater then amount of all slides in presentation, the last slide will be selected. If input presentation contains only single slide, this option will be ignored, and this single slide will be edited. By default is 0, that implies first slide for edit.
 
-[ShowHiddenSlides](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/presentationeditoptions/properties/showhiddenslides) is a boolean flag, which specifies whether the hidden slides should be included or not. Default is *false* — hidden slides are not shown and exception will be thrown while trying to edit them. So, if input Presentation has 3 slides, where 2nd is hidden, user has specified *SlideNumber = 1* (2nd slide) and simultaneously *ShowHiddenSlides  = false*, the `InvalidOperationException` will be thrown.
+[ShowHiddenSlides](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/presentationeditoptions/properties/showhiddenslides) is a boolean flag, which specifies whether the hidden slides should be included or not. Default is *false* — hidden slides are not shown and exception will be thrown while trying to edit them. So, if input Presentation has 5 slides, where 2nd is hidden, user has specified *SlideNumber = 1* (2nd slide) and simultaneously *ShowHiddenSlides  = false*, the `InvalidOperationException` will be thrown. From this short example it can be seen, that the indexes of the hidden slides are not flopped in but instead are _denied_ — when trying to access them, the `InvalidOperationException` occurs.
 
 If parameterless overload of the [Editor](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor).[Edit](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor/methods/edit) method is used, the default [PresentationEditOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/presentationeditoptions) instance will be used: first slide and disabled [ShowHiddenSlides](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/presentationeditoptions/properties/showhiddenslides).
 

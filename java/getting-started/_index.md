@@ -7,6 +7,8 @@ description: "This section decsribes how to get started with GroupDocs.Editor fo
 keywords: 
 productName: GroupDocs.Editor for Java
 hideChildren: False
+structuredData:
+    showOrganization: True
 ---
 This section provides introduction to GroupDocs.Editor fundamentals. For users new to GroupDocs.Editor, this is the fastest way to learn the basic requirements and capabilities and get started with using the product.
 

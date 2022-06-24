@@ -7,8 +7,28 @@ description: "Follow this guide and learn how to edit text documents, spreadshee
 keywords: Edit document, edit presentation, edit spreadsheet, GroupDocs.Editor
 productName: GroupDocs.Editor for .NET
 hideChildren: False
+structuredData:
+    showOrganization: True
+    application:    
+        name: Edit document in the GroupDocs.Editor
+        description: Edit document using the GroupDocs.Editor C# language
+        productCode: editor
+        productPlatform: net 
+    showVideo: True
+    howTo:
+        name: How to edit document using the GroupDocs.Editor in C#
+        description: Learn how to edit document using the GroupDocs.Editor in C# step by step
+        steps:
+        - name: Create appropriate EditOptions instance
+          text: Each format family has its own implementation of IEditOptions interface. You need to create an inheritor of the IEditOptions interface, that is corresponding to the format family of the input document
+		- name: Adjust EditOptions
+          text: When IEditOptions is created, you need to adjust it to meet your needs: select pagination mode (for WordProcessing documents), desired tab (Spreadsheet), slide (Presentation), or separator (Delimiter-separated values) etc.        
+        - name: Invoke Editor.Edit method
+          text: After document is successfully loaded to the Editor class instance and appropriate EditOptions are ready, call Editor.Edit method with specified options and obtain an instance of generated EditableDocument		
+		- name: Obtain HTML markup and resources from EditableDocument
+          text: When EditableDocument is generated, use its methods and properties to obtain HTML-markup and all related HTML resuources (stylesheets, fonts, images, audio) in order to send and use them in the WYSIWYG HTML-editor.
 ---
-This article describes how to open for editing a previously loaded document, which options should be applied, and how to send document content to the WYSIWYG HTML-editor or any other editing application.
+> This article describes how to open for editing a previously loaded document, which options should be applied, and how to send document content to the WYSIWYG HTML-editor or any other editing application.
 
 When document is loaded into the instance of the [Editor](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) class, it is possible to open it for editing. In terms of [**GroupDocs.Editor**](https://products.groupdocs.com/editor/net), open a document for edit implies creating an instance of [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) class by calling an [Editor](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor).[Edit()](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor/methods/edit) instance method. There are two overloads of the [Edit](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor/methods/edit) method. First one obtains a single parameter — inheritor of [IEditOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/ieditoptions) interface.  
 Each format family has its own implementation of [IEditOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/ieditoptions) interface. They are listed in the table below.

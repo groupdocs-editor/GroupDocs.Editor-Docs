@@ -9,6 +9,32 @@ keywords: Edit TXT file, Edit plain text, Edit TXT programmatically
 productName: GroupDocs.Editor for .NET
 hideChildren: False
 toc: True
+structuredData:
+    showOrganization: True
+    application:    
+        name: How to edit text file in the GroupDocs.Editor
+        description: How to edit plain text TXT file using the GroupDocs.Editor in C# language
+        productCode: editor
+        productPlatform: net 
+    showVideo: True
+    howTo:
+        name: How to edit content of the plain text (TXT) file in the GroupDocs.Editor in C#
+        description: Learn how to edit content of the plain text (TXT) file using the GroupDocs.Editor in C# step by step
+        steps:
+        - name: Load desired text file to the Editor class
+          text: Create an instance of the Editor class using the most suitable constructor overload, by passing the desired  text file into it. LoadOptions are not needed.
+		- name: Prepare a TextEditOptions class
+          text: Create an instance of the TextEditOptions class and adjust its properties to meet your needs if necessary. You can specify an encoding of the text document, direction of the text flow, pagination mode, and other options.
+		- name: Call Editor.Edit and send the obtained EditableDocument to the WYSIWYG-editor
+          text: Invoke a Editor.Edit method with specifying a previously prepared TextEditOptions and obtain an instance of the EditableDocument class, which is ready for editing. Then generate HTML-markup and extract resources from this instance using corresponding instance methods, and pass all these data to the HTML-based WYSIWYG-editor.
+		- name: Edit the document in WYSIWYG-editor and send the edited content back to the server-side
+          text: Make all necessary edits in the content of the text file in the HTML-based WYSIWYG-editor, which is running on a client-side (in a web-browser) and then submit the edited content and resources back to the server-side, where the GroupDocs.Editor is running.
+		- name: Create an instance of EditableDocument
+          text: Create an instance of the EditableDocument by passing the edited text content into the most suitable static methods of the class
+		- name: Prepare a TextSaveOptions class
+          text: Create an instance of the TextSaveOptions class and adjust its properties to meet your needs if necessary. You can specify an encoding of the text document, and other options. 
+		- name: Save edited text file with Editor.Save method
+          text: Pass an instance of EditableDocument with content of the edited text file, instance of the TextSaveOptions, and a destination byte stream or file path to the Editor.Save method for saving the text file.
 ---
 > This demonstration shows how to load, open for editing and save text documents, explains edit and save options and their destination.
 
@@ -34,7 +60,7 @@ In order to open a text document for edit by creating the [EditableDocument](ht
 3. [LeadingSpaces](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/texteditoptions/properties/leadingspaces) — enum flag, that indicates how consecutive leading spaces should be handled: convert to left indent (default value), preserve as consecutive spaces, or trim.
 4. [TrailingSpaces](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/texteditoptions/properties/trailingspaces) — enum flag, that indicates how consecutive trailing spaces should be handled: truncated (default value), or trim.
 5. [EnablePagination](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/texteditoptions/properties/enablepagination) — boolean flag, that allows to enable paged view of the document. In their nature all text documents are pageless, however, GroupDocs.Editor allows to split them on pages, like MS Word does.
-6. Direction — enum flag, which allows to specify the direction of text flow in the input plain text document. By default is Left-to-Right.
+6. [Direction](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/texteditoptions/properties/direction) — enum flag, which allows to specify the direction of text flow in the input plain text document. By default is Left-to-Right.
 
 Source code below demonstrates using this option class and opening input text document for editing. Then, when [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocumenthttps://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) instance is ready, example below demonstrates, how to emit HTML markup from it, edit it and create new [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) instance from edited content:
 

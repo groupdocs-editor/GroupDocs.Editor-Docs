@@ -7,6 +7,8 @@ description: "GroupDocs.Editor for Java enables document editing in form of HTML
 keywords: document editing, Edit Words, document editing API
 productName: GroupDocs.Editor for Java
 hideChildren: True
+structuredData:
+    showOrganization: True
 ---
 <img src="editor/java/images/home.png" width="110" height="110" alt="groupdocs-editor-java-home" align="left" style="margin: 0 30px 30px 0"/>
 

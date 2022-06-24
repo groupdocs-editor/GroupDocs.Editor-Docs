@@ -8,6 +8,14 @@ keywords: Edit document programmatically, Edit document C#, Edit document princi
 productName: GroupDocs.Editor for .NET
 hideChildren: False
 toc: True
+structuredData:
+    showOrganization: True
+    application:    
+        name: Introduction to GroupDocs.Editor usage
+        description: Description of the purposes and the most basic principles of the GroupDocs.Editor
+        productCode: editor
+        productPlatform: net 
+    showVideo: True    
 ---
 > This article explains the most common and fundamental principles of GroupDocs.Editor, how it works, what is its purpose, and how it should be used.
 

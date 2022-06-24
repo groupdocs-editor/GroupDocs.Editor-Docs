@@ -7,8 +7,28 @@ description: "This article demonstrates how to save edited text documents, sprea
 keywords: Save edited document, edit document, GroupDocs.Editor
 productName: GroupDocs.Editor for .NET
 hideChildren: False
+structuredData:
+    showOrganization: True
+    application:    
+        name: Save document in the GroupDocs.Editor
+        description: Save document using the GroupDocs.Editor in C# language
+        productCode: editor
+        productPlatform: net 
+    showVideo: True
+    howTo:
+        name: How to save document using the GroupDocs.Editor in C#
+        description: Learn how to save document using the GroupDocs.Editor in C# step by step
+        steps:
+        - name: Submit edited HTML-document to the server-side
+          text: After document was edited on the client-side with WYSIWYG HTML-editor, its edited HTML-markup and resources must be submitted to the server-side, because the GroupDocs.Editor is a server-based middleware.
+		- name: Create EditableDocument instance from edited content
+          text: Once the content of edited document is transferred to the server-side, you should create an instance of EditableDocument class from this content by using the most appropriate static method from this type.
+        - name: Create and adjust the appropriate SaveOptions
+          text: Depending on what format the input document had and which output format you want to obtain, you need to create an appropriate inheritor of the ISaveOptions interface and and adjust it by selecting the desired format, protection, and other options.
+		- name: Invoke Editor.Save method
+          text: Finally, when edited document is stored within the EditableDocument instance and SaveOptions are prepared, you should invoke the desired overload of the Editor.Save method (first one saves the document to the file, while second — to the byte stream).
 ---
-This article describes how to obtain edited document content from client, process it and save to the resultant document of some specified format.
+> This article describes how to obtain edited document content from client, process it and save to the resultant document of some specified format.
 
 When end-user has finished document editing in the WYSIWYG HTML-editor (this is usually a pure client-side application, written on JavaScript), he submits the editing operation, and HTML markup with stylesheets, images, and maybe other resources are passed to the server-side. In order to generate a document of some output format, these resources should be passed to the [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument).
 

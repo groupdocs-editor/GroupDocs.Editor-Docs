@@ -7,6 +7,8 @@ description: "This guide demonstrates how to edit XLS, XLSX, XLSM, XLSB, ODS, SX
 keywords: Edit Excel, Edit spreadsheet, Edit XLS, Edit XLSX, Edit XLSM, Edit XLSB, Edit ODS, Edit SXC
 productName: GroupDocs.Editor for Java
 hideChildren: False
+structuredData:
+    showOrganization: True
 ---
 > This demonstration shows and explains all necessary moments and options regarding processing the Spreadsheet documents.
 

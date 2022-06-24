@@ -10,6 +10,8 @@ keywords: Edit DOCX, Edit DOC, Edit RTF, Edit ODT, Edit Word document
 productName: GroupDocs.Editor for Java
 hideChildren: False
 toc: True
+structuredData:
+    showOrganization: True
 ---
 > This example demonstrates standard open-edit-save cycle with WordProcessing documents, using different options on every step.
 

@@ -7,6 +7,24 @@ description: "Following this guide you will learn how to load document from loca
 keywords: Load document with GroupDocs.Editor, Load and edit document, edit document, edit spreadsheet, edit presentation
 productName: GroupDocs.Editor for .NET
 hideChildren: False
+structuredData:
+    showOrganization: True
+    application:    
+        name: Load document into GroupDocs.Editor
+        description: Load document into GroupDocs.Editor for subsequent usage on C# language
+        productCode: editor
+        productPlatform: net 
+    showVideo: True
+    howTo:
+        name: How to load document to the GroupDocs.Editor in C#
+        description: Learn how to load document to the GroupDocs.Editor in C# step by step
+        steps:
+        - name: Prepare a LoadOptions instance if needed 
+          text: If input document is password-protected or requires some adjusting using load, or it is required to specify its format family explicitly, create an appropriate inheritor of the ILoadOptions interface
+        - name: Invoke the appropriate Editor class constructor
+          text: Pass a filepath as a string or a byte stream through delegate into the most appropriate overload of the constructor of GroupDocs.Editor.Editor class
+        - name: Make all necessary edits and savings
+          text: After document is successfully loaded, you can get its metainfo, generate its editable version, and finally save it to the resultant file
 ---
 > This article describes how to load input document to the [**GroupDocs.Editor**](https://products.groupdocs.com/editor/net) and how to apply load options.
 

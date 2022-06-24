@@ -9,19 +9,46 @@ keywords: Edit CSV, Edit TSV, Edit Semicolon-separated value file, Edit Whitespa
 productName: GroupDocs.Editor for .NET
 hideChildren: False
 toc: True
+structuredData:
+    showOrganization: True
+    application:    
+        name: How to edit CSV and all other DSV files in the GroupDocs.Editor
+        description: How to edit documents in CSV and all other DSV formats using the GroupDocs.Editor in C# language
+        productCode: editor
+        productPlatform: net 
+    showVideo: True
+    howTo:
+        name: How to edit content of the documents in CSV and all other DSV formats in the GroupDocs.Editor in C#
+        description: Learn how to edit content of the documents in DSV (Delimiter-Separated Values) formats, including CSV, TSV and all others using the GroupDocs.Editor in C# step by step
+        steps:
+        - name: Load desired Delimiter-Separated Values (DSV) file to the Editor class
+          text: Create an instance of the Editor class using the most suitable constructor overload, by passing the desired  text file into it. LoadOptions are not needed.
+		- name: Prepare a DelimitedTextEditOptions class
+          text: Create an instance of the DelimitedTextEditOptions class and adjust its properties to meet your needs if necessary. While creating the DelimitedTextEditOptions instance, you should specify a separator (delimiter) string (may be a single character), which is used in the loaded DSV. For example, for the CSV it will be a comma character (","), for TSV — a tab character, and so on.
+		- name: Call Editor.Edit and send the obtained EditableDocument to the WYSIWYG-editor
+          text: Invoke a Editor.Edit method with specifying a previously prepared DelimitedTextEditOptions and obtain an instance of the EditableDocument class, which is ready for editing. Then generate HTML-markup and extract resources from this instance using corresponding instance methods, and pass all these data to the HTML-based WYSIWYG-editor.
+		- name: Edit the document in WYSIWYG-editor and send the edited content back to the server-side
+          text: Make all necessary edits in the content of the DSV spreadsheet in the HTML-based WYSIWYG-editor, which is running on a client-side (in a web-browser) and then submit the edited content and resources back to the server-side, where the GroupDocs.Editor is running.
+		- name: Create an instance of EditableDocument
+          text: Create an instance of the EditableDocument by passing the edited DSV content into the most suitable static methods of the class
+		- name: Prepare a DelimitedTextSaveOptions class
+          text: Create an instance of the DelimitedTextSaveOptions class and adjust its properties to meet your needs if necessary. While creating the DelimitedTextSaveOptions instance, you must choose the desired separator (delimiter) string. It may not be the same as it was specified in the DelimitedTextEditOptions before, select any desired string separator that you need.
+		- name: Save edited DSV spreadhseet with Editor.Save method
+          text: Pass an instance of EditableDocument with content of the edited DSV spreadsheet, instance of the DelimitedTextSaveOptions, and a destination byte stream or file path to the Editor.Save method for saving the DSV file.
 ---
-> This demonstration shows and explains all necessary moments and options regarding processing DSV spreadsheets (Delimiter-separated values)
+> This demonstration shows and explains all necessary moments and options regarding processing DSV spreadsheets (Delimiter-separated values) like CSV and others
 
 ## Introduction
 
 DSV (Delimiter-Separated Values) files are specific form of text-based spreadsheets with delimiters (separators). Due of their nature the [**GroupDocs.Editor**](https://products.groupdocs.com/editor/net) processes this class of documents separately from usual binary spreadsheets. In counterpart to usual spreadsheets, DSV documents due to their textual nature have only single tab (worksheet) and cannot be encoded. But any non-empty string may be treated as separator, so user always need to specify it explicitly.
+
 The most common types of DSV are:
 
 1. CSV (Comma-Separated value)
 2. TSV (Tab-Separated value)
-   Semicolon-separated value
-3. Whitespace-separated value
-4. ...and any other
+3. Semicolon-separated value
+4. Whitespace-separated value
+5. ...and any other
 
 GroupDocs.Editor supports DSV with any separator, which can be character or a set of characters (string).
 

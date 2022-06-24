@@ -8,6 +8,8 @@ keywords: Edit PPT, Edit PPTX, Edit PPTM, Edit PPSX, Edit PPSM, Edit POTX, Edit 
 productName: GroupDocs.Editor for Java
 hideChildren: False
 toc: True
+structuredData:
+    showOrganization: True
 ---
 > This example demonstrates standard open-edit-save cycle with Presentation documents, using different options on every step.
 

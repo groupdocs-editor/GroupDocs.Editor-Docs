@@ -8,6 +8,24 @@ keywords: Extract document metadata, Get document info, obtain basic document me
 productName: GroupDocs.Editor for .NET
 hideChildren: False
 toc: True
+structuredData:
+    showOrganization: True
+    application:    
+        name: Extract document metainfo in the GroupDocs.Editor
+        description: Extract information about document format and other properties using the GroupDocs.Editor in C# language
+        productCode: editor
+        productPlatform: net 
+    showVideo: True
+    howTo:
+        name: How to extract document metainfo using the GroupDocs.Editor in C#
+        description: Learn how to extract information about document format and other properties using the GroupDocs.Editor in C# step by step
+        steps:
+        - name: Load desired document to the Editor class
+          text: Create an instance of the Editor class using the most suitable constructor overload, by passing the desired document into it.
+		- name: Invoke the Editor.GetDocumentInfo method
+          text: Once the document is loaded, call the Editor.GetDocumentInfo method and specify an optional password for the document into it, if document is password-protected.		  
+        - name: Examine obtained document info
+          text: The Editor.GetDocumentInfo method returns the inheritor of the IDocumentInfo interface, which has the type, that is the most appropriate for the document format. For example, for the input document in WordProcessing format the GetDocumentInfo will return an instance of a WordProcessingDocumentInfo class with information about page count, protection, exact format, and some other data.
 ---
 > This demonstration shows and explains usage of the [GetDocumentInfo](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor/methods/getdocumentinfo) method, that extracts meta info from the document.
 
