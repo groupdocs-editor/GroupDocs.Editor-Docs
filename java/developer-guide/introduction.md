@@ -8,6 +8,14 @@ keywords: Edit document programmatically, Edit document Java, Edit document prin
 productName: GroupDocs.Editor for Java
 hideChildren: False
 toc: True
+structuredData:
+    showOrganization: True
+    application:    
+        name: Introduction to GroupDocs.Editor usage
+        description: Description of the purposes and the most basic principles of the GroupDocs.Editor
+        productCode: editor
+        productPlatform: java 
+    showVideo: True 
 ---
 > This article explains the most common and fundamental principles of GroupDocs.Editor, how it works, what is its purpose, and how it should be used.
 

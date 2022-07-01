@@ -9,6 +9,32 @@ productName: GroupDocs.Editor for Java
 hideChildren: False
 structuredData:
     showOrganization: True
+    application:    
+        name: How to edit Excel workbook in the GroupDocs.Editor
+        description: How to edit Excel workbook using the GroupDocs.Editor in Java language
+        productCode: editor
+        productPlatform: net 
+    showVideo: True
+    howTo:
+        name: How to edit content of the Excel workbook in the GroupDocs.Editor in Java
+        description: Learn how to edit content of the worksheets from the Excel workbook using the GroupDocs.Editor in Java step by step
+        steps:
+        - name: Load desired Excel workbook to the Editor class
+          text: Create an instance of the Editor class using the most suitable constructor overload, by passing the desired  Excel workbook into it.
+        - name: Prepare a SpreadsheetEditOptions class
+          text: Create an instance of the SpreadsheetEditOptions class and adjust its properties to meet your needs if necessary.
+        - name: Select desired worksheet (tab) for editing
+          text: Using the SpreadsheetEditOptions you should select the desired worksheet (tab), that should be edited, using the "setWorksheetIndex()" method.
+        - name: Call Editor.edit and send the obtained EditableDocument to the WYSIWYG-editor
+          text: Invoke a Editor.Edit method with specifying a previously prepared SpreadsheetEditOptions and obtain an instance of the EditableDocument class, which is ready for editing. Then generate HTML-markup and extract resources from this instance using corresponding instance methods, and pass all these data to the HTML-based WYSIWYG-editor.
+        - name: Edit the document in WYSIWYG-editor and send the edited content back to the server-side
+          text: Make all necessary edits in the content of the worksheet in the HTML-based WYSIWYG-editor, which is running on a client-side (in a web-browser) and then submit the edited content and resources back to the server-side, where the GroupDocs.Editor is running.
+        - name: Create an instance of EditableDocument
+          text: Create an instance of the EditableDocument by passing the edited worksheet content into the most suitable static methods of the class
+        - name: Prepare a SpreadsheetSaveOptions class
+          text: Create an instance of the SpreadsheetSaveOptions class and adjust its properties to meet your needs if necessary. You need to choose the format of the output workbook — this is the only mandatory parameter, that must be specified in the constructor. Also using the "setWorksheetNumber()" and "setInsertAsNewWorksheet()" methods you can choose how to insert the edited worksheet into the output workbook — replace the original worksheet with the edited one, or inject a new edited worksheet to keep it along with old original simultaneously.
+        - name: Save edited Excel workbook with Editor.save method
+          text: Pass an instance of EditableDocument with content of the edited Excel workbook, instance of the SpreadsheetSaveOptions, and a destination byte stream or file path to the Editor.Save method for saving the workbook.
 ---
 > This demonstration shows and explains all necessary moments and options regarding processing the Spreadsheet documents.
 

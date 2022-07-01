@@ -8,6 +8,24 @@ keywords: Extract document metadata, Get document info,  obtain basic document m
 productName: GroupDocs.Editor for Java
 hideChildren: False
 toc: True
+structuredData:
+    showOrganization: True
+    application:    
+        name: Extract document metainfo in the GroupDocs.Editor
+        description: Extract information about document format and other properties using the GroupDocs.Editor in Java language
+        productCode: editor
+        productPlatform: java 
+    showVideo: True
+    howTo:
+        name: How to extract document metainfo using the GroupDocs.Editor in Java
+        description: Learn how to extract information about document format and other properties using the GroupDocs.Editor in Java step by step
+        steps:
+        - name: Load desired document to the Editor class
+          text: Create an instance of the Editor class using the most suitable constructor overload, by passing the desired document into it.
+        - name: Invoke the Editor.getDocumentInfo method
+          text: Once the document is loaded, call the Editor.getDocumentInfo method and specify an optional password for the document into it, if document is password-protected.		  
+        - name: Examine obtained document info
+          text: The Editor.getDocumentInfo method returns the inheritor of the IDocumentInfo interface, which has the type, that is the most appropriate for the document format. For example, for the input document in WordProcessing format the getDocumentInfo will return an instance of a WordProcessingDocumentInfo class with information about page count, protection, exact format, and some other data.
 ---
 > This demonstration shows and explains usage of the [GetDocumentInfo](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor#getdocumentinfo()) method, that extracts meta info from the document.
 
