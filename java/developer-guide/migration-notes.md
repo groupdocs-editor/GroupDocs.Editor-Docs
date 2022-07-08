@@ -74,4 +74,4 @@ try {
 }
 ```
 
-For more code examples and specific use cases please refer to our [Developer Guide]({{< ref "editor/java/developer-guide/_index.md" >}}) documentation or [GitHub](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java) samples and showcases.
+For more code examples and specific use cases please refer to our [Developer Guide]({{< ref "editor/java/developer-guide/_index.md" >}}) documentation or [GitHub](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java) samples and showcases.

@@ -13,9 +13,9 @@ toc: True
 
 ## Preparations
 
-When input document is loaded into [Editor](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor) class and opened for edit by transforming to the intermediate [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class, it is possible to generate and get HTML markup in different forms. Code below shows all variations of such procedure.
+When input document is loaded into [Editor](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor) class and opened for edit by transforming to the intermediate [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class, it is possible to generate and get HTML markup in different forms. Code below shows all variations of such procedure.
 
-First of all user needs to load document into [Editor](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor) class and open it for editing, what is demonstrated in the code below.
+First of all user needs to load document into [Editor](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor) class and open it for editing, what is demonstrated in the code below.
 
 ```java
 String inputFilePath = "C:\\input_path\\document.docx"; //path to some document
@@ -25,11 +25,11 @@ EditableDocument document = editor.edit(new WordProcessingEditOptions()); //open
 
 ```
 
-Piece of code above has prepared a ready-to-use instance of [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class, that contains the original document in its own intermediate format and is able to generate HTML markup in different forms.
+Piece of code above has prepared a ready-to-use instance of [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class, that contains the original document in its own intermediate format and is able to generate HTML markup in different forms.
 
 ## Getting whole HTML content
 
-The most default and standard method for generating HTML markup is parameterless [GetContent](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument#getcontent()) method:
+The most default and standard method for generating HTML markup is parameterless [getContent()](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/EditableDocument#getContent--) method:
 
 ```java
 String htmlContent = document.getContent();
