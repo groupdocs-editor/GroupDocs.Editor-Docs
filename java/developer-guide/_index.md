@@ -12,5 +12,5 @@ structuredData:
     showOrganization: True
 ---
 {{< alert style="info" >}}
-This section describes some basic and advanced use cases of GroupDocs.Editor. Please refer to [GitHub repository](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java) for more examples and samples.
+This section describes some basic and advanced use cases of GroupDocs.Editor. Please refer to [GitHub repository](https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java) for more examples and samples.
 {{< /alert >}}
