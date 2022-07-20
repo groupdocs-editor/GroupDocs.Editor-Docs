@@ -3,7 +3,7 @@ id: edit-word
 url: editor/net/edit-word
 title: Edit Word 
 linktitle: Edit Word document
-weight: 45
+weight: 12
 description: "This guide demonstrates how to edit DOC, DOT, DOCX, DOCM, DOTX, ODT, RTF documents with font extraction, different pagination modes and many other powerful features of GroupDocs.Editor for .NET."
 keywords: Edit DOCX, Edit DOC, Edit RTF, Edit ODT, Edit Word document
 productName: GroupDocs.Editor for .NET
@@ -53,7 +53,7 @@ In counterpart to this, when paged mode is enabled, document content is divided 
 
 ## Load Word file for edit
 
-First of all user must open a document by loading it into the [Editor](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) class instance. This example demonstrates how to load the password-protected document from the stream. So, let's suppose we have an encoded DOCX, and user knows its password. First of all, you need to create a load options.
+First of all user must open a document by loading it into the [Editor](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) class instance. This example demonstrates how to load the password-protected document from the stream. So, let's suppose we have an encoded DOCX, and user knows its password. First of all, you need to create a load options — an instance of the [`GroupDocs.Editor.Options.WordProcessingLoadOptions` class](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/wordprocessingloadoptions).
 
 ```csharp
 Options.WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
@@ -62,7 +62,7 @@ loadOptions.Password = "some_password_to_open_a_document";
 
 Please note that if document has no protection, the password will be ignored. However, if document is protected, but user has not specified a password, a [PasswordRequiredException](https://apireference.groupdocs.com/net/editor/groupdocs.editor/passwordrequiredexception) will be thrown during document editing.
 
-Next step is to load the document from stream into the [Editor](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) class. For loading documents from streams [Editor](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) uses delegates. In other words, you need to pass the delegate instance, that points to the method, that returns a stream.   
+Next step is to load the document from stream into the [Editor](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) class. For loading documents from streams (implementations of a `System.IO.Stream`) the [`Editor` class](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) uses delegates. In other words, you need to pass the delegate instance, that points to the method, that returns a stream.   
 Same with load options — they are passed via delegate.
 
 ```csharp

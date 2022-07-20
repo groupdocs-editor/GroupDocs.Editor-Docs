@@ -2,7 +2,7 @@
 id: edit-document
 url: editor/net/edit-document
 title: Edit document
-weight: 3
+weight: 6
 description: "Follow this guide and learn how to edit text documents, spreadsheets and presentations using GroupDocs.Editor for .NET API features."
 keywords: Edit document, edit presentation, edit spreadsheet, GroupDocs.Editor
 productName: GroupDocs.Editor for .NET

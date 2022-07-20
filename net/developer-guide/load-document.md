@@ -2,7 +2,7 @@
 id: load-document
 url: editor/net/load-document
 title: Load document
-weight: 2
+weight: 4
 description: "Following this guide you will learn how to load document from local disk or file stream for editing with GroupDocs.Editor for .NET API."
 keywords: Load document with GroupDocs.Editor, Load and edit document, edit document, edit spreadsheet, edit presentation
 productName: GroupDocs.Editor for .NET
