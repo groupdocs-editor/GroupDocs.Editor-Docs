@@ -17,15 +17,19 @@ GroupDocs.Editor supports different document formats, all of them are conditiona
 3. Delimiter-Separated Values (DSV) formats, also known as delimited text, that are text-based form of spreadsheets, and includes CSV, TSV, semicolon-delimited, whitespace-delimited etc.
 4. Presentation formats, which includes PPT, PPS, POT, PPTX, PPTM etc.
 5. Text-based formats, which includes TXT, HTML, XML etc.
-6. Fixed-layout formats, which includes only PDF at this time (for version 19.12).
+6. Fixed-layout formats, which includes PDF and XPS formats, where their representation is "baked" to be uniform on every platform.
+7. eBook formats, which includes Mobi, AZW3 and ePub.
+8. Email formats, which includes MSG, EML, PST and others.
 
-For representing some of these format families the [Formats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/) namespace and [IDocumentFormat](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/idocumentformat) interface exists, along with five inheritors of this interface:
+For representing some of these format families the [Formats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/) namespace and [IDocumentFormat](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/idocumentformat) interface exists, along with seven inheritors of this interface:
 
 1. [WordProcessingFormats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/wordprocessingformats), which is common for all WordProcessing formats.
 2. [SpreadsheetFormats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/spreadsheetformats), which is common for all Spreadsheet formats.
 3. [PresentationFormats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/presentationformats), which is common for all Presentation formats.
 4. [TextualFormats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/textualformats), which is common for all text-based formats, including plain text (TXT), markup formats (XML and HTML), and all Delimiter-Separated Values (DSV) formats.
-5. [EBookFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats), which is common for all E-book formats, including MOBI and ePub.
+5. [EBookFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats), which is common for all E-book formats, including MOBI, AZV3, and ePub.
+6. [FixedLayoutFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/fixedlayoutformats), which is common for only the PDF and XPS (this includes OpenXPS).
+7. [EmailFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/emailformats), which is common for all electronic mail formats.
 
 All these types are immutable structs, all of them have text properties, which reflect their names, MIME codes, and file extensions, all of them are equatable. Every struct has a set of static fields, each one represents one specific format within given family format. For every struct there is a `FromExtension` static method, that obtains a file extension, parses it and returns an instance of appropriate format. Every struct has an `All` static field, which allows enumeration over all specific formats within given family format.
 

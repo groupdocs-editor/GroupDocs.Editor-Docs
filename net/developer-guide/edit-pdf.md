@@ -137,9 +137,10 @@ The next properties are inherited from the `FixedLayoutEditOptionsBase`:
 1. [`Boolean`](https://docs.microsoft.com/en-us/dotnet/api/system.boolean?view=net-6.0) flag [`SkipImages`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/fixedlayouteditoptionsbase/properties/skipimages). By default if has a `false` value — images are not skipped and are preserved. However, if you need only textual information from the document, you can set this flag to true.
 
 2. [`Boolean`](https://docs.microsoft.com/en-us/dotnet/api/system.boolean?view=net-6.0) flag [`EnablePagination`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/fixedlayouteditoptionsbase/properties/enablepagination). It has the exact meaning as [the same flag](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/wordprocessingeditoptions/properties/enablepagination) in the [`WordProcessingEditOptions`](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/wordprocessingeditoptions). This flag sets the document conversion mode: the **float** (default value is `false`) or **paginal** (`true`). For the PDF and XPS documents it means the same:
-> When the float mode is selected, the document content will be converted to a pageless (float) HTML document, where there is only a single page (like any common web-document).
+> - When the float mode is selected, the document content will be converted to a pageless (float) HTML document, where there is only a single page (like any common web-document).
 >
-> When the paginal mode is selected, the pages of the document will be preserved in the generated HTML document, like it can be seen in the PDF viewer like Adobe Reader.
+> - When the paginal mode is selected, the pages of the document will be preserved in the generated HTML document, like it can be seen in the PDF viewer like Adobe Reader.
+
 Actually, the relevance and necessity of this mode relies mostly on your WYSIWYG-editor.
 
 3. [`Pages` property](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/fixedlayouteditoptionsbase/properties/pages) of the [`PageRange` type](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pagerange). `PageRange` is an immutable struct, that holds a page range of any document, without relation to the specific document. And the `Pages` property through a `PageRange` struct allows setting a page range, which should be processed. By default all the pages of the input document are processed ([`PageRange.IsDefault`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pagerange/properties/isdefault)` == true`). You can choose the different ways to set a page range using different static methods from a `PageRange` struct. Also pay attention — in `PageRange` pages are specified via page numbers, not via indexes, so they are 1-based, but not 0-based.
@@ -246,7 +247,7 @@ When the [`GetDocumentInfo()` method](https://apireference.groupdocs.com/net/edi
 
 As all [`IDocumentInfo`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.metadata/idocumentinfo) implementations, it has four properties:
 
-1. [`Format` property](https://apireference.groupdocs.com/editor/net/groupdocs.editor.metadata/fixedlayoutdocumentinfo/properties/format) of [`Formats.FixedLayoutFormats` type](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/fixedlayoutformats). For PDF documents it always is a [`FixedLayoutFormats.Pdf`](https://apireference-qa.groupdocs.com/editor/net/groupdocs.editor.formats/fixedlayoutformats/fields/pdf).
+1. [`Format` property](https://apireference.groupdocs.com/editor/net/groupdocs.editor.metadata/fixedlayoutdocumentinfo/properties/format) of [`Formats.FixedLayoutFormats` type](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/fixedlayoutformats). For PDF documents it always is a [`FixedLayoutFormats.Pdf`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/fixedlayoutformats/fields/pdf).
 2. [`PageCount` property](https://apireference.groupdocs.com/editor/net/groupdocs.editor.metadata/fixedlayoutdocumentinfo/properties/pagecount) of [integer (`Int32`)](https://docs.microsoft.com/en-us/dotnet/api/system.int32?view=net-6.0) type. Returns a number of pages.
 3. [`Size` property](https://apireference.groupdocs.com/editor/net/groupdocs.editor.metadata/fixedlayoutdocumentinfo/properties/size) of a [long integer (`Int64`)](https://docs.microsoft.com/en-us/dotnet/api/system.int64?view=net-6.0) type. Returns a file size in bytes.
 4. [`IsEncrypted` property](https://apireference.groupdocs.com/editor/net/groupdocs.editor.metadata/fixedlayoutdocumentinfo/properties/isencrypted) of a [`Boolean`](https://docs.microsoft.com/en-us/dotnet/api/system.boolean?view=net-6.0) type. For the password-encoded documents it returns `true`, and `false` otherwise. For XPS files it always returns `false`, because the XPS format doesn’t support encryption.
@@ -254,6 +255,7 @@ As all [`IDocumentInfo`](https://apireference.groupdocs.com/editor/net/groupdocs
 As usual, if the input PDF, loaded into the [`Editor` class](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor), is encoded, then its correct password should be specified in the [`GetDocumentInfo()` method](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor/methods/getdocumentinfo). If PDF is not encoded, then the value of the [`GetDocumentInfo()`](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor/methods/getdocumentinfo) is ignored.
 
 **Important note!**
+
 Unlike the editing process, the extraction of metadata from PDF doesn’t require the .NET Framework 4.6.1 and higher, or .NET Standard 2.0 and higher — it is supportable from the lowest .NET Framework 2.0.
 
 The code example below demonstrates the extracting metadata from two PDFs: first one is unprotected, while second - protected.

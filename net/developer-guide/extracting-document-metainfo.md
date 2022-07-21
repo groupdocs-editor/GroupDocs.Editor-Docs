@@ -53,27 +53,40 @@ There can be several scenarios here regarding whether document is encoded or not
 
 [GetDocumentInfo](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor/methods/getdocumentinfo)() method returns a [IDocumentInfo](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/idocumentinfo). This is interface, that stores meta info about one particular document and contains the next properties:
 
-1. [PageCount](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/idocumentinfo/properties/pagecount). This is a positive number, that returns page count for WordProcessing documents, tabs (worksheets) count for Spreadsheets, and 1 for pageless documents like XML or TXT.
+1. [PageCount](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/idocumentinfo/properties/pagecount). This is a positive number, that returns page count for WordProcessing, PDF and XPS documents, tabs (worksheets) count for Spreadsheets, slides count for Presentations and a number `1` for pageless documents like XML or TXT.
 2. [Size](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/idocumentinfo/properties/size). Document size in bytes.
-3. [IsEncrypted](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/idocumentinfo/properties/isencrypted). A boolean flag that indicates whether document is encrypted with the password or not. If document is of type, that doesn't support encryption at all, like CSV or XML, this property will return 'false'.
+3. [IsEncrypted](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/idocumentinfo/properties/isencrypted). A boolean flag that indicates whether document is encrypted with the password or not. If document is of type, that doesn't support encryption at all, like CSV or XML, this property always returns `false`.
 4. [Format](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/idocumentinfo/properties/format). Returns info about the format itself.
 
-There are three inheritors of the [IDocumentInfo](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/idocumentinfo) interface:
+There are eight inheritors of the [IDocumentInfo](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/idocumentinfo) interface, all are structs:
 
 1. [WordProcessingDocumentInfo](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/wordprocessingdocumentinfo) — common for all WordProcessing family formats.
 2. [SpreadsheetDocumentInfo](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/spreadsheetdocumentinfo) — common for all Spreadsheet family formats.
 3. [PresentationDocumentInfo](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/presentationdocumentinfo) — common for all Presentation family formats.
 4. [TextualDocumentInfo](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/textualdocumentinfo) — common for all textual types, including all DSV (like CSV and TSV), XML, HTML, and plain text.
+5. [FixedLayoutDocumentInfo](https://apireference.groupdocs.com/editor/net/groupdocs.editor.metadata/fixedlayoutdocumentinfo) - common for all documents with a fixed-layout format, this includes only PDF and XPS.
+6. [EmailDocumentInfo](https://apireference.groupdocs.com/editor/net/groupdocs.editor.metadata/emaildocumentinfo) - common for all Email family formats, like EML, MSG, VCF, PST, MBOX and others.
+7. [EbookDocumentInfo](https://apireference.groupdocs.com/editor/net/groupdocs.editor.metadata/ebookdocumentinfo) - common for all eBook family formats like MOBI and ePub.
+8. [MarkdownDocumentInfo](https://apireference.groupdocs.com/editor/net/groupdocs.editor.metadata/markdowndocumentinfo) - special struct, that is dedicated especially for the Markdown (MD) textual format.
 
-One important thing to note: if [GetDocumentInfo()](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor/methods/getdocumentinfo) returns NULL value instead of some of [IDocumentInfo](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/idocumentinfo) inheritors, this means that specified document is not supported by the GroupDocs.Editor and thus cannot be opened for editing or saved.
+
+One important thing to note: if [GetDocumentInfo()](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor/methods/getdocumentinfo) returns `NULL` value instead of some of [IDocumentInfo](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/idocumentinfo) inheritors, this means that specified document is not supported by the GroupDocs.Editor and thus cannot be opened for editing or saved.
 
 ## Explaining document format
 
-[IDocumentInfo](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/idocumentinfo) interface contains a `Format` property of [IDocumentFormat](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/idocumentformat) type. [IDocumentFormat](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/idocumentformat) is an interface, that is common for all format descriptors. It is designed for indicating one particular document format and stores format name, extension, and has equality operators. It has three inheritors, all of them are structs:
+[IDocumentInfo](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/idocumentinfo) interface contains a [`Format` property](https://apireference.groupdocs.com/editor/net/groupdocs.editor.metadata/idocumentinfo/properties/format) of [IDocumentFormat](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/idocumentformat) type. [IDocumentFormat](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/idocumentformat) is an interface, that is common for all format descriptors. It is designed for indicating one particular document format and stores format name, extension, MIME-code, and has equality operators.
 
+Each inheritor of [IDocumentFormat](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/idocumentformat) interface delivers three properties, all of a [System.String](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0) type: 
+1. [Name](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/idocumentformat/properties/name), that provides name of the format.
+2. [Extension](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/idocumentformat/properties/extension), that provides a format extension.
+3. [Mime](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/idocumentformat/properties/mime), that provides a MIME-code for a particular format
+
+[`IDocumentFormat` interface](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/idocumentformat) has seven inheritors, all of them are structs:
 1. [WordProcessingFormats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/wordprocessingformats) — holds all formats from WordProcessing family.
 2. [SpreadsheetFormats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/spreadsheetformats) — holds all formats from Spreadsheet family.
 3. [PresentationFormats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/spreadsheetformats) — holds all formats from Presentation family.
 4. [TextualFormats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/textualformats) — holds all formats with text-based nature.
+5. [FixedLayoutFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/fixedlayoutformats) - holds all formats from the fixed-layout format family. This includes only PDF and XPS.
+6. [EBookFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats) - holds all eBool (Electronic book) formats like Mobi and ePub.
+7. [EmailFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/emailformats) - holds all email (electronic mail) formats like EML and MSG.
 
-Each inheritor of [IDocumentFormat](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/idocumentformat) interface delivers two properties: [Name](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/idocumentformat/properties/name), that provides name of the format, and [Extension](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/idocumentformat/properties/extension), that provides a format extension.
