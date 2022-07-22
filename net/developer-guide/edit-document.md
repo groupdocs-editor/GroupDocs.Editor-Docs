@@ -40,8 +40,11 @@ Each format family has its own implementation of [IEditOptions](https://apirefe
 | Delimiter-Separated Values (DSV) | CSV, TSV | [DelimitedTextEditOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/delimitedtexteditoptions) |
 | Presentation | PPT, PPTX, PPS, POT | [PresentationEditOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/presentationeditoptions) |
 | Plain Text documents | TXT | [TextEditOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/texteditoptions) |
+| Fixed-layout format | PDF | [PdfEditOptions](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfeditoptions) |
+| Fixed-layout format | XPS (including OpenXPS) | [XpsEditOptions](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/xpseditoptions) |
 | XML | Any XML-based format like CSPROJ, SVG, and so on | [XmlEditOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/xmleditoptions) |
-| Mobi | Any Mobi E-book | [MobiEditOptions](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/mobieditoptions) |
+| eBook | MOBI, AZW3 | [MobiEditOptions](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/mobieditoptions) |
+| Email | EML, EMLX, TNEF, MSG, HTML, MHTML, ICS, VCF, PST, MBOX, OFT | [EmailEditOptions](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/emaileditoptions) |
 
 Second overload is parameterless — it chooses the most appropriate default edit options based on input document format.
 

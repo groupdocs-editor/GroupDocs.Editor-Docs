@@ -57,19 +57,20 @@ SpreadsheetLoadOptions spreadsheetLoadOptions = new SpreadsheetLoadOptions();
 Editor editor = new Editor(delegate { return inputStream; }, delegate { return spreadsheetLoadOptions; });
 ```
 
-Please note that not all document formats have appropriate classes, that represent load options. As for version 19.10, only WordProcessing, Spreadsheet and Presentation family formats have load options. For other document types, such as DSV, TXT or XML, there are no load options.
+Please note that not all document formats have appropriate classes, that represent load options. As for version 22.7, only WordProcessing, Spreadsheet and Presentation family formats, as well as a distinct PDF format, have load options. For other document formats, such as DSV, TXT or XML, there are no load options.
 
 | Format family | Example formats | Load options class |
 | --- | --- | --- |
-| WordProcessing | DOC, DOCX, DOCM, DOT, ODT | `WordProcessingLoadOptions` |
-| Spreadsheet | XLS, XLSX, XLSM, XLSB | `SpreadsheetLoadOptions` |
-| Presentation | PPT, PPTX, PPS, POT | `PresentationLoadOptions` |
+| WordProcessing | DOC, DOCX, DOCM, DOT, ODT | [`WordProcessingLoadOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/wordprocessingloadoptions) |
+| Spreadsheet | XLS, XLSX, XLSM, XLSB | [`SpreadsheetLoadOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/spreadsheetloadoptions) |
+| Presentation | PPT, PPTX, PPS, POT | [`PresentationLoadOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/presentationloadoptions) |
+| Fixed-layout format | PDF | [`PdfLoadOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfloadoptions) |
 
-Using load options is the only way for working with password-protected input documents. Any document can be loaded into the `Editor` instance, even encoded document without the password. However, on the next step — opening for editing, — the exception will be thrown. GroupDocs.Editor handles passwords and encoded documents in the next way:
+Using load options is the only way for working with password-protected input documents. Any document can be loaded into the [`Editor`](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) instance, even encoded document without the password. However, on the next step — opening for editing, — the exception will be thrown. GroupDocs.Editor handles passwords and encoded documents in the next way:
 
 1. If document is not encoded, password is ignored anyway, whether or not it was specified.
-2. If document is password-protected, but password is not specified, the [PasswordRequiredException](https://apireference.groupdocs.com/net/editor/groupdocs.editor/passwordrequiredexception) will be thrown later during editing.
-3. If document is password-protected, and password is specified, but is incorrect, the [IncorrectPasswordException](https://apireference.groupdocs.com/net/editor/groupdocs.editor/incorrectpasswordexception) will be thrown later during editing.
+2. If document is password-protected, but password is not specified, the [`PasswordRequiredException`](https://apireference.groupdocs.com/net/editor/groupdocs.editor/passwordrequiredexception) will be thrown later during editing.
+3. If document is password-protected, and password is specified, but is incorrect, the [`IncorrectPasswordException`](https://apireference.groupdocs.com/net/editor/groupdocs.editor/incorrectpasswordexception) will be thrown later during editing.
 
 Example below shows specifying password for opening some password-protected WordProcessing document.
 
@@ -80,4 +81,4 @@ wordLoadOptions.Password = "correct_password";
 Editor editor = new Editor(inputFilePath, delegate { return wordLoadOptions; });
 ```
 
-{{< alert style="info" >}}Same approach is applicable for Spreadsheet and Presentation documents too.{{< /alert >}}
+{{< alert style="info" >}}Same approach is applicable for Spreadsheet, Presentation, and PDF documents too.{{< /alert >}}

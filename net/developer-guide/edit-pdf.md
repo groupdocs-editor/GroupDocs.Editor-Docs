@@ -51,7 +51,7 @@ From its emergence the GroupDocs.Editor for .NET had no support for editing the 
 
 **Important note!**
 
-GroupDocs.Editor for .NET [version 22.7](https://docs.groupdocs.com/editor/net/groupdocs-editor-for-net-22-7-release-notes/) is distributed for three platforms/runtimes: .NET Framework 2.0, .NET Framework 4.6.1 and .NET Standard 2.0. Ability to edit PDF documents is available only for the .NET Framework 4.6.1 and higher, or .NET Standard 2.0 and higher.
+{{< alert style="info" >}}GroupDocs.Editor for .NET [version 22.7](https://docs.groupdocs.com/editor/net/groupdocs-editor-for-net-22-7-release-notes/) is distributed for three platforms/runtimes: .NET Framework 2.0, .NET Framework 4.6.1 and .NET Standard 2.0. Ability to edit PDF documents is available only for the .NET Framework 4.6.1 and higher, or .NET Standard 2.0 and higher.{{< /alert >}}
 
 ## In two words
 
@@ -140,8 +140,7 @@ The next properties are inherited from the `FixedLayoutEditOptionsBase`:
 > - When the float mode is selected, the document content will be converted to a pageless (float) HTML document, where there is only a single page (like any common web-document).
 >
 > - When the paginal mode is selected, the pages of the document will be preserved in the generated HTML document, like it can be seen in the PDF viewer like Adobe Reader.
-
-Actually, the relevance and necessity of this mode relies mostly on your WYSIWYG-editor.
+>Actually, the relevance and necessity of this mode relies mostly on your WYSIWYG-editor.
 
 3. [`Pages` property](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/fixedlayouteditoptionsbase/properties/pages) of the [`PageRange` type](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pagerange). `PageRange` is an immutable struct, that holds a page range of any document, without relation to the specific document. And the `Pages` property through a `PageRange` struct allows setting a page range, which should be processed. By default all the pages of the input document are processed ([`PageRange.IsDefault`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pagerange/properties/isdefault)` == true`). You can choose the different ways to set a page range using different static methods from a `PageRange` struct. Also pay attention — in `PageRange` pages are specified via page numbers, not via indexes, so they are 1-based, but not 0-based.
 
@@ -256,7 +255,7 @@ As usual, if the input PDF, loaded into the [`Editor` class](https://apireferenc
 
 **Important note!**
 
-Unlike the editing process, the extraction of metadata from PDF doesn’t require the .NET Framework 4.6.1 and higher, or .NET Standard 2.0 and higher — it is supportable from the lowest .NET Framework 2.0.
+{{< alert style="info" >}}Unlike the editing process, the extraction of metadata from PDF doesn’t require the .NET Framework 4.6.1 and higher, or .NET Standard 2.0 and higher — it is supportable from the lowest .NET Framework 2.0.{{< /alert >}}
 
 The code example below demonstrates the extracting metadata from two PDFs: first one is unprotected, while second - protected.
 
