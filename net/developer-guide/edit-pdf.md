@@ -286,3 +286,66 @@ Assert.IsTrue(protectedPdfInfo.IsEncrypted);
 Assert.AreEqual(1016198, protectedPdfInfo.Size);
 Assert.AreEqual(Formats.FixedLayoutFormats.Pdf, protectedPdfInfo.Format);
 ```
+
+## Extended info
+
+### EnablePagination in save options
+
+In the previous versions of the GroupDocs.Editor the [`PdfSaveOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfsaveoptions) contained an [`EnablePagination`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfsaveoptions/properties/enablepagination) boolean flag. Starting from the version 22.7 this flag was marked as [`Obsolete`](https://docs.microsoft.com/en-us/dotnet/api/system.obsoleteattribute?view=net-6.0) and its value is ignored whether it was specified by the user or was left intact. This was done by the improvements of the backward converter, which generates the output PDF from [`EditableDocument`](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument). Now the backward converter automatically detects the content in the obtained [`EditableDocument`](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) — if it was generated with the [`EnablePagination`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/fixedlayouteditoptionsbase/properties/enablepagination) flag set to `true` in [`PdfEditOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfeditoptions), then pagination will be applied to the output PDF, and same for the `false` value.
+
+If you’re using the GroupDocs.Editor version older then 22.7, you should specify the [`EnablePagination`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfsaveoptions/properties/enablepagination) flag manually and in accordance with the value of the same flag in the [`PdfEditOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfeditoptions): if `EnablePagination` in [`PdfEditOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfeditoptions) is set to `true`, then in the [`PdfSaveOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfsaveoptions) it should also be `true`; same for `false`.
+
+### Different output formats
+
+Keep in mind that, when input PDF was edited and you’re going to save it, it is not necessary to save it exactly in the PDF format — you are free to choose any compatible format, like all WordProcessing formats, or text format, or eBook format.
+
+Code example below shows editing a PDF file and then saving the edited content to three different files in different formats.
+
+```csharp
+//0. Prepare path to your input PDF file
+const string filename = "Comparison for .NET.pdf";
+string inputPdfPath = System.IO.Path.Combine(Common.TestHelper.PdfFolder, filename);
+
+//1. Create Editor instance - we do not use PdfLoadOptions here
+Editor editor = new Editor(inputPdfPath);
+
+//2. Edit PDF document with default PdfEditOptions - no need to create and pass PdfEditOptions explicitly
+EditableDocument originalDoc = editor.Edit();
+
+//3. Generate HTML/CSS/resources, send to WYSIWYG-editor, edit there, send back to server and create EditableDocument... omitted here
+EditableDocument editedDoc = originalDoc;//just use the same in the sake of simplicity
+
+//4. Prepare PDF save options
+Options.PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+pdfSaveOptions.Compliance = PdfCompliance.PdfA2a;
+
+//5. Prepare DOCX save options
+Options.WordProcessingSaveOptions docxSaveOptions = new WordProcessingSaveOptions(Formats.WordProcessingFormats.Docx);
+
+//6. Prepare TXT save options
+Options.TextSaveOptions txtSaveOptions = new TextSaveOptions();
+txtSaveOptions.PreserveTableLayout = true;
+
+//7. Save to PDF format to the stream
+using (MemoryStream pdfStream = new MemoryStream())
+{
+	editor.Save(editedDoc, pdfStream, pdfSaveOptions);
+}
+
+//8. Save to DOCX format to the stream
+using (MemoryStream docxStream = new MemoryStream())
+{
+	editor.Save(editedDoc, docxStream, docxSaveOptions);
+}
+
+//9. Save to TXT format to the stream
+using (MemoryStream txtStream = new MemoryStream())
+{
+	editor.Save(editedDoc, txtStream, txtSaveOptions);
+}
+
+//10. Dispose all resources
+editedDoc.Dispose();
+originalDoc.Dispose();
+editor.Dispose();
+```
