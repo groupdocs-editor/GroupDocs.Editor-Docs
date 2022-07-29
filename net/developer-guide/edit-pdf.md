@@ -22,7 +22,7 @@ structuredData:
         description: Learn how to edit content of the PDF document in the different editing modes and with different editing options using the GroupDocs.Editor in C# step by step
         steps:
         - name: Load desired PDF document to the Editor class
-          text: Create an instance of the Editor class using the most suitable constructor overload, by passing the desired  PDF document into it.
+          text: Create an instance of the Editor class using the most suitable constructor overload, by passing the desired PDF document into it.
         - name: Prepare a PdfEditOptions class
           text: Create an instance of the PdfEditOptions class and adjust its properties to meet your needs if necessary. For example, enable or disable images, select a page range, set a pagination mode.   
         - name: Call Editor.Edit and send the obtained EditableDocument to the WYSIWYG-editor
@@ -36,7 +36,7 @@ structuredData:
         - name: Save edited document with Editor.Save method
           text: Pass an instance of EditableDocument with content of the edited document, instance of the PdfSaveOptions, and a destination byte stream or file path to the Editor.Save method for saving the document.
 ---
-> This example demonstrates the standard open-edit-save cycle with PDF documents, using different options on every step.
+> This example demonstrates the standard open-edit-save pipeline with PDF documents, using different options on every step.
 
 ## Introduction
 
@@ -188,7 +188,7 @@ This class has the next properties:
 
 3. [`OptimizeMemoryUsage`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfsaveoptions/properties/optimizememoryusage) [`boolean`](https://docs.microsoft.com/en-us/dotnet/api/system.boolean?view=net-6.0) flag, that allows to modify the process of generation of an output PDF document from an `EditableDocument` instance in such a way that this process will take a lesser memory consumption at the cost of the longer processing time. By default it has a `false` value, which means that the memory optimization is disabled for the sake of better performance. In case of extremely huge documents, enabling this property is vital in order to cope with [`OutOfMemoryException`](https://docs.microsoft.com/en-us/dotnet/api/system.OutOfMemoryException?view=net-6.0), especially on 32-bit processes.
 
-4. FontEmbedding property of FontEmbeddingOptions type is responsible for embedding the font resources into the resultant PDF document. FontEmbeddingOptions is an enum that has several values, which allow to control which fonts should be embedded into PDF. By default fonts are not embedded at all.
+4. [`FontEmbedding`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfsaveoptions/properties/FontEmbedding) property of [`FontEmbeddingOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/fontembeddingoptions) type is responsible for embedding the font resources into the resultant PDF document. `FontEmbeddingOptions` is an enum that has several values, which allow to control which fonts should be embedded into PDF. By default fonts are not embedded at all (`NotEmbed`). When specifying the `EmbedAll` enum value, all used fonts in the document will be embedded inside the resultant PDF. When specifying the `EmbedWithoutSystem` — only those fonts, which are absent in the current operating system (where the GroupDocs.Editor is running).
 
 Unlike the [`PdfLoadOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfloadoptions) and [`PdfEditOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfeditoptions), which are optional when they are default (may be omitted during loading and editing respectively), the [`PdfSaveOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfsaveoptions) is mandatory even if all its values are default.
 
@@ -240,7 +240,7 @@ In this example we’ve created two output PDF files with different PDF saving o
 
 ## Obtaining PDF document info
 
-Article [Extracting document metainfo](https://docs.groupdocs.com/editor/net/extracting-document-metainfo/) described the [`GetDocumentInfo()` method](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor/methods/getdocumentinfo), that allows to detect the document format and extract its metadata without editing it. Actually, after adding PDF support to the GroupDocs.Editor, this mechanism also works with PDF documents.
+Article [Extracting document metainfo](https://docs.groupdocs.com/editor/net/extracting-document-metainfo/) describes the [`GetDocumentInfo()` method](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor/methods/getdocumentinfo), that allows to detect the document format and extract its metadata without editing it. Actually, after adding PDF support to the GroupDocs.Editor, this mechanism also works with PDF documents.
 
 When the [`GetDocumentInfo()` method](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor/methods/getdocumentinfo) is called for the [`Editor` class](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) instance that is loaded with a PDF document, the method will return a [`GroupDocs.Editor.Metadata.FixedLayoutDocumentInfo`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.metadata/fixedlayoutdocumentinfo) instance — it is a common class for all fixed-layout documents, PDF and XPS in particular.
 

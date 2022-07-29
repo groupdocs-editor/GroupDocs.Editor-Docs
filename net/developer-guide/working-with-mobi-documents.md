@@ -15,6 +15,8 @@ Mobi format is an E-Book format, developed by the French company MobiPocket and 
 
 Starting from the version 20.7, the GroupDocs.Editor for .NET is able to open (load) Mobi documents for editing. However, on this moment saving _into_ Mobi is not available, so users should choose some other format (mostly some of WordProcessing) in order to save edited Mobi document.
 
+Starting from the [version 22.7](https://docs.groupdocs.com/editor/net/groupdocs-editor-for-net-22-7-release-notes/) the GroupDocs.Editor is able to edit the e-books in [AZW3 format](https://docs.fileformat.com/ebook/azw3/), also known as Kindle Format 8 (KF8), whech may be considered as a successor to the Mobi.
+
 ## Loading Mobi file for edit
 
 Despite of a distinct format, which doesn't belong to any of existing format families, Mobi has no dedicated loading options. So for loading it into the instance of the [`Editor`](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) class, users should simply specify a path to the Mobi file or a stream with its content in the constructor:
