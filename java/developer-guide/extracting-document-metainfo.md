@@ -53,10 +53,10 @@ There can be several scenarios here regarding whether document is encoded or not
 
 [getDocumentInfo()](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/Editor#getDocumentInfo-java.lang.String-) method returns a [IDocumentInfo](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/idocumentinfo). This is interface, that stores meta info about one particular document and contains the next properties:
 
-1. [PageCount](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/idocumentinfo/properties/pagecount). This is a positive number, that returns page count for WordProcessing documents, tabs (worksheets) count for Spreadsheets, and 1 for pageless documents like XML or TXT.
-2. [Size](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/idocumentinfo/properties/size). Document size in bytes.
-3. [IsEncrypted](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/idocumentinfo/properties/isencrypted). A boolean flag that indicates whether document is encrypted with the password or not. If document is of type, that doesn't support encryption at all, like CSV or XML, this property will return 'false'.
-4. [Format](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/idocumentinfo/properties/format). Returns info about the format itself.
+1. [PageCount](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/IDocumentInfo#getPageCount--). This is a positive number, that returns page count for WordProcessing documents, tabs (worksheets) count for Spreadsheets, and 1 for pageless documents like XML or TXT.
+2. [Size](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/IDocumentInfo#getSize--). Document size in bytes.
+3. [IsEncrypted](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/IDocumentInfo#isEncrypted--). A boolean flag that indicates whether document is encrypted with the password or not. If document is of type, that doesn't support encryption at all, like CSV or XML, this property will return 'false'.
+4. [Format](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/IDocumentInfo#getFormat--). Returns info about the format itself.
 
 There are three inheritors of the [IDocumentInfo](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/idocumentinfo) interface:
 

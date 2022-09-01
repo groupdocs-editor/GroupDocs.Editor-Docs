@@ -76,7 +76,7 @@ Sometimes it is necessary to *[detect a document type and extract its metadata]
 4. Number of pages (tabs);
 5. Text encoding, if document is textual.
 
-In order to detect document type and gather its meta info, user should load a desired document into the [Editor](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor) class and then call a [GetDocumentInfo()](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor#getdocumentinfo()) method.
+In order to detect document type and gather its meta info, user should load a desired document into the [Editor](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor) class and then call a [getDocumentInfo()](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor#getdocumentinfo()) method.
 
 ## Describing options
 
