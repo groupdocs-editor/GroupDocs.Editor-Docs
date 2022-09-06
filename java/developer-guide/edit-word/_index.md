@@ -62,8 +62,7 @@ loadOptions.setPassword("some_password_to_open_a_document");
 
 Please note that if document has no protection, the password will be ignored. However, if document is protected, but user has not specified a password, a [PasswordRequiredException](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/passwordrequiredexception) will be thrown during document editing.
 
-Next step is to load the document from stream into the [Editor](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor) class. For loading documents from streams [Editor](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor) uses delegates. In other words, you need to pass the delegate instance, that points to the method, that returns a stream.
-Same with load options — they are passed via delegate.
+Next step is to load the document from stream into the [Editor](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/editor) class with load options. 
 
 ```java
 InputStream inputStream = new FileInputStream("C:\\input_path\\document.docx");

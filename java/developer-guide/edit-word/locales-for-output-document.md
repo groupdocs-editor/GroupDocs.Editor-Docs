@@ -8,7 +8,7 @@ keywords: Edit document with locale, GroupDocs.Editor, Edit RTL documents
 productName: GroupDocs.Editor for Java
 hideChildren: False
 ---
-[WordProcessingSaveOptions](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingsaveoptions) class contains 3 very similar properties of the same type `System.Globalization.CultureInfo`:
+[WordProcessingSaveOptions](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingsaveoptions) class contains 3 very similar properties of the same type `java.util.Locale`:
 
 ```java
 public java.util.Locale getLocale()
