@@ -46,8 +46,8 @@ The following table indicates the file formats that GroupDocs.Editor can edit.
 | [SXC](https://docs.fileformat.com/spreadsheet/sxc/) | StarOffice or OpenOffice.org Calc XML Spreadsheet | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 | [DIF](https://docs.fileformat.com/spreadsheet/dif/) | Data Interchange Format | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 | DSV | Delimiter Separated Values document (arbitrary delimiter) | ![(tick)](editor/net/images/check.png) | ![(error)](editor/net/images/error.png) | ![(error)](editor/net/images/error.png) |
-| [CSV](https://docs.fileformat.com/spreadsheet/csv/) | Comma Separated Values document | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png | ![(tick)](editor/net/images/check.png |
-| [TSV](https://docs.fileformat.com/spreadsheet/tsv/) | Tab Separated Values document | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png | ![(tick)](editor/net/images/check.png |
+| [CSV](https://docs.fileformat.com/spreadsheet/csv/) | Comma Separated Values document | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
+| [TSV](https://docs.fileformat.com/spreadsheet/tsv/) | Tab Separated Values document | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 
 ## Presentation family formats
 
@@ -72,8 +72,7 @@ The following table indicates the file formats that GroupDocs.Editor can edit.
 | Format | Description | Import | Export | Auto Detection |
 | --- | --- | --- | --- | --- |
 | [PDF](https://docs.fileformat.com/pdf/) | Portable Document Format | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
-| [XPS](https://docs.fileformat.com/page-description-language/xps/) | 
-XML Paper Specification | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
+| [XPS](https://docs.fileformat.com/page-description-language/xps/) | XML Paper Specification | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 
 ## Email family formats
 
@@ -101,8 +100,8 @@ XML Paper Specification | ![(tick)](editor/net/images/check.png) | ![(tick)](edi
 
 ## Markup formats
 
-| Format | Description | Edit | Auto Detection |
-| --- | --- | --- | --- |
+| Format | Description | Import | Export | Auto Detection |
+| --- | --- | --- | --- | --- |
 | [HTML](https://docs.fileformat.com/web/html/) | HyperText Markup Language | ![(tick)](editor/net/images/check.png) | ![(error)](editor/net/images/error.png) | ![(tick)](editor/net/images/check.png) |
 | [MHTML](https://docs.fileformat.com/web/mhtml/) | MIME Encapsulation of Aggregate HTML | ![(tick)](editor/net/images/check.png) | ![(error)](editor/net/images/error.png) | ![(tick)](editor/net/images/check.png) |
 | [CHM](https://docs.fileformat.com/web/chm/) | Microsoft Compiled HTML Help | ![(tick)](editor/net/images/check.png) | ![(error)](editor/net/images/error.png) | ![(tick)](editor/net/images/check.png) |
