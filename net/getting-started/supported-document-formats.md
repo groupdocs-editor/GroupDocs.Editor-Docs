@@ -96,14 +96,14 @@ The following table indicates the file formats that GroupDocs.Editor can edit.
 | --- | --- | --- | --- | --- |
 | [ePub](https://docs.fileformat.com/ebook/epub/) | Electronic Publication | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 | [MOBI](https://docs.fileformat.com/ebook/mobi/) | MobiPocket | ![(tick)](editor/net/images/check.png) | ![(error)](editor/net/images/error.png) | ![(tick)](editor/net/images/check.png) |
-| [AZW3](https://docs.fileformat.com/ebook/azw3/) | AZW3, also known as Kindle Format 8 (KF8) | ![(tick)](editor/net/images/check.png) | ![(error)](editor/net/images/error.png) | ![(tick)](editor/net/images/check.png) |
+| [AZW3](https://docs.fileformat.com/ebook/azw3/) | AZW3, also known as Kindle Format 8 (KF8) | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 
 ## Markup formats
 
 | Format | Description | Import | Export | Auto Detection |
 | --- | --- | --- | --- | --- |
 | [HTML](https://docs.fileformat.com/web/html/) | HyperText Markup Language | ![(tick)](editor/net/images/check.png) | ![(error)](editor/net/images/error.png) | ![(tick)](editor/net/images/check.png) |
-| [MHTML](https://docs.fileformat.com/web/mhtml/) | MIME Encapsulation of Aggregate HTML | ![(tick)](editor/net/images/check.png) | ![(error)](editor/net/images/error.png) | ![(tick)](editor/net/images/check.png) |
+| [MHTML](https://docs.fileformat.com/web/mhtml/) | MIME Encapsulation of Aggregate HTML | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) |
 | [CHM](https://docs.fileformat.com/web/chm/) | Microsoft Compiled HTML Help | ![(tick)](editor/net/images/check.png) | ![(error)](editor/net/images/error.png) | ![(tick)](editor/net/images/check.png) |
 | [XML](https://docs.fileformat.com/web/xml/) | eXtensible Markup Language | ![(tick)](editor/net/images/check.png) | ![(error)](editor/net/images/error.png) | ![(tick)](editor/net/images/check.png) |
 | [JSON](https://docs.fileformat.com/web/json/) | JavaScript Object Notation | ![(tick)](editor/net/images/check.png) | ![(error)](editor/net/images/error.png) | ![(tick)](editor/net/images/check.png) |
