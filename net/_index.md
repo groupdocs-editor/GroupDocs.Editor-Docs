@@ -20,8 +20,8 @@ GroupDocs.Editor can also be used to generate different Microsoft Word documents
 
 ----------------------------------------------------------------------------------------
 
-<div class="row">
-	<div class="col-md-4">
+{{< columns >}}
+
 		<p><b>About GroupDocs.Editor</b></p>
 			<hr><p>OVERVIEW</p></hr>
 			<ul>
@@ -32,8 +32,8 @@ GroupDocs.Editor can also be used to generate different Microsoft Word documents
 			<ul>
                 <li><a href='{{< ref "editor/net/getting-started/licensing-and-subscription.md" >}}'>Licensing and Subscription</a></li>
 			</ul>
-	</div>
-	<div class="col-md-4">
+<--->
+
 		<p><b>Get Started</b></p>
 			<hr><p>GETTING STARTED</p></hr>
 			<ul>
@@ -51,8 +51,8 @@ GroupDocs.Editor can also be used to generate different Microsoft Word documents
 				</li><li><a href="https://downloads.groupdocs.com/editor/net">GroupDocs.Editor for .NET Downloads</a></li>
 				<li><a href="https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET">Download Examples and Demos from GitHub</a></li>
 			</ul>
-	</div>
-	<div class="col-md-4">
+<--->
+
 		<p><b>RESOURCES</b></p>
 			<hr><p>GUIDE</p></hr>
 			<ul>
@@ -68,5 +68,4 @@ GroupDocs.Editor can also be used to generate different Microsoft Word documents
 				<li><a href="https://forum.groupdocs.com/">GroupDocs Free Support Forum</a></li>
 				<li><a href="https://helpdesk.groupdocs.com/">GroupDocs Paid Support Helpdesk</a></li>
 			</ul>
-	</div>
-</div>
+{{< /columns >}}
