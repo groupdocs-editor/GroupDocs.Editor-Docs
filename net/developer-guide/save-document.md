@@ -59,6 +59,8 @@ Like with load and edit options, every family format has its own class, that imp
 | Fixed-layout format | PDF | [PdfSaveOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/pdfsaveoptions) | [FixedLayoutFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/fixedlayoutformats) |
 | Fixed-layout format | XPS | [XpsSaveOptions](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/xpssaveoptions) | [FixedLayoutFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/fixedlayoutformats) |
 | Email | EML, EMLX, TNEF, MSG, HTML, MHTML, ICS, VCF, PST, MBOX, OFT | [EmailSaveOptions](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/emailsaveoptions) | [EmailFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/emailformats) |
+| e-Books | ePub | [EpubSaveOptions](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/epubsaveoptions) | [EBookFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats) |
+| e-Books | AZW3 | [Azw3SaveOptions](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/azw3saveoptions) | [EBookFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats) |
 
 Source code below shows creating an instance of [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) class and consequent saving a two versions of the document: one to the file and second — to the stream.
 

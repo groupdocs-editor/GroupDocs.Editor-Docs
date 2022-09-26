@@ -27,7 +27,7 @@ For representing some of these format families the [Formats](https://apireferenc
 2. [SpreadsheetFormats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/spreadsheetformats), which is common for all Spreadsheet formats.
 3. [PresentationFormats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/presentationformats), which is common for all Presentation formats.
 4. [TextualFormats](https://apireference.groupdocs.com/net/editor/groupdocs.editor.formats/textualformats), which is common for all text-based formats, including plain text (TXT), markup formats (XML and HTML), and all Delimiter-Separated Values (DSV) formats.
-5. [EBookFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats), which is common for all E-book formats, including MOBI, AZV3, and ePub.
+5. [EBookFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats), which is common for all E-book formats, including MOBI, AZW3, and ePub.
 6. [FixedLayoutFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/fixedlayoutformats), which is common for only the PDF and XPS (this includes OpenXPS).
 7. [EmailFormats](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/emailformats), which is common for all electronic mail formats.
 
