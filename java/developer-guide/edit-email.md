@@ -174,7 +174,7 @@ IDocumentInfo pstDocInfo = pstEditor.getDocumentInfo(null);
 
 Assert.isTrue(emlDocInfo instanceof EmailDocumentInfo);
 Assert.isTrue(msgDocInfo instanceof EmailDocumentInfo);
-Assert.isTrue(instanceof);
+Assert.isTrue(pstDocInfo instanceof EmailDocumentInfo);
 
 Assert.areEqual(com.groupdocs.editor.formats.EmailFormats.Eml, emlDocInfo.getFormat());
 Assert.areEqual(com.groupdocs.editor.formats.EmailFormats.Msg, msgDocInfo.getFormat());
