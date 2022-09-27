@@ -53,7 +53,7 @@ GroupDocs.Editor can also be used to generate different Microsoft Word documents
 <hr><p>GUIDE</p></hr>
 <ul>
 	<li><a href='{{< ref "editor/java/developer-guide/edit-document.md" >}}'>Edit Files</a></li>
-	<li><a href="https://apireference.groupdocs.com/editor/java">GroupDocs.Editor for Java API Reference</a></li>
+	<li><a href="https://reference.groupdocs.com/editor/java">GroupDocs.Editor for Java API Reference</a></li>
 </ul>
 <p>WHAT'S NEW?</p>
 <ul>

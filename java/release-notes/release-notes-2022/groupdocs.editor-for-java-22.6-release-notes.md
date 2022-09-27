@@ -20,13 +20,13 @@ Version 22.6 of GroupDocs.Editor contains two new features, which are described 
 
 #### Audio support
 
-In version 22.6 GroupDocs.Editor is able to process the MP3 audio files, embedded in the WordProcessing documents. For supporting this a new public namespace "[com.groupdocs.editor.htmlcss.resources.audio](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.htmlcss.resources.audio/package-frame)" and two new public types inside it, — [AudioType](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.htmlcss.resources.audio/AudioType) and [Mp3Audio](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.htmlcss.resources.audio/Mp3Audio), — were added. Now, when WordProcessing document contains an embedded audio, it will be preserved and stored in the EditableDocument instance, and will be present in editable HTML representation.
+In version 22.6 GroupDocs.Editor is able to process the MP3 audio files, embedded in the WordProcessing documents. For supporting this a new public namespace "[com.groupdocs.editor.htmlcss.resources.audio](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.htmlcss.resources.audio/package-frame)" and two new public types inside it, — [AudioType](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.htmlcss.resources.audio/AudioType) and [Mp3Audio](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.htmlcss.resources.audio/Mp3Audio), — were added. Now, when WordProcessing document contains an embedded audio, it will be preserved and stored in the EditableDocument instance, and will be present in editable HTML representation.
 
 #### New HTML parser
 
-When edited document content in a form of HTML markup, CSS, images and other resources, is passing back to the GroupDocs.Editor via [EditableDocument](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/EditableDocument) in order to create an output document, GroupDocs.Editor internally performs a parsing of HTML markup. Before version 22.6 the HTML parser supported only a strict and narrow range of valid HTML markup, with proper tag structure, where all opening tags are properly closed, and structure is complete and well-formed. There even was a special method "[fromBodyMarkupAndResourceFolder](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/EditableDocument#fromBodyMarkupAndResourceFolder(java.lang.String,%20java.lang.String))" for coping with inner-BODY content.
+When edited document content in a form of HTML markup, CSS, images and other resources, is passing back to the GroupDocs.Editor via [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/EditableDocument) in order to create an output document, GroupDocs.Editor internally performs a parsing of HTML markup. Before version 22.6 the HTML parser supported only a strict and narrow range of valid HTML markup, with proper tag structure, where all opening tags are properly closed, and structure is complete and well-formed. There even was a special method "[fromBodyMarkupAndResourceFolder](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/EditableDocument#fromBodyMarkupAndResourceFolder(java.lang.String,%20java.lang.String))" for coping with inner-BODY content.
 
-Starting from 22.6 the completely new HTML parser has replaced the old one, and now any HTML content is supportable and correctly processable, even invalid. Method "[fromBodyMarkupAndResourceFolder](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/EditableDocument#fromBodyMarkupAndResourceFolder(java.lang.String,%20java.lang.String))" now is depracated; instead of it a new method "[fromMarkupAndResourceFolder](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/EditableDocument#fromMarkupAndResourceFolder(java.lang.String,%20java.lang.String))" is introduced.
+Starting from 22.6 the completely new HTML parser has replaced the old one, and now any HTML content is supportable and correctly processable, even invalid. Method "[fromBodyMarkupAndResourceFolder](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/EditableDocument#fromBodyMarkupAndResourceFolder(java.lang.String,%20java.lang.String))" now is depracated; instead of it a new method "[fromMarkupAndResourceFolder](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/EditableDocument#fromMarkupAndResourceFolder(java.lang.String,%20java.lang.String))" is introduced.
 
 ## Improvements
 
@@ -58,14 +58,14 @@ GroupDocs.Editor version 22.6 contains big amount of bugfixes and performance im
 
 New public types:
 
-1. [com.groupdocs.editor.htmlcss.resources.audio.Mp3Audio](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.htmlcss.resources.audio/Mp3Audio)
-2. [com.groupdocs.editor.htmlcss.resources.audio.AudioType](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor.htmlcss.resources.audio/AudioType)
+1. [com.groupdocs.editor.htmlcss.resources.audio.Mp3Audio](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.htmlcss.resources.audio/Mp3Audio)
+2. [com.groupdocs.editor.htmlcss.resources.audio.AudioType](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.htmlcss.resources.audio/AudioType)
 
 New public methods and properties:
 
-1. [com.groupdocs.editor.htmlcss.resources.audio](https://apireference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/properties/audio) - instance property
-2. [com.groupdocs.editor.EditableDocument.fromMarkupAndResourceFolder(String newHtmlContent, String resourceFolderPath)](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/EditableDocument#fromMarkupAndResourceFolder(java.lang.String,%20java.lang.String)) - static method
+1. [com.groupdocs.editor.htmlcss.resources.audio](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/properties/audio) - instance property
+2. [com.groupdocs.editor.EditableDocument.fromMarkupAndResourceFolder(String newHtmlContent, String resourceFolderPath)](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/EditableDocument#fromMarkupAndResourceFolder(java.lang.String,%20java.lang.String)) - static method
 
 **Deprecated** methods:
 
-1. [com.groupdocs.editor.EditableDocument.fromBodyMarkupAndResourceFolder(String htmlBodyContent, String resourceFolderPath)](https://apireference.groupdocs.com/editor/java/com.groupdocs.editor/EditableDocument#fromBodyMarkupAndResourceFolder(java.lang.String,%20java.lang.String)) - static method
+1. [com.groupdocs.editor.EditableDocument.fromBodyMarkupAndResourceFolder(String htmlBodyContent, String resourceFolderPath)](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/EditableDocument#fromBodyMarkupAndResourceFolder(java.lang.String,%20java.lang.String)) - static method
