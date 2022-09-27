@@ -2,7 +2,7 @@
 id: groupdocs-editor-for-java-22-9-release-notes
 url: editor/java/groupdocs-editor-for-java-22-9-release-notes
 title: GroupDocs.Editor for Java 22.9 Release Notes
-weight: 100
+weight: 50
 description: ""
 keywords: 
 productName: GroupDocs.Editor for Java
