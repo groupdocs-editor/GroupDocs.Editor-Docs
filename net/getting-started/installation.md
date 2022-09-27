@@ -21,7 +21,7 @@ Follow these steps to reference GroupDocs.Editor using Package Manager GUI:
 * Click **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**. You can also access the same option through the Solution Explorer. Right-click the solution or project and select Manage NuGet Packages from the context menu.
 * Select **Browse** tab and type **"GroupDocs.Editor"** in the search text box.
 * Click the **Install** button to install the latest version of the API into your project as shown in the following screenshot.
-![](editor/net/images/development-environment-installation-and-configuration.png)
+![](/editor/net/images/development-environment-installation-and-configuration.png)
 
 ### Using Package Manager Console
 
@@ -31,7 +31,7 @@ You can follow the steps below to reference GroupDocs.Editor for .NET using the 
 * Select **Tools** -> **NuGet Package Manager** -> **Package Manager Console** from the menu to open package manager console.
 * Type the command "Install-Package GroupDocs.Editor" and press enter to install the latest release into your application.
 * After successful installation, GroupDocs.Editor will be referenced in your application.
-![](editor/net/images/installation_1.png)
+![](/editor/net/images/installation_1.png)
   
 ## Install from official GroupDocs website
 
