@@ -11,7 +11,7 @@ toc: True
 ---
 ## Introduction
 
-Starting from the [version 22.9](https://docs.groupdocs.com/editor/net/groupdocs-editor-for-net-22-9-release-notes/), the GroupDocs.Editor for .NET supports 3 formats from the e-Book family: 
+For the [version 22.9](https://docs.groupdocs.com/editor/net/groupdocs-editor-for-net-22-9-release-notes/), the GroupDocs.Editor for .NET supports 3 formats from the e-Book family: 
 
 1. [MOBI](https://docs.fileformat.com/ebook/mobi/) (MobiPocket),
 2. [AZW3](https://docs.fileformat.com/ebook/azw3/), also known as Kindle Format 8 (KF8),
@@ -21,7 +21,7 @@ As for the 22.9 version, the AZW3 and ePub formats are supported on both import 
 
 ## Load e-Book files for edit
 
-GroupDocs.Editor for .NET doesn't contain loading options nor for the whole e-Book family format neither for the specific e-Book formats — users should specify e-Books through file path or byte stream without any loading options at all. 
+GroupDocs.Editor for .NET doesn't contain loading options nor for the whole e-Book formats family neither for the specific e-Book formats — users should specify e-Books through file path or byte stream without any loading options at all. 
 
 Code example below shows loading of 3 different e-Books in different formats into the 3 different istances of the [`Editor`](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) class from different sources:
 
@@ -94,7 +94,7 @@ Unlike other format families and unlike a single [`EbookEditOptions`](https://ap
 
 These classes has one common property - a `SplitHeadingLevel` of the `System.Int32` type. This property controls how (if so) to split the content of AZW3 or ePub e-book onto packages in the resultant file. It doesn't affect the representation of a file, opened in any e-Book reader; rather, it is about an internal structure of the e-Book file. If you dont bother about internal structure of the ePub or AZW3 file, you may leave this property to has the default value.
 
-[`EpubSaveOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/epubsaveoptions) also has an `ExportDocumentProperties` boolean property — it controls whether to export built-in and custom document properties inside the resultant IDPF ePub e-Book. If you have no plans to reconvert the resultant ePub to some other format, you may leave it intact — the dafault `false` value disables the exporting of the document properties, so the resultant document will be a little bit smaller in size.
+[`EpubSaveOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/epubsaveoptions) also has an `ExportDocumentProperties` boolean property — it controls whether to export built-in and custom document properties inside the resultant IDPF ePub e-Book. If you have no plans to reconvert the resultant ePub to some other format, you may leave it intact — the default `false` value disables the exporting of the document properties, so the resultant document will be a little bit smaller in size.
 
 Code example below demonstrates a loading of a single ePub file to the [`Editor`](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) instance, editing it with default options, and saving to the ePub and AZW3 with different options for each one.
 
