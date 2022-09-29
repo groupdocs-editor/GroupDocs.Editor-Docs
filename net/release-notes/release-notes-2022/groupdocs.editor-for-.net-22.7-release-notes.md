@@ -94,5 +94,5 @@ So the minimum required platform will be a .NET Framework 4.6.1.
 - `Formats.EBookFormats`
 
 **Removed** types and members:
-- `MobiDocumentInfo` struct - replaced with [`EbookDocumentInfo`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.metadata/ebookdocumentinfo) struct
+- `MobiDocumentInfo` struct - replaced with [`EbookDocumentInfo`](https://reference.groupdocs.com/editor/net/groupdocs.editor.metadata/ebookdocumentinfo) struct
 

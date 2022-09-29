@@ -28,7 +28,7 @@ structuredData:
 ---
 > This article describes how to load input document to the [**GroupDocs.Editor**](https://products.groupdocs.com/editor/net) and how to apply load options.
 
-First of all the input document, which should be accessible as a byte stream or through valid file path, should be loaded into the GroupDocs.Editor by creating an instance of the [Editor](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) class through one of the constructor overloads.  
+First of all the input document, which should be accessible as a byte stream or through valid file path, should be loaded into the GroupDocs.Editor by creating an instance of the [Editor](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor) class through one of the constructor overloads.  
 If the input document is presented as a stream, it should be loaded through delegate. Source code below shows two ways of loading documents: from path and from stream.
 
 ```csharp
@@ -61,16 +61,16 @@ Please note that not all document formats have appropriate classes, that represe
 
 | Format family | Example formats | Load options class |
 | --- | --- | --- |
-| WordProcessing | DOC, DOCX, DOCM, DOT, ODT | [`WordProcessingLoadOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/wordprocessingloadoptions) |
-| Spreadsheet | XLS, XLSX, XLSM, XLSB | [`SpreadsheetLoadOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/spreadsheetloadoptions) |
-| Presentation | PPT, PPTX, PPS, POT | [`PresentationLoadOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/presentationloadoptions) |
-| Fixed-layout format | PDF | [`PdfLoadOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/pdfloadoptions) |
+| WordProcessing | DOC, DOCX, DOCM, DOT, ODT | [`WordProcessingLoadOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/wordprocessingloadoptions) |
+| Spreadsheet | XLS, XLSX, XLSM, XLSB | [`SpreadsheetLoadOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/spreadsheetloadoptions) |
+| Presentation | PPT, PPTX, PPS, POT | [`PresentationLoadOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/presentationloadoptions) |
+| Fixed-layout format | PDF | [`PdfLoadOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/pdfloadoptions) |
 
-Using load options is the only way for working with password-protected input documents. Any document can be loaded into the [`Editor`](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) instance, even encoded document without the password. However, on the next step — opening for editing, — the exception will be thrown. GroupDocs.Editor handles passwords and encoded documents in the next way:
+Using load options is the only way for working with password-protected input documents. Any document can be loaded into the [`Editor`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor) instance, even encoded document without the password. However, on the next step — opening for editing, — the exception will be thrown. GroupDocs.Editor handles passwords and encoded documents in the next way:
 
 1. If document is not encoded, password is ignored anyway, whether or not it was specified.
-2. If document is password-protected, but password is not specified, the [`PasswordRequiredException`](https://apireference.groupdocs.com/net/editor/groupdocs.editor/passwordrequiredexception) will be thrown later during editing.
-3. If document is password-protected, and password is specified, but is incorrect, the [`IncorrectPasswordException`](https://apireference.groupdocs.com/net/editor/groupdocs.editor/incorrectpasswordexception) will be thrown later during editing.
+2. If document is password-protected, but password is not specified, the [`PasswordRequiredException`](https://reference.groupdocs.com/editor/net/groupdocs.editor/passwordrequiredexception) will be thrown later during editing.
+3. If document is password-protected, and password is specified, but is incorrect, the [`IncorrectPasswordException`](https://reference.groupdocs.com/editor/net/groupdocs.editor/incorrectpasswordexception) will be thrown later during editing.
 
 Example below shows specifying password for opening some password-protected WordProcessing document.
 
