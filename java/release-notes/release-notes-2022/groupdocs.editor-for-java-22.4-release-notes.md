@@ -55,7 +55,7 @@ Now, if some slide contains such text formatting, this formatting will be presen
 
 First of all, starting from version 22.4, HTML/CSS module supports an SVG content, inlined inside HTML markup. This means that if given HTML document contains SVG images, which are inlined directly inside HTML using SVG elements, GroupDocs.Editor will correctly process such markup with SVG images without throwing an exception.
 
-Another improvement is related to the serialization: now, when [EditableDocument.getEmbeddedHtml()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/EditableDocument#getEmbeddedHtml()) method is invoked, all SVG files will not be encoded to the base64 and placed inside the values of "src" attributes of corresponding IMG elements, but rather will be stored in their native XML-compliant form, with SVG elements and so on.
+Another improvement is related to the serialization: now, when [EditableDocument.getEmbeddedHtml()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument#getEmbeddedHtml()) method is invoked, all SVG files will not be encoded to the base64 and placed inside the values of "src" attributes of corresponding IMG elements, but rather will be stored in their native XML-compliant form, with SVG elements and so on.
 
 ## Bugs
 
