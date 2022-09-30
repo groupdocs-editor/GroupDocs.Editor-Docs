@@ -18,7 +18,7 @@ GroupDocs.Editor for .NET version 20.3 contains a set of new features, improveme
 
 Starting from version 20.3, GroupDocs.Editor is able to extract fonts, installed in the operating system, not only from the system folder, common for all users, but also from user folder, which was introduced in the MS Windows 10. This feature doesn't affect the public API.
 
-In counterpart, the next feature, related to font processing, has affected the public API: new boolean flag named `ExtractOnlyUsedFont` was added to the [WordProcessingEditOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/wordprocessingeditoptions) class. Setting this flag to `true` allows to exclude those fonts, which are not directly applied to textual content in the document.
+In counterpart, the next feature, related to font processing, has affected the public API: new boolean flag named `ExtractOnlyUsedFont` was added to the [WordProcessingEditOptions](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/wordprocessingeditoptions) class. Setting this flag to `true` allows to exclude those fonts, which are not directly applied to textual content in the document.
 
 More info about these two features is located in the corresponding article "[Font extraction options]({{< ref "editor/net/developer-guide/edit-word/font-extraction-options.md" >}})".
 

@@ -16,7 +16,7 @@ GroupDocs.Editor for .NET version 20.12 provides one new minor feature, which ha
 
 ### New public class OtfFont
 
-Before version 20.12 the GroupDocs.Editor was not able to process the OTF (Open Type Format) fonts: it was not able to obtain them from input documents and export into resultant documents. If occured, such fonts were ignored. Starting from version 20.12 there is a full support of Open Type fonts, including new public class `GroupDocs.Editor.HtmlCss.Resources.Fonts.OtfFont`. So now, if input Wordprocessing document contains an OTF font, this font will be properly exported to the [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) and HTML, and finally properly imported back to the output WordProcessing document.
+Before version 20.12 the GroupDocs.Editor was not able to process the OTF (Open Type Format) fonts: it was not able to obtain them from input documents and export into resultant documents. If occured, such fonts were ignored. Starting from version 20.12 there is a full support of Open Type fonts, including new public class `GroupDocs.Editor.HtmlCss.Resources.Fonts.OtfFont`. So now, if input Wordprocessing document contains an OTF font, this font will be properly exported to the [EditableDocument](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument) and HTML, and finally properly imported back to the output WordProcessing document.
 
 ## Improvements
 

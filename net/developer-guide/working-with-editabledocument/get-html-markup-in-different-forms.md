@@ -9,13 +9,13 @@ productName: GroupDocs.Editor for .NET
 hideChildren: False
 toc: True
 ---
-> This demonstration shows how to open input document, convert it to intermediate [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument), and get HTML markup in different forms depending on client requirements.
+> This demonstration shows how to open input document, convert it to intermediate [EditableDocument](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument), and get HTML markup in different forms depending on client requirements.
 
 ## Preparations
 
-When input document is loaded into [Editor](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) class and opened for edit by transforming to the intermediate [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) class, it is possible to generate and get HTML markup in different forms. Code below shows all variations of such procedure.
+When input document is loaded into [Editor](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor) class and opened for edit by transforming to the intermediate [EditableDocument](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument) class, it is possible to generate and get HTML markup in different forms. Code below shows all variations of such procedure.
 
-First of all user needs to load document into [Editor](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editor) class and open it for editing, what is demonstrated in the code below.
+First of all user needs to load document into [Editor](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor) class and open it for editing, what is demonstrated in the code below.
 
 ```csharp
 string inputFilePath = "C:\\input_path\\document.docx"; //path to some document
@@ -24,25 +24,25 @@ Editor editor = new Editor(inputFilePath, delegate { return loadOptions; }); //p
 EditableDocument document = editor.Edit(new WordProcessingEditOptions()); //opening document for editing with format-specific edit options
 ```
 
-Piece of code above has prepared a ready-to-use instance of [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) class, that contains the original document in its own intermediate format and is able to generate HTML markup in different forms.
+Piece of code above has prepared a ready-to-use instance of [EditableDocument](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument) class, that contains the original document in its own intermediate format and is able to generate HTML markup in different forms.
 
 ## Getting whole HTML content
 
-The most default and standard method for generating HTML markup is parameterless [GetContent](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument/methods/getcontent) method:
+The most default and standard method for generating HTML markup is parameterless [GetContent](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/getcontent) method:
 
 ```csharp
 string htmlContent = document.GetContent();
 
 ```
 
-If document has external resources (stylesheets, fonts, images), they are referenced via different HTML elements: stylesheets are specified through LINK elements, while images — through IMG. When using the [GetContent()](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument/methods/getcontent) method, such external resources will be referenced by external links. For example:
+If document has external resources (stylesheets, fonts, images), they are referenced via different HTML elements: stylesheets are specified through LINK elements, while images — through IMG. When using the [GetContent()](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/getcontent) method, such external resources will be referenced by external links. For example:
 
 ```csharp
 <link href="stylesheet.css" rel="stylesheet"/>
 <IMG src="image.png"/">
 ```
 
-Quite often on the web-server, where such HTML will be edited, resources are processed by specific HTTP handler. In such cases it is required to adjust paths to such endpoints. More advanced overload of the [GetContent()](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument/methods/getcontent) method can help:
+Quite often on the web-server, where such HTML will be edited, resources are processed by specific HTTP handler. In such cases it is required to adjust paths to such endpoints. More advanced overload of the [GetContent()](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/getcontent) method can help:
 
 ```csharp
 string externalImagesPrefix = "http://www.mywebsite.com/images/id=";
@@ -59,7 +59,7 @@ In the example above specified prefixes will be added to every external link in 
 
 ## Getting HTML BODY content
 
-Lot of HTML WYSIWYG editors are not able to process the whole HTML document, with HEAD section and so on. They are able only to process inner content of HTML->BODY element. In order to obtain such part of HTML markup, [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) class contains the [GetBodyContent()](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument/methods/getcontent) method, which, as previous one, has two overloads, that are provided below:
+Lot of HTML WYSIWYG editors are not able to process the whole HTML document, with HEAD section and so on. They are able only to process inner content of HTML->BODY element. In order to obtain such part of HTML markup, [EditableDocument](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument) class contains the [GetBodyContent()](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/getcontent) method, which, as previous one, has two overloads, that are provided below:
 
 ```csharp
 string bodyContent = document.GetBodyContent();

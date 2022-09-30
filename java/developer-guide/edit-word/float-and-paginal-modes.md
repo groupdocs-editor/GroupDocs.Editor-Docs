@@ -17,7 +17,7 @@ public boolean getEnablePagination()
 public void setEnablePagination(boolean)
 ```
 
-At first, such property is present in the [WordProcessingEditOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingeditoptions) class and is doubled in the [overload of class constructor](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingeditoptions/constructors/1), which obtains one boolean parameter of the same name. In this case this option is responsible for selected mode during forward (WordProcessing to [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument)) conversion.
+At first, such property is present in the [WordProcessingEditOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingeditoptions) class and is doubled in the [overload of class constructor](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingeditoptions/#WordProcessingEditOptions--), which obtains one boolean parameter of the same name. In this case this option is responsible for selected mode during forward (WordProcessing to [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument)) conversion.
 
 Secondly, such property is present in the [WordProcessingSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingsaveoptions) class and is responsible for selected mode during backward ([EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) to WordProcessing) conversion.
 

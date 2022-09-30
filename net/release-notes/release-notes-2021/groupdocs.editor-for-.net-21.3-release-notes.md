@@ -43,6 +43,6 @@ GroupDocs.Editor version 21.3 contains big amount of bugfixes, which address dif
 
 ## Public API and Backward Incompatible Changes
 
-New public class [GroupDocs.Editor.HtmlCss.Resources.ResourceTypeDetector](https://apireference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.resources/resourcetypedetector) is present with 2 public members: methods [DetectTypeFromFilename](https://apireference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.resources/resourcetypedetector/methods/detecttypefromfilename) and [TryDetectResource](https://apireference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.resources/resourcetypedetector/methods/trydetectresource).
+New public class [GroupDocs.Editor.HtmlCss.Resources.ResourceTypeDetector](https://reference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.resources/resourcetypedetector) is present with 2 public members: methods [DetectTypeFromFilename](https://reference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.resources/resourcetypedetector/detecttypefromfilename) and [TryDetectResource](https://reference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.resources/resourcetypedetector/trydetectresource).
 
 No existing types or their members were modified or removed.
