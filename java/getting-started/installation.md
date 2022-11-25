@@ -4,7 +4,7 @@ url: editor/java/installation
 title: Installation
 weight: 4
 description: "This guide explains how to install GroupDocs.Editor for Java to your environment"
-keywords: 
+keywords:
 productName: GroupDocs.Editor for Java
 hideChildren: False
 toc: true
@@ -29,7 +29,7 @@ toc: true
 
 ## Installation from GroupDocs Repository using Maven
 
-GroupDocs hosts all Java APIs on [GroupDocs Repository](https://repository.groupdocs.com/). You can easily use [GroupDocs.Editor for Java](https://repository.groupdocs.com/editor/) API directly in your Maven projects with simple configurations.
+GroupDocs hosts all Java APIs on [GroupDocs Repository](https://releases.groupdocs.com/java/repo/). You can easily use [GroupDocs.Editor for Java](https://releases.groupdocs.com/editor/java/) API directly in your Maven projects with simple configurations.
 
 ### Specify GroupDocs Repository Configuration
 
@@ -40,7 +40,7 @@ First, you need to specify GroupDocs repository configuration/location in your M
 	<repository>
 		<id>GroupDocs Artifact Repository</id>
         	<name>GroupDocs Artifact Repository</name>
-        	<url>https://repository.groupdocs.com/repo/</url>
+        	<url>https://releases.groupdocs.com/java/repo/</url>
 	</repository>
 </repositories>
 ```
@@ -54,7 +54,7 @@ Then define GroupDocs.Editor for Java API dependency in your `pom.xml` as fol
     <dependency>
         <groupId>com.groupdocs</groupId>
         <artifactId>groupdocs-editor</artifactId>
-        <version>22.9</version>
+        <version>22.11</version>
     </dependency>
 </dependencies>
 ```
