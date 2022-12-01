@@ -107,7 +107,7 @@ The following table indicates the file formats that GroupDocs.Editor can edit.
 | [CHM](https://docs.fileformat.com/web/chm/) | Microsoft Compiled HTML Help | ![(tick)](/editor/net/images/check.png) | ![(error)](/editor/net/images/error.png) | ![(tick)](/editor/net/images/check.png) |
 | [XML](https://docs.fileformat.com/web/xml/) | eXtensible Markup Language | ![(tick)](/editor/net/images/check.png) | ![(error)](/editor/net/images/error.png) | ![(tick)](/editor/net/images/check.png) |
 | [JSON](https://docs.fileformat.com/web/json/) | JavaScript Object Notation | ![(tick)](/editor/net/images/check.png) | ![(error)](/editor/net/images/error.png) | ![(tick)](/editor/net/images/check.png) |
-| [MD](https://docs.fileformat.com/word-processing/md/) | Markdown | ![(error)](/editor/net/images/error.png) | ![(error)](/editor/net/images/error.png) | ![(tick)](/editor/net/images/check.png) |
+| [MD](https://docs.fileformat.com/word-processing/md/) | Markdown | ![(tick)](/editor/net/images/check.png) | ![(tick)](/editor/net/images/check.png) | ![(tick)](/editor/net/images/check.png) |
 
 ## Other formats
 
