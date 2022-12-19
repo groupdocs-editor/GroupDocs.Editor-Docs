@@ -3,39 +3,24 @@ id: installation
 url: editor/java/installation
 title: Installation
 weight: 4
-description: "This guide explains how to install GroupDocs.Editor for Java to your environment"
-keywords:
+description: "GroupDocs.Editor for Java installation"
+keywords: "groupdocs editor java, installation, maven"
 productName: GroupDocs.Editor for Java
 hideChildren: False
-toc: true
+toc: True
 ---
-## Operating Systems
 
-**GroupDocs.**Editor** for Java** can be executed on any Operating System with Java JDK installed.
+## Install using Maven
 
-* Windows Desktops and Servers
-* Linux
-* Mac OS
+All Java packages are hosted at [GroupDocs Artifact Repository](https://repository.groupdocs.com/). You can easily reference GroupDocs.Editor for Java API directly in your Maven project using following steps.
 
-## Supported Runtime
+### Add GroupDocs Artifact Repository
 
-**GroupDocs.Editor for Java** supports Java run-time version 6 (1.6) and above.
+First, you need to specify repository configuration/location in your Maven `pom.xml` as follows:
 
-## Development Environments
-
-* NetBeans
-* IntelliJ IDEA
-* Eclipse
-
-## Installation from GroupDocs Repository using Maven
-
-GroupDocs hosts all Java APIs on [GroupDocs Repository](https://releases.groupdocs.com/java/repo/). You can easily use [GroupDocs.Editor for Java](https://releases.groupdocs.com/editor/java/) API directly in your Maven projects with simple configurations.
-
-### Specify GroupDocs Repository Configuration
-
-First, you need to specify GroupDocs repository configuration/location in your Maven `pom.xml` as follows:
-
-```java
+{{< tabs "example1">}}
+{{< tab "pom.xml" >}}
+```xml
 <repositories>
 	<repository>
 		<id>GroupDocs Artifact Repository</id>
@@ -44,12 +29,16 @@ First, you need to specify GroupDocs repository configuration/location in your M
 	</repository>
 </repositories>
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
-### Define GroupDocs.Editor for Java API Dependency
+### Add GroupDocs.Editor as a dependency
 
 Then define GroupDocs.Editor for Java API dependency in your `pom.xml` as follows:
 
-```java
+{{< tabs "example2">}}
+{{< tab "pom.xml" >}}
+```xml
 <dependencies>
     <dependency>
         <groupId>com.groupdocs</groupId>
@@ -58,5 +47,5 @@ Then define GroupDocs.Editor for Java API dependency in your `pom.xml` as fol
     </dependency>
 </dependencies>
 ```
-
-After performing above-mentioned steps, GroupDocs.Editor for Java dependency will finally be added to your Maven project.
+{{< /tab >}}
+{{< /tabs >}}
