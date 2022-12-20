@@ -8,7 +8,7 @@ keywords:
 productName: GroupDocs.Editor for .NET
 hideChildren: False
 ---
-{{< alert style="info" >}}This page contains release notes for GroupDocs.Editor for .NET 22.11{{< /alert >}}
+{{< alert style="info" >}}This page contains release notes for GroupDocs.Editor for .NET 22.12{{< /alert >}}
 
 GroupDocs.Editor for .NET version 22.12 contains only several improvements and one significant bug fix, and they don't affect the public API.
 
