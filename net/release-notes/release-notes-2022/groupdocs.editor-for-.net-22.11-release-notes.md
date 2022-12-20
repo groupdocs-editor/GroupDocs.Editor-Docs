@@ -60,14 +60,14 @@ Fixed different bugs in mostly the new Markdown module, and also implemented a p
 ## Public API and Backward Incompatible Changes
 
 **New** public types:
-- [`Options.MarkdownEditOptions`](https://reference2.groupdocs.com/editor/net/groupdocs.editor.options/markdowneditoptions/)
-- [`Options.MarkdownSaveOptions`](https://reference2.groupdocs.com/editor/net/groupdocs.editor.options/markdownsaveoptions/)
-- [`Options.MarkdownImageLoadArgs`](https://reference2.groupdocs.com/editor/net/groupdocs.editor.options/markdownimageloadargs/)
-- [`Options.MarkdownImageLoadingAction`](https://reference2.groupdocs.com/editor/net/groupdocs.editor.options/markdownimageloadingaction/)
-- [`Options.IMarkdownImageLoadCallback`](https://reference2.groupdocs.com/editor/net/groupdocs.editor.options/imarkdownimageloadcallback/)
+- [`Options.MarkdownEditOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/markdowneditoptions/)
+- [`Options.MarkdownSaveOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/markdownsaveoptions/)
+- [`Options.MarkdownImageLoadArgs`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/markdownimageloadargs/)
+- [`Options.MarkdownImageLoadingAction`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/markdownimageloadingaction/)
+- [`Options.IMarkdownImageLoadCallback`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/imarkdownimageloadcallback/)
 
 **New** public members:
-- [`PresentationDocumentInfo.GeneratePreview(int slideIndex)`](https://reference2.groupdocs.com/editor/net/groupdocs.editor.metadata/presentationdocumentinfo/generatepreview/)
+- [`PresentationDocumentInfo.GeneratePreview(int slideIndex)`](https://reference.groupdocs.com/editor/net/groupdocs.editor.metadata/presentationdocumentinfo/generatepreview/)
 
 
 **Removed** types and members:
