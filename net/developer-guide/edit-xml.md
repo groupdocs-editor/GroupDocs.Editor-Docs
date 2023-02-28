@@ -61,9 +61,13 @@ using (GroupDocs.Editor.Editor editor = new Editor(xmlInputPath))
 
 [`XmlEditOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmleditoptions/) class has different properties, some of them are grouped into “wrappers” — special classes [`XmlHighlightOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmlhighlightoptions/) and [`XmlFormatOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmlformatoptions/), which are described below in detail. The most useful and important properties, however, are directly inside the [`XmlEditOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmleditoptions/) class.
 
-[`System.Text.Encoding`](https://learn.microsoft.com/en-us/dotnet/api/system.text.encoding?view=net-7.0) [`Encoding`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmleditoptions/encoding)
+#### Encoding
 
-Allows to set the encoding, which will be applied while opening an input XML file (keep in mind that any XML is first of all a text file). By default all XML files are UTF8, so the default value of this option is also UTF8.
+[`System.Text.Encoding`](https://learn.microsoft.com/en-us/dotnet/api/system.text.encoding?view=net-7.0) [`Encoding`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmleditoptions/encoding) 
+
+This property allows to set the encoding, which will be applied while opening an input XML file (keep in mind that any XML is first of all a text file). By default all XML files are UTF8, so the default value of this option is also UTF8.
+
+#### FixIncorrectStructure
 
 [`bool`](https://learn.microsoft.com/en-us/dotnet/api/system.boolean?view=net-7.0) [`FixIncorrectStructure`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmleditoptions/fixincorrectstructure)
 
@@ -73,9 +77,13 @@ In order to fix this, the [`FixIncorrectStructure`](https://reference.groupdocs.
 
 Because such document scanning and fixing requires additional computational resources and in general most of XML documents are valid, this mechanism is disabled by default: [`FixIncorrectStructure`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmleditoptions/fixincorrectstructure) has a `false` value. So for enabling it, you must set the `true` value manually.
 
+#### RecognizeUris
+
 [`bool`](https://learn.microsoft.com/en-us/dotnet/api/system.boolean?view=net-7.0) [`RecognizeUris`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmleditoptions/recognizeuris)
 
 This property enables the mechanism of recognizing and preparing the URIs (web address). By default this mechanism is disabled (`false`) and URIs, if they are present in the text nodes or attribute values inside the XML documents, are represented as an ordinary text. When this property is enabled (`true`), the GroupDocs.Editor scans the XML document for any valid URIs, and if found, represents them as external links in the resultant HTML format: by using the A element. GroupDocs.Editor is searching for URIs in: text nodes, CDATA sections, XML comments, attribute values, DocType definitions.
+
+#### RecognizeEmails
 
 [`bool`](https://learn.microsoft.com/en-us/dotnet/api/system.boolean?view=net-7.0) [`RecognizeEmails`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmleditoptions/recognizeemails)
 
@@ -83,9 +91,13 @@ This property is very similar to the [`RecognizeUris`](https://reference.groupdo
 
 Unlike the [`RecognizeUris`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmleditoptions/recognizeuris) property, the [`RecognizeEmails`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmleditoptions/recognizeemails), if enabled, is working only for attribute values.
 
+#### TrimTrailingWhitespaces
+
 [`bool`](https://learn.microsoft.com/en-us/dotnet/api/system.boolean?view=net-7.0) [`TrimTrailingWhitespaces`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmleditoptions/trimtrailingwhitespaces)
 
 This property enables the truncation of trailing whitespaces in the text nodes — the textual content, located between start and end tags (inner-tag text). By default is disabled (`false`) — trailing whitespaces will be preserved. Line breaks are also treated as whitespaces. May be useful when input XML is formed with line breaks and empty spans for the sake of readability.
+
+#### AttributeValuesQuoteType
 
 [`QuoteType`](https://reference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.serialization/quotetype/) [`AttributeValuesQuoteType`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmleditoptions/attributevaluesquotetype)
 

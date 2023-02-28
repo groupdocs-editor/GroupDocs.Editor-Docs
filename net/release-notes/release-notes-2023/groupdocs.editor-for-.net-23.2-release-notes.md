@@ -12,7 +12,7 @@ hideChildren: False
 
 GroupDocs.Editor for .NET version 23.2 is a new significant update that contains a new complex feature, that consists of several related sub-features, improvements and bug fixes — completely redeveloped and heavily expanded supprot of editing XML documents. 
 
-This release notes article describes this ferature in short, for the detailed review please take a look on a separate detailed article.
+This release notes article describes this ferature in short, for the detailed review please take a look on a [separate detailed article](https://docs.groupdocs.com/editor/net/how-to-edit-xml/).
 
 ## New features and improvements
 
@@ -48,15 +48,15 @@ GroupDocs.Editor version 23.2 contains a new namespace and a plenty of new publi
 
 **New** public types:
 - [`GroupDocs.Editor.HtmlCss.Css.Properties`](https://reference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.css.properties/) namespace:
--- `FontSize`
--- `FontStyle`
--- `FontWeight`
+	- `FontSize`
+	- `FontStyle`
+	- `FontWeight`
 - [`GroupDocs.Editor.HtmlCss.Css.DataTypes`](https://reference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.css.datatypes/) namespace:
--- `ArgbColor`
+	- `ArgbColor`
 - [`GroupDocs.Editor.Options`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/) namespace:
--- `WebFont`
--- `XmlHighlightOptions`
--- `XmlFormatOptions`
+	- `WebFont`
+	- `XmlHighlightOptions`
+	- `XmlFormatOptions`
 
 **Removed** types and members:
 - `EnablePagination` flag in [`PdfSaveOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/pdfsaveoptions) class
