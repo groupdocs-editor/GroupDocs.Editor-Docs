@@ -2,7 +2,7 @@
 id: how-to-edit-mobi-file
 url: editor/net/how-to-edit-mobi-file
 title: How to edit Mobi file
-weight: 52
+weight: 58
 description: "This article demonstrates how to edit Mobi files using C# programming language."
 keywords: GroupDocs.Editor Mobi support, Mobi format, editing Mobi documents
 productName: GroupDocs.Editor for .NET

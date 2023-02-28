@@ -2,7 +2,7 @@
 id: how-to-edit-ebook
 url: editor/net/how-to-edit-ebook
 title: How to edit e-Book file
-weight: 51
+weight: 56
 description: "This article demonstrates how to edit e-Book files using C# programming language."
 keywords: GroupDocs.Editor e-Book support, ebook format, editing electronic books, edit e-Book
 productName: GroupDocs.Editor for .NET
