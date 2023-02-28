@@ -215,7 +215,7 @@ Assert.IsFalse(editOptions.FormatOptions.IsDefault);
 formatOptions.LeftIndent = HtmlCss.Css.DataTypes.Length.UnitlessZero;
 ```
 
-### Complex example
+## Complex example
 
 Now, when the [`XmlEditOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmleditoptions/) class with all its properties and sub-properties is described in detail, it's time to bring it together. Code example below shows opening a XML file from file path, creating and adjusting two different [`XmlEditOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/xmleditoptions/) instances, and editing a document twice with these two different option classes to obtain two different [`EditableDocument`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument) representations. Then these [`EditableDocument`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument) are saved to the two different HTML files.
 
@@ -253,7 +253,7 @@ using (GroupDocs.Editor.Editor editor = new Editor(xmlInputPath))
 }
 ```
 
-### Getting document metainfo
+## Getting document metainfo
 
 Article "[Extracting document metainfo](https://docs.groupdocs.com/editor/net/extracting-document-metainfo/)" describes the [`GetDocumentInfo()`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor/getdocumentinfo) method, that allows to detect the document format and extract its metadata without editing it. XML format is supported as well.
 
