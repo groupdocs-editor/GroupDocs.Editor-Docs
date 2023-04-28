@@ -10,9 +10,7 @@ hideChildren: False
 ---
 {{< alert style="info" >}}This page contains release notes for GroupDocs.Editor for .NET 23.4{{< /alert >}}
 
-GroupDocs.Editor for .NET version 23.2 is a new significant update that contains a new complex feature, that consists of several related sub-features, improvements and bug fixes — completely redeveloped and heavily expanded supprot of editing XML documents. 
-
-This release notes article describes this ferature in short, for the detailed review please take a look on a [separate detailed article](https://docs.groupdocs.com/editor/net/how-to-edit-xml/).
+GroupDocs.Editor for .NET version 23.4 is a new significant update that contains several new features, plenty of useful improvements and a lot of bugfixes in different modules of the GroupDocs.Editor, primarily in HTML/CSS sub-system, e-Book module, and WordProcessing module.
 
 ## New features and improvements
 
