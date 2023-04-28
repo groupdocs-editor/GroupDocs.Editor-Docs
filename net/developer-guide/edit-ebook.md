@@ -17,7 +17,9 @@ For the [version 22.9](https://docs.groupdocs.com/editor/net/groupdocs-editor-fo
 2. [AZW3](https://docs.fileformat.com/ebook/azw3/), also known as Kindle Format 8 (KF8),
 3. [ePub](https://docs.fileformat.com/ebook/epub/) (Electronic Publication).
 
-As for the 22.9 version, the AZW3 and ePub formats are supported on both import (load) and export (save), while MOBI is supported only on import (we plan to add support of MOBI on export in the next release).
+As for the 22.9 version, the AZW3 and ePub formats are supported on both import (load) and export (save), while MOBI is supported only on import (support of MOBI on export was scheduled for the next release).
+
+Starting from the version 23.4, the MOBI format is fully supported on export.
 
 ## Load e-Book files for edit
 
@@ -85,14 +87,60 @@ editorEpub.Dispose();
 
 ## Save e-Book files after edit
 
-Saving of the e-Books is performed like for all other formats. When e-Book content was edited by the client in the WYSIWYG-editor and was sent back to the server-side, it should be passed to the [`EditableDocument`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument), and then this instance should be passed to the [`GroupDocs.Editor.Editor.Save()`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor/save) method.
+{{< alert style="info" >}}This section describes the saving of e-book files in the GroupDocs.Editor version 23.4 and newer. In using older versions, this description is invalid and source code is not working.{{< /alert >}}
 
-Unlike other format families and unlike a single [`EbookEditOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/ebookeditoptions) class, which is common for all e-Book formats, there is no such save options class. As for the version 22.9, the GroupDocs.Editor for .NET supports saving into AZW3 and ePub, and for each of these two formats the GroupDocs.Editor for .NET contains a distinct save options class:
+Starting from the version 23.4 the GroupDocs.Editor for .NET has obtained an ability to save e-books in all 3 supported formats: MOBI, AZW3, and ePub. Saving of the e-books is performed like for all other formats. When e-book content was edited by the client in the WYSIWYG-editor and was sent back to the server-side, it should be passed to the [`EditableDocument`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument), and then this instance should be passed to the [`GroupDocs.Editor.Editor.Save()`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor/save) method.
+
+The [`Editor.Save()`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor/save) method obtains an instance of the [`ISaveOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/isaveoptions/) interface, and for saving in some of the e-book formats the [`EbookSaveOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/ebooksaveoptions) class should be used. This class is common for all supported e-book formats within e-book family: MOBI, AZW3 and ePub. It has one constructor with a mandatory parameter — a desired output format, into which the resultant document will be stored. This specific format should be specified as one of the [`Formats.EBookFormats`](https://reference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats/) value: [`Mobi`](https://reference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats/mobi/), [`Azw3`](https://reference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats/azw3/), or [`Epub`](https://reference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats/epub/). Once the instance was created, this format can be obtained and changed using the `OutputFormat` property.
+
+The [`EbookSaveOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/ebooksaveoptions) class has also two another properties: `SplitHeadingLevel` and `ExportDocumentProperties`.
+
+- `SplitHeadingLevel` of the `System.Int32` type controls how (if so) to split the content of e-book onto packages in the resultant file. It doesn't affect the representation of a file, opened in any e-Book reader; rather, it is about an internal structure of the e-Book file. If you dont bother about internal structure of the e-book file, you may leave this property to has the default value (`2`). Setting it to `0` will disable splitting, so all content of the e-Book will be incorporarted into a single package inside the resultant file.
+- `ExportDocumentProperties` of the `System.Boolean` type controls whether to export built-in and custom document properties inside the resultant e-Book file. If you have no plans to reconvert the resultant e-book to some other format, you may leave it intact — the default `false` value disables the exporting of the document properties, so the resultant document will be a little bit smaller in size.
+
+Code example below demonstrates a loading of a single ePub file to the [`Editor`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor) instance, editing it with default options, and saving to the ePub, AZW3, and Mobi with different options for each one.
+
+```csharp
+string epubPath = Path.Combine(Common.TestHelper.EpubFolder, "Alices Adventures in Wonderland.epub");
+
+string epubOutputPath = "Output_ePub.epub";
+string azw3OutputPath = "Output_AZW3.azw3";
+string mobiOutputPath = "Output_Mobi.azw3";
+
+GroupDocs.Editor.Editor editor = new Editor(epubPath);
+
+//edit with default EbookEditOptions
+EditableDocument edited = editor.Edit();
+
+Options.EbookSaveOptions epubSaveOptions = new Options.EbookSaveOptions(Formats.EBookFormats.Epub);
+epubSaveOptions.ExportDocumentProperties = true;
+epubSaveOptions.SplitHeadingLevel = 5;
+
+Options.EbookSaveOptions azw3SaveOptions = new Options.EbookSaveOptions(Formats.EBookFormats.Azw3);
+azw3SaveOptions.SplitHeadingLevel = 1;
+
+Options.EbookSaveOptions mobiSaveOptions = new Options.EbookSaveOptions(Formats.EBookFormats.Mobi);
+
+editor.Save(edited, epubOutputPath, epubSaveOptions);
+editor.Save(edited, azw3OutputPath, azw3SaveOptions);
+editor.Save(edited, mobiOutputPath, mobiSaveOptions);
+
+// ...
+// Don't forget to dispose Editor and EditableDocument when work is done
+edited.Dispose();
+editor.Dispose();
+```
+
+### Saving e-Book files before version 23.4
+
+{{< alert style="info" >}}This section describes the saving of e-book files in the GroupDocs.Editor versions 22.9 - 23.2. From the version 23.4 (inclusive) and newer this description is invalid and source code is not working.{{< /alert >}}
+
+Starting from the version 22.9 and before the version 23.4 the GroupDocs.Editor for .NET was able to save e-books only in AZW3 and ePub formats, while MOBI was not supported on the export. Due to this fact and unlike other format families and unlike a single [`EbookEditOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/ebookeditoptions) class, which is common for all e-Book formats, there was no single options class for saving into different e-Book formats at that moment. And because the GroupDocs.Editor for .NET has supported saving into AZW3 and ePub, there were distinct save options classes for each of these two formats:
 
 - [`EpubSaveOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/epubsaveoptions) - for saving into ePub format
 - [`Azw3SaveOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/azw3saveoptions) - for saving into AZW3 format
 
-These classes has one common property - a `SplitHeadingLevel` of the `System.Int32` type. This property controls how (if so) to split the content of AZW3 or ePub e-book onto packages in the resultant file. It doesn't affect the representation of a file, opened in any e-Book reader; rather, it is about an internal structure of the e-Book file. If you dont bother about internal structure of the ePub or AZW3 file, you may leave this property to has the default value.
+These classes had one common property - a `SplitHeadingLevel` of the `System.Int32` type. This property controls how (if so) to split the content of AZW3 or ePub e-book onto packages in the resultant file. It doesn't affect the representation of a file, opened in any e-Book reader; rather, it is about an internal structure of the e-Book file. If you dont bother about internal structure of the ePub or AZW3 file, you may leave this property to has the default value.
 
 [`EpubSaveOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/epubsaveoptions) also has an `ExportDocumentProperties` boolean property — it controls whether to export built-in and custom document properties inside the resultant IDPF ePub e-Book. If you have no plans to reconvert the resultant ePub to some other format, you may leave it intact — the default `false` value disables the exporting of the document properties, so the resultant document will be a little bit smaller in size.
 
@@ -140,7 +188,7 @@ string mobiPath = "Ebook.mobi");
 string azw3Path = "Ebook.azw3";
 string epubPath = "Ebook.epub";
 
-GroupDocs.Editor.Editor editorMobi = new Editor(mobiPath);                        
+GroupDocs.Editor.Editor editorMobi = new Editor(mobiPath);
 GroupDocs.Editor.Editor editorAzw3 = new Editor(azw3Path);
 GroupDocs.Editor.Editor editorEpub = new Editor(epubPath);
 

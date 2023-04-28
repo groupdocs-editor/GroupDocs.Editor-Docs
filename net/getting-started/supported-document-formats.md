@@ -95,7 +95,7 @@ The following table indicates the file formats that GroupDocs.Editor can edit.
 | Format | Description | Import | Export | Auto Detection |
 | --- | --- | --- | --- | --- |
 | [ePub](https://docs.fileformat.com/ebook/epub/) | Electronic Publication | ![(tick)](/editor/net/images/check.png) | ![(tick)](/editor/net/images/check.png) | ![(tick)](/editor/net/images/check.png) |
-| [MOBI](https://docs.fileformat.com/ebook/mobi/) | MobiPocket | ![(tick)](/editor/net/images/check.png) | ![(error)](/editor/net/images/error.png) | ![(tick)](/editor/net/images/check.png) |
+| [MOBI](https://docs.fileformat.com/ebook/mobi/) | MobiPocket | ![(tick)](/editor/net/images/check.png) | ![(tick)](/editor/net/images/check.png) | ![(tick)](/editor/net/images/check.png) |
 | [AZW3](https://docs.fileformat.com/ebook/azw3/) | AZW3, also known as Kindle Format 8 (KF8) | ![(tick)](/editor/net/images/check.png) | ![(tick)](/editor/net/images/check.png) | ![(tick)](/editor/net/images/check.png) |
 
 ## Markup formats
