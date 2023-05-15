@@ -36,8 +36,8 @@ In the version 23.4 the HTML parser was significantly improved. Now it is able t
 - `SELECT` is generated and applied as a parent for the orphan `OPTION`/`OPTGROUP` elements, because `OPTION`/`OPTGROUP` must be direct children of the `SELECT`.
 - `COLGROUP` is generated and applied as a parent for the `COL`.
 - Incorrectly nested lists are properly processed.
-- Better parsing of HTML attributes
-- And many more
+- Better parsing of HTML attributes.
+- And many more.
 
 ### New method for obtaining an HTML markup
 

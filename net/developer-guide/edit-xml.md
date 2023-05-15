@@ -127,7 +127,7 @@ All these properties are of a [`WebFont`](https://reference.groupdocs.com/editor
 3. Font color — [`Color`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/webfont/color/) property of [`ArgbColor`](https://reference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.css.datatypes/argbcolor/) type. Is translated into the `color` CSS declaration.
 4. Font weight (boldness) — [`Weight`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/webfont/weight/) property of [`FontWeight`](https://reference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.css.properties/fontweight/) type. Is translated into the `font-weight` CSS declaration.
 5. Font style — [`Style`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/webfont/style/) property of [`FontStyle`](https://reference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.css.properties/fontstyle/) type. Is translated into the `font-style` CSS declaration.
-6. Text decoration line — [`Line`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/webfont/line/) property of [`WebFont.TextDecorationLine`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/webfont.textdecorationline/) enum type. Is translated into the `text-decoration-line` CSS declaration.
+6. Text decoration line — [`Line`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/webfont/line/) property of [`TextDecorationLineType`](https://reference.groupdocs.com/editor/net/groupdocs.editor.htmlcss.css.properties/textdecorationlinetype/) type. Is translated into the `text-decoration-line` CSS declaration.
 
 WebFont has also some other public functions — the ability to check on equality with itself (`System.IEquatable`) and support of deep cloning (`System.ICloneable`).
 
@@ -149,15 +149,15 @@ highlightOptions.XmlTagsFontSettings.Color = HtmlCss.Css.DataTypes.ArgbColor.Kno
 
 //Setting attribute names font settings
 highlightOptions.AttributeNamesFontSettings.Name = "Arial";
-highlightOptions.AttributeNamesFontSettings.Line = WebFont.TextDecorationLine.Underline;
+highlightOptions.AttributeNamesFontSettings.Line = HtmlCss.Css.Properties.TextDecorationLineType.Underline;
 highlightOptions.AttributeNamesFontSettings.Weight = HtmlCss.Css.Properties.FontWeight.Lighter;
 
 //Setting attribute values font settings
-highlightOptions.AttributeValuesFontSettings.Line = WebFont.TextDecorationLine.Underline | WebFont.TextDecorationLine.Overline;
+highlightOptions.AttributeValuesFontSettings.Line = HtmlCss.Css.Properties.TextDecorationLineType.Underline + HtmlCss.Css.Properties.TextDecorationLineType.Overline;
 highlightOptions.AttributeValuesFontSettings.Style = HtmlCss.Css.Properties.FontStyle.Italic;
 
 //Setting CDATA sections font settings
-highlightOptions.CDataFontSettings.Line = WebFont.TextDecorationLine.LineThrough;
+highlightOptions.CDataFontSettings.Line = HtmlCss.Css.Properties.TextDecorationLineType.LineThrough;
 highlightOptions.CDataFontSettings.Size = HtmlCss.Css.Properties.FontSize.Smaller;
 
 //Setting HTML comments font settings
@@ -232,7 +232,7 @@ editOptions1.RecognizeUris = true;
 editOptions1.FixIncorrectStructure = true;
 editOptions1.AttributeValuesQuoteType = HtmlCss.Serialization.QuoteType.SingleQuote;
 editOptions1.FormatOptions.LeftIndent = HtmlCss.Css.DataTypes.Length.Parse("20px");
-editOptions1.HighlightOptions.XmlTagsFontSettings.Line = WebFont.TextDecorationLine.Underline | WebFont.TextDecorationLine.Overline;
+editOptions1.HighlightOptions.XmlTagsFontSettings.Line = HtmlCss.Css.Properties.TextDecorationLineType.Underline + HtmlCss.Css.Properties.TextDecorationLineType.Overline;
 editOptions1.HighlightOptions.XmlTagsFontSettings.Weight = HtmlCss.Css.Properties.FontWeight.Bold;
 
 Options.XmlEditOptions editOptions2 = new XmlEditOptions();
@@ -240,7 +240,7 @@ editOptions2.TrimTrailingWhitespaces = true;
 editOptions2.AttributeValuesQuoteType = HtmlCss.Serialization.QuoteType.DoubleQuote;
 editOptions2.FormatOptions.LeafTextNodesOnNewline = true;
 editOptions2.HighlightOptions.XmlTagsFontSettings.Size = HtmlCss.Css.Properties.FontSize.XLarge;
-editOptions2.HighlightOptions.HtmlCommentsFontSettings.Line = WebFont.TextDecorationLine.LineThrough;
+editOptions2.HighlightOptions.HtmlCommentsFontSettings.Line = HtmlCss.Css.Properties.TextDecorationLineType.LineThrough;
 
 using (GroupDocs.Editor.Editor editor = new Editor(xmlInputPath))
 {

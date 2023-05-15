@@ -13,9 +13,11 @@ toc: True
 
 Mobi format is an E-Book format, developed by the French company MobiPocket and is based on XML. E-Books in this format can contain text with rich formatting, images, and different annotations like bookmarks, notes, highlights, corrections and so on. Mobi books can have a DRM protection.
 
-Starting from the version 20.7, the GroupDocs.Editor for .NET is able to open (load) Mobi documents for editing. However, at this moment a saving _into_ Mobi is not available, so users should choose some other format (the most likely AZW3 or ePub) in order to save edited Mobi document.
+Starting from the [version 20.7](https://docs.groupdocs.com/editor/net/groupdocs-editor-for-net-20-7-release-notes/), the GroupDocs.Editor for .NET is able to open (load) Mobi documents for editing. However, on that moment a saving _into_ Mobi was not available, so users were forced to choose some other format (the most likely AZW3 or ePub) in order to save edited Mobi document.
 
 Starting from the [version 22.7](https://docs.groupdocs.com/editor/net/groupdocs-editor-for-net-22-7-release-notes/) the GroupDocs.Editor is able to edit the e-books in [AZW3 format](https://docs.fileformat.com/ebook/azw3/), also known as Kindle Format 8 (KF8), whech may be considered as a successor to the Mobi. Unlike the MOBI, the AZW3 are supported on import (since version 22.7) and export (since version 22.9).
+
+Starting from the [version 23.4](https://docs.groupdocs.com/editor/net/groupdocs-editor-for-net-23-4-release-notes/) the GroupDocs.Editor for .NET is able to save (export) documents in the Mobi format, so from this version it can be said that Mobi is fully supported: on import, export and auto-detection.
 
 ## Loading Mobi file for edit
 
@@ -59,7 +61,42 @@ using (EditableDocument opened = editor.Edit(editOptions))
 
 ## Save Mobi file after edit
 
-As it was stated in the introduction, for now saving edited document in Mobi format is not supported.
+Starting from the [version 20.7](https://docs.groupdocs.com/editor/net/groupdocs-editor-for-net-20-7-release-notes/), and before the [version 23.4](https://docs.groupdocs.com/editor/net/groupdocs-editor-for-net-23-4-release-notes/), the GroupDocs.Editor for .NET was able only to load and edit the Mobi documents, but not to save (export) in the Mobi format. In other words, it was able to open and edit the Mobi document, and then save the edited document in some other format, but not in the Mobi. And in version 23.4 the export in the Mobi format was finally implemented.
+
+For all the format families the saving procedure is the same — it is required to obtain a content of the edited document on the server-side, create an instance of the [`EditableDocument`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument) from it, and then pass it to the [`GroupDocs.Editor.Editor.Save()`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor/save) instance method. And because the Mobi format belongs to the e-Book formats family, in order to save the document in the Mobi format a [`EbookSaveOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/ebooksaveoptions) class is required.
+
+This class has a [mandatory constructor with a single parameter](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/ebooksaveoptions/ebooksaveoptions/) — a desired [e-Book format](https://reference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats/). For the Mobi it should be a [`EBookFormats.Mobi`](https://reference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats/mobi/). All other parameters in the EbookSaveOptions class are in fact optional, but nevertheless described below:
+
+- [`SplitHeadingLevel`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/ebooksaveoptions/splitheadinglevel/) of the `System.Int32` type controls an internal structure of the generated Mobi file: whether its internal content is divided onto packages and if yes, then how. This parameter exists because a content of the Mobi file is stored in the packages, usually, a package per chapter. And some users may want to control the policy of distribution of the content into the packages. By default its parameter is “`2`” — the most optimal.
+- [`ExportDocumentProperties`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/ebooksaveoptions/exportdocumentproperties/) of the `System.Boolean` type also has a relation to the internal structure of the Mobi file — it decides whether to embed the built-in and custom document properties inside the resultant Mobi file (`true`) or not (`false`). By default is `false` — do not embed.
+
+Concluding: in order to save the edited document in the Mobi format, the user should create an instance of the [`EbookSaveOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/ebooksaveoptions) class with [`EBookFormats.Mobi`](https://reference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats/mobi/) argument in the constructor parameter, and then pass this instance to the [`Editor.Save()`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor/save) method along with other arguments.
+
+The code example below demonstrates the full roundtrip: opening a Mobi document, editing it, and saving the edited version to the Mobi format.
+
+```csharp
+//Create an Editor instance and load an input Mobi file
+Editor editor = new Editor("Input.mobi");
+
+//Create edit options
+Options.EbookEditOptions editOptions = new EbookEditOptions();
+
+//Edit the Mobi document and obtain
+EditableDocument doc = editor.Edit(editOptions);
+
+//Send EditableDocument to the client-side, edit it there, and obtain an edited version
+
+//Create Mobi save options
+Options.EbookSaveOptions saveOptions = new EbookSaveOptions(Formats.EBookFormats.Mobi);
+saveOptions.ExportDocumentProperties = true;//Tune save options
+
+//Save the edited document in a Mobi format
+editor.Save(doc, "Output.mobi", saveOptions);
+
+//Dispose document and Editor instances
+doc.Dispose();
+editor.Dispose();
+```
 
 ## Detecting Mobi file
 
