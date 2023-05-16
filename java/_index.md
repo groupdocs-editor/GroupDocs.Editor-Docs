@@ -52,12 +52,12 @@ GroupDocs.Editor can also be used to generate different Microsoft Word documents
 <p><b>RESOURCES</b></p>
 <hr><p>GUIDE</p></hr>
 <ul>
-	<li><a href='https://releases.groupdocs.com/editor/java/release-notes/'>Edit Files</a></li>
+	<li><a href='{{< ref "editor/java/developer-guide/edit-document.md" >}}'>Edit Files</a></li>
 	<li><a href="https://reference.groupdocs.com/editor/java">GroupDocs.Editor for Java API Reference</a></li>
 </ul>
 <p>WHAT'S NEW?</p>
 <ul>
-	<li><a href='{{< ref "editor/java/release-notes" >}}'>GroupDocs.Editor for Java Release Notes</a></li>
+	<li><a href='https://releases.groupdocs.com/editor/java/release-notes/'>GroupDocs.Editor for Java Release Notes</a></li>
 </ul>
 <p>TECHNICAL SUPPORT</p>
 <ul>
