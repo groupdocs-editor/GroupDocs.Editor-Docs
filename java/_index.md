@@ -13,9 +13,9 @@ structuredData:
 <img src="/editor/java/images/home.png" width="110" height="110" alt="groupdocs-editor-java-home" align="left" style="margin: 0 30px 30px 0"/>
 
 Edit Word, Excel and PowerPoint documents using GroupDocs.Editor for Java powerful document editing API. It can be used with any external, open source or paid HTML editor.
-  
+
 GroupDocs.Editor API will load documents, convert it into HTML that allows to edit document with any external UI, after making changes to document content edited HTML will be saved to original document format.
-  
+
 GroupDocs.Editor can also be used to generate different Microsoft Word documents, Excel workbooks, PowerPoint presentations, XML, OpenDocument Formats and TXT files.
 
 ------
@@ -57,7 +57,7 @@ GroupDocs.Editor can also be used to generate different Microsoft Word documents
 </ul>
 <p>WHAT'S NEW?</p>
 <ul>
-	<li><a href='{{< ref "editor/java/release-notes" >}}'>GroupDocs.Editor for Java Release Notes</a></li>
+	<li><a href='https://releases.groupdocs.com/editor/java/release-notes/'>GroupDocs.Editor for Java Release Notes</a></li>
 </ul>
 <p>TECHNICAL SUPPORT</p>
 <ul>
