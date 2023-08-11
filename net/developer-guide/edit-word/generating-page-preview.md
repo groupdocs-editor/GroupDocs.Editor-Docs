@@ -2,7 +2,7 @@
 id: generating-page-preview
 url: editor/net/generating-page-preview
 title: Generating page preview for WordProcessing document
-weight: 12
+weight: 16
 description: "This article describes how to generate a preview for any page for the existing WordProcessing document in SVG format using the GroupDocs.Editor"
 keywords: preview page WordProcessing Word DOCX SVG
 productName: GroupDocs.Editor for .NET

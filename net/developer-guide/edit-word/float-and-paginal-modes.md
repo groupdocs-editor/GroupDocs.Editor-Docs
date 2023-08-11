@@ -18,7 +18,7 @@ WordProcessing module of [**GroupDocs.Editor**](https://products.groupdocs.com/e
 public bool EnablePagination {get; set;}
 ```
 
-At first, such property is present in the [WordProcessingEditOptions](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/wordprocessingeditoptions) class and is doubled in the [overload of class constructor](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/wordprocessingeditoptions/wordprocessingeditoptions/#constructor), which obtains one boolean parameter of the same name. In this case this option is responsible for selected mode during forward (WordProcessing to [EditableDocument](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument)) conversion.
+At first, such property is present in the [`WordProcessingEditOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/wordprocessingeditoptions) class and is doubled in the [overload of class constructor](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/wordprocessingeditoptions/wordprocessingeditoptions/#constructor), which obtains one boolean parameter of the same name. In this case this option is responsible for selected mode during forward (WordProcessing to [EditableDocument](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument)) conversion.
 
 Secondly, such property is present in the [WordProcessingSaveOptions](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/wordprocessingsaveoptions) class and is responsible for selected mode during backward ([EditableDocument](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument) to WordProcessing) conversion.
 
