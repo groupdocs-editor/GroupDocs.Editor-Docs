@@ -37,9 +37,9 @@ string htmlContent = document.GetContent();
 
 If document has external resources (stylesheets, fonts, images), they are referenced via different HTML elements: stylesheets are specified through LINK elements, while images — through IMG. When using the [GetContent()](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/getcontent) method, such external resources will be referenced by external links. For example:
 
-```csharp
+```html
 <link href="stylesheet.css" rel="stylesheet"/>
-<IMG src="image.png"/">
+<IMG src="image.png"/>
 ```
 
 Quite often on the web-server, where such HTML will be edited, resources are processed by specific HTTP handler. In such cases it is required to adjust paths to such endpoints. More advanced overload of the [GetContent()](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/getcontent) method can help:
@@ -52,9 +52,28 @@ string prefixedHtmlContent = document.GetContent(externalImagesPrefix, externalC
 
 In the example above specified prefixes will be added to every external link in the document's markup. For example, with the code above link will be the next:
 
-```csharp
+```html
 <link href="http://www.mywebsite.com/css/id=stylesheet.css" rel="stylesheet"/>
-<IMG src="http://www.mywebsite.com/css/id=image.png"/"> 
+.....
+<IMG src="http://www.mywebsite.com/css/id=image.png"/> 
+```
+
+Starting from the GroupDocs.Editor for .NET [version 23.9](https://releases.groupdocs.com/editor/net/release-notes/2023/groupdocs-editor-for-net-23-9-release-notes/) it is possible not only to specify the prefix, but also a template format string, where one or more placeholders mark the places, where resource names will be recorded. If specified string contains valid placeholder(s), then a GroupDocs.Editor will replace the placeholder with a resource name. Otherwise, if placeholder(s) are not found, GroupDocs.Editor will treat it as a prefix string. For example, the next code sample shows specifying the template string for the external images and stylesheets:
+
+```csharp
+string externalImagesTemplate = "http://www.mywebsite.com/images/{0}/expires=3600&token={0}";
+string externalCssTemplate = "http://www.mywebsite.com/css/{0}/expires=60&token={0}";
+string templatedHtmlContent = document.GetContent(externalImagesTemplate, externalCssTemplate);
+```
+
+In the example above the resource names will be placed inside the placeholders in the specified template strings, so, if the original document contains a stylesheet and two images named "`foo.jpeg`" and "`bar.png`", the output HTML markup will be the next:
+
+```html
+<link href="http://www.mywebsite.com/css/stylesheet.css/expires=60&token=stylesheet.css" rel="stylesheet"/>
+.....
+<IMG src="http://www.mywebsite.com/images/foo.jpeg/expires=3600&token=foo.jpeg"/>
+.....
+<IMG src="http://www.mywebsite.com/images/bar.png/expires=3600&token=bar.png"/>
 ```
 
 ## Getting HTML BODY content
@@ -68,6 +87,8 @@ string prefixedBodyContent = document.GetBodyContent(externalImagesPrefix); 
 ```
 
 First parameterless overload, like previous one, leaves links to the external images intact. Second, that obtains external resource prefix, adds this prefix to every url in the 'src' attribute of every IMG tag, that is found inside HTML->BODY markup.
+
+As in previous sample, starting from the [version 23.9](https://releases.groupdocs.com/editor/net/release-notes/2023/groupdocs-editor-for-net-23-9-release-notes/) it may be not only a prefix, but also a template string.
 
 ## Getting base64-encoded content
 
