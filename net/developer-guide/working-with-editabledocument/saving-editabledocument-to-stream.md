@@ -155,10 +155,10 @@ GroupDocs.Editor version 23.9 fixes both these issues. The methods signatures ar
 
 Due to this protocol the old-written user code will work the same as for the previous versions, because the template strings do not have the placeholders and thus are treated as prefixes.
 
-But when using the template string, now, when calling the `EditableDocument.GetBodyContent("https://mywebsite.web/image?name={0}&timestamp=456789&token={0}&expireIn=123987")` method, the image named "foo.jpeg" will be presented in the output markup as the next:
+But when using the template string, now, when calling the `EditableDocument.GetBodyContent("https://mywebsite.web/image?name={0}&stamp=456789&token={0}&expireIn=123987")` method, the image named "foo.jpeg" will be presented in the output markup as the next:
 
 ```html
-<IMG src="https://mywebsite.web/image?name=foo.jpeg&timestamp=456789&token=foo.jpeg&expireIn=123987"/>
+<IMG src="https://mywebsite.web/image?name=foo.jpeg&stamp=456789&token=foo.jpeg&expireIn=123987"/>
 ```
 
 So this new mechanism allows to specify the request URIs for the external images and stylesheets very precisely.
