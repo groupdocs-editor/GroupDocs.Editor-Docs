@@ -16,10 +16,10 @@ All Java packages are hosted at [GroupDocs Artifact Repository](https://reposit
 
 ### Add GroupDocs Artifact Repository
 
-First, you need to specify repository configuration/location in your Maven `pom.xml` as follows:
+First, you need to specify repository configuration/location in your project as follows:
 
 {{< tabs "example1">}}
-{{< tab "pom.xml" >}}
+{{< tab "Maven" >}}
 ```xml
 <repositories>
 	<repository>
@@ -30,6 +30,39 @@ First, you need to specify repository configuration/location in your Maven `pom
 </repositories>
 ```
 {{< /tab >}}
+{{< tab "Gradle" >}}
+```xml
+repositories {
+    maven {
+        url "https://repository.groupdocs.com/repo/"
+    }
+}
+```
+{{< /tab >}}
+{{< tab "Kotlin" >}}
+```xml
+repositories {
+    maven(url = "https://repository.groupdocs.com/repo/")
+}
+```
+{{< /tab >}}
+{{< tab "Ivy" >}}
+```xml
+<ivysettings>
+    <settings defaultResolver="chain"/>
+    <resolvers>
+        <chain name="chain">
+            <ibiblio name="GroupDocs Repository" m2compatible="true" root="https://releases.groupdocs.com/java/repo/"/>
+        </chain>
+    </resolvers>
+</ivysettings>
+```
+{{< /tab >}}
+{{< tab "Sbt" >}}
+```xml
+resolvers += Resolver.url("GroupDocs Repository", url("https://releases.groupdocs.com/java/repo/"))
+```
+{{< /tab >}}
 {{< /tabs >}}
 
 ### Add GroupDocs.Editor as a dependency
@@ -37,15 +70,43 @@ First, you need to specify repository configuration/location in your Maven `pom
 Then define GroupDocs.Editor for Java API dependency in your `pom.xml` as follows:
 
 {{< tabs "example2">}}
-{{< tab "pom.xml" >}}
+{{< tab "Maven" >}}
 ```xml
 <dependencies>
     <dependency>
         <groupId>com.groupdocs</groupId>
         <artifactId>groupdocs-editor</artifactId>
-        <version>22.11</version>
+        <version>24.4</version>
     </dependency>
 </dependencies>
 ```
 {{< /tab >}}
+{{< tab "Gradle" >}}
+```xml
+dependencies {
+    implementation 'com.groupdocs:groupdocs-editor:24.4'
+}
+```
+{{< /tab >}}
+{{< tab "Kotlin" >}}
+```xml
+dependencies {
+    implementation("com.groupdocs:groupdocs-editor:24.4")
+}
+```
+{{< /tab >}}
+{{< tab "Ivy" >}}
+```xml
+<dependency org="com.groupdocs" name="groupdocs-editor" rev="24.4">
+   <artifact name="groupdocs-editor" ext="jar"/>
+</dependency>
+```
+{{< /tab >}}
+{{< tab "Sbt" >}}
+```xml
+libraryDependencies += "com.groupdocs" % "groupdocs-editor" % "24.4"
+```
+{{< /tab >}}
 {{< /tabs >}}
+
+_The latest version of Editor API can be [found here](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-editor/)_

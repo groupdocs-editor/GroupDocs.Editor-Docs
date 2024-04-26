@@ -2,7 +2,7 @@
 id: output-format-and-password
 url: editor/java/output-format-and-password
 title: Output format and password
-weight: 10
+weight: 14
 description: "Following this guide you will learn how to save edited Word document with password or change output document format using GroupDocs.Editor for Java features."
 keywords: Set password to edited document, Change output format for edited document
 productName: GroupDocs.Editor for Java
