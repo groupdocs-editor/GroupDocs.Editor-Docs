@@ -52,7 +52,7 @@ GroupDocs.Editor can also be used to generate different Microsoft Word documents
 <p><b>RESOURCES</b></p>
 <hr><p>GUIDE</p></hr>
 <ul>
-	<li><a href='{{< ref "editor/net/developer-guide/edit-document.md" >}}'>Edit Files</a></li>
+	<li><a href='{{< ref "editor/net/developer-guide" >}}'>Edit Files</a></li>
 	<li><a href="https://reference.groupdocs.com/editor/net">GroupDocs.Editor for .NET API Reference</a></li>
 </ul>
 <p>WHAT'S NEW?</p>

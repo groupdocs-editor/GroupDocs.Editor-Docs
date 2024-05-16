@@ -123,8 +123,8 @@ Complete description of [EditableDocument](https://reference.groupdocs.com/edit
 Detailed review of all supported family formats together with explaining their load/edit/save options, illustrated with source code, can be found in the next articles:
 
 * [Working with PDF documents]({{< ref "editor/net/developer-guide/edit-document/edit-pdf.md" >}})
-* [Working with WordProcessing documents]({{< ref "editor/net/developer-guide/net/developer-guide/edit-document/edit-word/_index.md" >}})
-* [Working with Spreadsheets]({{< ref "editor/net/developer-guidenet/developer-guide/edit-document/edit-excel/_index.md" >}})
+* [Working with WordProcessing documents]({{< ref "editor/net/developer-guide/net/developer-guide/edit-document/edit-word" >}})
+* [Working with Spreadsheets]({{< ref "editor/net/developer-guidenet/developer-guide/edit-document/edit-excel" >}})
 * [Working with DSV]({{< ref "editor/net/developer-guide/edit-document/how-to-edit-csv-file.md" >}})
-* [Working with Presentations]({{< ref "editor/net/developer-guide/edit-document/edit-powerpoint/_index.md" >}})
+* [Working with Presentations]({{< ref "editor/net/developer-guide/edit-document/edit-powerpoint" >}})
 * [Working with text documents]({{< ref "editor/net/developer-guide/edit-document/edit-txt.md" >}})
