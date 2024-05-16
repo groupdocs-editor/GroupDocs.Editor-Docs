@@ -109,22 +109,22 @@ All document formats, which GroupDocs.Editor supports, are grouped into family f
 Detailed information about every stage of document processing along with source code examples, options explanations and so on, can be found in the next articles:
 
 1. [Load document]({{< ref "editor/net/developer-guide/load-document.md" >}})
-2. [Edit document]({{< ref "editor/net/developer-guide/edit-document.md" >}})
+2. [Edit document]({{< ref "editor/net/developer-guide/edit-document" >}})
 3. [Save document]({{< ref "editor/net/developer-guide/save-document.md" >}})
 
 Complete description of [EditableDocument](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument) class, all its possibilities, members and purpose, along with source code example, is located in the next articles:
 
-* [Working with EditableDocument]({{< ref "editor/net/developer-guide/working-with-editabledocument/_index.md" >}})
-* [Get HTML markup in different forms]({{< ref "editor/net/developer-guide/working-with-editabledocument/get-html-markup-in-different-forms.md" >}})
-* [Save HTML to folder]({{< ref "editor/net/developer-guide/working-with-editabledocument/save-html-to-folder.md" >}})
-* [Working with resources]({{< ref "editor/net/developer-guide/working-with-editabledocument/working-with-resources.md" >}})
-* [Create EditableDocument from file or markup]({{< ref "editor/net/developer-guide/working-with-editabledocument/create-editabledocument-from-file-or-markup.md" >}})
+* [Working with EditableDocument]({{< ref "editor/net/developer-guide/editabledocument" >}})
+* [Get HTML markup in different forms]({{< ref "editor/net/developer-guide/editabledocument/get-html-markup-in-different-forms.md" >}})
+* [Save HTML to folder]({{< ref "editor/net/developer-guide/editabledocument/save-html-to-folder.md" >}})
+* [Working with resources]({{< ref "editor/net/developer-guide/editabledocument/working-with-resources.md" >}})
+* [Create EditableDocument from file or markup]({{< ref "editor/net/developer-guide/editabledocument/create-editabledocument-from-file-or-markup.md" >}})
 
 Detailed review of all supported family formats together with explaining their load/edit/save options, illustrated with source code, can be found in the next articles:
 
-* [Working with PDF documents]({{< ref "editor/net/developer-guide/edit-pdf.md" >}})
-* [Working with WordProcessing documents]({{< ref "editor/net/developer-guide/edit-word/_index.md" >}})
-* [Working with Spreadsheets]({{< ref "editor/net/developer-guide/edit-excel/_index.md" >}})
-* [Working with DSV]({{< ref "editor/net/developer-guide/how-to-edit-csv-file.md" >}})
-* [Working with Presentations]({{< ref "editor/net/developer-guide/edit-powerpoint/_index.md" >}})
-* [Working with text documents]({{< ref "editor/net/developer-guide/edit-txt.md" >}})
+* [Working with PDF documents]({{< ref "editor/net/developer-guide/edit-document/edit-pdf.md" >}})
+* [Working with WordProcessing documents]({{< ref "editor/net/developer-guide/net/developer-guide/edit-document/edit-wordedit-word/_index.md" >}})
+* [Working with Spreadsheets]({{< ref "editor/net/developer-guidenet/developer-guide/edit-document/edit-word/edit-excel/_index.md" >}})
+* [Working with DSV]({{< ref "editor/net/developer-guide/edit-document/how-to-edit-csv-file.md" >}})
+* [Working with Presentations]({{< ref "editor/net/developer-guide/edit-document/edit-powerpoint/_index.md" >}})
+* [Working with text documents]({{< ref "editor/net/developer-guide/edit-document/edit-txt.md" >}})
