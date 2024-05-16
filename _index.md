@@ -40,7 +40,7 @@ hideChildren: true
                 <p>Articles and guidelines for basic and advanced development</p>
                 <ul style="text-align: left;list-style:none">
                     <li>{{< icon "file-alt" >}} <a href='{{< ref "/editor/net/developer-guide/introduction.md" >}}'>Introduction</a></li>
-                    <li>{{< icon "file-alt" >}} <a href='{{< ref "/editor/net/developer-guide/edit-document.md" >}}'>Edit Document</a></li>
+                    <li>{{< icon "file-alt" >}} <a href='{{< ref "/editor/net/developer-guide/edit-document" >}}'>Edit Document</a></li>
                 </ul>
             </div>
         </div>
