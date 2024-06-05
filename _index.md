@@ -11,144 +11,181 @@ geekdocAnchor: false
 hideChildren: true
 ---
 
-## GroupDocs Developers Cookbook
 
-<br/>
+<div class="gdoc-list-descr">
+Excellent file editor component that empowers your C#, ASP.NET, and other .NET applications with document viewing features across more than 170+ supported file formats
+</div>
 
-<div class="gdoc-columns gdoc-columns--regular flex flex-gap flex-mobile-column">
-    <div class="gdoc-columns__content gdoc-markdown--nested flex-even" style="margin-top: 1rem !important">
-        <h3>
-            <a class="home-resource-link" rel="nofollow" href='{{< ref "/editor/net" >}}'> 
-                {{< icon-large "windows" >}}
-                <br/><br/>
-                GroupDocs.Editor for .NET
-            </a>
-        </h3>
-        <div class="gdoc-columns gdoc-columns--regular flex flex-gap flex-mobile-column">
-            <div class="gdoc-columns__content gdoc-markdown--nested flex-even" style="margin-top: 1rem !important">
-                <h4>{{< icon-large "gdoc_timer" >}} Getting Started</h4>
-                <p>Start quickly with our getting started documentation</p>
-                <ul style="text-align: left;list-style:none">
-                    <li>{{< icon "file-alt" >}} <a href='{{< ref "/editor/net/getting-started/features-overview.md" >}}'>Features Overview</a></li>
-                    <li>{{< icon "file-alt" >}} <a href='{{< ref "/editor/net/getting-started/supported-document-formats.md" >}}'>Supported Document Formats</a></li>
-                    <li>{{< icon "file-alt" >}} <a href='{{< ref "/editor/net/getting-started/system-requirements.md" >}}'>System Requirements</a></li>
-                    <li>{{< icon "file-alt" >}} <a href='{{< ref "/editor/net/getting-started/installation.md" >}}'>Installation</a></li>
+<h2 class="gdoc-product-title">Documentation</h2>
+
+<div class="gdoc-platform-links">
+<ul >
+<li><a href="#editor_net">.NET</a></li>
+<li><a href="#editor_java">Java</a></li>
+<li><a href="#editor_nodejs-java">Node.js</a></li>
+</ul>
+</div>
+
+
+<div class="gdoc-platforms">
+<div class="gdoc-platform">
+     <a id="editor_net"></a>
+        <div class="gdoc-platform__header">
+            <svg class="gdoc-platform__header-icon"><use xlink:href="/img/groupdocs-stack.svg#net"></use></svg>
+            <a class="gdoc-platform__header-title"  href='/editor/net/'>GroupDocs.Editor for .NET</a>
+            <a class="gdoc-platform__header-btn"  href='/editor/net/'>More</a>
+        </div>
+        <div class="gdoc-platform__cols">
+            <div class="gdoc-platform__col">
+                <div class="gdoc-platform__col-title">
+                <svg class="gdoc-platform__col-icon"><use xlink:href="/img/groupdocs-stack.svg#time"></use></svg>
+                <div>Getting started</div></div>
+                <div class="gdoc-platform__col-descr">Start quickly with our getting started documentation</div>
+                <ul class="gdoc-platform__col-links">
+                <li> <a href='/editor/net/features-overview/'>Features overview</a></li>
+                <li> <a href='/editor/net/supported-document-formats/'>Supported document formats</a></li>
+                <li> <a href='/editor/net/system-requirements/'>System requirements</a></li>
+                <li> <a href='/editor/net/installation/'>Installation</a></li>
                 </ul>
             </div>
-            <div class="gdoc-columns__content gdoc-markdown--nested flex-even" style="margin-top: 1rem !important">
-                <h4>{{< icon-large "book" >}} Developer Guide</h4>
-                <p>Articles and guidelines for basic and advanced development</p>
-                <ul style="text-align: left;list-style:none">
-                    <li>{{< icon "file-alt" >}} <a href='{{< ref "/editor/net/developer-guide/introduction.md" >}}'>Introduction</a></li>
-                    <li>{{< icon "file-alt" >}} <a href='{{< ref "/editor/net/developer-guide/edit-document" >}}'>Edit Document</a></li>
-                </ul>
+            <div class="gdoc-platform__col">
+                    <div class="gdoc-platform__col-title">
+                    <svg class="gdoc-platform__col-icon"><use xlink:href="/img/groupdocs-stack.svg#document"></use></svg>
+                    <div>Document rendering</div></div>
+                    <div class="gdoc-platform__col-descr">Articles and guidelines for  document rendering</div>
+                    <ul class="gdoc-platform__col-links">
+                    <li> <a href='/editor/net/render-word-documents/'>Render Word documents</a></li>
+                    <li> <a href='/editor/net/render-pdf-documents/'>Render PDF documents</a></li>
+                    <li> <a href='/editor/net/render-presentations/'>Render PowerPoint presentations</a></li>
+                    <li> <a href='/editor/net/render-excel-and-apple-numbers-spreadsheets/'>Render spreadsheets</a></li>
+                    </ul>
+                    </div>
+            <div class="gdoc-platform__col">
+                    <div class="gdoc-platform__col-title">
+                    <svg class="gdoc-platform__col-icon"><use xlink:href="/img/groupdocs-stack.svg#git-big"></use></svg>
+                    <div>.NET code examples</div></div>
+                    <div class="gdoc-platform__col-descr">Open-source projects for APIs example usage</div>
+                    <ul class="gdoc-platform__col-links gdoc-platform__col-links--alt">
+                    <li> <a href='https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET'>GroupDocs.Editor for .NET</a></li>
+                    <li> <a href='https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-UI/tree/master/samples/GroupDocs.Editor.UI.RestFulApi'>GroupDocs.Editor for .NET Web API</a></li>
+                    </ul>
             </div>
         </div>
-        {{< button size="large" href="net" >}} MORE {{< icon "gdoc_keyboard_arrow_right" >}}{{< /button >}}
+        <div class="gdoc-platform__footer">
+            <a class="gdoc-platform__footer-btn"  href='/editor/net/'>More</a>
+        </div>
     </div>
-    <div class="gdoc-columns__content gdoc-markdown--nested flex-even" style="margin-top: 1rem !important">
-        <h3>
-            <a class="home-resource-link" rel="nofollow" href='{{< ref "/editor/java" >}}'> {{< icon-large "java" >}}
-                <br/><br/> 
-                GroupDocs.Editor for Java
-            </a>
-        </h3>
-        <div class="gdoc-columns gdoc-columns--regular flex flex-gap flex-mobile-column">
-            <div class="gdoc-columns__content gdoc-markdown--nested flex-even" style="margin-top: 1rem !important">
-                <h4>{{< icon-large "gdoc_timer" >}} Getting Started</h4>
-                <p>Start quickly with our getting started documentation</p>
-                <ul style="text-align: left;list-style:none">
-                    <li>{{< icon "file-alt" >}} <a href='{{< ref "/editor/java/getting-started/features-overview.md" >}}'>Features  Overview</a></li>
-                    <li>{{< icon "file-alt" >}} <a href='{{< ref "/editor/java/getting-started/supported-document-formats.md" >}}'>Supported Document Formats</a></li>
-                    <li>{{< icon "file-alt" >}} <a href='{{< ref "/editor/java/getting-started/system-requirements.md" >}}'>System Requirements</a></li>
-                    <li>{{< icon "file-alt" >}} <a href='{{< ref "/editor/java/getting-started/installation.md" >}}'>Installation</a></li>
+    <div class="gdoc-platform">
+    <a id="editor_java"></a>
+        <div class="gdoc-platform__header">
+            <svg class="gdoc-platform__header-icon"><use xlink:href="/img/groupdocs-stack.svg#java"></use></svg>
+            <a class="gdoc-platform__header-title"  href='/editor/java/'>GroupDocs.Editor for Java</a>
+            <a class="gdoc-platform__header-btn"  href='/editor/java/'>More</a>
+        </div>
+        <div class="gdoc-platform__cols">
+            <div class="gdoc-platform__col">
+                <div class="gdoc-platform__col-title">
+                <svg class="gdoc-platform__col-icon"><use xlink:href="/img/groupdocs-stack.svg#time"></use></svg>
+                <div>Getting started</div></div>
+                <div class="gdoc-platform__col-descr">Start quickly with our getting started documentation</div>
+                <ul class="gdoc-platform__col-links">
+                <li> <a href='/editor/java/features-overview/'>Features overview</a></li>
+                            <li> <a href='/editor/java/supported-document-formats/'>Supported document formats</a></li>
+                            <li> <a href='/editor/java/system-requirements/'>System requirements</a></li>
+                            <li> <a href='/editor/java/installation/'>Installation</a></li>
                 </ul>
             </div>
-           <div class="gdoc-columns__content gdoc-markdown--nested flex-even" style="margin-top: 1rem !important">
-                <h4>{{< icon-large "book" >}} Developer Guide</h4>
-                <p>Articles and guidelines for basic and advanced development</p>
-                <ul style="text-align: left;list-style:none">
-                    <li>{{< icon "file-alt" >}} <a href='{{< ref "/editor/net/developer-guide/introduction.md" >}}'>Introduction</a></li>
-                    <li>{{< icon "file-alt" >}} <a href='{{< ref "/editor/net/developer-guide/edit-document" >}}'>Edit Document</a></li>
-                </ul>
+            <div class="gdoc-platform__col">
+                    <div class="gdoc-platform__col-title">
+                    <svg class="gdoc-platform__col-icon"><use xlink:href="/img/groupdocs-stack.svg#document"></use></svg>
+                    <div>Document rendering</div></div>
+                    <div class="gdoc-platform__col-descr">Articles and guidelines for  document rendering</div>
+                    <ul class="gdoc-platform__col-links">
+                <li> <a href='/editor/java/how-to-view-word-documents-using-java/'>Render Word documents</a></li>
+                    <li> <a href='/editor/java/how-to-view-pdf-documents-using-java/'>Render PDF documents</a></li>
+                    <li> <a href='/editor/java/how-to-view-cad-documents-using-java/'>Render CAD documents</a></li>
+                    </ul>
+                    </div>
+            <div class="gdoc-platform__col">
+                    <div class="gdoc-platform__col-title">
+                    <svg class="gdoc-platform__col-icon"><use xlink:href="/img/groupdocs-stack.svg#git-big"></use></svg>
+                    <div>Java code examples</div></div>
+                    <div class="gdoc-platform__col-descr">Open-source projects for APIs example usage</div>
+                    <ul class="gdoc-platform__col-links gdoc-platform__col-links--alt">
+                    <li> <a href='https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java'>GroupDocs.Editor for Java</a></li>
+                    <li> <a href='https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java/tree/master/Demos/Spring'>GroupDocs.Editor for Java Spring</a></li>
+                    <li> <a href='https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java/tree/master/Demos/Dropwizard'>GroupDocs.Editor for Java Dropwizard</a></li>
+                    </ul>
             </div>
         </div>
-        {{< button size="large" href="java" >}} MORE {{< icon "gdoc_keyboard_arrow_right" >}}{{< /button >}}
+        <div class="gdoc-platform__footer">
+            <a class="gdoc-platform__footer-btn"  href='/editor/java/'>More</a>
+        </div>
+    </div>
+    <div class="gdoc-platform">
+    <a id="editor_nodejs-java"></a>
+        <div class="gdoc-platform__header">
+            <svg class="gdoc-platform__header-icon"><use xlink:href="/img/groupdocs-stack.svg#nodejs"></use></svg>
+            <a class="gdoc-platform__header-title"  href='/editor/nodejs-java/'>GroupDocs.Editor for Node.js via Java</a>
+            <a class="gdoc-platform__header-btn"  href='/editor/nodejs-java/'>More</a>
+        </div>
+        <div class="gdoc-platform__cols">
+            <div class="gdoc-platform__col">
+                <div class="gdoc-platform__col-title">
+                <svg class="gdoc-platform__col-icon"><use xlink:href="/img/groupdocs-stack.svg#time"></use></svg>
+                <div>Getting started</div></div>
+                <div class="gdoc-platform__col-descr">Start quickly with our getting started documentation</div>
+                <ul class="gdoc-platform__col-links">
+                <li> <a href='/editor/nodejs-java/features-overview/'>Features overview</a></li>
+                            <li> <a href='/editor/nodejs-java/supported-document-formats/'>Supported document formats</a></li>
+                            <li> <a href='/editor/nodejs-java/system-requirements/'>System requirements</a></li>
+                            <li> <a href='/editor/nodejs-java/installation/'>Installation</a></li>
+                </ul>
+            </div>
+            <div class="gdoc-platform__col">
+                    <div class="gdoc-platform__col-title">
+                    <svg class="gdoc-platform__col-icon"><use xlink:href="/img/groupdocs-stack.svg#document"></use></svg>
+                    <div>Document rendering</div></div>
+                    <div class="gdoc-platform__col-descr">Articles and guidelines for  document rendering</div>
+                    <ul class="gdoc-platform__col-links">
+                <li> <a href='/editor/nodejs-java/rendering-to-pdf/'>Render to PDF</a></li>
+                    <li> <a href='/editor/nodejs-java/rendering-to-html/'>Render to HTML</a></li>
+                    <li> <a href='/editor/nodejs-java/add-text-watermark/'>Add text watermarks</a></li>
+                    </ul>
+                    </div>
+            <div class="gdoc-platform__col">
+                    <div class="gdoc-platform__col-title">
+                    <svg class="gdoc-platform__col-icon"><use xlink:href="/img/groupdocs-stack.svg#git-big"></use></svg>
+                    <div>Node.js via Java code examples</div></div>
+                    <div class="gdoc-platform__col-descr">Open-source projects for APIs example usage</div>
+                    <ul class="gdoc-platform__col-links gdoc-platform__col-links--alt">
+                    <li> <a href='https://github.com/groupdocs-editor/GroupDocs.Editor-for-Node.js-via-Java'>GroupDocs.Editor for Node.js via Java</a></li>
+                    </ul>
+            </div>
+        </div>
+        <div class="gdoc-platform__footer">
+            <a class="gdoc-platform__footer-btn"  href='/editor/nodejs-java/'>More</a>
+        </div>
     </div>
 </div>
 
-<br/>
 
-<div class="gdoc-columns gdoc-columns--regular flex flex-gap flex-mobile-column">
-    <div class="gdoc-columns__content gdoc-markdown--nested flex-even" style="margin-top: 1rem !important">
-        <h3>
-            {{< icon-large "code" >}}&nbsp;.NET Code Examples
-        </h3>
-        <ul style="list-style:none;padding-top: 10px">
-            <li>
-                <h4>
-                 <a class="home-resource-link" rel="nofollow" href="https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET">{{< icon "gdoc_github" >}} GroupDocs.Editor for .NET</a>
-                </h4>
-                 <p>Open-source project for APIs example usage</p>
-            </li>
-            <li>
-                <h4>
-                 <a class="home-resource-link" rel="nofollow" href="https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Demos/MVC">{{< icon "gdoc_github" >}} GroupDocs.Editor for .NET MVC</a>
-                </h4>
-                <p>Open-source font-end project ready to be used out of the box</p>
-            </li>
-            <li>
-                <h4>
-                 <a class="home-resource-link" rel="nofollow" href="https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Demos/WebForms">{{< icon "gdoc_github" >}} GroupDocs.Editor for .NET Web Forms</a>
-                </h4>
-                <p>Open-source font-end project ready to be used out of the box</p>
-            </li>
-        </ul>
-    </div>
-    <div class="gdoc-columns__content gdoc-markdown--nested flex-even" style="margin-top: 1rem !important">
-        <h3>
-            {{< icon-large "code" >}}&nbsp;Java Code Examples
-        </h3>
-        <ul style="list-style:none;padding-top: 10px">
-            <li>
-                <h4>
-                <a class="home-resource-link" rel="nofollow" href="https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET" >{{< icon "gdoc_github" >}} GroupDocs.Editor for Java</a>
-                </h4>
-                <p>Open-source project for APIs example usage</p>
-            </li>
-            <li>
-                <h4>
-                <a class="home-resource-link" rel="nofollow" href="https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java/tree/master/Demos/Spring">{{< icon "gdoc_github" >}} GroupDocs.Editor for Java Spring</a>
-                </h4>
-                <p>Open-source font-end project ready to be used out of the box</p>
-            </li>
-            <li>
-                <h4>
-                <a class="home-resource-link" rel="nofollow" href="https://github.com/groupdocs-editor/GroupDocs.Editor-for-Java/tree/master/Demos/Dropwizard">{{< icon "gdoc_github" >}} GroupDocs.Editor for Java Dropwizard</a>
-                </h4>
-                <p>Open-source font-end project ready to be used out of the box</p>
-            </li>
-        </ul>
-    </div>
+
+
+<h2 class="gdoc-product-title">Live demos</h2>
+
+<div class="gdoc-product-examples">
+<div class="gdoc-product-example">
+<ul class="gdoc-product-example__list gdoc-product-example__list--app">
+<li > 
+ <svg class="gdoc-product-example__icon"><use xlink:href="/img/groupdocs-stack.svg#app"></use></svg>
+<div>
+<a class="gdoc-product-example__link" href="https://products.groupdocs.app/editor/total">GroupDocs.Editor Free App</a>
+<div class="gdoc-product-example__descr">View 170+ file and document types online for free</div>
+</div>
+</li>
+
+</ul>
 </div>
 
-<br/>
-
-<h3>
-    {{< icon-large "desktop" >}}&nbsp;Live Demos
-</h3>
-
-<div class="gdoc-columns gdoc-columns--regular flex flex-gap flex-mobile-column">
-    <div class="gdoc-columns__content gdoc-markdown--nested flex-even" style="margin-top: 1rem !important">
-    <h4>
-        <a class="home-resource-link" href="https://hub.docker.com/r/groupdocs/editor" rel="nofollow">{{< icon "docker" >}} GroupDocs.Editor for .NET at DockerHub</a>
-        </h4>
-        <p>Out-of-the-box docker container</p>
-    </div>
-    <div class="gdoc-columns__content gdoc-markdown--nested flex-even" style="margin-top: 1rem !important">
-    <h4>
-        <a class="home-resource-link" href="https://products.groupdocs.app/editor/total" rel="nofollow">{{< icon "eye" >}} GroupDocs.Editor Free App</a>
-        </h4>
-        <p>Fully-featured free online application</p>
-    </div>
 </div>
