@@ -80,7 +80,7 @@ editOptions.EnablePagination = true;//enable pagination for per-page processing 
 editOptions.Pages = PageRange.FromStartPageTillEnd(3);//edit not all pages, but starting from 3rd and till the end
 
 //3. Create Editor instance, load a document
-GroupDocs.Editor.Editor editor = new Editor(inputPath, delegate () { return loadOptions; });
+GroupDocs.Editor.Editor editor = new Editor(inputPath, loadOptions);
 
 //4. Edit a document and generate EditableDocument
 GroupDocs.Editor.EditableDocument originalDoc = editor.Edit(editOptions);
@@ -125,7 +125,7 @@ string inputPdfPath = System.IO.Path.Combine(Common.TestHelper.PdfFolder, "NET_F
 Editor editor1 = new Editor(inputPdfPath);
 
 //Loading a PDF with PDF load options
-Editor editor2 = new Editor(inputPdfPath, delegate () { return loadOptions; });
+Editor editor2 = new Editor(inputPdfPath, loadOptions);
 ```
 
 ## Editing

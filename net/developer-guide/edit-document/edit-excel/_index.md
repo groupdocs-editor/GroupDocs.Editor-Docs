@@ -56,7 +56,7 @@ Example below shows such situation: loading the password-protected spreadsheet:
 string inputXlsxPath = "C://input/spreadsheet.xlsx";
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
 loadOptions.Password = "password";
-Editor editor = new Editor(inputXlsxPath, delegate { return loadOptions; });
+Editor editor = new Editor(inputXlsxPath, loadOptions);
 ```
 
 There can be several scenarios here:

@@ -20,7 +20,7 @@ First of all user needs to load document into [Editor](https://reference.groupd
 ```csharp
 string inputFilePath = "C:\\input_path\\document.docx"; //path to some document
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
-Editor editor = new Editor(inputFilePath, delegate { return loadOptions; }); //passing path and load options (via delegate) to the constructor
+Editor editor = new Editor(inputFilePath, loadOptions); //passing path and load options to the constructor
 EditableDocument document = editor.Edit(new WordProcessingEditOptions()); //opening document for editing with format-specific edit options
 ```
 

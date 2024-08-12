@@ -72,7 +72,7 @@ string inputPath = System.IO.Path.Combine("markdown folder", filename);
 
 using (FileStream content = File.OpenRead(inputPath))
 {
-	using (Editor fromStream = new Editor(delegate () { return content; }))
+	using (Editor fromStream = new Editor(content)
 	using (Editor fromPath = new Editor(inputPath))
 	{
 		GroupDocs.Editor.Metadata.IDocumentInfo info = fromStream.GetDocumentInfo(null);

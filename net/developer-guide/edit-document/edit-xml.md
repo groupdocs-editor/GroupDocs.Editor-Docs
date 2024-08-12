@@ -33,7 +33,7 @@ string xmlInputPath = System.IO.Path.Combine("full_folder_path", xmlFilename);
 
 using (FileStream xmlStream = System.IO.File.OpenRead(xmlInputPath))
 using (GroupDocs.Editor.Editor editorFromPath = new Editor(xmlInputPath))//from the path
-using (GroupDocs.Editor.Editor editorFromStream = new Editor(delegate () { return xmlStream; }))//from the stream
+using (GroupDocs.Editor.Editor editorFromStream = new Editor(xmlStream))//from the stream
 {
 	//Here two Editor instances can separately work with one file
 }

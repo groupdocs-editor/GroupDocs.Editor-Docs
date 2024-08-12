@@ -62,12 +62,12 @@ loadOptions.Password = "some_password_to_open_a_document";
 
 Please note that if document has no protection, the password will be ignored. However, if document is protected, but user has not specified a password, a [PasswordRequiredException](https://reference.groupdocs.com/editor/net/groupdocs.editor/passwordrequiredexception) will be thrown during document editing.
 
-Next step is to load the document from stream into the [Editor](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor) class. For loading documents from streams (implementations of a `System.IO.Stream`) the [`Editor` class](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor) uses delegates. In other words, you need to pass the delegate instance, that points to the method, that returns a stream.   
-Same with load options — they are passed via delegate.
+Next step is to load the document from stream into the [Editor](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor) class. For loading documents  uses streams (implementations of a `System.IO.Stream`) in the [`Editor` class](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor). 
+Same with load options — they should be passed.
 
 ```csharp
 FileStream inputStream = File.OpenRead("C:\\input_path\\document.docx");
-Editor editor = new Editor(delegate { return inputStream; }, delegate { return loadOptions; });
+Editor editor = new Editor(inputStream, loadOptions);
 ```
 
 ## Edit the document

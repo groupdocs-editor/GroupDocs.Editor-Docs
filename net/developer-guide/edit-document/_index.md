@@ -52,7 +52,7 @@ Second overload is parameterless — it chooses the most appropriate default edi
 
 ```csharp
 string inputFilePath = "C:\\input_path\\document.docx"; //path to some document
-Editor editor = new Editor(inputFilePath, delegate { return new WordProcessingLoadOptions(); });
+Editor editor = new Editor(inputFilePath, new WordProcessingLoadOptions());
 EditableDocument openedDocument = editor.Edit();//with default edit options
 
 WordProcessingEditOptions editOptions = new WordProcessingEditOptions();
@@ -66,7 +66,7 @@ There can be generated several [EditableDocument](https://reference.groupdocs.c
 
 ```csharp
 string inputXlsxPath = "C://input/spreadsheet.xlsx";
-Editor editor = new Editor(inputXlsxPath, delegate { return new SpreadsheetLoadOptions(); });
+Editor editor = new Editor(inputXlsxPath, new SpreadsheetLoadOptions());
 
 SpreadsheetEditOptions editOptions1 = new SpreadsheetEditOptions();
 editOptions1.WorksheetIndex = 0;//index is 0-based, so this is 1st tab

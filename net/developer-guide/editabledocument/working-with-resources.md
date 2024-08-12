@@ -28,7 +28,7 @@ Let's prepare an [EditableDocument](https://reference.groupdocs.com/editor/net/
 
 ```csharp
 string inputDocxPath = "C://input/document.docx";
-Editor editor = new Editor(inputDocxPath, delegate { return new WordProcessingLoadOptions(); });
+Editor editor = new Editor(inputDocxPath, new WordProcessingLoadOptions());
 WordProcessingEditOptions editOptions = new WordProcessingEditOptions();
 editOptions.FontExtraction = FontExtractionOptions.ExtractAll;// Enable max font extraction - ExtractAll
 EditableDocument beforeEdit = editor.Edit(editOptions);// Create EditableDocument instance

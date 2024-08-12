@@ -28,7 +28,7 @@ string inputMobiPath = "C://input/book.mobi";
 Editor editorFromPath = new Editor(inputMobiPath);
   
 FileStream inputMobiStream = File.OpenRead("C://input/book.mobi");
-Editor editorFromStream = new Editor(delegate() { return inputMobiStream; });
+Editor editorFromStream = new Editor(inputMobiStream);
 ```
 
 There is no loading options, because Mobi has nothing to tune-up during loading, — it cannot have a password protection, and can be processed only in one way.

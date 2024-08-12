@@ -43,7 +43,7 @@ This article demonstrates how to load, edit, and read form fields in a Word docu
    Use the `Editor` class to load the document with the specified load options.
 
    ```csharp
-   using (Editor editor = new Editor(delegate { return fs; }, delegate { return loadOptions; }))
+   using (Editor editor = new Editor(fs, loadOptions))
    {
        // Further code will be placed here
    }
@@ -118,7 +118,7 @@ internal static class LegacyFormFieldCollection
             // 3.2. ...but, because the document is unprotected, this password will be ignored
 
             // 4. Load the document with options to the Editor instance
-            using (Editor editor = new Editor(delegate { return fs; }, delegate { return loadOptions; }))
+            using (Editor editor = new Editor(fs, loadOptions))
             {
                 // 4.1. Read the FormFieldManager instance
                 FormFieldManager fieldManager = editor.FormFieldManager;

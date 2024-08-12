@@ -35,11 +35,11 @@ string epubPath = "path/to/Alices Adventures in Wonderland.epub";
 GroupDocs.Editor.Editor editorMobi = new Editor(mobiPath);
 
 FileStream azw3Stream = File.OpenRead(azw3Path);
-GroupDocs.Editor.Editor editorAzw3 = new Editor(delegate() { return azw3Stream; });
+GroupDocs.Editor.Editor editorAzw3 = new Editor(azw3Stream);
 
 byte[] epubBytes = File.ReadAllBytes(epubPath);
 MemoryStream epubStream = new MemoryStream(epubBytes);
-GroupDocs.Editor.Editor editorEpub = new Editor(delegate () { return epubStream; });
+GroupDocs.Editor.Editor editorEpub = new Editor(epubStream);
 
 
 // ...

@@ -19,10 +19,8 @@ structuredData:
         name: How to create new document using the GroupDocs.Editor in C#
         description: Learn how to create new document using the GroupDocs.Editor in C# step by step
         steps:
-        - name: Prepare a Callback function to save the new document stream if needed 
-          text: Callback function allow to save the new document stream
         - name: Invoke the appropriate Editor class constructor
-          text: Pass a Callback function delegate into the most appropriate overload of the constructor of GroupDocs.Editor.Editor class
+          text: Pass a document format into the most appropriate overload of the constructor of GroupDocs.Editor.Editor class
         - name: Make all necessary edits and savings
           text: After document is successfully loaded, you can get its metainfo, generate its editable version, and finally save it to the resultant file
 ---

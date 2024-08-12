@@ -56,7 +56,7 @@ string emlInputPath = System.IO.Path.Combine(Common.TestHelper.EmailFolder, emlF
 
 using (FileStream emlStream = File.OpenRead(emlInputPath))
 using (Editor editorFromPath = new Editor(emlInputPath))//from the path
-using (Editor editorFromStream = new Editor(delegate () { return emlStream; }))//from the stream
+using (Editor editorFromStream = new Editor(emlStream))//from the stream
 {
 	//Here two Editor instances can separately work with one file
 }

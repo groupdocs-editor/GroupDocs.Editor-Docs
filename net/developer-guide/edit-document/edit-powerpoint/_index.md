@@ -59,7 +59,7 @@ Below is an example of loading a presentation document from file path with load 
 string inputPptxPath = "C://input/presentation.pptx";
 PresentationLoadOptions loadOptions = new PresentationLoadOptions();
 loadOptions.Password = "password";
-Editor editor = new Editor(inputPptxPath, delegate { return loadOptions; });
+Editor editor = new Editor(inputPptxPath, loadOptions);
 ```
 
 ## Edit PowerPoint presentation 
