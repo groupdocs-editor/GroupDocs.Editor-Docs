@@ -38,7 +38,7 @@ After this stage document is ready to be opened and edited.
 
 ## Opening a document for editing
 
-Because GroupDocs.Editor is GUI-less library, document cannot be edited directly into it. But in order to edit document in WYSIWYG HTML-editor, GroupDocs.Editor needs to generate an HTML-version of a document, because any WYSIWYG editor can work only with HTML/CSS markup. When instance of [Editor](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor) class is created on the 1st stage, user should *[open document for editing]({{< ref "editor/java/developer-guide/edit-document.md" >}})*
+Because GroupDocs.Editor is GUI-less library, document cannot be edited directly into it. But in order to edit document in WYSIWYG HTML-editor, GroupDocs.Editor needs to generate an HTML-version of a document, because any WYSIWYG editor can work only with HTML/CSS markup. When instance of [Editor](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor) class is created on the 1st stage, user should *[open document for editing]({{< ref "editor/java/developer-guide/edit-document" >}})*
 
 by calling an [edit()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor#edit--) method of [Editor](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor) class. This method returns an instance of [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class. This class can be described as a converted version of input document, that is stored in internal intermediate format, compatible with all formats, that GroupDocs.Editor supports. With [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) user can obtain HTML markup of the input document with different options, stylesheets, images, fonts, save HTML-document to disk, and other things. It is implied that HTML-markup, emitted by [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument), then is passed into the client-side WYSIWYG HTML-editor, where end-user can actually edit the document.
 
@@ -108,21 +108,21 @@ Detailed information about every stage of document processing along with source 
 
 1. [Load document]({{< ref "editor/java/developer-guide/load-document.md" >}}
 .    )
-2. [Edit document]({{< ref "editor/java/developer-guide/edit-document.md" >}})
+2. [Edit document]({{< ref "editor/java/developer-guide/edit-document" >}})
 3. [Save document]({{< ref "editor/java/developer-guide/save-document.md" >}})
 
 Complete description of [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class, all its possibilities, members and purpose, along with source code example, is located in the next articles:
 
-* [Working with EditableDocument]({{< ref "editor/java/developer-guide/working-with-editabledocument/_index.md" >}})
-* [Get HTML markup in different forms]({{< ref "editor/java/developer-guide/working-with-editabledocument/get-html-markup-in-different-forms.md" >}})
-* [Save HTML to folder]({{< ref "editor/java/developer-guide/working-with-editabledocument/save-html-to-folder.md" >}})
-* [Working with resources]({{< ref "editor/java/developer-guide/working-with-editabledocument/working-with-resources.md" >}})
-* [Create EditableDocument from file or markup]({{< ref "editor/java/developer-guide/working-with-editabledocument/create-editabledocument-from-file-or-markup.md" >}})
+* [Working with EditableDocument]({{< ref "editor/java/developer-guide/editabledocument/_index.md" >}})
+* [Get HTML markup in different forms]({{< ref "editor/java/developer-guide/editabledocument/get-html-markup-in-different-forms.md" >}})
+* [Save HTML to folder]({{< ref "editor/java/developer-guide/editabledocument/save-html-to-folder.md" >}})
+* [Working with resources]({{< ref "editor/java/developer-guide/editabledocument/working-with-resources.md" >}})
+* [Create EditableDocument from file or markup]({{< ref "editor/java/developer-guide/editabledocument/create-editabledocument-from-file-or-markup.md" >}})
 
 Detailed review of all supported family formats together with explaining their load/edit/save options, illustrated with source code, can be found in the next articles:
 
-* [Working with WordProcessing documents]({{< ref "editor/java/developer-guide/edit-word/_index.md" >}})
-* [Working with Spreadsheets]({{< ref "editor/java/developer-guide/edit-excel/_index.md" >}})
-* [Working with DSV]({{< ref "editor/java/developer-guide/how-to-edit-csv-file.md" >}})
-* [Working with Presentations]({{< ref "editor/java/developer-guide/edit-powerpoint/_index.md" >}})
-* [Working with text documents]({{< ref "editor/java/developer-guide/edit-txt.md" >}})
+* [Working with WordProcessing documents]({{< ref "editor/java/developer-guide/edit-document/edit-word" >}})
+* [Working with Spreadsheets]({{< ref "editor/java/developer-guide/edit-document/edit-excel" >}})
+* [Working with DSV]({{< ref "editor/java/developer-guide/edit-document/how-to-edit-csv-file.md" >}})
+* [Working with Presentations]({{< ref "editor/java/developer-guide/edit-document/edit-powerpoint" >}})
+* [Working with text documents]({{< ref "editor/java/developer-guide/edit-document/edit-txt.md" >}})

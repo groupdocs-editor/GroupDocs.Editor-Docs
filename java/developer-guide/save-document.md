@@ -2,7 +2,7 @@
 id: save-document
 url: editor/java/save-document
 title: Save document
-weight: 3
+weight: 8
 description: "This article demonstrates how to save edited text documents, spreadsheets and presentations with GroupDocs.Editor for Java API."
 keywords: Save edited document, edit document, GroupDocs.Editor
 productName: GroupDocs.Editor for Java
@@ -38,7 +38,7 @@ However [EditableDocument](https://reference.groupdocs.com/editor/java/com.grou
 1. [FromFile](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument#fromfile()) method is designed for opening HTML-documents from disk — it obtains path to \*.html file and path to corresponding resource folder.
 2. [FromMarkup](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument#frommarkup()) method is designed for opening HTML-documents from memory — it obtains HTML-markup as a `String` and a list of [IHtmlResource](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.htmlcss.resources/ihtmlresource) items.
 
-More information about creating [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) instances from files or markup with resources can be found in corresponding article "[Create EditableDocument from file or markup]({{< ref "editor/java/developer-guide/working-with-editabledocument/create-editabledocument-from-file-or-markup.md" >}})".
+More information about creating [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) instances from files or markup with resources can be found in corresponding article "[Create EditableDocument from file or markup]({{< ref "editor/java/developer-guide/editabledocument/create-editabledocument-from-file-or-markup.md" >}})".
 
 When [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) is created, it can be converted to the output document. For doing this, user must use [Editor.save()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor#save--) method, that has two overloads. These overloads differ only with the way how output document is specified: as path, where file should be created, or as a byte stream, into which the document content should be written. All other parameters are same. They are:
 

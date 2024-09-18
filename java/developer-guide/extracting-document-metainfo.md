@@ -2,7 +2,7 @@
 id: extracting-document-metainfo
 url: editor/java/extracting-document-metainfo
 title: Extracting document metainfo
-weight: 6
+weight: 10
 description: "Following this guide you will learn how to obtain basic document metadata like pages count, size, file type before editing it with GroupDocs.Editor for Java API."
 keywords: Extract document metadata, Get document info,  obtain basic document metadata
 productName: GroupDocs.Editor for Java
@@ -64,16 +64,28 @@ There are three inheritors of the [IDocumentInfo](https://reference.groupdocs.c
 2. [SpreadsheetDocumentInfo](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/spreadsheetdocumentinfo) — common for all Spreadsheet family formats.
 3. [PresentationDocumentInfo](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/presentationdocumentinfo) — common for all Presentation family formats.
 4. [TextualDocumentInfo](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/textualdocumentinfo) — common for all textual types, including all DSV (like CSV and TSV), XML, HTML, and plain text.
+5. [FixedLayoutDocumentInfo](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/fixedlayoutdocumentinfo/) - common for all documents with a fixed-layout format, this includes only PDF and XPS.
+6. [EmailDocumentInfo](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/emaildocumentinfo/) - common for all Email family formats, like EML, MSG, VCF, PST, MBOX and others.
+7. [EbookDocumentInfo](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/ebookdocumentinfo/) - common for all eBook family formats like MOBI and ePub.
+8. [MarkdownDocumentInfo](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/markdowndocumentinfo/) - special struct, that is dedicated especially for the Markdown (MD) textual format.
 
 One important thing to note: if [getDocumentInfo()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor#getDocumentInfo-java.lang.String-) returns NULL value instead of some of [IDocumentInfo](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/idocumentinfo) inheritors, this means that specified document is not supported by the GroupDocs.Editor and thus cannot be opened for editing or saved.
 
 ## Explaining document format
 
-[IDocumentInfo](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/idocumentinfo) interface contains a `Format` property of [IDocumentFormat](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/idocumentformat) type. [IDocumentFormat](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/idocumentformat) is an interface, that is common for all format descriptors. It is designed for indicating one particular document format and stores format name, extension, and has equality operators. It has three inheritors, all of them are structs:
+[IDocumentInfo](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/idocumentinfo/) interface contains a [`getFormat()` property](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.metadata/idocumentinfo/#getFormat--) of [IDocumentFormat](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats.abstraction/idocumentformat/) type. [IDocumentFormat](https://reference2.groupdocs.com/editor/java/com.groupdocs.editor.formats.abstraction/idocumentformat/) is an interface, that is common for all format descriptors. It is designed for indicating one particular document format and stores format name, extension, MIME-code, and has equality operators.
 
-1. [WordProcessingFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/wordprocessingformats) — holds all formats from WordProcessing family.
-2. [SpreadsheetFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/spreadsheetformats) — holds all formats from Spreadsheet family.
-3. [PresentationFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/spreadsheetformats) — holds all formats from Presentation family.
-4. [TextualFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/textualformats) — holds all formats with text-based nature.
+Each inheritor of [IDocumentFormat](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats.abstraction/idocumentformat/) interface delivers three properties, all of a [java.lang.String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html) type: 
+1. [getName()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats.abstraction/idocumentformat/#getName--), that provides name of the format.
+2. [getExtension()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats.abstraction/idocumentformat/#getExtension--), that provides a format extension.
+3. [getMime()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats.abstraction/idocumentformat/#getMime--), that provides a MIME-code for a particular format
 
-Each inheritor of [IDocumentFormat](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/idocumentformat) interface delivers two properties: [getName()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/IDocumentFormat#getName--), that provides name of the format, and [getExtension()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/idocumentFormat#getExtension--), that provides a format extension.
+[`IDocumentFormat` interface](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats.abstraction/idocumentformat/) has seven inheritors, all of them are structs:
+1. [WordProcessingFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/wordprocessingformats/) — holds all formats from WordProcessing family.
+2. [SpreadsheetFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/spreadsheetformats/) — holds all formats from Spreadsheet family.
+3. [PresentationFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/presentationformats/) — holds all formats from Presentation family.
+4. [TextualFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/textualformats/) — holds all formats with text-based nature.
+5. [FixedLayoutFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/fixedlayoutformats/) - holds all formats from the fixed-layout format family. This includes only PDF and XPS.
+6. [EBookFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/ebookformats/) - holds all eBool (Electronic book) formats like Mobi and ePub.
+7. [EmailFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/emailformats/) - holds all email (electronic mail) formats like EML and MSG.
+

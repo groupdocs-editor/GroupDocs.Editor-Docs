@@ -13,7 +13,7 @@ structuredData:
         name: Creating New Documents by Format
         description: Create new document using the GroupDocs.Editor in Java language
         productCode: editor
-        productPlatform: net 
+        productPlatform: java 
     showVideo: True
     howTo:
         name: How to create new document using the GroupDocs.Editor in Java
@@ -37,63 +37,32 @@ To initiate the document creation process, the [**GroupDocs.Editor**](https://re
 ### 1. WordProcessing Document:
 
 ```java
-// Callback function to save the new document stream
-static void saveNewDocument(InputStream document)
-    {
-        try /*JAVA: was using*/
-        {
-            ByteArrayOutputStream out = new ByteArrayOutputStream();
+ByteArrayOutputStream memoryStream = new ByteArrayOutputStream();
 
-            byte[] buf = new byte[1024];
-            int len;
-            while ((len = document.read(buf)) > 0) {
-                out.write(buf, 0, len);
-            }
-            document.close();
-            out.close();
-        } catch (Exception e){
-            throw new RuntimeException(e.getMessage());
-        }
-    }
-// Create a new WordProcessing document and save it using a callback.
-Editor editorWord = new Editor(document -> saveNewDocument(document), WordProcessingFormats.Docx);
+// Create a new WordProcessing document and save it.
+Editor editor = new Editor(WordProcessingFormats.Docx);
 {
     // Edit the WordProcessing document with default options.
     EditableDocument defaultWordProcessingDoc = editor.edit();
 
     // Edit the WordProcessing document with specified options and some defined settings.
     WordProcessingEditOptions wordProcessingEditOptions = new WordProcessingEditOptions();
-    wordProcessingEditOptions.setEnablePagination(false);  
-    wordProcessingEditOptions.setEnableLanguageInformation(true);  
-    wordProcessingEditOptions.setFontExtraction(FontExtractionOptions.ExtractAllEmbedded);  
+    wordProcessingEditOptions.setEnablePagination(false);  // Disable pagination for the document.
+    wordProcessingEditOptions.setEnableLanguageInformation(true);  // Enable language information for the document.
+    wordProcessingEditOptions.setFontExtraction(FontExtractionOptions.ExtractAllEmbedded);  // Extract all embedded fonts.
 
     EditableDocument editableWordProcessingDocument = editor.edit(wordProcessingEditOptions);
+    editor.save(memoryStream);
 }
 ```
 
 ### 2. Spreadsheet Document:
 
 ```java
-// Callback function to save the new document stream
-static void saveNewDocument(InputStream document)
-    {
-        try /*JAVA: was using*/
-        {
-            ByteArrayOutputStream out = new ByteArrayOutputStream();
+ByteArrayOutputStream memoryStream = new ByteArrayOutputStream();
 
-            byte[] buf = new byte[1024];
-            int len;
-            while ((len = document.read(buf)) > 0) {
-                out.write(buf, 0, len);
-            }
-            document.close();
-            out.close();
-        } catch (Exception e){
-            throw new RuntimeException(e.getMessage());
-        }
-    }
-// Create a new Spreadsheet document and save it via callback.
-Editor editorSpreadsheet = new Editor(document -> saveNewDocument(document), SpreadsheetFormats.Xlsx);
+// Create a new Spreadsheet document and save it.
+Editor editor = new Editor(SpreadsheetFormats.Xlsx);
 {
     // Edit the Spreadsheet document with default options.
     EditableDocument defaultEditableSpreadsheetDocument = editor.edit();
@@ -104,43 +73,28 @@ Editor editorSpreadsheet = new Editor(document -> saveNewDocument(document), Spr
     spreadsheetEditOptions.setExcludeHiddenWorksheets(true);
 
     EditableDocument editableSpreadsheetDocument = editor.edit(spreadsheetEditOptions);
+    editor.save(memoryStream);
 }
 ```
 
 ### 3. Presentation Document:
 
 ```java
-// Callback function to save the new document stream
-static void saveNewDocument(InputStream document)
-    {
-        try /*JAVA: was using*/
-        {
-            ByteArrayOutputStream out = new ByteArrayOutputStream();
+ByteArrayOutputStream memoryStream = new ByteArrayOutputStream();
 
-            byte[] buf = new byte[1024];
-            int len;
-            while ((len = document.read(buf)) > 0) {
-                out.write(buf, 0, len);
-            }
-            document.close();
-            out.close();
-        } catch (Exception e){
-            throw new RuntimeException(e.getMessage());
-        }
-    }
-
-// Create a new Presentation document and save it via callback .
-Editor editorPresentation = new Editor(document -> saveNewDocument(document), PresentationFormats.Pptx);
+// Create a new Presentation document and save it.
+Editor editor = new Editor(PresentationFormats.Pptx);
 {
     // Edit the Presentation document with default options.
-    EditableDocument defaultEditablePresentationDocument = editor.Edit();
+    EditableDocument defaultEditablePresentationDocument = editor.edit();
 
     // Edit the Presentation document with specified options and some defined settings.
     PresentationEditOptions presentationEditOptions = new PresentationEditOptions();
-    presentationEditOptions.ShowHiddenSlides = false;
-    presentationEditOptions.SlideNumber = 0;
+    presentationEditOptions.setShowHiddenSlides(false);
+    presentationEditOptions.setSlideNumber(0);
 
-    EditableDocument editablePresentationDocument = editor.Edit(presentationEditOptions);
+    EditableDocument editablePresentationDocument = editor.edit(presentationEditOptions);
+    editor.save(memoryStream);
 }
 ```
 
@@ -148,27 +102,10 @@ Editor editorPresentation = new Editor(document -> saveNewDocument(document), Pr
 ### 4. Email Document:
 
 ```java
-// Callback function to save the new document stream
-static void saveNewDocument(InputStream document)
-    {
-        try /*JAVA: was using*/
-        {
-            ByteArrayOutputStream out = new ByteArrayOutputStream();
+ByteArrayOutputStream memoryStream = new ByteArrayOutputStream();
 
-            byte[] buf = new byte[1024];
-            int len;
-            while ((len = document.read(buf)) > 0) {
-                out.write(buf, 0, len);
-            }
-            document.close();
-            out.close();
-        } catch (Exception e){
-            throw new RuntimeException(e.getMessage());
-        }
-    }
-
-// Create a new Email document and save it via callback .
-Editor editorEmail = new Editor(document -> saveNewDocument(document), EmailFormats.Eml);
+// Create a new Email document and save it.
+Editor editor = new Editor(EmailFormats.Eml);
 {
     // Edit the Email document with default options.
     EditableDocument defaultEditableEmailDocument = editor.edit();
@@ -178,6 +115,7 @@ Editor editorEmail = new Editor(document -> saveNewDocument(document), EmailForm
     emailEditOptions.setMailMessageOutput(MailMessageOutput.All);
 
     EditableDocument editableEmailDocument = editor.edit(emailEditOptions);
+    editor.save(memoryStream);
 }
 ```
 
