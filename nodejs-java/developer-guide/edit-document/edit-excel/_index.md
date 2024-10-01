@@ -1,6 +1,6 @@
 ---
 id: edit-excel
-url: url: editor/nodejs-java/edit-excel
+url: editor/nodejs-java/edit-excel
 title: Edit Excel Spreadsheet in Node.js
 weight: 46
 description: "This guide demonstrates how to edit XLS, XLSX, XLSM, XLSB, ODS, SXC spreadsheets with hidden worksheets, protect edited spreadsheets with passwords, and many other powerful features of GroupDocs.Editor for Node.js."
