@@ -10,7 +10,9 @@ hideChildren: False
 toc: True
 ---
 
-The following table indicates the file formats that GroupDocs.Editor can edit.
+The following table indicates the file formats that GroupDocs.Editor can edit. You can use the input below to filter supported formats by extension.
+
+{{< table-filter placeholder="Start typing to find file format" forumUrl="https://forum.groupdocs.com/c/editor/20">}}
 
 ## WordProcessing family formats
 
