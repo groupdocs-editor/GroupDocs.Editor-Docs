@@ -74,7 +74,7 @@ The following table indicates the file formats that GroupDocs.Editor can edit. 
 | Format | Description | Create | Import | Export | Auto Detection |
 | --- | ---  | --- | --- | --- | --- |
 | [PDF](https://docs.fileformat.com/pdf/) | Portable Document Format | ![(tick)](/editor/net/images/check.png)   | ![(tick)](/editor/net/images/check.png) | ![(tick)](/editor/net/images/check.png) | ![(tick)](/editor/net/images/check.png) |
-| [XPS](https://docs.fileformat.com/page-description-language/xps/) | XML Paper Specification | ![(error)](/editor/net/images/error.png) | ![(tick)](/editor/net/images/check.png) | ![(tick)](/editor/net/images/check.png) | ![(tick)](/editor/net/images/check.png) |
+| [XPS](https://docs.fileformat.com/page-description-language/xps/) | XML Paper Specification | ![(error)](/editor/net/images/error.png) | ![(error)](/editor/net/images/error.png) | ![(tick)](/editor/net/images/check.png) | ![(tick)](/editor/net/images/check.png) |
 
 ## Email family formats
 
