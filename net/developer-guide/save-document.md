@@ -76,15 +76,33 @@ When the [EditableDocument](https://reference.groupdocs.com/editor/net/groupdocs
 
 So, let’s say it is necessary to save the **modified content** to the document of DOCX format. DOCS is the part of WordProcessing family. So the instance of the [WordProcessingSaveOptions](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/wordprocessingsaveoptions) class should be created, and the [WordProcessingFormats.Docx](https://reference.groupdocs.com/editor/net/groupdocs.editor.formats/wordprocessingformats/docx/) value should be specified in its constructor. Like this:
 
+{{< tabs "Save options creation">}}
+{{< tab "C#" >}}
 ```csharp
 WordProcessingSaveOptions saveOptions = new WordProcessingSaveOptions(WordProcessingFormats.Docx);
 ```
+{{< /tab >}}
+{{< tab "VB.NET">}}
+```vb
+Dim saveOptions As WordProcessingSaveOptions = New WordProcessingSaveOptions(WordProcessingFormats.Docx)
+```
+{{< /tab >}}
+{{< /tabs >}}
 
 If it is also necessary to encode the resultant document with the password, it can be done using one line of code:
 
+{{< tabs "Save options adjustment">}}
+{{< tab "C#" >}}
 ```csharp
-saveOptions.Password = "sone-password";
+saveOptions.Password = "some-password";
 ```
+{{< /tab >}}
+{{< tab "VB.NET">}}
+```vb
+saveOptions.Password = "some-password"
+```
+{{< /tab >}}
+{{< /tabs >}}
 
 Of course, different formats have different options. For example, there is a `Password` property in [WordProcessingSaveOptions](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/wordprocessingsaveoptions), [SpreadsheetSaveOptions](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/spreadsheetsaveoptions), [PresentationSaveOptions](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/presentationsaveoptions), but there is no anything similar in XpsSaveOptions, [EmailSaveOptions](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/emailsaveoptions), [TextSaveOptions](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/textsaveoptions), and [EbookSaveOptions](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/ebooksaveoptions/), because these formats do not support password protection.
 
@@ -95,11 +113,20 @@ Also need to mention that the format of input document with **original content**
 Finally, when the instance of [EditableDocument](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument) class with modified content inside is created, and the format of the resultant document is defined, it is possible to generate this resultant document using the [Editor](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor).[Save()](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor/save) method. This method has two overloads. These overloads differ only with the way how output document is specified: as path, where file should be created, or as a byte stream, into which the document content should be written. All other parameters are the same.
 
 Here is a signature:
+{{< tabs "Save signature">}}
+{{< tab "C#" >}}
 ```csharp
 Save(EditableDocument inputDocument, string filePath, ISaveOptions saveOptions)
 Save(EditableDocument inputDocument, Stream outputDocument, ISaveOptions saveOptions)
 ```
-
+{{< /tab >}}
+{{< tab "VB.NET">}}
+```vb
+Save(inputDocument As EditableDocument, filePath As String, saveOptions As ISaveOptions)
+Save(inputDocument As EditableDocument, outputDocument As Stream, saveOptions As ISaveOptions)
+```
+{{< /tab >}}
+{{< /tabs >}}
 Here:
 - The 1st parameter — `EditableDocument inputDocument` — is a [EditableDocument](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument) instance with **modified content** inside, created on the 1st step.
 - The 2nd parameter is a [stream](https://learn.microsoft.com/en-us/dotnet/api/system.io.stream), into which the resultant document of defined format should be written, or a file path, where the resultant document of defined format should be stored.
@@ -109,7 +136,13 @@ Here:
 
 Because the WYSIWYG HTML-editor is not a part of the GroupDocs.Editor, it is hard to provide a lightweight code example with fully functional editing. So in this sample the content will be edited programmatically, using a [`String.Replace`](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.replace) method.
 
+{{< tabs "Full example">}}
+{{< tab "C#" >}}
 ```csharp
+using GroupDocs.Editor.Formats;
+using GroupDocs.Editor.Options;
+// ...
+
 // Create Editor class by loading an input document in DOCX format by path
 Editor editor = new Editor("input.docx");
 
@@ -138,5 +171,43 @@ original.Dispose();
 modified.Dispose();
 editor.Dispose();
 ```
+{{< /tab >}}
+{{< tab "VB.NET">}}
+```vb
+Imports GroupDocs.Editor.Formats
+Imports GroupDocs.Editor.Options
+' ...
+
+' Create Editor class by loading an input document in DOCX format by path
+Dim editor As Editor = New Editor("input.docx")
+
+' Open document for edit And obtain EditableDocument
+Dim original As EditableDocument = editor.Edit()
+
+' Get the original content as a string
+Dim originalContent As String = original.GetEmbeddedHtml()
+
+' Get the modified content by editing original content
+Dim modifiedContent As String = originalContent.Replace("old", "new")
+
+
+' Create EditableDocument from modified content
+Dim modified As EditableDocument = EditableDocument.FromMarkup(modifiedContent, Nothing)
+
+' Create And adjust 2 different saving options
+Dim docxSaveOptions As WordProcessingSaveOptions = New WordProcessingSaveOptions(WordProcessingFormats.Docx)
+Dim pdfSaveOptions As PdfSaveOptions = New PdfSaveOptions()
+
+' Save modified content to the 2 documents
+editor.Save(modified, "output.docx", docxSaveOptions)
+editor.Save(modified, "output.pdf", pdfSaveOptions)
+
+' Dispose all
+original.Dispose()
+modified.Dispose()
+editor.Dispose()
+```
+{{< /tab >}}
+{{< /tabs >}}
 
 In this example 2 different save options are created and two different [Editor](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor).[Save()](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor/save) calls are made for saving the modified content to the DOCX and PDF formats.
