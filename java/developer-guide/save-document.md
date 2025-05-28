@@ -30,52 +30,121 @@ structuredData:
 ---
 This article describes how to obtain edited document content from client, process it and save to the resultant document of some specified format.
 
-When end-user has finished document editing in the WYSIWYG HTML-editor (this is usually a pure client-side application, written on JavaScript), he submits the editing operation, and HTML markup with stylesheets, images, and maybe other resources are passed to the server-side. In order to generate a document of some output format, these resources should be passed to the [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument).
+In a nutshell, the core process of document editing, where a user types some text across the pages of the document, inserts images, makes some edits, removes words or paragraphs, or moves some document parts from one location to another, is performed in some 3rd party software with GUI outside of the GroupDocs.Editor. This software may be, for example, but not limiting to:
 
-As it was shown in previous articles, instances of [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) are generated and returned by the [Editor.edit()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor/#edit--) method and then are used for emitting HTML markup and resources for passing them *to* the WYSIWYG editor.  
-However [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) also has a second purpose — to obtain edited content *from* WYSIWYG editor. [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class has no public constructors; instead of them it has two static factories, that obtain HTML document in different forms:
+- a web-based WYSIWYG HTML-editor, that is usually a pure client-side application, written on JavaScript and running in the browser. This may be, for example, a TinyMCE or CKEditor;
+- desktop (like WinForms or WPF) application;
+- mobile application, running on Android or iOS.
 
-1. [FromFile](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument#fromfile()) method is designed for opening HTML-documents from disk — it obtains path to \*.html file and path to corresponding resource folder.
-2. [FromMarkup](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument#frommarkup()) method is designed for opening HTML-documents from memory — it obtains HTML-markup as a `String` and a list of [IHtmlResource](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.htmlcss.resources/ihtmlresource) items.
+The core requirement for this application is to be able to open, view and edit HTML content. The GroupDocs.Editor on its side accepts various document formats (WordProcessing, Spreadsheet, Presentation, and many more) and prepares them for editing in external applications by converting to the HTML markup and placing it in the [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) container. So when calling the [Editor](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor/).[Edit()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor/#edit--) method, the [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) with the **original content** inside it is generated.
+
+Then the user obtains this **original content** from the [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument), pushes it to the external HTML-editor, makes edits, and when these edits are done, a user has the **modified content**. In the GroupDocs.Editor terminology saving a document means obtaining the **modified content** and generating the document in output format (WordProcessing, Spreadsheet, Presentation, and many more) from it. And this article explains how to do this.
+
+In short, saving a document implies the next three steps:
+
+1. Obtain the **modified content** from somewhere (HTML-editor or any other storage or method) and create an instance of [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) from it. [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) actually serves as an object-oriented wrapper of the document content.
+2. Select a desired output format, into which the **modified content** should be saved, and optional parameters.
+3. Save the **modified content** to the document of previously chosen format by specified file path or into specified stream using the [Editor](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor/).[Save()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor/#save-com.groupdocs.editor.EditableDocument-java.lang.String-com.groupdocs.editor.options.ISaveOptions-) method.
+
+These three steps are explained in detail and with code samples below.
+
+## Obtaining the modified content
+
+Different content editors provide the content in different forms. Some may return HTML markup as a `String`, while the external resources like stylesheet(s) and/or image(s) are located in some specific folder as files. Others may return both main content and resources as a collection of byte streams. Some HTML-editors may generate a single string, which already contains all HTML markup with resources baked into it using base64 encoding. There may be unlimited possibilities to do that, and thus the [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class has different static factories, which obtain **modified content** of the HTML document in different forms on input and according to this generate the [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) instance:
+
+1. [fromFile](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument/#fromFile-java.lang.String-java.lang.String-) method is designed for opening HTML-documents from disk — it obtains path to \*.html file (that contains HTML-markup) and an optional path to corresponding resource folder that contains different resources, like stylesheets, images, font files, audio files and so on.
+2. [fromMarkup](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument/#fromMarkup-java.lang.String-java.util.List-com.groupdocs.editor.htmlcss.resources.IHtmlResource--) method is designed for opening HTML-documents from memory — it obtains HTML-markup as a `String` and an optional list of [IHtmlResource](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.htmlcss.resources/ihtmlresource) items, like stylesheets, images, fonts, audio resources and so on.
+3. [`fromMarkupAndResourceFolder` method](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument/#fromMarkupAndResourceFolder-java.lang.String-java.lang.String-) is designed for opening HTML-documents from mixed storages — it obtains the HTML-markup as a `String`, but resources are obtained from a path to corresponding resource folder, which, unlike previous methods, is mandatory (such directory should exist).
 
 More information about creating [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) instances from files or markup with resources can be found in corresponding article "[Create EditableDocument from file or markup]({{< ref "editor/java/developer-guide/editabledocument/create-editabledocument-from-file-or-markup.md" >}})".
 
-When [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) is created, it can be converted to the output document. For doing this, user must use [Editor.save()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor#save--) method, that has two overloads. These overloads differ only with the way how output document is specified: as path, where file should be created, or as a byte stream, into which the document content should be written. All other parameters are same. They are:
+## Create and adjust saving options
 
-1. Instance of [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class, that holds a content of edited document.
-2. Output document, that is specified as file path (`String`) or byte stream (`ByteArrayOutputStream`).
-3. Mandatory save options, that are represented by one of inheritors of the [ISaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/isaveoptions) interface.
-
-Like with load and edit options, every family format has its own class, that implements [ISaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/isaveoptions) interface. These classes are listed below.
+When the [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) instance with the **modified content** is created, it's time to save it to the resultant document of some defined format, and the GroupDocs.Editor needs to know this format. Like with load and edit options, every family format has its own class that implements [ISaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/isaveoptions/) interface. These classes are listed below.
 
 | Format family | Example formats | Save options class | Format class |
 | --- | --- | --- | --- |
-| WordProcessing | DOC, DOCX, DOCM, DOT, ODT | [WordProcessingSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingsaveoptions) | [WordProcessingFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/wordprocessingformats) |
-| Spreadsheet | XLS, XLSX, XLSM, XLSB | [SpreadsheetSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/spreadsheetsaveoptions/) | [SpreadsheetFormat](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/spreadsheetformats) |
-| Delimiter-Separated Values (DSV) | CSV, TSV | [DelimitedTextSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/delimitedtextsaveoptions) | [TextualFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/textualformats) |
-| Presentation | PPT, PPTX, PPS, POT | [PresentationSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/presentationsaveoptions) | [PresentationFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/presentationformats) |
-| Plain Text documents | TXT | [TextSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/textsaveoptions) | [TextualFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/textualformats) |
-| PDF | PDF | [PdfSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/pdfsaveoptions) | N/A |
+| WordProcessing | DOC, DOCX, DOCM, DOT, ODT | [WordProcessingSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingsaveoptions/) | [WordProcessingFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/wordprocessingformats/) |
+| Spreadsheet | XLS, XLSX, XLSM, XLSB | [SpreadsheetSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/spreadsheetsaveoptions/) | [SpreadsheetFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/spreadsheetformats/) |
+| Delimiter-Separated Values (DSV) | CSV, TSV | [DelimitedTextSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/delimitedtextsaveoptions/) | [SpreadsheetFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/spreadsheetformats/) |
+| Presentation | PPT, PPTX, PPS, POT | [PresentationSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/presentationsaveoptions/) | [PresentationFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/presentationformats/) |
+| Plain Text documents | TXT | [TextSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/textsaveoptions/) | [TextualFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/textualformats/) |
+| Fixed-layout format | PDF | [PdfSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/pdfsaveoptions/) | [FixedLayoutFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/fixedlayoutformats/) |
+| Fixed-layout format | XPS | [XpsSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/xpssaveoptions/) | [FixedLayoutFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/fixedlayoutformats/) |
+| Email | EML, EMLX, TNEF, MSG, HTML, MHTML, ICS, VCF, PST, MBOX, OFT | [EmailSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/emailsaveoptions/) | [EmailFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/emailformats/) |
+| e-Books | ePub, Mobi, AZW3 | [EbookSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/ebooksaveoptions/) | [EBookFormats](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/ebookformats/) |
 
-Source code below shows creating an instance of [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class and consequent saving a two versions of the document: one to the file and second — to the stream.
+So, let’s say it is necessary to save the **modified content** to the document of DOCX format. DOCS is the part of WordProcessing family. So the instance of the [WordProcessingSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingsaveoptions/) class should be created, and the [WordProcessingFormats.Docx](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.formats/wordprocessingformats/#Docx) value should be specified in its constructor. Like this:
 
 ```java
-String inputHtmlPath = "C:\\input\\document.html";
-EditableDocument document = EditableDocument.fromFile(inputHtmlPath, null);
-
-Editor editor = new Editor("C:\\path\\original.docx");
-
-//save 1st version to file through path
-String outputPath = "C:\\output_path\\document.rtf";
-WordProcessingSaveOptions saveOptions1 = new WordProcessingSaveOptions(WordProcessingFormats.Rtf);
-editor.save(document, outputPath, saveOptions1);
-
-//save 2nd version to stream
-OutputStream outputStream = new ByteArrayOutputStream();
-WordProcessingSaveOptions saveOptions2 = new WordProcessingSaveOptions(WordProcessingFormats.Docm);
-editor.save(document, outputStream, saveOptions2);
+WordProcessingSaveOptions saveOptions = new WordProcessingSaveOptions(WordProcessingFormats.Docx);
 ```
 
-As you can see from example above, it is possible to create multiple output documents from a single `EditableDocument` with different save options and different formats. And these output formats should not be strictly same as format of input document.
+If it is also necessary to encode the resultant document with the password, it can be done using one line of code:
 
-Even more: in some cases format family can also be different. For example, original document can be some of WordProcessing formats, while output document can be TXT or PDF. Same transitions are allowed between Spreadsheets and DSV (two-ways). But, of course, they are not allowed, where formats are theoretically incompatible in their essence, like WordProcessing and Spreadsheet.
+```java
+saveOptions.setPassword("some-password");
+```
+
+Of course, different formats have different options. For example, there is a `Password` property in [WordProcessingSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/wordprocessingsaveoptions/), [SpreadsheetSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/spreadsheetsaveoptions/), [PresentationSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/presentationsaveoptions/), but there is no anything similar in [XpsSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/xpssaveoptions/), [EmailSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/emailsaveoptions/), [TextSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/textsaveoptions/), and [EbookSaveOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/ebooksaveoptions/), because these formats do not support password protection.
+
+Also need to mention that the format of input document with **original content** and format of the resultant document with **modified content** may be different. For example, the original document can be some WordProcessing formats, while the output document can be TXT or PDF. Or the original document can be a PDF, while output — DOCX. Same transitions are allowed between Spreadsheets and DSV (two-ways). But, of course, they are not allowed, where formats are theoretically incompatible in their essence, like WordProcessing and Spreadsheet.
+
+## Saving modified content to the document
+
+Finally, when the instance of [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) class with modified content inside is created, and the format of the resultant document is defined, it is possible to generate this resultant document using the [Editor](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor/).[Save()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor/#save-com.groupdocs.editor.EditableDocument-java.lang.String-com.groupdocs.editor.options.ISaveOptions-) method. This method has two overloads. These overloads differ only with the way how output document is specified: as path, where file should be created, or as a byte stream, into which the document content should be written. All other parameters are the same.
+
+Here is a signature:
+
+```java
+save(EditableDocument inputDocument, String filePath, ISaveOptions saveOptions)
+save(EditableDocument inputDocument, OutputStream outputDocument, ISaveOptions saveOptions)
+```
+
+Here:
+- The 1st parameter — `EditableDocument inputDocument` — is a [EditableDocument](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editabledocument) instance with **modified content** inside, created on the 1st step.
+- The 2nd parameter is a `OutputStream`, into which the resultant document of defined format should be written, or a file path, where the resultant document of defined format should be stored.
+- The 3rd parameter is an instance of some save options, which defines the format of the resultant document and additional adjustments, created on the 2nd step.
+
+## Complete code example
+
+Because the WYSIWYG HTML-editor is not a part of the GroupDocs.Editor, it is hard to provide a lightweight code example with fully functional editing. So in this sample the content will be edited programmatically, using a [`String.Replace`](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.replace) method.
+
+```java
+import com.groupdocs.editor.Editor;
+import com.groupdocs.editor.EditableDocument;
+import com.groupdocs.editor.options.PdfSaveOptions;
+import com.groupdocs.editor.options.WordProcessingSaveOptions; 
+import com.groupdocs.editor.formats.WordProcessingFormats; 
+// ...
+
+// Create Editor class by loading an input document in DOCX format by path
+Editor editor = new Editor("input.docx");
+
+// Open document for edit and obtain EditableDocument
+EditableDocument original = editor.edit();
+
+// Get the original content as a string
+String originalContent = original.getEmbeddedHtml();
+
+// Get the modified content by editing original content
+String modifiedContent = originalContent.replace("old", "new");
+
+// Create EditableDocument from modified content
+EditableDocument modified = EditableDocument.fromMarkup(modifiedContent, null);
+
+// Create and adjust 2 different saving options
+WordProcessingSaveOptions docxSaveOptions = new WordProcessingSaveOptions(WordProcessingFormats.Docx);
+PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+
+// Save modified content to the 2 documents
+editor.save(modified, "output.docx", docxSaveOptions);
+editor.save(modified, "output.pdf", pdfSaveOptions);
+
+// Dispose all
+original.dispose();
+modified.dispose();
+editor.dispose();
+```
+
+In this example 2 different save options are created and two different [Editor](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor/).[Save()](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor/#save-com.groupdocs.editor.EditableDocument-java.lang.String-com.groupdocs.editor.options.ISaveOptions-) calls are made for saving the modified content to the DOCX and PDF formats.
