@@ -37,7 +37,7 @@ Finally, when "class" attribute with specified class name is applied to all HTML
 
 ## Complete example
 
-Code example below demonstrated editing a sample DOCX file "Fields.docx", that contains 3 input controls: a textbox, a checkbox, and a drop down list. This file is edited twice: 1st time with default `WordProcessingEditOptions`, where no custom class name is specified, and 2nd time with custom value in the `InputControlsClassName` property. As a result, two resultant HTML files are produced.
+Code example below demonstrates editing a sample DOCX file "Fields.docx", that contains 3 input controls: a textbox, a checkbox, and a drop down list. This file is edited twice: 1st time with default `WordProcessingEditOptions`, where no custom class name is specified, and 2nd time with custom value in the `InputControlsClassName` property. As a result, two resultant HTML files are produced.
 
 {{< tabs "Complete example">}}
 {{< tab "C#" >}}
@@ -56,7 +56,8 @@ optionsWithClassName.InputControlsClassName = "myClass1";
 EditableDocument docWithoutClassName = editor.Edit(optionsWithoutClassName);
 EditableDocument docWithClassName = editor.Edit(optionsWithClassName);
 
-System.IO.File.WriteAllText("input-controls-without-custom-classname.html", docWithoutClassName.GetEmbeddedHtml());
+System.IO.File.WriteAllText("input-controls-without-custom-classname.html", 
+    docWithoutClassName.GetEmbeddedHtml());
 System.IO.File.WriteAllText("input-controls-with-custom-classname.html", 
     docWithClassName.GetEmbeddedHtml());
 
