@@ -100,8 +100,6 @@ Reference files to download:
 - Output HTML "[input-controls-without-custom-classname.html](/editor/net/sample-files/input-controls-without-custom-classname.html)"
 - Output HTML "[input-controls-with-custom-classname.html](/editor/net/sample-files/input-controls-with-custom-classname.html)"
 
-Screenshots below show the difference in HTML markup between these two output HTML files: without and with `class` attribute with a `"myClass1"` value.
+Screenshot below shows the difference in HTML markup between these two output HTML files: without on the left side and with `class` attribute with a `"myClass1"` value on the right side.
 
-![input controls without custom classname](/editor/net/images/input-controls-without-custom-classname.png)
-
-![input controls with custom classname](/editor/net/images/input-controls-with-custom-classname.png)
+![input controls without and with custom classname - side-by-side comparison](/editor/net/images/input-controls-without-with-custom-classname-side-by-side.png)
