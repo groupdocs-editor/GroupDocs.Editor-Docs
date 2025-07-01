@@ -65,6 +65,23 @@ allResources.Add(stylesheet);
 EditableDocument document = EditableDocument.FromMarkup(inputHtmlMarkup, allResources);
 ```
 
+Starting from the [version 25.7](https://releases.groupdocs.com/editor/net/release-notes/2025/groupdocs-editor-for-net-25-7-release-notes/) a new simplified overload of the `FromMarkup` method was implemented: `EditableDocument.FromMarkup(string newHtmlContent)`. This overload is useful when there is no any external HTML resources for the given HTML markup. This usually happens when the whole document content with HTML- and CSS-markup and all the resources is packed inside a single string (resources are packed to the HTML-markup using the [data URI scheme](https://en.wikipedia.org/wiki/Data_URI_scheme) with base64 encoding). So, in case when the `inputHtmlMarkup` string variable from the example above contains all resources inside it, and there are no any external images, fonts, or stylesheets, the whole example above can be rewritten as below:
+
+{{< tabs "FromMarkup simplified">}}
+{{< tab "C#" >}}
+```csharp
+string inputHtmlMarkup = "<HTML><HEAD><TITLE>Edited document</TITLE>.....";//all content is here
+EditableDocument document = EditableDocument.FromMarkup(inputHtmlMarkup);
+```
+{{< /tab >}}
+{{< tab "VB.NET">}}
+```vb
+Dim inputHtmlMarkup As String = "<HTML><HEAD><TITLE>Edited document</TITLE>....." 'all content is here
+Dim document As EditableDocument = EditableDocument.FromMarkup(inputHtmlMarkup)
+```
+{{< /tab >}}
+{{< /tabs >}}
+
 ## Opening from markup and resource folder
 
 In some cases there is an HTML markup of edited document, but resources are represented as a set of files, located in some specific folder. For example, original document was converted to [EditableDocument](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument) and then saved to the disk as an HTML document with *.html file and a folder with resources. Then it was loaded to the WYSIWYG-editor, edited by the end-user, and edited content was obtained back from the front-end to the back-end. So now there is an edited HTML markup, available as a stream, and a resource folder. In such case a new method [FromMarkupAndResourceFolder](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument/frommarkupandresourcefolder) was introduced in version 21.10. Here is an example of its usage.

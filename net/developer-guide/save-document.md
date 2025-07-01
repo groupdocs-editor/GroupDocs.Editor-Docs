@@ -129,8 +129,25 @@ Save(inputDocument As EditableDocument, outputDocument As Stream, saveOptions As
 {{< /tabs >}}
 Here:
 - The 1st parameter — `EditableDocument inputDocument` — is a [EditableDocument](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument) instance with **modified content** inside, created on the 1st step.
-- The 2nd parameter is a [stream](https://learn.microsoft.com/en-us/dotnet/api/system.io.stream), into which the resultant document of defined format should be written, or a file path, where the resultant document of defined format should be stored.
+- The 2nd parameter is a [stream](https://learn.microsoft.com/en-us/dotnet/api/system.io.stream), into which the resultant document of defined format should be written, or a `string`, that represents a file path, where the resultant document of defined format should be stored.
 - The 3rd parameter is an instance of some save options, which defines the format of the resultant document and additional adjustments, created on the 2nd step.
+
+In the [version 25.7](https://releases.groupdocs.com/editor/net/release-notes/2025/groupdocs-editor-for-net-25-7-release-notes/) a new overload of the `Editor.Save()` method was added:
+
+{{< tabs "Save simplified">}}
+{{< tab "C#" >}}
+```csharp
+Save(EditableDocument inputDocument, string filePath)
+```
+{{< /tab >}}
+{{< tab "VB.NET">}}
+```vb
+Save(inputDocument As EditableDocument, filePath As String)
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+This overload is essentially a wrapper for the previously mentioned overload — it analyzes the file extension of the `filePath` argument and inferes the default saving options automatically.
 
 ## Complete code example
 
