@@ -1,7 +1,7 @@
 ---
 id: create-document
 url: editor/net/create-document
-title: Create and Edit a New WordProcessing Document
+title: Create and edit new WordProcessing document
 weight: 8
 description: "This article demonstrates how to create and edit WordProcessing documents using GroupDocs.Editor for .NET. It also covers supported formats like spreadsheets and presentations."
 keywords: Create new document, edit document, WordProcessing, GroupDocs.Editor, DOCX
@@ -10,7 +10,7 @@ hideChildren: False
 structuredData:
     showOrganization: True
     application:    
-        name: Creating and Editing Documents by Format
+        name: Create and edit new WordProcessing document
         description: Create and edit new documents using GroupDocs.Editor for .NET in C#
         productCode: editor
         productPlatform: net 
@@ -28,8 +28,8 @@ structuredData:
 
 This guide shows how to create a new blank document in a specific format using the `Editor` class from GroupDocs.Editor for .NET.
 
-You can create documents in **DOCX**, **XLSX**, **PPTX**, **EPUB**, and **EML** formats.
-🔗 See the list of [supported document formats](https://docs.groupdocs.com/editor/net/supported-document-formats/).
+It is possible to create a new blank document in all major document formats, including text (DOCX), workbooks (XLSX), presentations (PPTX), e-books (EPUB) and emails (EML). See the full list of [supported document formats](https://docs.groupdocs.com/editor/net/supported-document-formats/), take a note on a "Create" column, which indicates whether it is possible to create a new document of a particular format.
+
 
 ---
 
@@ -60,10 +60,8 @@ using GroupDocs.Editor;
 using GroupDocs.Editor.Formats;
 using GroupDocs.Editor.Options;
 
-Stream memoryStream = new MemoryStream();
 
-using (Editor editor = new Editor(WordProcessingFormats.Docx))
-{
+    using (Editor editor = new Editor(WordProcessingFormats.Docx))
     WordProcessingEditOptions editOptions = new WordProcessingEditOptions
     {
         EnablePagination = false,
@@ -90,11 +88,9 @@ using (Editor editor = new Editor(WordProcessingFormats.Docx))
 ```csharp
     WordProcessingSaveOptions saveOptions = new WordProcessingSaveOptions(WordProcessingFormats.Docx);
     saveOptions.EnablePagination = true;
+    using Stream memoryStream = new MemoryStream();
     editor.Save(updatedDoc, memoryStream, saveOptions);
-}
 
-memoryStream.Dispose();
-Console.WriteLine("EditNewDocument routine has successfully finished.");
 ```
 
 ---

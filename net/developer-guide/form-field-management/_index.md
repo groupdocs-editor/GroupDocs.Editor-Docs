@@ -1,7 +1,7 @@
 ---
 id: form-field-management
 url: editor/net/form-field-management
-title: Field Management in GroupDocs.Editor for .NET
+title: Field Management
 weight: 100
 description: "This documentation section explains how to the management and manipulation of form fields within documents."
 keywords: fields, form fields
@@ -12,7 +12,7 @@ structuredData:
     showOrganization: True
 ---
 
-The [`GroupDocs.Editor.Words.FieldManagement`](https://reference.groupdocs.com/editor/net/groupdocs.editor/formfieldmanager/) namespace provides classes and interfaces for the management and manipulation of form fields within Word documents. This feature allows users to interact with various types of form fields programmatically, including text fields, checkboxes, dropdowns, and more. This article covers the main features and usage of field management in GroupDocs.Editor for .NET.
+The [`GroupDocs.Editor.Words.FieldManagement`](https://reference.groupdocs.com/editor/net/groupdocs.editor/formfieldmanager/) namespace provides classes and interfaces for the management and manipulation of form fields within Word documents. This feature allows users to interact with various types of form fields programmatically, including text fields, checkboxes, dropdowns, and more. This article covers the main features and usage of field management in GroupDocs.Editor.
 
 ## Key Classes and Interfaces
 
