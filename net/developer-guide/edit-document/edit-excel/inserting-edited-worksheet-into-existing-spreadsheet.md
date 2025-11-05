@@ -4,7 +4,7 @@ url: editor/net/inserting-edited-worksheet-into-existing-spreadsheet
 title: Inserting edited worksheet into existing spreadsheet
 weight: 1
 description: "This article describes the new feature of the GroupDocs.Editor for .NET version 20.10 - inserting an edited worksheet into existing spreadsheet"
-keywords: Edit Excel, insert tab into Escel, insert worksheet into Excel, insert worksheet into spreadsheet
+keywords: Edit Excel, insert tab into Excel, insert worksheet into Excel, insert worksheet into workbook, insert worksheet into spreadsheet
 productName: GroupDocs.Editor for .NET
 hideChildren: False
 toc: True
