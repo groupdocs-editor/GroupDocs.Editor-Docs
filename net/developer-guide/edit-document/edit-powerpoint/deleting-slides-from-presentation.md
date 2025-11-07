@@ -9,7 +9,7 @@ productName: GroupDocs.Editor for .NET
 hideChildren: False
 toc: True
 ---
-There are many [resentation](https://docs.fileformat.com/presentation/) document formats — PPT, PPTX, ODP and many more. They all have one common thing — the *slides*. Each presentation document has one or more slides, and these slides may be treated as containers of different content: text, geometric shapes, raster and vector images, animations, video, audio, comments, embedded objects and many more. The GroupDocs.Editor from its beginning had an ability to edit presentations, but only on a per-slide basis: a user can edit only the content of one slide at a time.
+There are many [presentation](https://docs.fileformat.com/presentation/) document formats — [PPT](https://docs.fileformat.com/presentation/ppt/), [PPTX](https://docs.fileformat.com/presentation/pptx/), [ODP](https://docs.fileformat.com/presentation/odp/) and many more. They all have one common thing — the *slides*. Each presentation document has one or more slides, and these slides may be treated as containers of different content: text, geometric shapes, raster and vector images, animations, video, audio, comments, embedded objects and many more. The GroupDocs.Editor from its beginning had an ability to edit presentations, but only on a per-slide basis: a user can edit only the content of one slide at a time.
 
 Initially, when the content of the slide was edited, it was only possible to save it as a new one-slide presentation. In particular, the pipeline was the next: user loads a presentation to the [`Editor`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor) class, selects the slide to edit with help of [`PresentationEditOptions`](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/presentationeditoptions), obtains [`EditableDocument`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument), edits the HTML-content of the slide, saves this content back to the [`EditableDocument`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editabledocument), and finally generates a new presentation file with one slide using the [`Editor.Save()`](https://reference.groupdocs.com/editor/net/groupdocs.editor/editor/save) method.
 
@@ -37,7 +37,7 @@ Example below shows full roundtrip of input PPT file: presentation with 21 slide
 Input PPT as well as two versions of the output PPTX files may be downloaded here:
 - [Presentations-Tips.ppt](/editor/net/sample-files/Presentations-Tips.ppt)
 - [Output22Slides-without-delete.pptx](/editor/net/sample-files/Output22Slides-without-delete.pptx)
-- [Output20Slides-with-delete.pptx](/editor/net/sample-files/Output22Slides-with-delete.pptx)
+- [Output20Slides-with-delete.pptx](/editor/net/sample-files/Output20Slides-with-delete.pptx)
 
 {{< tabs "DeleteSlidesFromLoadedAndEditedPresentations">}}
 {{< tab "C#" >}}
