@@ -76,7 +76,7 @@ Then define GroupDocs.Editor for Java API dependency in your `pom.xml` as fol
     <dependency>
         <groupId>com.groupdocs</groupId>
         <artifactId>groupdocs-editor</artifactId>
-        <version>25.3</version>
+        <version>26.1</version>
     </dependency>
 </dependencies>
 ```
@@ -84,27 +84,27 @@ Then define GroupDocs.Editor for Java API dependency in your `pom.xml` as fol
 {{< tab "Gradle" >}}
 ```xml
 dependencies {
-    implementation 'com.groupdocs:groupdocs-editor:25.3'
+    implementation 'com.groupdocs:groupdocs-editor:26.1'
 }
 ```
 {{< /tab >}}
 {{< tab "Kotlin" >}}
 ```xml
 dependencies {
-    implementation("com.groupdocs:groupdocs-editor:25.3")
+    implementation("com.groupdocs:groupdocs-editor:26.1")
 }
 ```
 {{< /tab >}}
 {{< tab "Ivy" >}}
 ```xml
-<dependency org="com.groupdocs" name="groupdocs-editor" rev="25.3">
+<dependency org="com.groupdocs" name="groupdocs-editor" rev="26.1">
    <artifact name="groupdocs-editor" ext="jar"/>
 </dependency>
 ```
 {{< /tab >}}
 {{< tab "Sbt" >}}
 ```xml
-libraryDependencies += "com.groupdocs" % "groupdocs-editor" % "25.3"
+libraryDependencies += "com.groupdocs" % "groupdocs-editor" % "26.1"
 ```
 {{< /tab >}}
 {{< /tabs >}}
