@@ -47,51 +47,52 @@ using GroupDocs.Editor.Formats;
 using GroupDocs.Editor.Options;
 // ...
 
-// Load input spreadsheet to the Editor and specify loading options
-using (Editor editor = new Editor("Input3Worksheets.xlsx", new SpreadsheetLoadOptions()))
+// Load input presentation to the Editor and specify loading options
+using (Editor editor = new Editor("Presentations-Tips.ppt", new PresentationLoadOptions()))
 {
-    // Prepare edit options and set 2nd worksheet to edit
-    SpreadsheetEditOptions editOptions = new SpreadsheetEditOptions();
-    editOptions.WorksheetIndex = 1;//2nd worksheet to edit, here WorksheetIndex is 0-based due to historical reasons
+    // Prepare edit options and set 2nd slide to edit
+    PresentationEditOptions editOptions = new PresentationEditOptions();
+    editOptions.ShowHiddenSlides = true;
+    editOptions.SlideNumber = 1;//2nd slide to edit, here SlideNumber is 0-based due to historical reasons
 
-    //generate EditableDocument with original content of 2nd worksheet
-    using (EditableDocument worksheet2OpenedForEdit = editor.Edit(editOptions))
+    //generate EditableDocument with original content of 2nd slide
+    using (EditableDocument slide2OpenedForEdit = editor.Edit(editOptions))
     {
         // Get the HTML-markup from the EditableDocument with original content
-        string originalHtmlContentOf2ndWorksheet = worksheet2OpenedForEdit.GetEmbeddedHtml();
-        
-        //emulate HTML content editing in WYSIWYG-editor in browser or somewhere else
-        string editedHtmlContentOf2ndWorksheet = originalHtmlContentOf2ndWorksheet.Replace("2nd row", "Edited 2nd row at 1st column");
+        string originalHtmlContentOf2ndSlide = slide2OpenedForEdit.GetEmbeddedHtml();
 
-        //generate EditableDocument with edited content of 2nd worksheet
-        using (EditableDocument worksheet2AfterEdit = EditableDocument.FromMarkup(editedHtmlContentOf2ndWorksheet))
+        //emulate HTML content editing in WYSIWYG-editor in browser or somewhere else
+        string editedHtmlContentOf2ndSlide = originalHtmlContentOf2ndSlide.Replace("Tips to be Covered", "Edited tips on 2nd slide");
+
+        //generate EditableDocument with edited content of 2nd slide
+        using (EditableDocument slide2AfterEdit = EditableDocument.FromMarkup(editedHtmlContentOf2ndSlide))
         {
             //prepare save options without deletions
-            SpreadsheetSaveOptions saveOptionsWithoutDelete = new SpreadsheetSaveOptions(SpreadsheetFormats.Xlsx);
-            // let it be the 2nd worksheet...
-            saveOptionsWithoutDelete.WorksheetNumber = 2;//here WorksheetNumber is 1-based
-            //... and we also save the original 2nd worksheet, which is pushed to the 3rd position
-            saveOptionsWithoutDelete.InsertAsNewWorksheet = true;
+            PresentationSaveOptions saveOptionsWithoutDelete = new PresentationSaveOptions(PresentationFormats.Pptx);
+            // let it be the 2nd slide...
+            saveOptionsWithoutDelete.SlideNumber = 2;//here SlideNumber is 1-based
+            //... and we also save the original 2nd slide, which is pushed to the 3rd position
+            saveOptionsWithoutDelete.InsertAsNewSlide = true;
 
-            // So now the spreadsheet must have 4 worksheets, not 3. Save it to file
-            editor.Save(worksheet2AfterEdit, "Output4Worksheets-without-delete.xlsx", saveOptionsWithoutDelete);
+            // So now the presentation must have 22 slides, not 21. Save it to file
+            editor.Save(slide2AfterEdit, "Output22Slides-without-delete.pptx", saveOptionsWithoutDelete);
 
             // Create another save options, with deletions at this time
-            SpreadsheetSaveOptions saveOptionsWithDelete = new SpreadsheetSaveOptions(SpreadsheetFormats.Xlsx);
-            // let the new worksheet will be 2nd for now, but after deleting it will became the 1st later
-            saveOptionsWithDelete.WorksheetNumber = 2;
+            PresentationSaveOptions saveOptionsWithDelete = new PresentationSaveOptions(PresentationFormats.Pptx);
+            // let the new slide will be 2nd for now, but after deleting it will became the 1st later
+            saveOptionsWithDelete.SlideNumber = 2;
 
-            //... and we also save the original 2nd worksheet, which will be next sibling to the newly inserted
-            saveOptionsWithDelete.InsertAsNewWorksheet = true;
+            //... and we also save the original 2nd slide, which will be next sibling to the newly inserted
+            saveOptionsWithDelete.InsertAsNewSlide = true;
 
-            // delete the 1st and last worksheet
-            saveOptionsWithDelete.WorksheetNumbersToDelete = new int[2]
+            // delete the 1st and last slide
+            saveOptionsWithDelete.SlideNumbersToDelete = new int[2]
             {
-                1,//1st worksheet
-                4//last worksheet is 4, not 3, because we inserted the edited 2nd worksheet as the new worksheet instance, without rewriting the original 2nd worksheet
+                1,//1st slide
+                22//last slide is 22, not 21, because we inserted the edited 2nd slide as the new slide instance, without rewriting the original 2nd slide
             };
-            // Save it again to distinct file. Output XLSX should have 2 worksheets now.
-            editor.Save(worksheet2AfterEdit, "Output2Worksheets-with-delete.xlsx", saveOptionsWithDelete);
+            // Save it again to distinct file. Output PPTX should have 20 slides now.
+            editor.Save(slide2AfterEdit, "Output20Slides-with-delete.pptx", saveOptionsWithDelete);
         }
     }
 }
@@ -104,47 +105,48 @@ Imports GroupDocs.Editor.Formats
 Imports GroupDocs.Editor.Options
 ' ...
 
-' Load input spreadsheet to the Editor and specify loading options
-Using editor As New Editor("Input3Worksheets.xlsx", New SpreadsheetLoadOptions())
-    ' Prepare edit options and set 2nd worksheet to edit
-    Dim editOptions As New SpreadsheetEditOptions()
-    editOptions.WorksheetIndex = 1 '2nd worksheet to edit, here WorksheetIndex is 0-based due to historical reasons
+' Load input presentation to the Editor and specify loading options
+Using editor As New Editor("Presentations-Tips.ppt", New PresentationLoadOptions())
+    ' Prepare edit options and set 2nd slide to edit
+    Dim editOptions As New PresentationEditOptions
+    editOptions.ShowHiddenSlides = True
+    editOptions.SlideNumber = 1 '2nd slide to edit, here SlideNumber is 0-based due to historical reasons
 
-    ' generate EditableDocument with original content of 2nd worksheet
-    Using worksheet2OpenedForEdit As EditableDocument = editor.Edit(editOptions)
+    ' generate EditableDocument with original content of 2nd slide
+    Using slide2OpenedForEdit As EditableDocument = editor.Edit(editOptions)
         ' Get the HTML-markup from the EditableDocument with original content
-        Dim originalHtmlContentOf2ndWorksheet As String = worksheet2OpenedForEdit.GetEmbeddedHtml()
+        Dim originalHtmlContentOf2ndSlide As String = slide2OpenedForEdit.GetEmbeddedHtml()
 
         ' emulate HTML content editing in WYSIWYG-editor in browser or somewhere else
-        Dim editedHtmlContentOf2ndWorksheet As String = originalHtmlContentOf2ndWorksheet.Replace("2nd row", "Edited 2nd row at 1st column")
+        Dim editedHtmlContentOf2ndSlide As String = originalHtmlContentOf2ndSlide.Replace("Tips to be Covered", "Edited tips on 2nd slide")
 
-        ' generate EditableDocument with edited content of 2nd worksheet
-        Using worksheet2AfterEdit As EditableDocument = EditableDocument.FromMarkup(editedHtmlContentOf2ndWorksheet)
+        ' generate EditableDocument with edited content of 2nd slide
+        Using slide2AfterEdit As EditableDocument = EditableDocument.FromMarkup(editedHtmlContentOf2ndSlide)
             ' prepare save options without deletions
-            Dim saveOptionsWithoutDelete As New SpreadsheetSaveOptions(SpreadsheetFormats.Xlsx)
+            Dim saveOptionsWithoutDelete As New PresentationSaveOptions(PresentationFormats.Pptx)
 
-            ' let it be the 2nd worksheet...
-            saveOptionsWithoutDelete.WorksheetNumber = 2 'here WorksheetNumber is 1-based
-            '... and we also save the original 2nd worksheet, which is pushed to the 3rd position
-            saveOptionsWithoutDelete.InsertAsNewWorksheet = True
+            ' let it be the 2nd slide...
+            saveOptionsWithoutDelete.SlideNumber = 2
+            '... and we also save the original 2nd slide, which is pushed to the 3rd position
+            saveOptionsWithoutDelete.InsertAsNewSlide = True
 
-            ' So now the spreadsheet must have 4 worksheets, not 3. Save it to file
-            editor.Save(worksheet2AfterEdit, "Output4Worksheets-without-delete.xlsx", saveOptionsWithoutDelete)
+            ' So now the presentation must have 22 slides, not 21. Save it to file
+            editor.Save(slide2AfterEdit, "Output22Slides-without-delete.pptx", saveOptionsWithoutDelete)
 
             ' Create another save options, with deletions at this time
-            Dim saveOptionsWithDelete As New SpreadsheetSaveOptions(SpreadsheetFormats.Xlsx)
-            ' let the new worksheet will be 2nd for now, but after deleting it will became the 1st later
-            saveOptionsWithDelete.WorksheetNumber = 2
-            '... and we also save the original 2nd worksheet, which will be next sibling to the newly inserted
-            saveOptionsWithDelete.InsertAsNewWorksheet = True
+            Dim saveOptionsWithDelete As New PresentationSaveOptions(PresentationFormats.Pptx)
+            ' let the new slide will be 2nd for now, but after deleting it will became the 1st later
+            saveOptionsWithDelete.SlideNumber = 2
+            '... and we also save the original 2nd slide, which will be next sibling to the newly inserted
+            saveOptionsWithDelete.InsertAsNewSlide = True
 
-            ' delete the 1st and last worksheet
-            saveOptionsWithDelete.WorksheetNumbersToDelete = New Int32(1) {
-                1, '1st worksheet
-                4 'last worksheet is 4, not 3, because we inserted the edited 2nd worksheet as the new worksheet instance, without rewriting the original 2nd worksheet
+            'delete the 1st and last slide
+            saveOptionsWithDelete.SlideNumbersToDelete = New Int32(1) {
+                1,' 1St slide
+                22'last slide is 22, not 21, because we inserted the edited 2nd slide as the new slide instance, without rewriting the original 2nd slide
             }
-            ' Save it again to distinct file. Output XLSX should have 2 worksheets now.
-            editor.Save(worksheet2AfterEdit, "Output2Worksheets-with-delete.xlsx", saveOptionsWithDelete)
+            ' Save it again to distinct file. Output PPTX should have 20 slides now.
+            editor.Save(slide2AfterEdit, "Output20Slides-with-delete.pptx", saveOptionsWithDelete)
         End Using
     End Using
 End Using
