@@ -1,0 +1,5 @@
+Images: 4
+Stylesheets: 1
+Fonts: 0
+All resources: 5
+stylesheet resource: GroupDocs.Editor.HtmlCss.Resources.Textual.CssText

@@ -1,0 +1,4 @@
+Whole content length: 31654
+Body content length: 31461
+Embedded (base64) content length: 95550
+CSS stylesheets count: 1

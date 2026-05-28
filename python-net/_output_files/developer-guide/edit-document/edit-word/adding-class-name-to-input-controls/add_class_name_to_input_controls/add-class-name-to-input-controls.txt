@@ -1,0 +1,2 @@
+Occurrences of 'editable-field' without custom class name: 0
+Occurrences of 'editable-field' with custom class name: 7

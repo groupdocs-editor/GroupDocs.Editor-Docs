@@ -10,7 +10,7 @@ hideChildren: True
 structuredData:
     showOrganization: True
 ---
-<img src="/editor/nodejs-java/images/home.png" width="110" height="110" alt="groupdocs-editor-nodejs-java-home" align="left" style="margin: 0 30px 30px 0"/>
+<img src="/logo/128x128/groupdocs-editor-nodejs.png" width="110" height="110" alt="groupdocs-editor-nodejs-java-home" align="left" style="margin: 0 30px 30px 0"/>
 
 Edit Word, Excel and PowerPoint documents using GroupDocs.Editor for Node.js powerful document editing API. It can be used with any external, open source or paid HTML editor.
 

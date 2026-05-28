@@ -1,0 +1,6 @@
+Format: Office Open XML WordProcessingML Macro-Free Document (DOCX)
+Extension: docx
+MIME: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+Pages: 3
+Size, bytes: 49455
+Encrypted: False

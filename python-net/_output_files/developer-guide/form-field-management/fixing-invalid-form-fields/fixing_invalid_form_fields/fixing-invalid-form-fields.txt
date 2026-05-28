@@ -1,0 +1,2 @@
+Has invalid form fields: True
+Invalid form fields detected: 21

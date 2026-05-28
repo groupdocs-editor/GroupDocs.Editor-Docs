@@ -1,0 +1,315 @@
+{
+  "developer-guide/create-document#code-example-create-document": {
+    "type": "file",
+    "file": "new-document.docx",
+    "path": "developer-guide/create-document/create_document/new-document.docx",
+    "preview": "Binary file (DOCX, 8 KB)",
+    "function": "create_document"
+  },
+  "developer-guide/edit-document/edit-ebook#code-example-edit-ebook": {
+    "type": "file",
+    "file": "edited-ebook.epub",
+    "path": "developer-guide/edit-document/edit-ebook/edit_ebook/edited-ebook.epub",
+    "preview": "Binary file (EPUB, 29 KB)",
+    "function": "edit_ebook"
+  },
+  "developer-guide/edit-document/edit-email#code-example-edit-email": {
+    "type": "text",
+    "file": "edit-email.txt",
+    "path": "developer-guide/edit-document/edit-email/edit_email/edit-email.txt",
+    "preview": "Generated HTML content length: 1255",
+    "function": "edit_email"
+  },
+  "developer-guide/edit-document/edit-excel/deleting-worksheets-from-spreadsheet#code-example-deleting-worksheets-from-spreadsheet": {
+    "type": "file",
+    "file": "edited-spreadsheet.xlsx",
+    "path": "developer-guide/edit-document/edit-excel/deleting-worksheets-from-spreadsheet/deleting_worksheets_from_spreadsheet/edited-spreadsheet.xlsx",
+    "preview": "Binary file (XLSX, 35 KB)",
+    "function": "deleting_worksheets_from_spreadsheet"
+  },
+  "developer-guide/edit-document/edit-excel/generating-worksheet-preview-for-spreadsheet#code-example-generating-worksheet-preview-for-spreadsheet": {
+    "type": "text",
+    "file": "generating-worksheet-preview-spreadsheet.txt",
+    "path": "developer-guide/edit-document/edit-excel/generating-worksheet-preview-for-spreadsheet/generating_worksheet_preview_for_spreadsheet/generating-worksheet-preview-spreadsheet.txt",
+    "preview": "Worksheet HTML content length: 42948",
+    "function": "generating_worksheet_preview_for_spreadsheet"
+  },
+  "developer-guide/edit-document/edit-excel/inserting-edited-worksheet-into-existing-spreadsheet#code-example-inserting-edited-worksheet-into-existing-spreadsheet": {
+    "type": "file",
+    "file": "edited-spreadsheet.xlsx",
+    "path": "developer-guide/edit-document/edit-excel/inserting-edited-worksheet-into-existing-spreadsheet/inserting_edited_worksheet_into_existing_spreadsheet/edited-spreadsheet.xlsx",
+    "preview": "Binary file (XLSX, 66 KB)",
+    "function": "inserting_edited_worksheet_into_existing_spreadsheet"
+  },
+  "developer-guide/edit-document/edit-markdown#code-example-edit-markdown": {
+    "type": "file",
+    "file": "edited-article.md",
+    "path": "developer-guide/edit-document/edit-markdown/edit_markdown/edited-article.md",
+    "preview": "﻿# Sample Article\nThis is a **sample Markdown document** used by the GroupDocs.Editor for Python via .NET examples.\n## Introduction\nGroupDocs.Editor converts Markdown to editable HTML and back, so you can edit content programmatically or in any WYSIWYG editor.\n## Features\n- Headings, paragraphs, and emphasis\n- Ordered and unordered lists\n- Links such as [GroupDocs](https://www.groupdocs.com)\n- Inline code and fenced code blocks\n## Example List\n[TRUNCATED]",
+    "function": "edit_markdown"
+  },
+  "developer-guide/edit-document/edit-pdf#code-example-edit-pdf": {
+    "type": "text",
+    "file": "edit-pdf.txt",
+    "path": "developer-guide/edit-document/edit-pdf/edit_pdf/edit-pdf.txt",
+    "preview": "Generated HTML content length: 110427",
+    "function": "edit_pdf"
+  },
+  "developer-guide/edit-document/edit-powerpoint/deleting-slides-from-presentation#code-example-deleting-slides-from-presentation": {
+    "type": "file",
+    "file": "edited-presentation.pptx",
+    "path": "developer-guide/edit-document/edit-powerpoint/deleting-slides-from-presentation/deleting_slides_from_presentation/edited-presentation.pptx",
+    "preview": "Binary file (PPTX, 144 KB)",
+    "function": "deleting_slides_from_presentation"
+  },
+  "developer-guide/edit-document/edit-powerpoint/generating-slides-preview-for-presentation#code-example-generating-slides-preview-for-presentation": {
+    "type": "text",
+    "file": "generating-slides-preview-presentation.txt",
+    "path": "developer-guide/edit-document/edit-powerpoint/generating-slides-preview-for-presentation/generating_slides_preview_for_presentation/generating-slides-preview-presentation.txt",
+    "preview": "Slide HTML content length: 8422",
+    "function": "generating_slides_preview_for_presentation"
+  },
+  "developer-guide/edit-document/edit-powerpoint/inserting-edited-slide-into-existing-presentation#code-example-inserting-edited-slide-into-existing-presentation": {
+    "type": "file",
+    "file": "edited-presentation.pptx",
+    "path": "developer-guide/edit-document/edit-powerpoint/inserting-edited-slide-into-existing-presentation/inserting_edited_slide_into_existing_presentation/edited-presentation.pptx",
+    "preview": "Binary file (PPTX, 232 KB)",
+    "function": "inserting_edited_slide_into_existing_presentation"
+  },
+  "developer-guide/edit-document/edit-txt#code-example-edit-txt": {
+    "type": "file",
+    "file": "edited.txt",
+    "path": "developer-guide/edit-document/edit-txt/edit_txt/edited.txt",
+    "preview": "﻿This is an edited sample plain text file\n \nThere is one empty line above this text.  Two spaces.   Three spaces.\nNew line, which is preceded by 5 consecutive spaces. External link: https://rozetka.com.ua/final_pm_2d_black/p34087151/#tab=characteristics\nNew line again, but at this time 1 tab char and 1 space char.\nOne tab.\nTwo tabs.\nThree tabs.\n \n \n[TRUNCATED]",
+    "function": "edit_txt"
+  },
+  "developer-guide/edit-document/edit-word/adding-class-name-to-input-controls#code-example-adding-class-name-to-input-controls": {
+    "type": "text",
+    "file": "add-class-name-to-input-controls.txt",
+    "path": "developer-guide/edit-document/edit-word/adding-class-name-to-input-controls/add_class_name_to_input_controls/add-class-name-to-input-controls.txt",
+    "preview": "Occurrences of 'editable-field' without custom class name: 0\nOccurrences of 'editable-field' with custom class name: 7",
+    "function": "add_class_name_to_input_controls"
+  },
+  "developer-guide/edit-document/edit-word/document-protection#code-example-document-protection": {
+    "type": "file",
+    "file": "protected-document.docx",
+    "path": "developer-guide/edit-document/edit-word/document-protection/protect_document/protected-document.docx",
+    "preview": "Binary file (DOCX, 53 KB)",
+    "function": "protect_document"
+  },
+  "developer-guide/edit-document/edit-word/enabling-language-information#code-example-enabling-language-information": {
+    "type": "text",
+    "file": "enable-language-information.txt",
+    "path": "developer-guide/edit-document/edit-word/enabling-language-information/enable_language_information/enable-language-information.txt",
+    "preview": "HTML markup with language information, length: 35801",
+    "function": "enable_language_information"
+  },
+  "developer-guide/edit-document/edit-word/float-and-paginal-modes#code-example-float-and-paginal-modes": {
+    "type": "text",
+    "file": "edit-in-paginal-mode.txt",
+    "path": "developer-guide/edit-document/edit-word/float-and-paginal-modes/edit_in_paginal_mode/edit-in-paginal-mode.txt",
+    "preview": "Edited in paginal mode, HTML markup length: 32503",
+    "function": "edit_in_paginal_mode"
+  },
+  "developer-guide/edit-document/edit-word/font-embedding-options#code-example-font-embedding-options": {
+    "type": "file",
+    "file": "fonts-output.docx",
+    "path": "developer-guide/edit-document/edit-word/font-embedding-options/embed_fonts/fonts-output.docx",
+    "preview": "Binary file (DOCX, 49 KB)",
+    "function": "embed_fonts"
+  },
+  "developer-guide/edit-document/edit-word/font-extraction-options#code-example-font-extraction-options": {
+    "type": "text",
+    "file": "extract-used-fonts.txt",
+    "path": "developer-guide/edit-document/edit-word/font-extraction-options/extract_used_fonts/extract-used-fonts.txt",
+    "preview": "Extracted font resources: 6",
+    "function": "extract_used_fonts"
+  },
+  "developer-guide/edit-document/edit-word/generating-page-preview#code-example-generating-page-preview": {
+    "type": "text",
+    "file": "generate-page-preview.txt",
+    "path": "developer-guide/edit-document/edit-word/generating-page-preview/generate_page_preview/generate-page-preview.txt",
+    "preview": "Loaded WordProcessing document, HTML content length: 31654",
+    "function": "generate_page_preview"
+  },
+  "developer-guide/edit-document/edit-word/inline-styles#code-example-inline-styles": {
+    "type": "text",
+    "file": "use-inline-styles.txt",
+    "path": "developer-guide/edit-document/edit-word/inline-styles/use_inline_styles/use-inline-styles.txt",
+    "preview": "External styles HTML length: 31654\nInline styles HTML length: 48162",
+    "function": "use_inline_styles"
+  },
+  "developer-guide/edit-document/edit-word/locales-for-output-document#code-example-locales-for-output-document": {
+    "type": "file",
+    "file": "localized-document.docx",
+    "path": "developer-guide/edit-document/edit-word/locales-for-output-document/set_output_locale/localized-document.docx",
+    "preview": "Binary file (DOCX, 49 KB)",
+    "function": "set_output_locale"
+  },
+  "developer-guide/edit-document/edit-word/memory-optimization-option#code-example-memory-optimization-option": {
+    "type": "file",
+    "file": "optimized-document.docx",
+    "path": "developer-guide/edit-document/edit-word/memory-optimization-option/optimize_memory_usage/optimized-document.docx",
+    "preview": "Binary file (DOCX, 49 KB)",
+    "function": "optimize_memory_usage"
+  },
+  "developer-guide/edit-document/edit-word/output-format-and-password#code-example-output-format-and-password": {
+    "type": "file",
+    "file": "protected-output.rtf",
+    "path": "developer-guide/edit-document/edit-word/output-format-and-password/set_output_format_and_password/protected-output.rtf",
+    "preview": "Binary file (RTF, 1.6 MB)",
+    "function": "set_output_format_and_password"
+  },
+  "developer-guide/edit-document/edit-word/styles-export#code-example-styles-export": {
+    "type": "text",
+    "file": "export-styles.txt",
+    "path": "developer-guide/edit-document/edit-word/styles-export/export_styles/export-styles.txt",
+    "preview": "Number of exported stylesheets: 1\nTotal CSS length, characters: 34134",
+    "function": "export_styles"
+  },
+  "developer-guide/edit-document/edit-xml#code-example-edit-xml": {
+    "type": "text",
+    "file": "edit-xml.txt",
+    "path": "developer-guide/edit-document/edit-xml/edit_xml/edit-xml.txt",
+    "preview": "Generated HTML content length: 9345",
+    "function": "edit_xml"
+  },
+  "developer-guide/edit-document/how-to-edit-csv-file#code-example-how-to-edit-csv-file": {
+    "type": "file",
+    "file": "edited-cars.tsv",
+    "path": "developer-guide/edit-document/how-to-edit-csv-file/edit_csv/edited-cars.tsv",
+    "preview": "﻿1997\tFord\tE350\tac, abs, moon\t3000\n1999\tChevy\tVenture «Extended Edition»\t\t4900\n1996\tJeep\tGrand Cherokee\tMUST SELL! air, moon roof, loaded\t4799\n2014\tSsangYong\tKyron\tgood car!\t1998",
+    "function": "edit_csv"
+  },
+  "developer-guide/editabledocument/create-editabledocument-from-file-or-markup#code-example-create-editabledocument-from-file-or-markup": {
+    "type": "file",
+    "file": "output.docx",
+    "path": "developer-guide/editabledocument/create-editabledocument-from-file-or-markup/create_editabledocument_from_file_or_markup/output.docx",
+    "preview": "Binary file (DOCX, 7 KB)",
+    "function": "create_editabledocument_from_file_or_markup"
+  },
+  "developer-guide/editabledocument/get-html-markup-in-different-forms#code-example-get-html-markup-in-different-forms": {
+    "type": "text",
+    "file": "get-html-markup-in-different-forms.txt",
+    "path": "developer-guide/editabledocument/get-html-markup-in-different-forms/get_html_markup_in_different_forms/get-html-markup-in-different-forms.txt",
+    "preview": "Whole content length: 31654\nBody content length: 31461\nEmbedded (base64) content length: 95550\nCSS stylesheets count: 1",
+    "function": "get_html_markup_in_different_forms"
+  },
+  "developer-guide/editabledocument/save-html-to-folder#code-example-save-html-to-folder": {
+    "type": "file",
+    "file": "output.html",
+    "path": "developer-guide/editabledocument/save-html-to-folder/save_html_to_folder/output.html",
+    "preview": "<HTML><HEAD><META charset=\"utf-8\" /><TITLE>Sample Document ver.1</TITLE><META name=\"author\" content=\"neD\" /><LINK href=\"output_resources/style.css\" rel=\"stylesheet\" type=\"text/css\" /></HEAD><BODY><DIV class=\"documentMainContent\"><DIV class=\"Section1\"><H1 class=\"Heading_1\"><A id=\"_Toc465352669\" ><SPAN class=\"Default_Paragraph_Font text001\">Title of the document</SPAN></A></H1><H2 class=\"Heading_2\"><A id=\"_Toc465352671\" ><SPAN class=\"Default_Paragraph_Font text002\">Subtitle #1</SPAN></A></H2><P cl\n[TRUNCATED]",
+    "function": "save_html_to_folder"
+  },
+  "developer-guide/editabledocument/saving-editabledocument-to-stream#code-example-saving-editabledocument-to-stream": {
+    "type": "file",
+    "file": "output.html",
+    "path": "developer-guide/editabledocument/saving-editabledocument-to-stream/saving_editabledocument_to_stream/output.html",
+    "preview": "<HTML><HEAD><META charset=\"utf-8\" /><TITLE>Sample Document ver.1</TITLE><META name=\"author\" content=\"neD\" /><LINK href=\"output_resources/style.css\" rel=\"stylesheet\" type=\"text/css\" /></HEAD><BODY><DIV class=\"documentMainContent\"><DIV class=\"Section1\"><H1 class=\"Heading_1\"><A id=\"_Toc465352669\" ><SPAN class=\"Default_Paragraph_Font text001\">Title of the document</SPAN></A></H1><H2 class=\"Heading_2\"><A id=\"_Toc465352671\" ><SPAN class=\"Default_Paragraph_Font text002\">Subtitle #1</SPAN></A></H2><P cl\n[TRUNCATED]",
+    "function": "saving_editabledocument_to_stream"
+  },
+  "developer-guide/editabledocument/working-with-resources#code-example-working-with-resources": {
+    "type": "text",
+    "file": "working-with-resources.txt",
+    "path": "developer-guide/editabledocument/working-with-resources/working_with_resources/working-with-resources.txt",
+    "preview": "Images: 4\nStylesheets: 1\nFonts: 0\nAll resources: 5\nstylesheet resource: GroupDocs.Editor.HtmlCss.Resources.Textual.CssText",
+    "function": "working_with_resources"
+  },
+  "developer-guide/extracting-document-metainfo#code-example-extracting-document-metainfo": {
+    "type": "text",
+    "file": "extracting-document-metainfo.txt",
+    "path": "developer-guide/extracting-document-metainfo/extracting_document_metainfo/extracting-document-metainfo.txt",
+    "preview": "Format: Office Open XML WordProcessingML Macro-Free Document (DOCX)\nExtension: docx\nMIME: application/vnd.openxmlformats-officedocument.wordprocessingml.document\nPages: 3\nSize, bytes: 49455\nEncrypted: False",
+    "function": "extracting_document_metainfo"
+  },
+  "developer-guide/form-field-management/edit-and-update-form-fields#code-example-edit-and-update-form-fields": {
+    "type": "text",
+    "file": "edit-and-update-form-fields.txt",
+    "path": "developer-guide/form-field-management/edit-and-update-form-fields/edit_and_update_form_fields/edit-and-update-form-fields.txt",
+    "preview": "Has invalid form fields: True\nForm fields count: 31",
+    "function": "edit_and_update_form_fields"
+  },
+  "developer-guide/form-field-management/fixing-invalid-form-fields#code-example-fixing-invalid-form-fields": {
+    "type": "text",
+    "file": "fixing-invalid-form-fields.txt",
+    "path": "developer-guide/form-field-management/fixing-invalid-form-fields/fixing_invalid_form_fields/fixing-invalid-form-fields.txt",
+    "preview": "Has invalid form fields: True\nInvalid form fields detected: 21",
+    "function": "fixing_invalid_form_fields"
+  },
+  "developer-guide/form-field-management/working-with-form-fields#code-example-working-with-form-fields": {
+    "type": "text",
+    "file": "working-with-form-fields.txt",
+    "path": "developer-guide/form-field-management/working-with-form-fields/working_with_form_fields/working-with-form-fields.txt",
+    "preview": "Has invalid form fields: True\nForm fields count: 31\nname: Text1 type: 0\nname: Check1 type: 5\nname: Check2 type: 5\nname: Check3 type: 5\nname: Check4 type: 5\nname: Check5 type: 5\nname: Check6 type: 5\nname: Text7 type: 0\n[TRUNCATED]",
+    "function": "working_with_form_fields"
+  },
+  "developer-guide/load-document#code-example-load-document": {
+    "type": "text",
+    "file": "load-document.txt",
+    "path": "developer-guide/load-document/load_document/load-document.txt",
+    "preview": "Loaded: Office Open XML WordProcessingML Macro-Free Document (DOCX) - 3 page(s)",
+    "function": "load_document"
+  },
+  "developer-guide/save-document#code-example-save-document": {
+    "type": "zip",
+    "file": "save-document-outputs.zip",
+    "path": "developer-guide/save-document/save_document/save-document-outputs.zip",
+    "contents": [
+      "edited-document.docm",
+      "edited-document.rtf",
+      "edited-document.txt"
+    ],
+    "preview": "edited-document.docm (49 KB)\nedited-document.rtf (1648 KB)\nedited-document.txt (5 KB)",
+    "function": "save_document"
+  },
+  "developer-guide/working-with-formats#code-example-working-with-formats": {
+    "type": "file",
+    "file": "converted-document.docm",
+    "path": "developer-guide/working-with-formats/working_with_formats/converted-document.docm",
+    "preview": "Binary file (DOCM, 49 KB)",
+    "function": "working_with_formats"
+  },
+  "developer-guide/working-with-html-resources#code-example-working-with-html-resources": {
+    "type": "file",
+    "file": "output.html",
+    "path": "developer-guide/working-with-html-resources/working_with_html_resources/output.html",
+    "preview": "<HTML><HEAD><META charset=\"utf-8\" /><TITLE>Sample Document ver.1</TITLE><META name=\"author\" content=\"neD\" /><LINK href=\"output_resources/style.css\" rel=\"stylesheet\" type=\"text/css\" /></HEAD><BODY><DIV class=\"documentMainContent\"><DIV class=\"Section1\"><H1 class=\"Heading_1\"><A id=\"_Toc465352669\" ><SPAN class=\"Default_Paragraph_Font text001\">Title of the document</SPAN></A></H1><H2 class=\"Heading_2\"><A id=\"_Toc465352671\" ><SPAN class=\"Default_Paragraph_Font text002\">Subtitle #1</SPAN></A></H2><P cl\n[TRUNCATED]",
+    "function": "working_with_html_resources"
+  },
+  "developer-guide/working-with-mobi-documents#code-example-working-with-mobi-documents": {
+    "type": "file",
+    "file": "edited-ebook.mobi",
+    "path": "developer-guide/working-with-mobi-documents/edit_mobi_document/edited-ebook.mobi",
+    "preview": "Binary file (MOBI, 28 KB)",
+    "function": "edit_mobi_document"
+  },
+  "getting-started/how-to-run-examples#code-example-run_first_example": {
+    "type": "file",
+    "file": "edited-document.docx",
+    "path": "getting-started/how-to-run-examples/run_first_example/edited-document.docx",
+    "preview": "Binary file (DOCX, 49 KB)",
+    "function": "run_first_example"
+  },
+  "getting-started/quick-start-guide#demo_app_edit_word_document": {
+    "type": "file",
+    "file": "edited-document.docx",
+    "path": "getting-started/quick-start-guide/edit_word_document/edited-document.docx",
+    "preview": "Binary file (DOCX, 49 KB)",
+    "function": "edit_word_document"
+  },
+  "getting-started/quick-start-guide#demo_app_convert_word_to_pdf": {
+    "type": "file",
+    "file": "sample-document.pdf",
+    "path": "getting-started/quick-start-guide/convert_word_to_pdf/sample-document.pdf",
+    "preview": "Binary file (PDF, 155 KB)",
+    "function": "convert_word_to_pdf"
+  },
+  "getting-started/quick-start-guide#demo_app_get_document_info": {
+    "type": "text",
+    "file": "get-document-info.txt",
+    "path": "getting-started/quick-start-guide/get_document_info/get-document-info.txt",
+    "preview": "Format: Office Open XML WordProcessingML Macro-Free Document (DOCX)\nExtension: docx\nPages: 3\nSize, bytes: 49455\nEncrypted: False",
+    "function": "get_document_info"
+  }
+}

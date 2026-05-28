@@ -1,0 +1,5 @@
+Format: Office Open XML WordProcessingML Macro-Free Document (DOCX)
+Extension: docx
+Pages: 3
+Size, bytes: 49455
+Encrypted: False
