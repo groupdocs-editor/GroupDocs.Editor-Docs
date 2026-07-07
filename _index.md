@@ -53,13 +53,13 @@ Excellent file editor component that empowers your C#, ASP.NET, and other .NET a
             <div class="gdoc-platform__col">
                     <div class="gdoc-platform__col-title">
                     <svg class="gdoc-platform__col-icon"><use xlink:href="/img/groupdocs-stack.svg#document"></use></svg>
-                    <div>Document rendering</div></div>
-                    <div class="gdoc-platform__col-descr">Articles and guidelines for  document rendering</div>
+                    <div>Document editing</div></div>
+                    <div class="gdoc-platform__col-descr">Articles and guidelines for document editing</div>
                     <ul class="gdoc-platform__col-links">
-                    <li> <a href='/editor/net/render-word-documents/'>Render Word documents</a></li>
-                    <li> <a href='/editor/net/render-pdf-documents/'>Render PDF documents</a></li>
-                    <li> <a href='/editor/net/render-presentations/'>Render PowerPoint presentations</a></li>
-                    <li> <a href='/editor/net/render-excel-and-apple-numbers-spreadsheets/'>Render spreadsheets</a></li>
+                    <li> <a href='/editor/net/load-document/'>Load document</a></li>
+                    <li> <a href='/editor/net/save-document/'>Save document</a></li>
+                    <li> <a href='/editor/net/edit-word/'>Edit Word documents</a></li>
+                    <li> <a href='/editor/net/edit-excel/'>Edit Excel spreadsheets</a></li>
                     </ul>
                     </div>
             <div class="gdoc-platform__col">
@@ -100,12 +100,12 @@ Excellent file editor component that empowers your C#, ASP.NET, and other .NET a
             <div class="gdoc-platform__col">
                     <div class="gdoc-platform__col-title">
                     <svg class="gdoc-platform__col-icon"><use xlink:href="/img/groupdocs-stack.svg#document"></use></svg>
-                    <div>Document rendering</div></div>
-                    <div class="gdoc-platform__col-descr">Articles and guidelines for  document rendering</div>
+                    <div>Document editing</div></div>
+                    <div class="gdoc-platform__col-descr">Articles and guidelines for document editing</div>
                     <ul class="gdoc-platform__col-links">
-                <li> <a href='/editor/java/how-to-view-word-documents-using-java/'>Render Word documents</a></li>
-                    <li> <a href='/editor/java/how-to-view-pdf-documents-using-java/'>Render PDF documents</a></li>
-                    <li> <a href='/editor/java/how-to-view-cad-documents-using-java/'>Render CAD documents</a></li>
+                <li> <a href='/editor/java/load-document/'>Load document</a></li>
+                    <li> <a href='/editor/java/edit-word/'>Edit Word documents</a></li>
+                    <li> <a href='/editor/java/edit-excel/'>Edit Excel spreadsheets</a></li>
                     </ul>
                     </div>
             <div class="gdoc-platform__col">
@@ -147,12 +147,12 @@ Excellent file editor component that empowers your C#, ASP.NET, and other .NET a
             <div class="gdoc-platform__col">
                     <div class="gdoc-platform__col-title">
                     <svg class="gdoc-platform__col-icon"><use xlink:href="/img/groupdocs-stack.svg#document"></use></svg>
-                    <div>Document rendering</div></div>
-                    <div class="gdoc-platform__col-descr">Articles and guidelines for  document rendering</div>
+                    <div>Document editing</div></div>
+                    <div class="gdoc-platform__col-descr">Articles and guidelines for document editing</div>
                     <ul class="gdoc-platform__col-links">
-                <li> <a href='/editor/nodejs-java/rendering-to-pdf/'>Render to PDF</a></li>
-                    <li> <a href='/editor/nodejs-java/rendering-to-html/'>Render to HTML</a></li>
-                    <li> <a href='/editor/nodejs-java/add-text-watermark/'>Add text watermarks</a></li>
+                <li> <a href='/editor/nodejs-java/load-document/'>Load document</a></li>
+                    <li> <a href='/editor/nodejs-java/edit-word/'>Edit Word documents</a></li>
+                    <li> <a href='/editor/nodejs-java/edit-excel/'>Edit Excel spreadsheets</a></li>
                     </ul>
                     </div>
             <div class="gdoc-platform__col">
