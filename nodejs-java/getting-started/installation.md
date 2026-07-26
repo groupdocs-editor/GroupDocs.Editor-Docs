@@ -17,16 +17,21 @@ All Node.js packages are hosted at [GroupDocs Artifact Repository](https://repos
 
 1. **Install GroupDocs.Editor for Node.js:**
 
-   After configuring the repository, you can install the GroupDocs.Editor package using npm:
+   Install the GroupDocs.Editor package from npm:
    ```sh
-   npm install @groupdocs/editor
+   npm install @groupdocs/groupdocs.editor@26.7.0
+   ```
+
+   Or without pinning a version (latest published):
+   ```sh
+   npm install @groupdocs/groupdocs.editor
    ```
 
 2. **Example usage:**
 
    Here is a basic example of how to use GroupDocs.Editor in your Node.js application:
    ```javascript
-   const groupdocsEditor = require('@groupdocs/editor');
+   const groupdocsEditor = require('@groupdocs/groupdocs.editor');
 
    // Create an instance of the Editor class
    const editor = new groupdocsEditor.Editor("path/to/document");

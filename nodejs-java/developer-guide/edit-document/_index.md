@@ -45,6 +45,7 @@ Each format family has its own implementation of the `EditOptions` class. They a
 | **Plain Text Documents**           | TXT                                                     | [`TextEditOptions`](https://reference.groupdocs.com/editor/nodejs-java/com.groupdocs.editor.options.TextEditOptions)                    |
 | **XML**                            | Any XML-based format like CSPROJ, SVG, etc.             | [`XmlEditOptions`](https://reference.groupdocs.com/editor/nodejs-java/com.groupdocs.editor.options.XmlEditOptions)                      |
 | **eBook**                          | MOBI, AZW3, EPUB                                        | [`EbookEditOptions`](https://reference.groupdocs.com/editor/nodejs-java/com.groupdocs.editor.options.EbookEditOptions)                  |
+| **Fixed-layout (PDF)**             | PDF                                                     | [`PdfEditOptions`](https://reference.groupdocs.com/editor/nodejs-java/com.groupdocs.editor.options.PdfEditOptions)                      |
 | **Email**                          | EML, EMLX, TNEF, MSG, HTML, MHTML, ICS, VCF, PST, MBOX, OFT | [`EmailEditOptions`](https://reference.groupdocs.com/editor/nodejs-java/com.groupdocs.editor.options.EmailEditOptions)                  |
 
 The second overload is parameterless—it chooses the most appropriate default edit options based on the input document format.
