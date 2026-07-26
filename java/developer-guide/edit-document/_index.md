@@ -42,6 +42,7 @@ Each format family has its own implementation of [IEditOptions](https://referen
 | Plain Text documents | TXT | [TextEditOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/texteditoptions/) |
 | XML | Any XML-based format like CSPROJ, SVG, and so on | [XmlEditOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/xmleditoptions/) |
 | eBook | MOBI, AZW3, ePub | [EbookEditOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/ebookeditoptions/) |
+| Fixed-layout (PDF) | PDF | [PdfEditOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/pdfeditoptions/) |
 | Email | EML, EMLX, TNEF, MSG, HTML, MHTML, ICS, VCF, PST, MBOX, OFT | [EmailEditOptions](https://reference.groupdocs.com/editor/java/com.groupdocs.editor.options/emaileditoptions/) |
 
 Second overload is parameterless — it chooses the most appropriate default edit options based on input document format.
