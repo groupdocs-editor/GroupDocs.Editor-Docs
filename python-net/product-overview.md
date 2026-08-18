@@ -10,7 +10,7 @@ productName: GroupDocs.Editor for Python via .NET
 toc: True
 ---
 
-<img src="/editor/python-net/images/home.png" width="110" height="110" alt="groupdocs-editor-python-net-home" align="left" style="margin: 0 30px 30px 0"/>
+<img src="/logo/128x128/groupdocs-editor-python.png" alt="groupdocs-editor-python-net-home" align="left" style="width:110px; margin: 0 30px 30px 0"/>
 
 GroupDocs.Editor for Python via .NET is a powerful and lightweight library which allows you to edit the most popular document formats using third-party front-end WYSIWYG HTML editors without any additional software.
 
