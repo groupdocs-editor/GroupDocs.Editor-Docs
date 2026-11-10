@@ -107,3 +107,7 @@ editor.Save(afterEdit, outputStream, saveOptions);
 ```
 
 Starting from version 20.4, [PresentationSaveOptions](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/presentationsaveoptions) class contains two new properties — [SlideNumber](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/presentationsaveoptions/slidenumber) and [InsertAsNewSlide](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/presentationsaveoptions/insertasnewslide), — which are highly coupled together. These properties allow to insert edited slide into existing presentation instead of creating new presentation with single edited slide, which remains the default behavior. They are explained in detail in [separate article]({{< ref "editor/net/developer-guide/edit-document/edit-powerpoint/inserting-edited-slide-into-existing-presentation.md" >}}).
+
+## PowerPoint editor demo App
+
+Along with full featured .NET library we provide simple, but powerful free Apps. You are welcome to edit PowerPoint presentations, including PPT, PPTX, PPS, and ODP formats, directly in your browser with our [PowerPoint Presentation Editor App](https://products.groupdocs.app/editor/powerpoint).

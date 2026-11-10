@@ -155,3 +155,7 @@ editor.dispose();
 ### Conclusion
 
 This tutorial demonstrates basic scenario — opening document, editing it and saving, — but with detailed options on every step.
+
+## Word editor demo App
+
+Along with full featured Java library we provide simple, but powerful free Apps. You are welcome to edit Word documents, including DOC, DOCX, RTF, and ODT formats, directly in your browser with our [Word Document Editor App](https://products.groupdocs.app/editor/word).

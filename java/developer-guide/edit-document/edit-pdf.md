@@ -394,3 +394,7 @@ editedDoc.dispose();
 originalDoc.dispose();
 editor.dispose();
 ```
+
+## PDF editor demo App
+
+Along with full featured Java library we provide simple, but powerful free Apps. You are welcome to edit PDF documents directly in your browser with our [PDF Editor App](https://products.groupdocs.app/editor/pdf).
