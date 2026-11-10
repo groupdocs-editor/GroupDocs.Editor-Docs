@@ -284,3 +284,7 @@ using (GroupDocs.Editor.Editor editor = new Editor(xmlInputPath))
 	Assert.Greater(xmlInfo.Size, 0);
 }
 ```
+
+## XML editor demo App
+
+Along with full featured .NET library we provide simple, but powerful free Apps. You are welcome to edit XML files directly in your browser with our [XML Editor App](https://products.groupdocs.app/editor/xml).

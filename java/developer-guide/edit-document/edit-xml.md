@@ -313,3 +313,7 @@ Code example below shows obtaining the metainfo for the XML file and checking it
 		(editor).dispose();
 	}
 ```
+
+## XML editor demo App
+
+Along with full featured Java library we provide simple, but powerful free Apps. You are welcome to edit XML files directly in your browser with our [XML Editor App](https://products.groupdocs.app/editor/xml).

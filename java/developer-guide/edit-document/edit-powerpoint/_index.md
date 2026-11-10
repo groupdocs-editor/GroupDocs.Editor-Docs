@@ -104,3 +104,7 @@ FileStream outputStream = /* obtain it from somewhere */;
 //saving edited slide to specified stream in PPTM format and with password encoding
 editor.save(afterEdit, outputStream, saveOptions);
 ```
+
+## PowerPoint editor demo App
+
+Along with full featured Java library we provide simple, but powerful free Apps. You are welcome to edit PowerPoint presentations, including PPT, PPTX, PPS, and ODP formats, directly in your browser with our [PowerPoint Presentation Editor App](https://products.groupdocs.app/editor/powerpoint).
