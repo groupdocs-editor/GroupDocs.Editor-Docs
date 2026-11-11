@@ -1,0 +1,575 @@
+{
+  "serverVersion": "26.10.0",
+  "capturedFrom": "GroupDocs.Editor.Mcp@26.10.0",
+  "tools": [
+    {
+      "name": "get_document_info",
+      "description": "Inspects a document before editing it: its format family, format, number of pages (worksheets for spreadsheets, slides for presentations), size, whether it is password-protected, and which formats it can be saved to. Supports DOCX, DOC, RTF, ODT, XLSX, XLS, ODS, CSV, PPTX, PPT, ODP, PDF, TXT, HTML, XML, Markdown, EPUB, MOBI, EML, MSG and more. Call this first when the user asks how many pages, worksheets or slides a document has, or whether it can be edited. Do NOT pre-check whether files exist — just pass the filename the user provided; a missing file returns the list of available files. Returns JSON: { fileName, family, format: { name, extension, mime }, pageCount, size, isEncrypted, infoType, canEdit, canSaveTo[] }. family is one of WordProcessing, Spreadsheet, Presentation, FixedLayout, Textual, Email, Ebook. On failure isError is set and the text starts with 'Document-info lookup failed for'; a file that cannot be found returns the list of available files instead.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "object",
+            "properties": {
+              "filePath": {
+                "description": "Name or path of a file in the configured storage, e.g. 'report.pdf' or 'output/report.pdf'. Use this for files the server can already see.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileContent": {
+                "description": "Base64-encoded file content, for passing a file that is not in storage. Must be accompanied by fileName so the format can be determined.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileName": {
+                "description": "Filename with extension, e.g. 'report.pdf'. Required alongside fileContent. May also be used on its own as an alias for filePath.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "password": {
+            "description": "Password, for password-protected documents",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "file"
+        ]
+      },
+      "annotations": {
+        "idempotentHint": true,
+        "readOnlyHint": true
+      },
+      "execution": {
+        "taskSupport": "optional"
+      }
+    },
+    {
+      "name": "replace_text",
+      "description": "Finds and replaces text in a document and saves an edited copy, keeping the document's formatting, tables, images and layout. Use it whenever the user asks to change, rename, update or correct wording in a Word, Excel, PowerPoint, PDF or text document. Supports DOCX, DOC, RTF, ODT, XLSX, XLS, ODS, CSV, PPTX, PPT, ODP, PDF, TXT, Markdown, EPUB and more. Spreadsheets and presentations are edited one worksheet or slide at a time (1-based, default 1) and every other part is kept. Do NOT pre-check whether files exist — just pass the filename the user provided; a missing file returns the list of available files. Matching is case-sensitive by default; set matchCase=false, wholeWord=true or regex=true as needed. A phrase split across differently formatted runs is not matched — use extract_html and save_from_html for those edits. Returns 'Replaced N occurrence(s) …' and the saved path ('Saved to: …') of '<name>_edited.<ext>'. When nothing matches it returns 'Text replacement found no matches …' and writes no file. On failure isError is set and the text starts with 'Text replacement failed for'; a file that cannot be found returns the list of available files instead.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "object",
+            "properties": {
+              "filePath": {
+                "description": "Name or path of a file in the configured storage, e.g. 'report.pdf' or 'output/report.pdf'. Use this for files the server can already see.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileContent": {
+                "description": "Base64-encoded file content, for passing a file that is not in storage. Must be accompanied by fileName so the format can be determined.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileName": {
+                "description": "Filename with extension, e.g. 'report.pdf'. Required alongside fileContent. May also be used on its own as an alias for filePath.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "find": {
+            "description": "Text to find (or a .NET regular expression when regex=true)",
+            "type": "string"
+          },
+          "replace": {
+            "description": "Replacement text; with regex=true it may use $1-style group references",
+            "type": "string"
+          },
+          "matchCase": {
+            "description": "Case-sensitive matching (default true)",
+            "type": "boolean",
+            "default": true
+          },
+          "wholeWord": {
+            "description": "Match whole words only (default false)",
+            "type": "boolean",
+            "default": false
+          },
+          "regex": {
+            "description": "Treat 'find' as a regular expression (default false)",
+            "type": "boolean",
+            "default": false
+          },
+          "worksheet": {
+            "description": "Spreadsheets only: worksheet to edit, 1-based (default 1)",
+            "type": [
+              "integer",
+              "null"
+            ],
+            "default": null
+          },
+          "slide": {
+            "description": "Presentations only: slide to edit, 1-based (default 1)",
+            "type": [
+              "integer",
+              "null"
+            ],
+            "default": null
+          },
+          "format": {
+            "description": "Output format extension (default: same as the input), e.g. 'pdf' to also convert",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "outputName": {
+            "description": "Output file name (the extension follows the output format). Default: '<name>_edited.<ext>'",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "password": {
+            "description": "Password, for password-protected documents. The edited copy keeps the same password when its format can carry one (Word, workbook, presentation, PDF)",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "file",
+          "find",
+          "replace"
+        ]
+      },
+      "annotations": {
+        "destructiveHint": false
+      },
+      "execution": {
+        "taskSupport": "optional"
+      }
+    },
+    {
+      "name": "extract_html",
+      "description": "Opens a document for editing: converts it — or one worksheet, one slide, or a PDF page range — into editable HTML and saves the .html file to storage, keeping fonts, styles, tables and images. Edit that file, then call save_from_html to turn it back into DOCX, XLSX, PPTX, PDF or another format. For a simple find-and-replace use replace_text instead. Supports DOCX, DOC, RTF, ODT, XLSX, XLS, ODS, CSV, PPTX, PPT, ODP, PDF, TXT, HTML, XML, Markdown, EPUB, MOBI, EML and more. Do NOT pre-check whether files exist — just pass the filename the user provided; a missing file returns the list of available files. By default the HTML is self-contained (images, CSS and fonts embedded); set embedResources=false to get <name>.html plus a <name>_resources folder. Returns the saved path ('Saved to: …'), which part was extracted (e.g. 'worksheet 2 of 3'), and a plain-text preview of the content. On failure isError is set and the text starts with 'HTML extraction failed for'; a file that cannot be found returns the list of available files instead.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "object",
+            "properties": {
+              "filePath": {
+                "description": "Name or path of a file in the configured storage, e.g. 'report.pdf' or 'output/report.pdf'. Use this for files the server can already see.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileContent": {
+                "description": "Base64-encoded file content, for passing a file that is not in storage. Must be accompanied by fileName so the format can be determined.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileName": {
+                "description": "Filename with extension, e.g. 'report.pdf'. Required alongside fileContent. May also be used on its own as an alias for filePath.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "password": {
+            "description": "Password, for password-protected documents",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "worksheet": {
+            "description": "Spreadsheets only: which worksheet to extract, 1-based (default 1)",
+            "type": [
+              "integer",
+              "null"
+            ],
+            "default": null
+          },
+          "slide": {
+            "description": "Presentations only: which slide to extract, 1-based (default 1)",
+            "type": [
+              "integer",
+              "null"
+            ],
+            "default": null
+          },
+          "pages": {
+            "description": "PDF only: 1-based page or inclusive range, e.g. '3' or '2-4' (default: all pages)",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "pagination": {
+            "description": "Word, PDF and text: true keeps page boundaries (paginal HTML); false (default) gives one continuous flow",
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "default": null
+          },
+          "skipImages": {
+            "description": "PDF only: true leaves images out and keeps text only",
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "default": null
+          },
+          "embedResources": {
+            "description": "true (default) embeds images, CSS and fonts in one .html file; false writes a <name>_resources folder beside it",
+            "type": "boolean",
+            "default": true
+          },
+          "showHidden": {
+            "description": "Spreadsheets and presentations: allow hidden worksheets and slides",
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": [
+          "file"
+        ]
+      },
+      "annotations": {
+        "destructiveHint": false
+      },
+      "execution": {
+        "taskSupport": "optional"
+      }
+    },
+    {
+      "name": "save_from_html",
+      "description": "Saves edited HTML back as a real document: DOCX, DOC, RTF, ODT, XLSX, XLS, ODS, CSV, PPTX, PPT, ODP, PDF, XPS, TXT, Markdown (md), MHTML, EPUB, MOBI, AZW3, EML or MSG. Use it after extract_html when the user has edited the HTML, or to turn any HTML file in storage into a document. To put ONE edited worksheet or slide back into the original workbook or presentation (keeping every other part), pass the original as sourceFile together with the same 1-based worksheet or slide number (required for workbooks; a presentation sourceFile without slide gives a new one-slide presentation). PPTX and email targets always need sourceFile of the same kind. A resource folder named <name>_resources next to the .html is picked up automatically. Returns the saved path ('Saved to: …'). The output name is the HTML's name with the new extension unless outputName is given; an existing file is never overwritten (a ' (1)' suffix is added). On failure isError is set and the text starts with 'Save from HTML failed for'; a file that cannot be found returns the list of available files instead.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "htmlFile": {
+            "description": "The .html file to save, e.g. the file extract_html wrote",
+            "type": "object",
+            "properties": {
+              "filePath": {
+                "description": "Name or path of a file in the configured storage, e.g. 'report.pdf' or 'output/report.pdf'. Use this for files the server can already see.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileContent": {
+                "description": "Base64-encoded file content, for passing a file that is not in storage. Must be accompanied by fileName so the format can be determined.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileName": {
+                "description": "Filename with extension, e.g. 'report.pdf'. Required alongside fileContent. May also be used on its own as an alias for filePath.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "format": {
+            "description": "Target format extension: docx, xlsx, pptx, pdf, txt, md, epub, odt, rtf, csv, xps, mhtml, …",
+            "type": "string"
+          },
+          "outputName": {
+            "description": "Output file name (the extension is set from 'format'). Default: the HTML's name",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "password": {
+            "description": "Password-protect the output (Word, spreadsheet, presentation and PDF targets)",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "sourceFile": {
+            "description": "The original document to splice the edited part back into (needed for PPTX and email targets)",
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "filePath": {
+                "description": "Name or path of a file in the configured storage, e.g. 'report.pdf' or 'output/report.pdf'. Use this for files the server can already see.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileContent": {
+                "description": "Base64-encoded file content, for passing a file that is not in storage. Must be accompanied by fileName so the format can be determined.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileName": {
+                "description": "Filename with extension, e.g. 'report.pdf'. Required alongside fileContent. May also be used on its own as an alias for filePath.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "default": null
+          },
+          "worksheet": {
+            "description": "With sourceFile: which worksheet the HTML replaces, 1-based",
+            "type": [
+              "integer",
+              "null"
+            ],
+            "default": null
+          },
+          "slide": {
+            "description": "With sourceFile: which slide the HTML replaces, 1-based",
+            "type": [
+              "integer",
+              "null"
+            ],
+            "default": null
+          },
+          "sourcePassword": {
+            "description": "Password of sourceFile, if it is protected",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "htmlFile",
+          "format"
+        ]
+      },
+      "annotations": {
+        "destructiveHint": false
+      },
+      "execution": {
+        "taskSupport": "optional"
+      }
+    },
+    {
+      "name": "get_form_fields",
+      "description": "Lists the fillable form fields in a Word document — text boxes, check boxes, drop-downs, number and date fields — with each field's name, type and current value. Call it before fill_form_fields to learn the exact field names. Supports DOCX, DOC, DOCM, DOT, DOTX, RTF and ODT. Do NOT pre-check whether files exist — just pass the filename the user provided; a missing file returns the list of available files. Returns JSON: { fileName, count, hasInvalidFormFields, fields: [ { name, type, value } ] }. type is Text, CheckBox, DropDown, Number, Date, CurrentDate or CurrentTime; a check box value is true/false; a drop-down value is { options[], selected }. hasInvalidFormFields is true when names are duplicated or malformed. On failure isError is set and the text starts with 'Form-field lookup failed for'; a file that cannot be found returns the list of available files instead.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "object",
+            "properties": {
+              "filePath": {
+                "description": "Name or path of a file in the configured storage, e.g. 'report.pdf' or 'output/report.pdf'. Use this for files the server can already see.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileContent": {
+                "description": "Base64-encoded file content, for passing a file that is not in storage. Must be accompanied by fileName so the format can be determined.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileName": {
+                "description": "Filename with extension, e.g. 'report.pdf'. Required alongside fileContent. May also be used on its own as an alias for filePath.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "password": {
+            "description": "Password, for password-protected documents",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "file"
+        ]
+      },
+      "annotations": {
+        "idempotentHint": true,
+        "readOnlyHint": true
+      },
+      "execution": {
+        "taskSupport": "optional"
+      }
+    },
+    {
+      "name": "fill_form_fields",
+      "description": "Fills in the form fields of a Word document and saves a filled copy, leaving the rest of the document untouched. Use it when the user asks to complete, fill out or tick boxes in a Word form. Call get_form_fields first for the exact field names. Supports DOCX, DOC, DOCM, DOT, DOTX, RTF and ODT. Do NOT pre-check whether files exist — just pass the filename the user provided; a missing file returns the list of available files. values maps field name to text: any text for text fields, true/false for check boxes, an option (or its 0-based index) for drop-downs, a number for number fields, yyyy-MM-dd for date fields. Every field with that name is set. Returns 'Updated N field(s)', any names that were not found or values that did not fit, and the saved path ('Saved to: …') of '<name>_edited.<ext>'. When no field could be updated no file is written. On failure isError is set and the text starts with 'Form-field update failed for'; a file that cannot be found returns the list of available files instead.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "object",
+            "properties": {
+              "filePath": {
+                "description": "Name or path of a file in the configured storage, e.g. 'report.pdf' or 'output/report.pdf'. Use this for files the server can already see.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileContent": {
+                "description": "Base64-encoded file content, for passing a file that is not in storage. Must be accompanied by fileName so the format can be determined.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileName": {
+                "description": "Filename with extension, e.g. 'report.pdf'. Required alongside fileContent. May also be used on its own as an alias for filePath.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "values": {
+            "description": "Field name -> value, e.g. { \"Text1\": \"Jane Doe\", \"Check1\": \"true\" }",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "outputName": {
+            "description": "Output file name (default '<name>_edited.<ext>')",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "format": {
+            "description": "Output format: docx (default: same as input), doc, docm, rtf, odt, …",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "password": {
+            "description": "Password, for password-protected documents. The filled copy keeps the same password",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "file",
+          "values"
+        ]
+      },
+      "annotations": {
+        "destructiveHint": false
+      },
+      "execution": {
+        "taskSupport": "optional"
+      }
+    },
+    {
+      "name": "get_supported_formats",
+      "description": "Lists the formats GroupDocs.Editor can open for editing and save to. Without a file it returns the whole catalog per format family; with a file it returns that file's family and the formats it can be saved to. Call this when the user asks which formats are supported, or before save_from_html / replace_text with an unusual target. Families: WordProcessing, Spreadsheet, Presentation, FixedLayout (PDF), Textual (TXT, HTML, XML, Markdown, JSON), Email, Ebook. Returns JSON: without a file { families: [ { family, loadFormats[], saveFormats[] } ] }; with a file { fileName, family, saveFormats[] }. Extensions are lower-case without a dot. On failure isError is set and the text starts with 'Supported-formats lookup failed for'; a file that cannot be found returns the list of available files instead.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "description": "Optional: a document to list save targets for",
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "filePath": {
+                "description": "Name or path of a file in the configured storage, e.g. 'report.pdf' or 'output/report.pdf'. Use this for files the server can already see.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileContent": {
+                "description": "Base64-encoded file content, for passing a file that is not in storage. Must be accompanied by fileName so the format can be determined.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileName": {
+                "description": "Filename with extension, e.g. 'report.pdf'. Required alongside fileContent. May also be used on its own as an alias for filePath.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "default": null
+          }
+        }
+      },
+      "annotations": {
+        "idempotentHint": true,
+        "readOnlyHint": true
+      },
+      "execution": {
+        "taskSupport": "optional"
+      }
+    },
+    {
+      "name": "get_license_status",
+      "description": "Returns how this MCP server is licensed, and — under metered licensing — how much has been consumed. Call this when the user asks about licensing, evaluation limitations, metered usage, remaining credit, or which product engine version is running. Returns a JSON object with `mode` (\"evaluation\", \"licensed\" or \"metered\"), `licensed` (true for both licensed and metered), `consumption` (null unless metered; otherwise `quantity` and `credit`, or `error` if the reading failed), and `server` / `engine` name and version. Takes no arguments and never modifies anything.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ]
+}
