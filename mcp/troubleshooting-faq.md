@@ -32,7 +32,7 @@ These are properties of the build you run rather than of MCP, so the fixes live 
 | Symptom | Where the fix is |
 |---|---|
 | `dnx: command not found` | [.NET troubleshooting]({{< ref "editor/net/mcp/troubleshooting.md" >}}#dnx-command-not-found) — `dnx` ships inside the .NET 10 SDK |
-| `DllNotFoundException: libgdiplus` on Linux/macOS | [.NET troubleshooting]({{< ref "editor/net/mcp/troubleshooting.md" >}}#dllnotfoundexception-libgdiplus) — install the native graphics libraries, or use the Docker image |
+| Fonts missing or substituted in PDF output on Linux | [.NET troubleshooting]({{< ref "editor/net/mcp/troubleshooting.md" >}}#fonts-are-missing-or-substituted-in-pdf-output-linux) — install the fonts, or use the Docker image |
 | "docker daemon not reachable" | [.NET troubleshooting]({{< ref "editor/net/mcp/troubleshooting.md" >}}#docker-daemon-not-reachable) — start Docker Desktop or `dockerd` |
 
 ## The agent says a file does not exist
@@ -41,11 +41,24 @@ Pass the **file name**, not a full path from your machine: the server resolves n
 
 ## Why did one occurrence not change?
 
-`replace_text` matches text **within one formatting run**. A phrase whose words carry different formatting — *ACME* in italics, *Corp* not — is two runs to the engine, and the search does not see it. In our test 6 of 7 occurrences changed and the seventh was exactly that case. Ask the agent to search the result for the old text; for a phrase split across runs, use [`extract_html`]({{< ref "editor/mcp/tools-reference/extract-html.md" >}}) and [`save_from_html`]({{< ref "editor/mcp/tools-reference/save-from-html.md" >}}), which edit the text whatever its formatting.
+`replace_text` matches text **within one formatting run**. A phrase whose words carry different formatting — *ACME* in italics, *Corp* not — is two runs to the engine, and the search does not see it. In our test 6 of 7 occurrences changed and the seventh was exactly that case. Running `replace_text` again does not find it either, so "no matches" on a second run is **not** an all-clear. Check the edited copy with [`extract_html`]({{< ref "editor/mcp/tools-reference/extract-html.md" >}}) instead: its plain-text preview joins the runs, so a leftover *ACME Corp* shows up there. For a phrase split across runs, use [`extract_html`]({{< ref "editor/mcp/tools-reference/extract-html.md" >}}) and [`save_from_html`]({{< ref "editor/mcp/tools-reference/save-from-html.md" >}}), which edit the text whatever its formatting.
 
 ## Where is the edited file?
 
-In the **output folder** — `GROUPDOCS_MCP_OUTPUT_PATH`, which defaults to the storage folder itself — as `<name>_edited.<ext>`, or under the name you ask for (`outputName`). It lands in the folder's root even when the input sat in a sub-folder: editing `contracts/msa.docx` writes `msa_edited.docx`. The original is never overwritten.
+In the **output folder** — `GROUPDOCS_MCP_OUTPUT_PATH`, which defaults to the storage folder itself — as `<name>_edited.<ext>`, or under the name you ask for (`outputName`). It lands in the folder's root even when the input sat in a sub-folder: editing `contracts/msa.docx` writes `msa_edited.docx`. Nothing is ever overwritten — not the original, and not an earlier copy: when the name is taken, the server adds a number (`msa_edited (1).docx`).
+
+## What does replace_text keep in a Word document?
+
+`replace_text` opens the document in the engine's editing model (HTML), replaces the text there, and saves a new copy from it. We measured what a Word document keeps on server 26.10.0, with a file built in Word:
+
+| Kept | Changed or lost |
+|---|---|
+| headings and styles, bold and italics, tables, images, hyperlinks, bookmarks | the **footer** — dropped from the copy, page-number field included |
+| the header, footnotes and comments — their text is searched and replaced too | a **content control** — flattened to plain text, and its text is not replaced |
+| existing tracked changes | a tracked change loses its **author** |
+| a page-number field in the body | a date field becomes fixed text |
+
+For a document whose footer matters, extract it with `extract_html` and `"pagination": true`, edit the HTML, and save it with `save_from_html`: in paginated mode the footer and its page number come back. [`fill_form_fields`]({{< ref "editor/mcp/tools-reference/fill-form-fields.md" >}}) does not go through HTML and keeps footers.
 
 ## Does it track changes?
 
@@ -69,4 +82,4 @@ Ask your agent *"list your GroupDocs editor tools and the license status"* — i
 
 ## Still stuck?
 
-Post your config (redact license paths) and the client name in the [Editor forum](https://forum.groupdocs.com/c/editor/20) — we answer MCP questions daily. Bugs: [GitHub issues](https://github.com/groupdocs-editor/GroupDocs.Editor.Mcp/issues).
+Post your config (redact license paths) and the client name in the [Editor forum](https://forum.groupdocs.com/c/editor/20). Bugs: [GitHub issues](https://github.com/groupdocs-editor/GroupDocs.Editor.Mcp/issues).

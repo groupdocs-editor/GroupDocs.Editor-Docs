@@ -21,7 +21,7 @@ toc: True
 
 | Name | Type | Required | Description |
 |---|---|---|---|
-| `file` | object | yes |  — [FileInput shape]({{< ref "editor/mcp/tools-reference/_index.md#the-fileinput-shape" >}}) |
+| `file` | object | yes | The document — see [FileInput shape]({{< ref "editor/mcp/tools-reference/_index.md#the-fileinput-shape" >}}) |
 | `password` | string | no | Password, for password-protected documents |
 
 ## Example call
@@ -51,7 +51,7 @@ JSON — captured from server 26.10.0:
     "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
   },
   "pageCount": 3,
-  "size": 6099,
+  "size": 6100,
   "isEncrypted": false,
   "infoType": "SpreadsheetDocumentInfo",
   "canEdit": true,

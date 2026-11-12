@@ -21,7 +21,7 @@ toc: True
 
 | Name | Type | Required | Description |
 |---|---|---|---|
-| `file` | object | yes |  — [FileInput shape]({{< ref "editor/mcp/tools-reference/_index.md#the-fileinput-shape" >}}) |
+| `file` | object | yes | The document — see [FileInput shape]({{< ref "editor/mcp/tools-reference/_index.md#the-fileinput-shape" >}}) |
 | `values` | object | yes | Field name -> value, e.g. { "Text1": "Jane Doe", "Check1": "true" } — [FileInput shape]({{< ref "editor/mcp/tools-reference/_index.md#the-fileinput-shape" >}}) |
 | `outputName` | string | no | Output file name (default '<name>_edited.<ext>') |
 | `format` | string | no | Output format: docx (default: same as input), doc, docm, rtf, odt, … |
@@ -68,12 +68,12 @@ get_form_fields for the exact names.
 No file was written.
 ```
 
-`outputName` names the copy — one per applicant, for example; `format` converts it (`pdf` for a copy to send). A protected form keeps its password. On failure `isError` is set.
+`outputName` names the copy — one per applicant, for example. `format` picks another **Word** format (DOC, DOCM, RTF, ODT, …); a filled form is always saved as a Word document, and `"format": "pdf"` is refused — convert the filled copy in a second step. A protected form keeps its password. The filled copy is saved by the form-field engine, not through HTML, so headers, footers and page numbers stay as they were. On failure `isError` is set.
 
 ## Example prompts
 
 * *"Fill the new-employee form for Amara Okafor, Finance, starting 1 December, and tick the code of conduct."*
 * *"Fill one copy of this form per row of applicants.csv, named after each applicant."*
-* *"Tick the newsletter box and save it as a PDF."*
+* *"Tick the newsletter box and save the filled form as DOC."*
 
 See it used end-to-end: [Fill Word forms from data]({{< ref "editor/mcp/use-cases/fill-word-forms-from-data.md" >}}).

@@ -11,7 +11,7 @@ serverVersion: 26.10.0
 toc: True
 ---
 
-`get_form_fields` lists the **fillable fields** of a Word form — text boxes, check boxes, drop-downs, number and date fields — with each field's **exact name**, type and current value. It is the call to make before [`fill_form_fields`]({{< ref "editor/mcp/tools-reference/fill-form-fields.md" >}}): field names are rarely what the label on the page says. Example prompt: *"What fields does this form have?"*
+`get_form_fields` lists the **fillable fields** of a Word form — text boxes, check boxes, drop-downs, number and date fields — with each field's **exact name**, type and current value. These are **legacy form fields** — the ones Word inserts from *Developer → Legacy Tools*; content controls are not listed. It is the call to make before [`fill_form_fields`]({{< ref "editor/mcp/tools-reference/fill-form-fields.md" >}}): field names are rarely what the label on the page says. Example prompt: *"What fields does this form have?"*
 
 **Tool description (as the AI agent sees it):**
 
@@ -21,7 +21,7 @@ toc: True
 
 | Name | Type | Required | Description |
 |---|---|---|---|
-| `file` | object | yes |  — [FileInput shape]({{< ref "editor/mcp/tools-reference/_index.md#the-fileinput-shape" >}}) |
+| `file` | object | yes | The document — see [FileInput shape]({{< ref "editor/mcp/tools-reference/_index.md#the-fileinput-shape" >}}) |
 | `password` | string | no | Password, for password-protected documents |
 
 ## Example call

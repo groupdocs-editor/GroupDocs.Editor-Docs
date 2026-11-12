@@ -38,7 +38,7 @@ The commands and config snippets on this page are for the **.NET** build of the 
 
 ## Prerequisites
 
-* A Word form with legacy or content form fields (DOCX, DOC, DOCM, DOT, DOTX, RTF, ODT) in the storage folder.
+* A Word form with **legacy form fields** — text, check box, drop-down, the kind Word inserts from *Developer → Legacy Tools* — in DOCX, DOC, DOCM, DOT, DOTX, RTF or ODT, in the storage folder. Content controls are not form fields to this server: `get_form_fields` returns `"count": 0` for them.
 * The server registered in your AI client — [quick start]({{< ref "editor/mcp/getting-started/_index.md" >}}).
 
 ## The calls
@@ -92,11 +92,11 @@ With a list of people — a CSV, a spreadsheet the agent reads with its own tool
 
 > Fill one copy of new-employee-form.docx for each row of new-hires.csv, named form-<last name>.docx, and list any column that has no field on the form.
 
-`outputName` keeps the copies apart; without it each call would write `new-employee-form_edited.docx` again.
+`outputName` keeps the copies apart; without it they come out as `new-employee-form_edited.docx`, `new-employee-form_edited (1).docx`, … — impossible to tell apart without opening them.
 
 ## Expected result
 
-A filled copy per person, the original form untouched, and a list of values the form had no place for.
+A filled copy per person, the original form untouched, and a list of values the form had no place for. The filled copy is written by the form-field engine, not through HTML, so the rest of the document — headers, footers, page numbers — stays as it was.
 
 ## Troubleshooting
 
@@ -112,7 +112,9 @@ A filled copy per person, the original form untouched, and a list of values the 
 
 **Can it fill PDF forms?** No — Word formats only. Convert the PDF first ([turn a PDF into Word]({{< ref "editor/mcp/use-cases/turn-a-pdf-into-an-editable-word-document.md" >}})) or use a PDF form tool.
 
-**Can the filled copy be a PDF?** Yes — `"format": "pdf"` saves the filled form as a PDF to send.
+**Can the filled copy be a PDF?** Not in one step. A filled form is saved as a Word document — DOCX, DOC, DOCM, RTF, ODT; the server refuses `"format": "pdf"`. Convert the filled copy afterwards, for example with GroupDocs.Conversion.
+
+**Does it fill content controls?** No — only legacy form fields.
 
 ## Add to your CLAUDE.md or AGENTS.md
 
@@ -126,8 +128,9 @@ the server lists under 'Not found' instead of claiming the form is complete.
 
 ## Honest limits
 
-* **Evaluation mode:** every edited document starts with an evaluation banner, a saved workbook gains an `Evaluation Warning` worksheet, and only worksheets and slides 1–2 can be edited (a PDF extraction holds two pages). [Licensing]({{< ref "editor/mcp/getting-started/licensing.md" >}}).
-* **One formatting run:** `replace_text` does not see a phrase whose words are formatted differently; use the HTML round-trip for those.
+* **Evaluation mode:** every edited document starts with an evaluation banner, a saved workbook gains an `Evaluation Warning` worksheet, only worksheets and slides 1–2 can be edited, and a PDF is edited two pages per call (`replace_text` refuses a longer PDF). [Licensing]({{< ref "editor/mcp/getting-started/licensing.md" >}}).
+* **One formatting run:** `replace_text` does not see a phrase whose words are formatted differently — not on a second run either; use the HTML round-trip for those.
+* **Word footers:** `replace_text`, and `extract_html` without `pagination`, drop a Word document's footer on server 26.10.0; content controls are flattened. [What is kept]({{< ref "editor/mcp/troubleshooting-faq.md" >}}#what-does-replace_text-keep-in-a-word-document).
 * **No tracked changes:** the edited copy carries the new text, not a redline.
 * **PDF editing is a conversion:** text and structure come across; exact page layout does not.
 

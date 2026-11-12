@@ -107,13 +107,13 @@ One edited copy per file that contained the name, a per-file count, and a list o
 |---|---|---|
 | A file's count is one short of what you see | an occurrence is split across formatting runs (half italic) | edit that file through [`extract_html`]({{< ref "editor/mcp/tools-reference/extract-html.md" >}}) |
 | *"…slide 3 is beyond them."* | evaluation mode edits parts 1–2 | license the server — [Licensing]({{< ref "editor/mcp/getting-started/licensing.md" >}}) |
-| Two runs overwrite each other's output | both wrote `<name>_edited.<ext>` to the root | give each call an `outputName` |
+| A copy is named `msa-northwind_edited (1).docx` | an earlier run took the name — the server never overwrites | move the earlier copies away, or give each run its own `outputName` |
 
 ## FAQ
 
 **Can it edit a whole folder in one call?** No — one document per call, which is what makes the per-file count possible. The agent loops.
 
-**Does it edit headers, footers and tables?** Tables, yes (two of the agreement's six occurrences were in the fee table). Check headers and footers in the result for your documents.
+**Does it edit headers, footers and tables?** Tables and headers, yes (two of the agreement's six occurrences were in the fee table). On server 26.10.0 a Word **footer is dropped** from the edited copy, so for documents whose footer names the party, use the paginated HTML round-trip — [what is kept]({{< ref "editor/mcp/troubleshooting-faq.md" >}}#what-does-replace_text-keep-in-a-word-document).
 
 **Can it work on a code repository's documents?** Yes — point the storage folder at the repository and ask, for example, to bump `v2.3` to `v2.4` in the release-notes DOCX and the spec XLSX. Add the edited copies to `.gitignore` or rename them over the originals deliberately.
 
@@ -129,8 +129,9 @@ Report a count per file and list files with no match. Never re-type a document.
 
 ## Honest limits
 
-* **Evaluation mode:** every edited document starts with an evaluation banner, a saved workbook gains an `Evaluation Warning` worksheet, and only worksheets and slides 1–2 can be edited (a PDF extraction holds two pages). [Licensing]({{< ref "editor/mcp/getting-started/licensing.md" >}}).
-* **One formatting run:** `replace_text` does not see a phrase whose words are formatted differently; use the HTML round-trip for those.
+* **Evaluation mode:** every edited document starts with an evaluation banner, a saved workbook gains an `Evaluation Warning` worksheet, only worksheets and slides 1–2 can be edited, and a PDF is edited two pages per call (`replace_text` refuses a longer PDF). [Licensing]({{< ref "editor/mcp/getting-started/licensing.md" >}}).
+* **One formatting run:** `replace_text` does not see a phrase whose words are formatted differently — not on a second run either; use the HTML round-trip for those.
+* **Word footers:** `replace_text`, and `extract_html` without `pagination`, drop a Word document's footer on server 26.10.0; content controls are flattened. [What is kept]({{< ref "editor/mcp/troubleshooting-faq.md" >}}#what-does-replace_text-keep-in-a-word-document).
 * **No tracked changes:** the edited copy carries the new text, not a redline.
 * **PDF editing is a conversion:** text and structure come across; exact page layout does not.
 

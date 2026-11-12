@@ -81,7 +81,9 @@ The Word copy carries the headings, paragraphs and figures of the policy; the ed
 
 ## Two pages per call in evaluation mode
 
-Unlicensed, one extraction holds **at most two PDF pages**. Asking for `"pages": "1-3"` returned pages 1 and 2 and stopped at the first line of page 3 — **without an error**, only the evaluation line every response starts with. `"pages": "3"` on its own extracted page 3. So for a longer PDF in evaluation mode, extract two pages at a time; licensed, extract the whole document by leaving `pages` out.
+Unlicensed, a PDF is edited **two pages per call**. Asking `extract_html` for `"pages": "1-3"` returned pages 1 and 2 and stopped at the first line of page 3 — **without an error**, only the evaluation line every response starts with. `"pages": "3"` on its own extracted page 3. `replace_text` on a PDF longer than two pages is refused outright. So for a longer PDF in evaluation mode, extract two pages at a time; licensed, extract the whole document by leaving `pages` out.
+
+The policy above has three pages, so in this capture `travel-policy.docx` holds **pages 1–2 only**. Licensed, leave `pages` out and the Word copy holds the whole policy.
 
 ## What comes across, and what does not
 
@@ -125,8 +127,9 @@ copy. Tell the user that PDF layout does not round-trip exactly.
 
 ## Honest limits
 
-* **Evaluation mode:** every edited document starts with an evaluation banner, a saved workbook gains an `Evaluation Warning` worksheet, and only worksheets and slides 1–2 can be edited (a PDF extraction holds two pages). [Licensing]({{< ref "editor/mcp/getting-started/licensing.md" >}}).
-* **One formatting run:** `replace_text` does not see a phrase whose words are formatted differently; use the HTML round-trip for those.
+* **Evaluation mode:** every edited document starts with an evaluation banner, a saved workbook gains an `Evaluation Warning` worksheet, only worksheets and slides 1–2 can be edited, and a PDF is edited two pages per call (`replace_text` refuses a longer PDF). [Licensing]({{< ref "editor/mcp/getting-started/licensing.md" >}}).
+* **One formatting run:** `replace_text` does not see a phrase whose words are formatted differently — not on a second run either; use the HTML round-trip for those.
+* **Word footers:** `replace_text`, and `extract_html` without `pagination`, drop a Word document's footer on server 26.10.0; content controls are flattened. [What is kept]({{< ref "editor/mcp/troubleshooting-faq.md" >}}#what-does-replace_text-keep-in-a-word-document).
 * **No tracked changes:** the edited copy carries the new text, not a redline.
 * **PDF editing is a conversion:** text and structure come across; exact page layout does not.
 

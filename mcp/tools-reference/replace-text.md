@@ -11,7 +11,7 @@ serverVersion: 26.10.0
 toc: True
 ---
 
-`replace_text` changes wording **in place**: it finds the text, replaces it, keeps the fonts, tables, images and layout, and saves an edited copy — reporting how many occurrences changed. `wholeWord`, `matchCase` (default `true`) and `regex` (with `$1` group references) control the match; `worksheet` or `slide` picks the part of a workbook or presentation; `format` converts while editing. Example prompt: *"Replace ACME Corp with Globex Ltd in contract.docx."*
+`replace_text` changes wording without re-typing the document: it finds the text, replaces it, and saves an edited copy that keeps the fonts, tables and images — reporting how many occurrences changed. `wholeWord`, `matchCase` (default `true`) and `regex` (with `$1` group references) control the match; `worksheet` or `slide` picks the part of a workbook or presentation; `format` converts while editing. Example prompt: *"Replace ACME Corp with Globex Ltd in contract.docx."*
 
 **Tool description (as the AI agent sees it):**
 
@@ -21,7 +21,7 @@ toc: True
 
 | Name | Type | Required | Description |
 |---|---|---|---|
-| `file` | object | yes |  — [FileInput shape]({{< ref "editor/mcp/tools-reference/_index.md#the-fileinput-shape" >}}) |
+| `file` | object | yes | The document — see [FileInput shape]({{< ref "editor/mcp/tools-reference/_index.md#the-fileinput-shape" >}}) |
 | `find` | string | yes | Text to find (or a .NET regular expression when regex=true) |
 | `replace` | string | yes | Replacement text; with regex=true it may use $1-style group references |
 | `matchCase` | boolean | no | Case-sensitive matching (default true) |
@@ -63,7 +63,7 @@ Replaced 6 occurrence(s) of 'ACME Corp' in 'contract.docx'
 Saved to: …/contract_edited.docx
 ```
 
-(The first paragraph is one line in the response, wrapped here for width; it appears only in evaluation mode.)
+(The first paragraph is one line in the response, wrapped here for width; it appears only in evaluation mode. For a PDF, the limit is two pages per call — see [Licensing]({{< ref "editor/mcp/getting-started/licensing.md" >}}).)
 
 **Nothing matched, nothing written** — a find that matches nothing is an answer, not a failure:
 
@@ -79,8 +79,10 @@ Replaced 1 occurrence(s) of 'ACME Corp' in worksheet 1 of 3 of 'budget.xlsx'
 Replaced 1 occurrence(s) of 'ACME Corp' in slide 1 of 3 of 'review.pptx'
 ```
 
-* The copy is saved as `<name>_edited.<ext>` (or `outputName`) in the output folder's **root**, even when the input sits in a sub-folder. With `format: "pdf"` the edited copy is a PDF.
-* Matching works **within one formatting run**: a phrase half in italics is not found. In the capture above, the document held 7 occurrences; the 7th was split across two runs and stayed unchanged. Use [`extract_html`]({{< ref "editor/mcp/tools-reference/extract-html.md" >}}) for such phrases.
+* The copy is saved as `<name>_edited.<ext>` (or `outputName`) in the output folder's **root**, even when the input sits in a sub-folder; a name that is taken gets a number (`<name>_edited (1).<ext>`). With `format: "pdf"` the edited copy is a PDF.
+* Matching works **within one formatting run**: a phrase half in italics is not found, on this run or the next. In the capture above, the document held 7 occurrences; the 7th was split across two runs and stayed unchanged. Use [`extract_html`]({{< ref "editor/mcp/tools-reference/extract-html.md" >}}) to find and edit such phrases.
+* The document goes through the engine's HTML editing model and back. In a Word document, the **footer is dropped** on server 26.10.0, content controls are flattened, and tracked changes lose their author; headers, footnotes, comments, tables and images are kept — [the full list]({{< ref "editor/mcp/troubleshooting-faq.md" >}}#what-does-replace_text-keep-in-a-word-document).
+* In evaluation mode a PDF longer than two pages is refused: *"Evaluation mode edits only the first 2 PDF pages and this PDF has 3. Set a license, or edit pages 1-2 with extract_html (pages='1-2') and save_from_html."*
 
 On failure the text starts with `Text replacement failed for` and `isError` is set — for example, in evaluation mode:
 

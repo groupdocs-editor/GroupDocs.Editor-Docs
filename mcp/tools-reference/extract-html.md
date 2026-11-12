@@ -11,7 +11,7 @@ serverVersion: 26.10.0
 toc: True
 ---
 
-`extract_html` opens a document **for editing**: it converts the whole document — or **one worksheet** (`worksheet`), **one slide** (`slide`), or a **PDF page range** (`pages`) — into an HTML file in the output folder, keeping fonts, styles, tables and images. The agent edits that file, then calls [`save_from_html`]({{< ref "editor/mcp/tools-reference/save-from-html.md" >}}). Example prompt: *"Open the Q3 worksheet of budget.xlsx for editing."*
+`extract_html` opens a document **for editing**: it converts the whole document — or **one worksheet** (`worksheet`), **one slide** (`slide`), or a **PDF page range** (`pages`) — into an HTML file in the output folder, keeping fonts, styles, tables and images. The agent edits that file, then calls [`save_from_html`]({{< ref "editor/mcp/tools-reference/save-from-html.md" >}}). Worksheets and slides are addressed by **1-based number** — `get_document_info` gives the count, not the names. Example prompt: *"Open worksheet 2 (Q3) of budget.xlsx for editing."*
 
 **Tool description (as the AI agent sees it):**
 
@@ -21,7 +21,7 @@ toc: True
 
 | Name | Type | Required | Description |
 |---|---|---|---|
-| `file` | object | yes |  — [FileInput shape]({{< ref "editor/mcp/tools-reference/_index.md#the-fileinput-shape" >}}) |
+| `file` | object | yes | The document — see [FileInput shape]({{< ref "editor/mcp/tools-reference/_index.md#the-fileinput-shape" >}}) |
 | `password` | string | no | Password, for password-protected documents |
 | `worksheet` | integer | no | Spreadsheets only: which worksheet to extract, 1-based (default 1) |
 | `slide` | integer | no | Presentations only: which slide to extract, 1-based (default 1) |
@@ -77,11 +77,13 @@ HTML extraction failed for 'budget.xlsx': Evaluation mode edits only the first
 GROUPDOCS_LICENSE_PATH, or the metered keys, to edit every worksheet.
 ```
 
-A PDF extraction holds **at most two pages** per call in evaluation mode: `pages: "1-3"` returned pages 1 and 2 and stopped at the first line of page 3, with no error beyond the evaluation line; `pages: "3"` on its own extracted page 3.
+In evaluation mode a PDF is edited **two pages per call**: `pages: "1-3"` returned pages 1 and 2 and stopped at the first line of page 3, with no error beyond the evaluation line; `pages: "3"` on its own extracted page 3. Licensed, leave `pages` out to extract the whole PDF.
+
+A hidden **slide** needs `showHidden: true`; a hidden **worksheet** is refused whatever `showHidden` says — unhide it in the workbook first. For a slide, the plain-text preview may start with the master's placeholder text (*"Click to edit Master title style"*) rather than the slide's own words; the HTML file holds the slide.
 
 ## Example prompts
 
-* *"Open the Q3 worksheet of budget.xlsx for editing."*
+* *"Open worksheet 2 of budget.xlsx for editing — that is the Q3 sheet."*
 * *"Give me slide 2 of the review deck as HTML."*
 * *"Turn pages 1-2 of travel-policy.pdf into something I can edit."*
 

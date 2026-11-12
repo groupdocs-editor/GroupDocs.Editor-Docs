@@ -19,7 +19,7 @@ There are three modes. The server takes the first one that is configured:
 |---|---|---|
 | **Metered** (pay-per-use) | `GROUPDOCS_METERED_PUBLIC_KEY` **and** `GROUPDOCS_METERED_PRIVATE_KEY` | Billed for what you process; no evaluation limits |
 | **License file** | `licensePath` / `GROUPDOCS_LICENSE_PATH` | Fully licensed; works offline |
-| **Evaluation** | nothing | Edited output starts with an evaluation banner, and only the first 2 PDF pages, worksheets and slides can be edited |
+| **Evaluation** | nothing | Edited output starts with an evaluation banner, only worksheets and slides 1–2 can be edited, and a PDF is edited two pages per call |
 
 {{< alert style="info" >}}
 **Metered wins.** If both metered keys and a license file are configured, the server uses metered licensing and ignores the file — and says so in its startup log.
@@ -31,7 +31,8 @@ Without a license:
 
 * Every edited document **starts with an evaluation banner** — *"Created with evaluation version of GroupDocs.Editor …"*. In an edited worksheet it is a new first row.
 * A saved workbook **gains an extra worksheet** (`Evaluation Warning`).
-* Only the **first 2 worksheets of a workbook and the first 2 slides of a presentation** can be edited; the server refuses worksheet or slide 3 and says why. A PDF extraction holds **at most 2 pages** per call.
+* Only the **first 2 worksheets of a workbook and the first 2 slides of a presentation** can be edited; the server refuses worksheet or slide 3 and says why.
+* A PDF is edited **two pages per call**: `extract_html` returns at most two pages of the range you ask for, without an error (`pages: "1-3"` stops at the first line of page 3; `pages: "3"` alone works), and `replace_text` refuses a PDF longer than two pages. The `Evaluation mode:` line itself says *"only the first 2 PDF pages"*, which is looser than what happens.
 * Every response of an editing tool starts with an `Evaluation mode:` line, so an agent can tell you. The library's terms: [licensing and subscription]({{< ref "editor/net/getting-started/licensing-and-subscription.md" >}}).
 
 An **empty** license path is always safe — the server logs a notice and continues in evaluation mode; it never errors because a license is absent.
@@ -53,13 +54,14 @@ An **empty** license path is always safe — the server logs a notice and contin
 **Docker channel** — mount the license folder read-only:
 
 ```bash
-docker run --rm -i -v /path/to/documents:/data \
+docker run --rm -i --user "$(id -u):$(id -g)" \
+  -v /path/to/documents:/data \
   -v /path/to/license-folder:/license:ro \
   -e GROUPDOCS_LICENSE_PATH=/license/GroupDocs.Editor.lic \
   ghcr.io/groupdocs-editor/editor-net-mcp:latest
 ```
 
-Your license file is read from local disk by the local server process — like your documents, **it never leaves your machine**.
+Your license file is read from local disk by the local server process — like your documents, **it never leaves your machine**. On Linux, `--user` lets the container write into a folder you own; Docker Desktop on Windows and macOS does not need it.
 
 ## Metered (pay-per-use) licensing
 
@@ -75,7 +77,7 @@ Metered licensing bills you for what you actually process, which suits AI agents
 **One key pair covers every GroupDocs product and platform** — the same pair you already use for the library works here, and the consumption it reports is account-wide rather than per server.
 
 {{< alert style="warning" >}}
-**Both keys are required.** With only one set, the server ignores the metered configuration and stays in evaluation mode — it reports this explicitly rather than failing silently. Check with [`get_license_status`]({{< ref "editor/mcp/tools-reference/get-license-status.md" >}}).
+**Both keys are required.** With only one set, the server ignores the metered configuration and uses the license file, or evaluation mode when there is none — it names the missing key rather than failing silently. Check with [`get_license_status`]({{< ref "editor/mcp/tools-reference/get-license-status.md" >}}).
 {{< /alert >}}
 
 {{< alert style="warning" >}}
@@ -94,7 +96,8 @@ The private key is a secret, and client configurations are plain files on disk �
 With Docker, forward the two variables **by name** — `-e VAR` with no value copies it from the launching process, so the key never appears in the file:
 
 ```bash
-docker run --rm -i -v /path/to/documents:/data \
+docker run --rm -i --user "$(id -u):$(id -g)" \
+  -v /path/to/documents:/data \
   -e GROUPDOCS_MCP_STORAGE_PATH=/data \
   -e GROUPDOCS_METERED_PUBLIC_KEY -e GROUPDOCS_METERED_PRIVATE_KEY \
   ghcr.io/groupdocs-editor/editor-net-mcp:latest
@@ -106,7 +109,7 @@ On macOS, an app launched from Finder does **not** inherit variables exported in
 
 ## Confirming which mode is active
 
-Ask your agent *"what is the license status of the editor server?"*. The [`get_license_status`]({{< ref "editor/mcp/tools-reference/get-license-status.md" >}}) tool (server **26.9.0+**) answers without processing a document:
+Ask your agent *"what is the license status of the editor server?"*. The [`get_license_status`]({{< ref "editor/mcp/tools-reference/get-license-status.md" >}}) tool answers without processing a document:
 
 ```json
 {
@@ -119,7 +122,7 @@ Ask your agent *"what is the license status of the editor server?"*. The [`get_l
 }
 ```
 
-If a key pair is rejected, the mode reverts to `evaluation` and the `note` field says why — for example *"Metered keys were supplied but the engine rejected them (Authentication failed.)"* — so a mistyped key surfaces here instead of as an evaluation banner at the top of the contract you were about to send.
+If a key pair is rejected, the server falls back to the license file, or to `evaluation` when there is none, and the `note` field quotes the engine's error — *"Metered keys were supplied but the engine rejected them (…). Falling back."* — so a mistyped key surfaces here instead of as an evaluation banner at the top of the contract you were about to send.
 
 ## Getting a license
 

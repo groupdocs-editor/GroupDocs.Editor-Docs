@@ -22,7 +22,7 @@ structuredData:
           text: "In contract.docx, replace ACME Corp with Globex Ltd and keep the formatting."
 ---
 
-Run the GroupDocs.Editor MCP server locally and your agent can change the wording of a Word, Excel, PowerPoint or PDF document **without rewriting it** — the formatting stays, the response counts the changes, and the original file is kept:
+Run the GroupDocs.Editor MCP server locally and your agent can change the wording of a Word, Excel, PowerPoint or PDF document **without re-typing it** — the formatting stays, the response counts the changes, and the original file is kept:
 
 ```bash
 dnx GroupDocs.Editor.Mcp --yes
@@ -88,6 +88,18 @@ The contract mentions *ACME Corp* seven times. Six changed — in the parties pa
 
 `contract_edited.docx` next to the original, with the six occurrences changed and every style, table and heading as it was. In evaluation mode its first line is the evaluation banner.
 
+## What the edited copy keeps
+
+`replace_text` opens the document in the engine's HTML editing model, replaces the text there and saves a new copy. We checked a Word file built with every common feature, on server 26.10.0:
+
+| Kept | Changed or lost |
+|---|---|
+| headings, styles, bold and italics, tables, images, hyperlinks, bookmarks | the **footer**, page-number field included — dropped |
+| the header, footnotes and comments (their text is replaced too) | a **content control** — flattened to text, its text not replaced |
+| existing tracked changes | a tracked change loses its author |
+
+When the footer matters, use `extract_html` with `"pagination": true` and `save_from_html` — the paginated round-trip keeps it. `fill_form_fields` writes without the HTML step and keeps footers.
+
 ## Which tool for which edit
 
 | The edit | Tool |
@@ -101,7 +113,7 @@ The contract mentions *ACME Corp* seven times. Six changed — in the parties pa
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| The count is lower than the occurrences you see | the missed ones are split across formatting runs | ask the agent to search the edited copy; edit the rest through `extract_html` |
+| The count is lower than the occurrences you see | the missed ones are split across formatting runs | ask the agent to `extract_html` the edited copy — its preview joins the runs, so a leftover shows; edit those through the HTML round-trip |
 | *"Text replacement found no matches … No file was written."* | the text differs — case (`matchCase` is `true` by default), spacing, a line break | `matchCase: false`, or a `regex` |
 | *"File 'contract-final.docx' not found in storage."* with a file list | the name is wrong, or the file is outside the storage folder | pass a name from the list |
 
@@ -111,7 +123,9 @@ The contract mentions *ACME Corp* seven times. Six changed — in the parties pa
 
 **Does it work on Excel and PowerPoint?** Yes, one worksheet or slide per call — `"worksheet": 2`, `"slide": 1`. In evaluation mode, parts 1–2 only.
 
-**Does it keep tracked changes or comments?** Existing ones stay in the document; new edits are not tracked. Compare the two files to show a reviewer the changes.
+**Does it keep tracked changes or comments?** Existing ones stay — a tracked change loses its author name, and comment text is searched and replaced like the body. New edits are not tracked. Compare the two files to show a reviewer the changes.
+
+**Does it keep headers and footers?** Headers, yes. On server 26.10.0 a Word **footer is dropped** from the edited copy — see *What the edited copy keeps* above for the workaround.
 
 ## Add to your CLAUDE.md or AGENTS.md
 
@@ -125,8 +139,9 @@ say when a file had no match. Do not overwrite originals.
 
 ## Honest limits
 
-* **Evaluation mode:** every edited document starts with an evaluation banner, a saved workbook gains an `Evaluation Warning` worksheet, and only worksheets and slides 1–2 can be edited (a PDF extraction holds two pages). [Licensing]({{< ref "editor/mcp/getting-started/licensing.md" >}}).
-* **One formatting run:** `replace_text` does not see a phrase whose words are formatted differently; use the HTML round-trip for those.
+* **Evaluation mode:** every edited document starts with an evaluation banner, a saved workbook gains an `Evaluation Warning` worksheet, only worksheets and slides 1–2 can be edited, and a PDF is edited two pages per call (`replace_text` refuses a longer PDF). [Licensing]({{< ref "editor/mcp/getting-started/licensing.md" >}}).
+* **One formatting run:** `replace_text` does not see a phrase whose words are formatted differently — not on a second run either; use the HTML round-trip for those.
+* **Word footers:** `replace_text`, and `extract_html` without `pagination`, drop a Word document's footer on server 26.10.0; content controls are flattened. [What is kept]({{< ref "editor/mcp/troubleshooting-faq.md" >}}#what-does-replace_text-keep-in-a-word-document).
 * **No tracked changes:** the edited copy carries the new text, not a redline.
 * **PDF editing is a conversion:** text and structure come across; exact page layout does not.
 

@@ -19,7 +19,7 @@ structuredData:
         - name: "Put the documents in the storage folder"
           text: "Point GROUPDOCS_MCP_STORAGE_PATH at the folder that holds the files the agent should use."
         - name: "Ask the agent"
-          text: "In budget.xlsx, on the Q3 worksheet, raise Travel to 12500 and rename Training to Training (external). Keep the other worksheets as they are."
+          text: "In budget.xlsx, on worksheet 2 (Q3), raise Travel to 12500 and rename Training to Training (external). Keep the other worksheets as they are."
 ---
 
 To change one worksheet of a budget or one slide of a deck, the agent does not need the whole file. Run the GroupDocs.Editor MCP server locally: `extract_html` gives the agent that one part as HTML, the agent edits it, and `save_from_html` splices it back into a copy of the original — every other worksheet or slide untouched:
@@ -30,7 +30,7 @@ dnx GroupDocs.Editor.Mcp --yes
 
 with `GROUPDOCS_MCP_STORAGE_PATH` pointing at your documents folder — or the Docker image, `ghcr.io/groupdocs-editor/editor-net-mcp`. Per-client config: [Register in AI clients]({{< ref "editor/net/mcp/install-in-ai-clients.md" >}}).
 
-> In budget.xlsx, on the Q3 worksheet, raise Travel to 12500 and rename Training to Training (external). Keep the other worksheets as they are.
+> In budget.xlsx, on worksheet 2 (Q3), raise Travel to 12500 and rename Training to Training (external). Keep the other worksheets as they are.
 
 {{< alert style="info" >}}
 The commands and config snippets on this page are for the **.NET** build of the server — the only platform available today. Installation and client setup: [MCP server for .NET]({{< ref "editor/net/mcp/_index.md" >}}). Other platforms will expose the same tools with their own launch command; everything else on this page applies unchanged.
@@ -55,6 +55,8 @@ budget.xlsx  (Summary | Q3 | Q4)
           --> budget-q3-revised.xlsx: Q3 replaced, Summary and Q4 kept
 evaluation mode: worksheets and slides 1-2 only; 3+ is refused with a reason
 ```
+
+The tools address worksheets and slides by **1-based number**, hidden ones counted; `get_document_info` returns the count, not the names. Name the number in the prompt, or let the agent extract a part and check its preview.
 
 ## What the agent sees
 
@@ -125,6 +127,10 @@ A copy of the workbook or deck with one part changed and every other part as it 
 
 **Does the agent see the other worksheets?** No — only the part it extracted. That keeps the context small and the other parts out of reach.
 
+**What about hidden worksheets and slides?** A hidden slide needs `"showHidden": true`. A hidden worksheet is refused whatever `showHidden` says — unhide it in the workbook first.
+
+**Why does a slide's preview say "Click to edit Master title style"?** The plain-text preview can pick up the master's placeholder text before the slide's own words. Check the HTML file, not the preview, to confirm the slide.
+
 ## Add to your CLAUDE.md or AGENTS.md
 
 Agents follow project instructions about *when* to use a tool. Paste this into the instruction file your agent reads (`CLAUDE.md`, `AGENTS.md`, `.github/copilot-instructions.md`, `.cursorrules`):
@@ -137,8 +143,9 @@ the same worksheet/slide. Never rebuild a workbook or deck from scratch.
 
 ## Honest limits
 
-* **Evaluation mode:** every edited document starts with an evaluation banner, a saved workbook gains an `Evaluation Warning` worksheet, and only worksheets and slides 1–2 can be edited (a PDF extraction holds two pages). [Licensing]({{< ref "editor/mcp/getting-started/licensing.md" >}}).
-* **One formatting run:** `replace_text` does not see a phrase whose words are formatted differently; use the HTML round-trip for those.
+* **Evaluation mode:** every edited document starts with an evaluation banner, a saved workbook gains an `Evaluation Warning` worksheet, only worksheets and slides 1–2 can be edited, and a PDF is edited two pages per call (`replace_text` refuses a longer PDF). [Licensing]({{< ref "editor/mcp/getting-started/licensing.md" >}}).
+* **One formatting run:** `replace_text` does not see a phrase whose words are formatted differently — not on a second run either; use the HTML round-trip for those.
+* **Word footers:** `replace_text`, and `extract_html` without `pagination`, drop a Word document's footer on server 26.10.0; content controls are flattened. [What is kept]({{< ref "editor/mcp/troubleshooting-faq.md" >}}#what-does-replace_text-keep-in-a-word-document).
 * **No tracked changes:** the edited copy carries the new text, not a redline.
 * **PDF editing is a conversion:** text and structure come across; exact page layout does not.
 

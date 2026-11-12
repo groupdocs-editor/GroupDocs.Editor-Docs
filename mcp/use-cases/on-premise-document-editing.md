@@ -39,14 +39,14 @@ The commands and config snippets on this page are for the **.NET** build of the 
 ```
 
 * **Transport:** the AI client *starts the server as a child process* (`dnx` or `docker run -i`) and communicates over standard input/output. The server never listens on a network socket.
-* **Data path:** agent → local server → local filesystem. Documents are read from, and edited copies written to, the folders you configure; originals are never overwritten.
-* **Network use:** only at install time (nuget.org, or ghcr.io / docker.io). At runtime the server makes no outbound calls of its own — see *remote resources* below.
+* **Data path:** agent → local server → local filesystem. Documents are read from, and edited copies written to, the storage and output folders you configure; nothing is overwritten. In Docker, the mounted folders are all the server can see.
+* **Network use:** the server makes no outbound calls of its own, except metered licensing and the *remote resources* below. The launcher does: `dnx GroupDocs.Editor.Mcp --yes` without a version asks nuget.org for the latest one at each start, so pin it (`GroupDocs.Editor.Mcp@26.10.0`) and keep the package cached to start offline. Docker pulls from ghcr.io / docker.io only while the image is missing.
 * **Telemetry:** none. The engine edits documents in-process.
 
 ## Docker deployment inside the perimeter
 
 ```bash
-docker run --rm -i \
+docker run --rm -i --user "$(id -u):$(id -g)" \
   -v /srv/documents:/data \
   -v /srv/licenses:/license:ro \
   -e GROUPDOCS_MCP_STORAGE_PATH=/data \
@@ -56,7 +56,7 @@ docker run --rm -i \
 
 * Pin the tag (`:26.10.0`, not `:latest`).
 * Mount only the folders the agent should reach; the licence read-only. Set `GROUPDOCS_MCP_OUTPUT_PATH` to keep edited copies apart from the originals.
-* On Linux, add `--user "$(id -u):$(id -g)"` so the container can write into a folder you own.
+* `--user "$(id -u):$(id -g)"` (Linux) lets the container, which runs as a non-root user, write into a folder you own. A JSON client config runs no shell to expand it — write the numbers: `"--user", "1000:1000"`.
 * Multi-arch images (linux/amd64 + linux/arm64) with the fonts PDF output needs.
 
 ## Remote resources in documents
@@ -84,7 +84,7 @@ Both: [Licensing]({{< ref "editor/mcp/getting-started/licensing.md" >}}).
 
 **Does any document content leave the machine?** Not from the server. Text the agent reads or writes travels in the conversation to your model provider.
 
-**Does it need internet at runtime?** No — only at install, for metered licensing, and if a document references remote resources (block that with `--network none`).
+**Does it need internet at runtime?** The server itself, no — except for metered licensing, and when a document references remote resources (block that with `--network none`). An unpinned `dnx` launch checks nuget.org for a newer version at each start; pin the version to avoid that.
 
 **Can I run it air-gapped?** Yes: pre-pull the image or pre-cache the NuGet package, use a license file, pin the version.
 

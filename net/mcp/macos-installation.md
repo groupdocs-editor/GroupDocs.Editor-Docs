@@ -24,7 +24,7 @@ pwsh ./install-groupdocs-mcp.ps1 -Interactive
 
 * **Always:** PowerShell 7 — `brew install --cask powershell`.
 * **Docker channel (recommended):** Docker Desktop — `brew install --cask docker`. Launch Docker Desktop once from /Applications to finish its first-run setup.
-* **NuGet channel:** .NET 10 SDK — `brew install --cask dotnet-sdk` — plus the native graphics library `brew install mono-libgdiplus`.
+* **NuGet channel:** .NET 10 SDK — `brew install --cask dotnet-sdk` — nothing else: the native libraries ship inside the package.
 
 **Apple Silicon note:** the Docker images are published multi-arch (`linux/arm64` + `linux/amd64`), so M-series Macs run them **natively** — no Rosetta emulation. This makes the docker channel the smoothest path on Apple Silicon.
 
@@ -44,7 +44,7 @@ pwsh ./install-groupdocs-mcp.ps1 -Channel docker \
 docker run --rm -i -v $(pwd)/documents:/data \
   ghcr.io/groupdocs-editor/editor-net-mcp:latest
 
-# NuGet channel (requires .NET 10 SDK + mono-libgdiplus):
+# NuGet channel (requires .NET 10 SDK):
 dnx GroupDocs.Editor.Mcp --yes
 ```
 
@@ -61,7 +61,6 @@ The handshake lists the server's eight tools; with a document in your storage fo
 ## macOS-specific troubleshooting
 
 * **Docker daemon not reachable** — Docker Desktop must be running (menu-bar whale icon); the installer's preflight catches this before writing anything.
-* **Native (`dnx`) runs fail on graphics operations** — install `mono-libgdiplus` via Homebrew, or prefer the docker channel where everything is bundled.
 * **`pwsh` not found after install** — open a new terminal so the shell picks up the Homebrew path.
 
 Installing on a different OS? [Windows]({{< ref "editor/net/mcp/windows-installation.md" >}}) · [Linux]({{< ref "editor/net/mcp/linux-installation.md" >}})

@@ -15,9 +15,12 @@ toc: True
 Run it with one command. The Docker image is self-contained — the runtime and every native dependency the engine needs are inside it:
 
 ```bash
-docker run --rm -i -v $(pwd)/documents:/data \
+docker run --rm -i --user "$(id -u):$(id -g)" \
+  -v $(pwd)/documents:/data \
   ghcr.io/groupdocs-editor/editor-net-mcp:latest
 ```
+
+`--user` runs the container as you, so on Linux it can write into a folder you own (the image runs as a non-root user otherwise). Docker Desktop on Windows and macOS does not need it.
 
 With the .NET 10 SDK installed, the same server also runs without Docker:
 
@@ -41,7 +44,7 @@ Eight tools (full details in the [tools reference]({{< ref "editor/mcp/tools-ref
 |---|---|---|
 | "How many worksheets? Is it protected?" | [`get_document_info`]({{< ref "editor/mcp/tools-reference/get-document-info.md" >}}) | family, pages / worksheets / slides, protection, save targets |
 | "Change X to Y, keep the formatting" | [`replace_text`]({{< ref "editor/mcp/tools-reference/replace-text.md" >}}) | the number of occurrences changed, and an edited copy |
-| "Open the Q3 sheet / slide 2 / pages 1–2 for editing" | [`extract_html`]({{< ref "editor/mcp/tools-reference/extract-html.md" >}}) | an editable HTML file of that part |
+| "Open worksheet 2 / slide 2 / pages 1–2 for editing" | [`extract_html`]({{< ref "editor/mcp/tools-reference/extract-html.md" >}}) | an editable HTML file of that part |
 | "Put it back" / "save it as Word" | [`save_from_html`]({{< ref "editor/mcp/tools-reference/save-from-html.md" >}}) | the original with that part replaced, or a new document |
 | "What fields does this form have?" | [`get_form_fields`]({{< ref "editor/mcp/tools-reference/get-form-fields.md" >}}) | names, types, current values, drop-down options |
 | "Fill the form for Amara" | [`fill_form_fields`]({{< ref "editor/mcp/tools-reference/fill-form-fields.md" >}}) | the fields filled, the names it did not know |
@@ -68,18 +71,18 @@ user            agent                          Editor MCP server
     (a find that matches nothing: "No file was written")
 ```
 
-The agent never re-types the document. It names the change, the engine applies it to the original file, and the response says how many places changed — so a find that matched nothing is visible, not silently "done".
+The agent never re-types the document. It names the change, the engine opens the original, applies the change and writes a copy, and the response says how many places changed — so a find that matched nothing is visible, not silently "done".
 
 ## Edit, don't regenerate
 
-Ask a model to "change three words in this contract" without an editing tool and it reads the text and writes a new document: styles, tables and headers re-created from memory, and any clause it re-typed can drift without anyone noticing. An editing tool inverts that. The document stays the original file; only the named change is applied; the result is a copy with a count.
+Ask a model to "change three words in this contract" without an editing tool and it reads the text and writes a new document: styles, tables and headers re-created from memory, and any clause it re-typed can drift without anyone noticing. An editing tool inverts that. The engine opens the original, applies only the named change, and writes a copy with a count; the agent never re-types a word. (The engine does convert a document to its HTML editing model and back — what a Word document keeps, and the footer it loses on 26.10.0, is listed in the [FAQ]({{< ref "editor/mcp/troubleshooting-faq.md" >}}#what-does-replace_text-keep-in-a-word-document).)
 
 ```text
 Regenerate the document                Edit the document
 -------------------------------------  -------------------------------------
 agent reads the text, writes a new     agent names the change: find/replace,
   file from memory                       one worksheet, one form field
-styles, tables, headers re-typed       everything else is the original file
+styles, tables, headers re-typed       the engine carries the rest over
 silent drift in clauses it re-wrote    a count of what changed, nothing else
 no record of what changed              no match = no file written
 ```
@@ -145,6 +148,7 @@ The server uses MCP's **local stdio transport**: your AI client starts the serve
 
 * [Quick start]({{< ref "editor/mcp/getting-started/_index.md" >}}) · [Use cases]({{< ref "editor/mcp/use-cases/_index.md" >}}) · [Supported formats]({{< ref "editor/mcp/supported-formats.md" >}}) · [Troubleshooting & FAQ]({{< ref "editor/mcp/troubleshooting-faq.md" >}})
 * GitHub: [server source](https://github.com/groupdocs-editor/GroupDocs.Editor.Mcp) · [installer](https://github.com/groupdocs/GroupDocs.Mcp.Installer) · [integration tests](https://github.com/groupdocs-editor/GroupDocs.Editor.Mcp.Tests)
-* [NuGet package](https://www.nuget.org/packages/GroupDocs.Editor.Mcp) · [Docker image](https://github.com/orgs/groupdocs-editor/packages/container/package/editor-net-mcp) · [MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.groupdocs-editor/groupdocs-editor-mcp)
+* [NuGet package](https://www.nuget.org/packages/GroupDocs.Editor.Mcp) · [Docker image](https://github.com/groupdocs-editor/GroupDocs.Editor.Mcp/pkgs/container/editor-net-mcp) · [MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.groupdocs-editor/groupdocs-editor-mcp)
 * The library behind it: [GroupDocs.Editor for .NET]({{< ref "editor/net/_index.md" >}})
+* [GroupDocs.Editor MCP product page](https://products.groupdocs.com/editor/mcp/) — one-click install for VS Code and Cursor, configs for every other client
 * Questions: [Editor forum](https://forum.groupdocs.com/c/editor/20)

@@ -4,8 +4,8 @@ url: editor/net/mcp/troubleshooting
 title: Troubleshooting (.NET)
 linkTitle: Troubleshooting
 weight: 9
-description: "Fixes for problems specific to the .NET build of the GroupDocs.Editor MCP server — dnx not found, missing libgdiplus on Linux and macOS, cold NuGet cache on first launch, and Docker daemon errors."
-keywords: dnx command not found, libgdiplus not found error, .NET 10 SDK MCP server, MCP server first launch timeout, docker daemon not reachable
+description: "Fixes for problems specific to the .NET build of the GroupDocs.Editor MCP server — dnx not found, missing fonts on Linux, cold NuGet cache on first launch, and Docker errors."
+keywords: dnx command not found, MCP server fonts Linux, .NET 10 SDK MCP server, MCP server first launch timeout, docker daemon not reachable
 productName: GroupDocs.Editor MCP Server for .NET
 toc: True
 ---
@@ -25,19 +25,20 @@ Check with `dotnet --version` (expect 10.x) and `dnx --help`.
 Your AI client has its own `PATH`, which may differ from your terminal's — a GUI client launched from the desktop often does not see a `PATH` set in your shell profile. If `dnx` works in the terminal but the client reports it missing, that mismatch is the reason; use an absolute command path in the client entry, or launch the client from a terminal.
 {{< /alert >}}
 
-## `DllNotFoundException: libgdiplus`
+## Fonts are missing or substituted in PDF output (Linux)
 
-On Linux and macOS in the NuGet channel, the engine needs native graphics libraries that are not installed by default:
+The GroupDocs.Editor engine draws with libraries that ship inside the package, so **no `libgdiplus`** is needed on any platform. Saving to PDF or XPS lays text out, and a bare Linux machine has no real fonts:
 
 ```bash
-# Linux (Debian/Ubuntu)
 sudo apt-get install -y --no-install-recommends \
-  libgdiplus libfontconfig1 ttf-mscorefonts-installer
-# macOS
-brew install mono-libgdiplus
+  libfontconfig1 ttf-mscorefonts-installer
 ```
 
-Or switch to the **Docker channel**, where every native dependency is already inside the image — this is why Docker is the recommended default on Linux and macOS. See [Install on Linux]({{< ref "editor/net/mcp/linux-installation.md" >}}) / [Install on macOS]({{< ref "editor/net/mcp/macos-installation.md" >}}).
+The **Docker channel** bundles the fonts. See [Install on Linux]({{< ref "editor/net/mcp/linux-installation.md" >}}) / [Install on macOS]({{< ref "editor/net/mcp/macos-installation.md" >}}).
+
+## `Permission denied` when saving into a mounted folder (Docker on Linux)
+
+The image runs as a non-root user (uid 1654) and a mounted folder keeps its host owner, so the container cannot write into a folder you own. Run it as you: `--user "$(id -u):$(id -g)"` on the command line, or `"--user", "1000:1000"` (your `id -u` and `id -g`) in a JSON client config, which runs no shell.
 
 ## The first tool call is slow, or fails once and then works
 
