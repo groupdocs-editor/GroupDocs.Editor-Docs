@@ -3,7 +3,7 @@ id: showcases
 url: editor/nodejs-java/showcases
 title: Showcases
 weight: 3
-description: "Code examples and live demostrations of GroupDocs.Editor for Node.js"
+description: "Code examples and live demonstrations of GroupDocs.Editor for Node.js"
 keywords: 
 productName: GroupDocs.Editor for Node.js
 hideChildren: False
@@ -13,7 +13,7 @@ toc: True
 
 ## GitHub Examples
 
-You may download GroupDocs.Editor for Node.js code examples from our GitHub repository and see file editing features in action:s
+You may download GroupDocs.Editor for Node.js code examples from our GitHub repository and see file editing features in action
 
 * [GroupDocs.Editor for Node.js examples, plugins, and showcase](https://github.com/groupdocs-viewer/GroupDocs.Viewer-for-Node.js-via-Java)
 
