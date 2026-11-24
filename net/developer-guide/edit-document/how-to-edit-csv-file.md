@@ -40,7 +40,7 @@ structuredData:
 
 ## Introduction
 
-DSV (Delimiter-Separated Values) files are specific form of text-based spreadsheets with delimiters (separators). Due of their nature the [**GroupDocs.Editor**](https://products.groupdocs.com/editor/net) processes this class of documents separately from usual binary spreadsheets. In counterpart to usual spreadsheets, DSV documents due to their textual nature have only single tab (worksheet) and cannot be encoded. But any non-empty string may be treated as separator, so user always need to specify it explicitly.
+DSV (Delimiter-Separated Values) files are specific form of text-based spreadsheets with delimiters (separators). Due to their nature the [**GroupDocs.Editor**](https://products.groupdocs.com/editor/net) processes this class of documents separately from usual binary spreadsheets. In counterpart to usual spreadsheets, DSV documents due to their textual nature have only single tab (worksheet) and cannot be encoded. But any non-empty string may be treated as separator, so user always need to specify it explicitly.
 
 The most common types of DSV are:
 

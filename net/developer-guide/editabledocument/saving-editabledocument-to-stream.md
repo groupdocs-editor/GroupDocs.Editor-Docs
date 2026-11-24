@@ -133,7 +133,7 @@ After executing this code, the `markup` variable of `StringBuilder` type will co
 
 ## Saving HTML markup with template strings for resource links
 
-Sometimes it is necessary to save only markup, and do not save the resources. In such cases the approach, described above, may be treates as too redundant. The `EditableDocument` class from its beginning contains methods `GetContent` and `GetBodyContent`. These two methods have two overloads, but in general the first one returns the whole HTML markup of the document, while the second — only the inner content of the HTML->BODY element, without the BODY opening and closing tags.
+Sometimes it is necessary to save only markup, and do not save the resources. In such cases the approach, described above, may be treated as too redundant. The `EditableDocument` class from its beginning contains methods `GetContent` and `GetBodyContent`. These two methods have two overloads, but in general the first one returns the whole HTML markup of the document, while the second — only the inner content of the HTML->BODY element, without the BODY opening and closing tags.
 
 Before the version 23.9 was released, these two methods allowed to specify the external resource prefixes, so when generating the HTML markup, these prefixes are added to resource names. For example, if the document has two images, let's say, "foo.jpeg" and "bar.png", then, by calling the `EditableDocument.GetBodyContent("https://mywebsite.web/image?name=")`, the output markup will contain two IMG elements with the next content:
 
