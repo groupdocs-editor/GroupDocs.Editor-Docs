@@ -111,3 +111,7 @@ Starting from version 20.4, [PresentationSaveOptions](https://reference.groupdo
 ## PowerPoint editor demo App
 
 Along with full featured .NET library we provide simple, but powerful free Apps. You are welcome to edit PowerPoint presentations, including PPT, PPTX, PPS, and ODP formats, directly in your browser with our [PowerPoint Presentation Editor App](https://products.groupdocs.app/editor/powerpoint).
+
+## Conclusion
+
+This tutorial shows how to open, edit, and save a PowerPoint presentation, with options for each step.

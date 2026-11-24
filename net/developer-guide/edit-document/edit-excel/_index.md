@@ -104,3 +104,7 @@ However, starting from version 20.10 a new possibility was introduced — now Gr
 ## Excel editor demo App
 
 Along with full featured .NET library we provide simple, but powerful free Apps. You are welcome to edit Excel spreadsheets, including XLS, XLSX, XLSM, and ODS formats, directly in your browser with our [Excel Spreadsheet Editor App](https://products.groupdocs.app/editor/excel).
+
+## Conclusion
+
+This tutorial shows how to open, edit, and save an Excel workbook, with options for each step.
