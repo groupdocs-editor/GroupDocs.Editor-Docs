@@ -46,7 +46,7 @@ From its emergence the GroupDocs.Editor for Java had no support for editing the 
 
 ## Loading
 
-Loding of the Email documents is usual and the same as for other formats. Like with text, XPS and e-Book formats, and unlike the PDF and Office formats, there is no loading options for the Email documents — just specify a path to the file or a [byte stream](https://docs.oracle.com/javase/7/docs/api/java/io/ByteArrayInputStream.html?is-external=true) with the document content in the constructor of the [`com.groupdocs.editor.Editor`](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor) class and that's all.
+Loading of the Email documents is usual and the same as for other formats. Like with text, XPS and e-Book formats, and unlike the PDF and Office formats, there is no loading options for the Email documents — just specify a path to the file or a [byte stream](https://docs.oracle.com/javase/7/docs/api/java/io/ByteArrayInputStream.html?is-external=true) with the document content in the constructor of the [`com.groupdocs.editor.Editor`](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor) class and that's all.
 
 Code example below demonstrates loading a single EML file to the [`Editor`](https://reference.groupdocs.com/editor/java/com.groupdocs.editor/editor) instance through the file path and byte stream.
 

@@ -74,7 +74,7 @@ When the [EditableDocument](https://reference.groupdocs.com/editor/net/groupdocs
 | Email | EML, EMLX, TNEF, MSG, HTML, MHTML, ICS, VCF, PST, MBOX, OFT | [EmailSaveOptions](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/emailsaveoptions) | [EmailFormats](https://reference.groupdocs.com/editor/net/groupdocs.editor.formats/emailformats) |
 | e-Books | ePub, Mobi, AZW3 | [EbookSaveOptions](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/ebooksaveoptions/) | [EBookFormats](https://reference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats) |
 
-So, let’s say it is necessary to save the **modified content** to the document of DOCX format. DOCS is the part of WordProcessing family. So the instance of the [WordProcessingSaveOptions](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/wordprocessingsaveoptions) class should be created, and the [WordProcessingFormats.Docx](https://reference.groupdocs.com/editor/net/groupdocs.editor.formats/wordprocessingformats/docx/) value should be specified in its constructor. Like this:
+So, let’s say it is necessary to save the **modified content** to the document of DOCX format. DOCX is the part of WordProcessing family. So the instance of the [WordProcessingSaveOptions](https://reference.groupdocs.com/editor/net/groupdocs.editor.options/wordprocessingsaveoptions) class should be created, and the [WordProcessingFormats.Docx](https://reference.groupdocs.com/editor/net/groupdocs.editor.formats/wordprocessingformats/docx/) value should be specified in its constructor. Like this:
 
 {{< tabs "Save options creation">}}
 {{< tab "C#" >}}

@@ -3,7 +3,7 @@ id: showcases
 url: editor/net/showcases
 title: Showcases
 weight: 3
-description: "Code examples and live demostrations of GroupDocs.Editor for .NET"
+description: "Code examples and live demonstrations of GroupDocs.Editor for .NET"
 keywords: 
 productName: GroupDocs.Editor for .NET
 hideChildren: False
